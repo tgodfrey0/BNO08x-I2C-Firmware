@@ -7,4 +7,6 @@ digraph "/home/toby/Code/BNO085-I2C-Firmware/src/main.c"
   Node1 [label="/home/toby/Code/BNO085\l-I2C-Firmware/src/main.c",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="The entry point for testing the library."];
   Node1 -> Node2 [color="steelblue1",style="solid"];
   Node2 [label="stdio.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node1 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="defs.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$defs_8h.html",tooltip="A header file containing all pre-processor macros, definitions and global constants."];
 }

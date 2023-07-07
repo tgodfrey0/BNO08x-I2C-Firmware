@@ -26,18 +26,14 @@ var NAVTREE =
 [
   [ "BNO085 Firmware", "index.html", [
     [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ],
-      [ "Globals", "globals.html", [
-        [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ]
-      ] ]
+      [ "File List", "files.html", "files_dup" ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"dir_68267d1309a1af8e8297ef4c3efbcdba.html"
+"bno085_8h_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
