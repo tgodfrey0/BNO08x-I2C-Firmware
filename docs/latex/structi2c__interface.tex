@@ -1,0 +1,93 @@
+\hypertarget{structi2c__interface}{}\doxysection{i2c\+\_\+interface Struct Reference}
+\label{structi2c__interface}\index{i2c\_interface@{i2c\_interface}}
+
+
+Holds the data relevant to the I2C interface configuration.  
+
+
+
+
+{\ttfamily \#include $<$i2c.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structi2c__interface_acb49865e2894e64fdb1749089ea4ecfe}{sda\+\_\+pin}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structi2c__interface_a6c9ad0fce87376e80953c21ec3f98e6c}{scl\+\_\+pin}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structi2c__interface_a95fc986007433325caeb33834356d139}{freq\+\_\+hz}}
+\item 
+bool \mbox{\hyperlink{structi2c__interface_ad86e7ae1ce88f3a7655a02558318afc3}{initialised}}
+\item 
+uint8\+\_\+t($\ast$ \mbox{\hyperlink{structi2c__interface_a3a61dccf8071239cfd0caf11760a5031}{write}} )(const struct \mbox{\hyperlink{structi2c__message}{i2c\+\_\+message}} $\ast$message)
+\begin{DoxyCompactList}\small\item\em Callback to write data on to the I2C bus. \end{DoxyCompactList}\item 
+uint8\+\_\+t($\ast$ \mbox{\hyperlink{structi2c__interface_a3e759a6ff92ec4baa61177ea366e61a1}{read}} )(struct \mbox{\hyperlink{structi2c__message}{i2c\+\_\+message}} $\ast$message, const uint16\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Callback to read data from the I2C bus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Holds the data relevant to the I2C interface configuration. 
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structi2c__interface_a95fc986007433325caeb33834356d139}\label{structi2c__interface_a95fc986007433325caeb33834356d139}} 
+\index{i2c\_interface@{i2c\_interface}!freq\_hz@{freq\_hz}}
+\index{freq\_hz@{freq\_hz}!i2c\_interface@{i2c\_interface}}
+\doxysubsubsection{\texorpdfstring{freq\_hz}{freq\_hz}}
+{\footnotesize\ttfamily uint8\+\_\+t freq\+\_\+hz}
+
+The desired I2C bus speed in Hertz \mbox{\Hypertarget{structi2c__interface_ad86e7ae1ce88f3a7655a02558318afc3}\label{structi2c__interface_ad86e7ae1ce88f3a7655a02558318afc3}} 
+\index{i2c\_interface@{i2c\_interface}!initialised@{initialised}}
+\index{initialised@{initialised}!i2c\_interface@{i2c\_interface}}
+\doxysubsubsection{\texorpdfstring{initialised}{initialised}}
+{\footnotesize\ttfamily bool initialised}
+
+Stores true if the interface has been successfully initialised \mbox{\Hypertarget{structi2c__interface_a3e759a6ff92ec4baa61177ea366e61a1}\label{structi2c__interface_a3e759a6ff92ec4baa61177ea366e61a1}} 
+\index{i2c\_interface@{i2c\_interface}!read@{read}}
+\index{read@{read}!i2c\_interface@{i2c\_interface}}
+\doxysubsubsection{\texorpdfstring{read}{read}}
+{\footnotesize\ttfamily uint8\+\_\+t($\ast$ read) (struct \mbox{\hyperlink{structi2c__message}{i2c\+\_\+message}} $\ast$message, const uint16\+\_\+t n)}
+
+
+
+Callback to read data from the I2C bus. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em message} & The message struct to store the resulting data \\
+\hline
+\mbox{\texttt{ in}}  & {\em n} & The number of bytes to read from the bus \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structi2c__interface_a6c9ad0fce87376e80953c21ec3f98e6c}\label{structi2c__interface_a6c9ad0fce87376e80953c21ec3f98e6c}} 
+\index{i2c\_interface@{i2c\_interface}!scl\_pin@{scl\_pin}}
+\index{scl\_pin@{scl\_pin}!i2c\_interface@{i2c\_interface}}
+\doxysubsubsection{\texorpdfstring{scl\_pin}{scl\_pin}}
+{\footnotesize\ttfamily uint8\+\_\+t scl\+\_\+pin}
+
+The SCL pin number \mbox{\Hypertarget{structi2c__interface_acb49865e2894e64fdb1749089ea4ecfe}\label{structi2c__interface_acb49865e2894e64fdb1749089ea4ecfe}} 
+\index{i2c\_interface@{i2c\_interface}!sda\_pin@{sda\_pin}}
+\index{sda\_pin@{sda\_pin}!i2c\_interface@{i2c\_interface}}
+\doxysubsubsection{\texorpdfstring{sda\_pin}{sda\_pin}}
+{\footnotesize\ttfamily uint8\+\_\+t sda\+\_\+pin}
+
+The SDA pin number \mbox{\Hypertarget{structi2c__interface_a3a61dccf8071239cfd0caf11760a5031}\label{structi2c__interface_a3a61dccf8071239cfd0caf11760a5031}} 
+\index{i2c\_interface@{i2c\_interface}!write@{write}}
+\index{write@{write}!i2c\_interface@{i2c\_interface}}
+\doxysubsubsection{\texorpdfstring{write}{write}}
+{\footnotesize\ttfamily uint8\+\_\+t($\ast$ write) (const struct \mbox{\hyperlink{structi2c__message}{i2c\+\_\+message}} $\ast$message)}
+
+
+
+Callback to write data on to the I2C bus. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em message} & A message struct to send on the bus \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/toby/\+Code/\+BNO085-\/\+I2\+C-\/\+Firmware/src/i2c.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,33 @@
+\hypertarget{i2c_8h_source}{}\doxysection{i2c.\+h}
+\label{i2c_8h_source}\index{/home/toby/Code/BNO085-\/I2C-\/Firmware/src/i2c.h@{/home/toby/Code/BNO085-\/I2C-\/Firmware/src/i2c.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/****************************************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ @file\ i2c.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ @brief\ I2C\ related\ definitions}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ @author\ Toby\ Godfrey}}
+\DoxyCodeLine{00006\ \textcolor{comment}{****************************************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structi2c__message}{i2c\_message}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ uint8\_t*\ \mbox{\hyperlink{structi2c__message_aa5cbdad2c57e9b3f949e1a4d96382b66}{payload}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ uint8\_t*\ \mbox{\hyperlink{structi2c__message_a503afcd7f8134fc802daf761891e9590}{length}};\ \ \ \ \ \ }
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structi2c__interface}{i2c\_interface}}\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structi2c__interface_acb49865e2894e64fdb1749089ea4ecfe}{sda\_pin}};\ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structi2c__interface_a6c9ad0fce87376e80953c21ec3f98e6c}{scl\_pin}};\ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structi2c__interface_a95fc986007433325caeb33834356d139}{freq\_hz}};\ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structi2c__interface_ad86e7ae1ce88f3a7655a02558318afc3}{initialised}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ uint8\_t\ (*\mbox{\hyperlink{structi2c__interface_a3a61dccf8071239cfd0caf11760a5031}{write}})(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structi2c__message}{i2c\_message}}*\ message);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00047\ \ \ \ \ uint8\_t\ (*\mbox{\hyperlink{structi2c__interface_a3e759a6ff92ec4baa61177ea366e61a1}{read}})(\textcolor{keyword}{struct\ }\mbox{\hyperlink{structi2c__message}{i2c\_message}}*\ message,\ \textcolor{keyword}{const}\ uint16\_t\ n);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \};}
+
+\end{DoxyCode}
