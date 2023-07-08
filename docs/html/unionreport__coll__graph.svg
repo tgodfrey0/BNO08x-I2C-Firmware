@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Stores a single report struct.">
 <polygon fill="#999999" stroke="#666666" points="335,-746.05 293,-746.05 293,-727.05 335,-727.05 335,-746.05"/>
 <text text-anchor="middle" x="314" y="-734.05" font-family="Helvetica,sans-Serif" font-size="10.00">report</text>
 </a>

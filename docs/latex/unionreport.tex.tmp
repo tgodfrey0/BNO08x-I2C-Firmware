@@ -2,6 +2,11 @@
 \label{unionreport}\index{report@{report}}
 
 
+Stores a single report struct.  
+
+
+
+
 Collaboration diagram for report\+:
 % FIG 0
 \doxysubsection*{Data Fields}
@@ -82,6 +87,8 @@ struct \mbox{\hyperlink{structarvr__stabilised__game__rotation__vector__report}{
 
 
 \doxysubsection{Detailed Description}
+Stores a single report struct. 
+
 report struct for a single sensor 
 
 \doxysubsection{Field Documentation}
