@@ -14,20 +14,31 @@
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
 \DoxyCodeLine{00012\ }
-\DoxyCodeLine{00018\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structi2c__message}{i2c\_message}}\ \{}
-\DoxyCodeLine{00019\ \ \ \ \ uint8\_t*\ \mbox{\hyperlink{structi2c__message_aa5cbdad2c57e9b3f949e1a4d96382b66}{payload}};\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00020\ \ \ \ \ uint8\_t*\ \mbox{\hyperlink{structi2c__message_a503afcd7f8134fc802daf761891e9590}{length}};\ \ \ \ \ \ }
-\DoxyCodeLine{00021\ \};}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00028\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structi2c__interface}{i2c\_interface}}\ \{}
-\DoxyCodeLine{00029\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structi2c__interface_acb49865e2894e64fdb1749089ea4ecfe}{sda\_pin}};\ \ \ \ \ }
-\DoxyCodeLine{00030\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structi2c__interface_a6c9ad0fce87376e80953c21ec3f98e6c}{scl\_pin}};\ \ \ \ \ }
-\DoxyCodeLine{00031\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structi2c__interface_a95fc986007433325caeb33834356d139}{freq\_hz}};\ \ \ \ \ }
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structi2c__interface_ad86e7ae1ce88f3a7655a02558318afc3}{initialised}};\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00039\ \ \ \ \ uint8\_t\ (*\mbox{\hyperlink{structi2c__interface_a3a61dccf8071239cfd0caf11760a5031}{write}})(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structi2c__message}{i2c\_message}}*\ message);}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00047\ \ \ \ \ uint8\_t\ (*\mbox{\hyperlink{structi2c__interface_a3e759a6ff92ec4baa61177ea366e61a1}{read}})(\textcolor{keyword}{struct\ }\mbox{\hyperlink{structi2c__message}{i2c\_message}}*\ message,\ \textcolor{keyword}{const}\ uint16\_t\ n);}
+\DoxyCodeLine{00013\ \textcolor{comment}{//=================================================================================================//}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ \ Structs}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//=================================================================================================//}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structi2c__message}{i2c\_message}}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ uint8\_t*\ \mbox{\hyperlink{structi2c__message_aa5cbdad2c57e9b3f949e1a4d96382b66}{payload}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ uint8\_t*\ \mbox{\hyperlink{structi2c__message_a503afcd7f8134fc802daf761891e9590}{length}};\ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structi2c__interface}{i2c\_interface}}\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structi2c__interface_acb49865e2894e64fdb1749089ea4ecfe}{sda\_pin}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structi2c__interface_a6c9ad0fce87376e80953c21ec3f98e6c}{scl\_pin}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structi2c__interface_a00cf77886a8476a35f990d052e440aa8}{baud\_rate\_hz}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structi2c__interface_ad86e7ae1ce88f3a7655a02558318afc3}{initialised}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ uint8\_t\ (*\mbox{\hyperlink{structi2c__interface_a4ed72b3f1362cbbd3bdf8cd256cef2e7}{write}})(\textcolor{keyword}{const}\ uint8\_t\ addr,\ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structi2c__message}{i2c\_message}}*\ message);}
 \DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00058\ \ \ \ \ uint8\_t\ (*\mbox{\hyperlink{structi2c__interface_aa758dd5929419b707f4905fe1d41db25}{read}})(\textcolor{keyword}{const}\ uint8\_t\ addr,\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structi2c__message}{i2c\_message}}*\ message,\ \textcolor{keyword}{const}\ uint16\_t\ n);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ \ \ \ \ void\ (*\mbox{\hyperlink{structi2c__interface_a69828b3de203441326c526b86f46263f}{initialise}})(\textcolor{keyword}{struct\ }\mbox{\hyperlink{structi2c__interface}{i2c\_interface}}*\ self);}
+\DoxyCodeLine{00066\ \};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{comment}{//=================================================================================================//}}
+\DoxyCodeLine{00070\ \textcolor{comment}{//\ \ Functions}}
+\DoxyCodeLine{00071\ \textcolor{comment}{//=================================================================================================//}}
+\DoxyCodeLine{00072\ }
 
 \end{DoxyCode}
