@@ -111,9 +111,18 @@ Data Fields</h2></td></tr>
 <tr class="separator:ade818037fd6c985038ff29656089758d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70fbd315df33bf9039e036725b569e7f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structraw__accelerometer__report.html#a70fbd315df33bf9039e036725b569e7f">delay</a></td></tr>
 <tr class="separator:a70fbd315df33bf9039e036725b569e7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1c2d516777e6b42af0d281c9ecc7375"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structraw__accelerometer__report.html#ae1c2d516777e6b42af0d281c9ecc7375">x</a></td></tr>
+<tr class="separator:ae1c2d516777e6b42af0d281c9ecc7375"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af77b1a54442f2443cf64a4766f916bcd"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structraw__accelerometer__report.html#af77b1a54442f2443cf64a4766f916bcd">y</a></td></tr>
+<tr class="separator:af77b1a54442f2443cf64a4766f916bcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd938edbea27ed4f351dc19d69039222"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structraw__accelerometer__report.html#abd938edbea27ed4f351dc19d69039222">z</a></td></tr>
+<tr class="separator:abd938edbea27ed4f351dc19d69039222"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab20b0c7772544cf5d318507f34231fbe"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structraw__accelerometer__report.html#ab20b0c7772544cf5d318507f34231fbe">timestamp</a></td></tr>
+<tr class="separator:ab20b0c7772544cf5d318507f34231fbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Holds the report data for the raw accelerometer. </p>
+<p>Raw readings from the physical accelerometer MEMS sensor. Units are ADCs. Interpretation of the reported values is sensor dependent. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a70fbd315df33bf9039e036725b569e7f" name="a70fbd315df33bf9039e036725b569e7f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a70fbd315df33bf9039e036725b569e7f">&#9670;&#160;</a></span>delay</h2>
@@ -141,7 +150,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The ID of the report - 0x </p>
+<p>The ID of the report - 0x14 for the raw accelerometer </p>
 
 </div>
 </div>
@@ -172,6 +181,66 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>The status of the sensor </p>
+
+</div>
+</div>
+<a id="ab20b0c7772544cf5d318507f34231fbe" name="ab20b0c7772544cf5d318507f34231fbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab20b0c7772544cf5d318507f34231fbe">&#9670;&#160;</a></span>timestamp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t timestamp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The time the sample was measured, in us </p>
+
+</div>
+</div>
+<a id="ae1c2d516777e6b42af0d281c9ecc7375" name="ae1c2d516777e6b42af0d281c9ecc7375"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1c2d516777e6b42af0d281c9ecc7375">&#9670;&#160;</a></span>x</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t x</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>x component of the raw accelerometer </p>
+
+</div>
+</div>
+<a id="af77b1a54442f2443cf64a4766f916bcd" name="af77b1a54442f2443cf64a4766f916bcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af77b1a54442f2443cf64a4766f916bcd">&#9670;&#160;</a></span>y</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>y component of the raw accelerometer </p>
+
+</div>
+</div>
+<a id="abd938edbea27ed4f351dc19d69039222" name="abd938edbea27ed4f351dc19d69039222"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd938edbea27ed4f351dc19d69039222">&#9670;&#160;</a></span>z</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t z</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>z component of the raw accelerometer </p>
 
 </div>
 </div>

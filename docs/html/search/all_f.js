@@ -8,5 +8,5 @@ var searchData=
   ['tilt_5',['tilt',['../structtilt__detector__report.html#a5f5dc69ca023116bd196c0e1c97554e4',1,'tilt_detector_report']]],
   ['tilt_5fdetector_6',['tilt_detector',['../unionreport.html#aa0f0bbf9527a94fcbbd42e526fb45d21',1,'report']]],
   ['tilt_5fdetector_5freport_7',['tilt_detector_report',['../structtilt__detector__report.html',1,'']]],
-  ['timestamp_8',['timestamp',['../structraw__gyroscope__report.html#ab20b0c7772544cf5d318507f34231fbe',1,'raw_gyroscope_report::timestamp()'],['../structraw__magnetometer__report.html#ab20b0c7772544cf5d318507f34231fbe',1,'raw_magnetometer_report::timestamp()']]]
+  ['timestamp_8',['timestamp',['../structraw__accelerometer__report.html#ab20b0c7772544cf5d318507f34231fbe',1,'raw_accelerometer_report::timestamp()'],['../structraw__gyroscope__report.html#ab20b0c7772544cf5d318507f34231fbe',1,'raw_gyroscope_report::timestamp()'],['../structraw__magnetometer__report.html#ab20b0c7772544cf5d318507f34231fbe',1,'raw_magnetometer_report::timestamp()']]]
 ];

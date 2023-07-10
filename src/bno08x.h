@@ -337,14 +337,20 @@ struct stability_classifier_report {
 
 /**
  * @struct raw_accelerometer_report
+ *
+ * Raw readings from the physical accelerometer MEMS sensor. Units are ADCs. Interpretation of the reported values is sensor dependent.
  * 
  * @brief Holds the report data for the raw accelerometer.
  */
 struct raw_accelerometer_report {
-  uint8_t report_id;    /**< The ID of the report - 0x */
+  uint8_t report_id;    /**< The ID of the report - 0x14 for the raw accelerometer */
   uint8_t seq_num;    /**< The sequence number of the report */
   uint8_t status;    /**< The status of the sensor */
   uint8_t delay;    /**< Report delay in 100us */
+  int16_t x;    /**< x component of the raw accelerometer */
+  int16_t y;    /**< y component of the raw accelerometer */
+  int16_t z;    /**< z component of the raw accelerometer */
+  uint32_t timestamp;    /**< The time the sample was measured, in us */
 };
 
 /**

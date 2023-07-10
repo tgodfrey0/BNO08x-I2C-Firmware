@@ -208,8 +208,12 @@ var NAVTREEINDEX0 =
 "structraw__accelerometer__report.html":[0,0,21],
 "structraw__accelerometer__report.html#a70fbd315df33bf9039e036725b569e7f":[0,0,21,0],
 "structraw__accelerometer__report.html#a725a13d8d43f65c0f5e8adc271f71573":[0,0,21,1],
+"structraw__accelerometer__report.html#ab20b0c7772544cf5d318507f34231fbe":[0,0,21,4],
+"structraw__accelerometer__report.html#abd938edbea27ed4f351dc19d69039222":[0,0,21,7],
 "structraw__accelerometer__report.html#ac117f9690109b1aeb49da826aff1cca6":[0,0,21,2],
 "structraw__accelerometer__report.html#ade818037fd6c985038ff29656089758d":[0,0,21,3],
+"structraw__accelerometer__report.html#ae1c2d516777e6b42af0d281c9ecc7375":[0,0,21,5],
+"structraw__accelerometer__report.html#af77b1a54442f2443cf64a4766f916bcd":[0,0,21,6],
 "structraw__gyroscope__report.html":[0,0,22],
 "structraw__gyroscope__report.html#a4af92569ea830250443045233c9bf5fb":[0,0,22,4],
 "structraw__gyroscope__report.html#a70fbd315df33bf9039e036725b569e7f":[0,0,22,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX0 =
 "structsar__report.html#ac117f9690109b1aeb49da826aff1cca6":[0,0,26,2],
 "structsar__report.html#ade818037fd6c985038ff29656089758d":[0,0,26,3],
 "structshake__detector__report.html":[0,0,27],
-"structshake__detector__report.html#a70fbd315df33bf9039e036725b569e7f":[0,0,27,0],
-"structshake__detector__report.html#a725a13d8d43f65c0f5e8adc271f71573":[0,0,27,1],
-"structshake__detector__report.html#ac117f9690109b1aeb49da826aff1cca6":[0,0,27,2],
-"structshake__detector__report.html#ade818037fd6c985038ff29656089758d":[0,0,27,4],
-"structshake__detector__report.html#aed4bac074892e119823bdf19ca6a5cf5":[0,0,27,3]
+"structshake__detector__report.html#a70fbd315df33bf9039e036725b569e7f":[0,0,27,0]
 };
