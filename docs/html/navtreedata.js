@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "BNO085 Firmware", "index.html", [
+    [ "Modules", "modules.html", "modules" ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
@@ -42,7 +43,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"structraw__accelerometer__report.html#ab20b0c7772544cf5d318507f34231fbe"
+"structraw__accelerometer__report.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

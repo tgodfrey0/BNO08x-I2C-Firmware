@@ -5,6 +5,13 @@
 * @author Toby Godfrey
 ****************************************************************************************************/
 
+
+/*! 
+	\defgroup Enumerations
+		Public enumeration types
+*/
+
+
 #pragma once
 
 #include <stdint.h>
@@ -18,6 +25,8 @@
 
 /**
  * @enum SENSOR_ID
+ *
+ * @ingroup Enumerations
  *
  * @brief Stores the ID for each sensor.
  */
