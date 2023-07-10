@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['magnetic_5ffield_0',['magnetic_field',['../unionreport.html#ac51b7d06151e86996043a97d8d858454',1,'report']]],
-  ['magnetic_5ffield_5freport_1',['magnetic_field_report',['../structmagnetic__field__report.html',1,'']]]
+  ['k_0',['k',['../structrotation__vector__report.html#a9fc4cca635a26c692681a7071e379aa7',1,'rotation_vector_report::k()'],['../structgame__rotation__vector__report.html#a9fc4cca635a26c692681a7071e379aa7',1,'game_rotation_vector_report::k()'],['../structgeomagnetic__rotation__vector__report.html#a9fc4cca635a26c692681a7071e379aa7',1,'geomagnetic_rotation_vector_report::k()']]]
 ];

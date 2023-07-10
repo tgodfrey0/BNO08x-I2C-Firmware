@@ -90,6 +90,8 @@ $(document).ready(function(){initNavTree('structraw__accelerometer__report.html'
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle"><div class="title">raw_accelerometer_report Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -98,9 +100,82 @@ $(document).ready(function(){initNavTree('structraw__accelerometer__report.html'
  <a href="structraw__accelerometer__report.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="bno08x_8h_source.html">bno08x.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a725a13d8d43f65c0f5e8adc271f71573"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structraw__accelerometer__report.html#a725a13d8d43f65c0f5e8adc271f71573">report_id</a></td></tr>
+<tr class="separator:a725a13d8d43f65c0f5e8adc271f71573"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac117f9690109b1aeb49da826aff1cca6"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structraw__accelerometer__report.html#ac117f9690109b1aeb49da826aff1cca6">seq_num</a></td></tr>
+<tr class="separator:ac117f9690109b1aeb49da826aff1cca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade818037fd6c985038ff29656089758d"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structraw__accelerometer__report.html#ade818037fd6c985038ff29656089758d">status</a></td></tr>
+<tr class="separator:ade818037fd6c985038ff29656089758d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70fbd315df33bf9039e036725b569e7f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structraw__accelerometer__report.html#a70fbd315df33bf9039e036725b569e7f">delay</a></td></tr>
+<tr class="separator:a70fbd315df33bf9039e036725b569e7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Holds the report data for the raw accelerometer. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="a70fbd315df33bf9039e036725b569e7f" name="a70fbd315df33bf9039e036725b569e7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70fbd315df33bf9039e036725b569e7f">&#9670;&#160;</a></span>delay</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t delay</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Report delay in 100us </p>
+
+</div>
+</div>
+<a id="a725a13d8d43f65c0f5e8adc271f71573" name="a725a13d8d43f65c0f5e8adc271f71573"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a725a13d8d43f65c0f5e8adc271f71573">&#9670;&#160;</a></span>report_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t report_id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The ID of the report - 0x06 for gravity </p>
+
+</div>
+</div>
+<a id="ac117f9690109b1aeb49da826aff1cca6" name="ac117f9690109b1aeb49da826aff1cca6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac117f9690109b1aeb49da826aff1cca6">&#9670;&#160;</a></span>seq_num</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t seq_num</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The sequence number of the report </p>
+
+</div>
+</div>
+<a id="ade818037fd6c985038ff29656089758d" name="ade818037fd6c985038ff29656089758d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade818037fd6c985038ff29656089758d">&#9670;&#160;</a></span>status</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t status</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The status of the sensor </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>/home/toby/Code/BNO085-I2C-Firmware/src/<a class="el" href="bno08x_8h_source.html">bno08x.h</a></li>
 </ul>
 </div><!-- contents -->

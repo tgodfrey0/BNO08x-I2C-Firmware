@@ -181,62 +181,77 @@ struct geomagnetic_rotation_vector_report {
 
 /**
  * @struct pressure_report
+ *
+ * Reports the atmoshperic pressure. Units are hectohascals and the Q points is 20.
  * 
  * @brief Holds the report data for the pressure.
  */
 struct pressure_report {
-  uint8_t report_id;    /**< The ID of the report - 0x06 for gravity */
+  uint8_t report_id;    /**< The ID of the report - 0x0A for pressure */
   uint8_t seq_num;    /**< The sequence number of the report */
   uint8_t status;    /**< The status of the sensor */
   uint8_t delay;    /**< Report delay in 100us */
+  float value;	  /**< The pressure reading */
 };
 
 /**
  * @struct ambient_light_report
+ *
+ * The amount of light entering the sensor. Units are lux and the Q point is 8.
  * 
  * @brief Holds the report data for the ambient light.
  */
 struct ambient_light_report {
-  uint8_t report_id;    /**< The ID of the report - 0x06 for gravity */
+  uint8_t report_id;    /**< The ID of the report - 0x0B for ambient light */
   uint8_t seq_num;    /**< The sequence number of the report */
   uint8_t status;    /**< The status of the sensor */
   uint8_t delay;    /**< Report delay in 100us */
+  float value;	  /**< The ambient light reading */
 };
 
 /**
  * @struct humidity_report
+ *
+ * Reports the humidity in the ambient air. Units are in percent and the Q point is 8.
  * 
  * @brief Holds the report data for the humidity.
  */
 struct humidity_report {
-  uint8_t report_id;    /**< The ID of the report - 0x06 for gravity */
+  uint8_t report_id;    /**< The ID of the report - 0x0C for humidity */
   uint8_t seq_num;    /**< The sequence number of the report */
   uint8_t status;    /**< The status of the sensor */
   uint8_t delay;    /**< Report delay in 100us */
+  float value;	  /**< The humidity reading */
 };
 
 /**
  * @struct proximity_report
+ *
+ * Reports the distance from the device. Units in cm and the Q point is 4.
  * 
  * @brief Holds the report data for the proximity.
  */
 struct proximity_report {
-  uint8_t report_id;    /**< The ID of the report - 0x06 for gravity */
+  uint8_t report_id;    /**< The ID of the report - 0x0D for proximity */
   uint8_t seq_num;    /**< The sequence number of the report */
   uint8_t status;    /**< The status of the sensor */
   uint8_t delay;    /**< Report delay in 100us */
+  float value;
 };
 
 /**
  * @struct temperature_report
+ *
+ * Reports the ambient temperature. Units are in Celcius and the Q point is 7.
  * 
  * @brief Holds the report data for the temperature.
  */
 struct temperature_report {
-  uint8_t report_id;    /**< The ID of the report - 0x06 for gravity */
+  uint8_t report_id;    /**< The ID of the report - 0x0E for temperature */
   uint8_t seq_num;    /**< The sequence number of the report */
   uint8_t status;    /**< The status of the sensor */
   uint8_t delay;    /**< Report delay in 100us */
+  float value;	  /**< The temperature reading */
 };
 
 /**
@@ -261,26 +276,33 @@ struct uncalibrated_magnetic_field_report {
 
 /**
  * @struct tap_detector_report
- * 
+ *
+ * Reports single and double taps.
+ *
  * @brief Holds the report data for the tap detector.
  */
 struct tap_detector_report {
-  uint8_t report_id;    /**< The ID of the report - 0x06 for gravity */
+  uint8_t report_id;    /**< The ID of the report - 0x10 for the tap detector */
   uint8_t seq_num;    /**< The sequence number of the report */
   uint8_t status;    /**< The status of the sensor */
   uint8_t delay;    /**< Report delay in 100us */
+  uint8_t taps;	  /**< Flags for different tap information. See SH-2 Reference Manual for more details. */
 };
 
 /**
  * @struct step_counter_report
+ *
+ * Counts the number of steps. The step counter will wake the host at least once before the steps field wraps around to a previously reported value.
  * 
  * @brief Holds the report data for the step counter.
  */
 struct step_counter_report {
-  uint8_t report_id;    /**< The ID of the report - 0x06 for gravity */
+  uint8_t report_id;    /**< The ID of the report - 0x18 for the step detector */
   uint8_t seq_num;    /**< The sequence number of the report */
   uint8_t status;    /**< The status of the sensor */
   uint8_t delay;    /**< Report delay in 100us */
+  uint32_t latency;	  /**< The latency of the detection */
+  uint16_t steps;   /**< The number of steps */
 };
 
 /**
@@ -370,14 +392,17 @@ struct sar_report {
 
 /**
  * @struct step_detector_report
+ *
+ * Reports steps, one report per detected step.
  * 
  * @brief Holds the report data for the step detector.
  */
 struct step_detector_report {
-  uint8_t report_id;    /**< The ID of the report - 0x06 for gravity */
+  uint8_t report_id;    /**< The ID of the report - 0x18 for the step detector */
   uint8_t seq_num;    /**< The sequence number of the report */
   uint8_t status;    /**< The status of the sensor */
   uint8_t delay;    /**< Report delay in 100us */
+  uint32_t latency;   /**< The latency of the detection */
 };
 
 /**

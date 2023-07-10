@@ -90,6 +90,8 @@ $(document).ready(function(){initNavTree('structmagnetic__field__report.html',''
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle"><div class="title">magnetic_field_report Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -98,9 +100,134 @@ $(document).ready(function(){initNavTree('structmagnetic__field__report.html',''
  <a href="structmagnetic__field__report.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="bno08x_8h_source.html">bno08x.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a725a13d8d43f65c0f5e8adc271f71573"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmagnetic__field__report.html#a725a13d8d43f65c0f5e8adc271f71573">report_id</a></td></tr>
+<tr class="separator:a725a13d8d43f65c0f5e8adc271f71573"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac117f9690109b1aeb49da826aff1cca6"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmagnetic__field__report.html#ac117f9690109b1aeb49da826aff1cca6">seq_num</a></td></tr>
+<tr class="separator:ac117f9690109b1aeb49da826aff1cca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade818037fd6c985038ff29656089758d"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmagnetic__field__report.html#ade818037fd6c985038ff29656089758d">status</a></td></tr>
+<tr class="separator:ade818037fd6c985038ff29656089758d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70fbd315df33bf9039e036725b569e7f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmagnetic__field__report.html#a70fbd315df33bf9039e036725b569e7f">delay</a></td></tr>
+<tr class="separator:a70fbd315df33bf9039e036725b569e7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0da36b2558901e21e7a30f6c227a45e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmagnetic__field__report.html#ad0da36b2558901e21e7a30f6c227a45e">x</a></td></tr>
+<tr class="separator:ad0da36b2558901e21e7a30f6c227a45e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4f0d3eebc3c443f9be81bf48561a217"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmagnetic__field__report.html#aa4f0d3eebc3c443f9be81bf48561a217">y</a></td></tr>
+<tr class="separator:aa4f0d3eebc3c443f9be81bf48561a217"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af73583b1e980b0aa03f9884812e9fd4d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmagnetic__field__report.html#af73583b1e980b0aa03f9884812e9fd4d">z</a></td></tr>
+<tr class="separator:af73583b1e980b0aa03f9884812e9fd4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Holds the report data for the magnetic field. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<p>The calibrated magentic field sensor; calibrated for hard and soft iron effects such that the vector is aligned with the declination and heading of Earth's magnetic field. Untis are uTesla and the Q point is 4. </p>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="a70fbd315df33bf9039e036725b569e7f" name="a70fbd315df33bf9039e036725b569e7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70fbd315df33bf9039e036725b569e7f">&#9670;&#160;</a></span>delay</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t delay</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Report delay in 100us </p>
+
+</div>
+</div>
+<a id="a725a13d8d43f65c0f5e8adc271f71573" name="a725a13d8d43f65c0f5e8adc271f71573"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a725a13d8d43f65c0f5e8adc271f71573">&#9670;&#160;</a></span>report_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t report_id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The ID of the report - 0x03 for the calibrated magnetic field sensor </p>
+
+</div>
+</div>
+<a id="ac117f9690109b1aeb49da826aff1cca6" name="ac117f9690109b1aeb49da826aff1cca6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac117f9690109b1aeb49da826aff1cca6">&#9670;&#160;</a></span>seq_num</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t seq_num</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The sequence number of the report </p>
+
+</div>
+</div>
+<a id="ade818037fd6c985038ff29656089758d" name="ade818037fd6c985038ff29656089758d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade818037fd6c985038ff29656089758d">&#9670;&#160;</a></span>status</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t status</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The status of the sensor </p>
+
+</div>
+</div>
+<a id="ad0da36b2558901e21e7a30f6c227a45e" name="ad0da36b2558901e21e7a30f6c227a45e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0da36b2558901e21e7a30f6c227a45e">&#9670;&#160;</a></span>x</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float x</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>x component of the calibrated magnetic field </p>
+
+</div>
+</div>
+<a id="aa4f0d3eebc3c443f9be81bf48561a217" name="aa4f0d3eebc3c443f9be81bf48561a217"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4f0d3eebc3c443f9be81bf48561a217">&#9670;&#160;</a></span>y</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>y component of the calibrated magnetic field </p>
+
+</div>
+</div>
+<a id="af73583b1e980b0aa03f9884812e9fd4d" name="af73583b1e980b0aa03f9884812e9fd4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af73583b1e980b0aa03f9884812e9fd4d">&#9670;&#160;</a></span>z</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float z</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>z component of the calibrated magnetic field </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>/home/toby/Code/BNO085-I2C-Firmware/src/<a class="el" href="bno08x_8h_source.html">bno08x.h</a></li>
 </ul>
 </div><!-- contents -->

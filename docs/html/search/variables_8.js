@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['length_0',['length',['../structi2c__message.html#a503afcd7f8134fc802daf761891e9590',1,'i2c_message']]],
-  ['linear_5facceleration_1',['linear_acceleration',['../unionreport.html#a89cba08a9a8d55bcdc80bfa2fb743da1',1,'report']]]
+  ['j_0',['j',['../structrotation__vector__report.html#ac25976cf079d34d71c9da8ca3517dfb5',1,'rotation_vector_report::j()'],['../structgame__rotation__vector__report.html#ac25976cf079d34d71c9da8ca3517dfb5',1,'game_rotation_vector_report::j()'],['../structgeomagnetic__rotation__vector__report.html#ac25976cf079d34d71c9da8ca3517dfb5',1,'geomagnetic_rotation_vector_report::j()']]]
 ];
