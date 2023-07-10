@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['flip_0',['flip',['../structflip__detector__report.html#ad9db22d7f2afb40fcb112b060bf67f66',1,'flip_detector_report']]],
-  ['flip_5fdetector_1',['flip_detector',['../unioninput__report.html#a2c2773e12838ba756f8b6cb30bc12ef2',1,'input_report']]]
+  ['enabled_0',['enabled',['../structsensor.html#a8740ba80e30dd75e71d09fa1dcf04f3d',1,'sensor']]]
 ];

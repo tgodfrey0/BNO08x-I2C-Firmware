@@ -28,6 +28,7 @@ var annotated_dup =
     [ "report", "unionreport.html", null ],
     [ "rotation_vector_report", "structrotation__vector__report.html", "structrotation__vector__report" ],
     [ "sar_report", "structsar__report.html", "structsar__report" ],
+    [ "sensor", "structsensor.html", "structsensor" ],
     [ "shake_detector_report", "structshake__detector__report.html", "structshake__detector__report" ],
     [ "significant_motion_report", "structsignificant__motion__report.html", "structsignificant__motion__report" ],
     [ "sleep_detector_report", "structsleep__detector__report.html", "structsleep__detector__report" ],

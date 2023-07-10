@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['i_0',['i',['../structrotation__vector__report.html#a58e739b7bdf8275493686ae76e3705c3',1,'rotation_vector_report::i()'],['../structgame__rotation__vector__report.html#a58e739b7bdf8275493686ae76e3705c3',1,'game_rotation_vector_report::i()'],['../structgeomagnetic__rotation__vector__report.html#a58e739b7bdf8275493686ae76e3705c3',1,'geomagnetic_rotation_vector_report::i()'],['../structarvr__stabilised__rotation__vector__report.html#a58e739b7bdf8275493686ae76e3705c3',1,'arvr_stabilised_rotation_vector_report::i()'],['../structarvr__stabilised__game__rotation__vector__report.html#a58e739b7bdf8275493686ae76e3705c3',1,'arvr_stabilised_game_rotation_vector_report::i()']]],
-  ['i2c_5finterface_1',['i2c_interface',['../structi2c__interface.html',1,'']]],
-  ['i2c_5fmessage_2',['i2c_message',['../structi2c__message.html',1,'']]],
-  ['initialise_3',['initialise',['../structi2c__interface.html#a69828b3de203441326c526b86f46263f',1,'i2c_interface']]],
-  ['initialised_4',['initialised',['../structi2c__interface.html#ad86e7ae1ce88f3a7655a02558318afc3',1,'i2c_interface']]],
-  ['input_5freport_5',['input_report',['../unioninput__report.html',1,'']]]
+  ['heart_5frate_5fmonitor_0',['heart_rate_monitor',['../unioninput__report.html#a95508e5a23f51a80626f7fb8beccbe52',1,'input_report']]],
+  ['heart_5frate_5fmonitor_5freport_1',['heart_rate_monitor_report',['../structheart__rate__monitor__report.html',1,'']]],
+  ['hr_2',['hr',['../structheart__rate__monitor__report.html#aa6d165cfc88fbaeeabbbd18951801e03',1,'heart_rate_monitor_report']]],
+  ['humidity_3',['humidity',['../unioninput__report.html#a628f7cb50215dc7063394d7d2843ccea',1,'input_report']]],
+  ['humidity_5freport_4',['humidity_report',['../structhumidity__report.html',1,'']]]
 ];
