@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['personal_5factivity_5fclassifier_5freport_0',['personal_activity_classifier_report',['../structpersonal__activity__classifier__report.html',1,'']]],
-  ['pickup_5fdetector_5freport_1',['pickup_detector_report',['../structpickup__detector__report.html',1,'']]],
-  ['pocket_5fdetector_5freport_2',['pocket_detector_report',['../structpocket__detector__report.html',1,'']]],
-  ['pressure_5freport_3',['pressure_report',['../structpressure__report.html',1,'']]],
-  ['proximity_5freport_4',['proximity_report',['../structproximity__report.html',1,'']]]
+  ['magnetic_5ffield_5freport_0',['magnetic_field_report',['../structmagnetic__field__report.html',1,'']]],
+  ['motion_5frequest_5freport_1',['motion_request_report',['../structmotion__request__report.html',1,'']]]
 ];

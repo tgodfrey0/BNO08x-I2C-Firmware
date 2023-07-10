@@ -297,7 +297,7 @@ struct tap_detector_report {
  * @brief Holds the report data for the step counter.
  */
 struct step_counter_report {
-  uint8_t report_id;    /**< The ID of the report - 0x18 for the step detector. */
+  uint8_t report_id;    /**< The ID of the report - 0x11 for the step detector. */
   uint8_t seq_num;    /**< The sequence number of the report. */
   uint8_t status;    /**< The status of the sensor. */
   uint8_t delay;    /**< Report delay in 100us. */
@@ -388,18 +388,6 @@ struct raw_magnetometer_report {
   int16_t y;    /**< y component of the raw gyroscope. */
   int16_t z;    /**< z component of the raw gyroscope. */
   uint32_t timestamp;    /**< The time the sample was measured, in us. */
-};
-
-/**
- * @struct sar_report
- * 
- * @brief Holds the report data for the SAR.
- */
-struct sar_report {
-  uint8_t report_id;    /**< The ID of the report - 0x. */
-  uint8_t seq_num;    /**< The sequence number of the report. */
-  uint8_t status;    /**< The status of the sensor. */
-  uint8_t delay;    /**< Report delay in 100us. */
 };
 
 /**
@@ -596,7 +584,7 @@ struct arvr_stabilised_rotation_vector_report {
  * @brief Holds the report data for the ARVR stabilised game rotation vector.
  */
 struct arvr_stabilised_game_rotation_vector_report {
-  uint8_t report_id;    /**< The ID of the report - 0x. */
+  uint8_t report_id;    /**< The ID of the report - 0x29. */
   uint8_t seq_num;    /**< The sequence number of the report. */
   uint8_t status;    /**< The status of the sensor. */
   uint8_t delay;    /**< Report delay in 100us. */
@@ -604,6 +592,81 @@ struct arvr_stabilised_game_rotation_vector_report {
   float j;    /**< The unit quaternion j component. */
   float k;    /**< The unit quaternion k component. */
   float real;	/**< The unit quaternion real component. */
+};
+
+/**
+ * @struct gyro_integrated_rotation_vector_report
+ *
+ * Reports the absolute orientation of the device as determined by integrating gyroscope data at every gyroscope sample and correcting to the more-accurate rotation vector periodically. The format is a unit quaternion and calibrated gyroscope data. The Q point of the angular position is 14 and the angular velocity is 10.
+ * 
+ * @brief Holds the report data for the gyro-integrated rotation vector.
+ */
+struct gyro_integrated_rotation_vector_report {
+  float i;    /**< The unit quaternion i component. */
+  float j;    /**< The unit quaternion j component. */
+  float k;    /**< The unit quaternion k component. */
+  float real;	/**< The unit quaternion real component. */
+  float x;    /**< The angular velocity x component. */
+  float y;    /**< The angular velocity y component. */
+  float z;    /**< The angular velocity z component. */
+};
+
+/**
+ * @struct motion_request_report
+ *
+ * Used for interactive calibration. The sensor sends this request to the host periodically.
+ * 
+ * @brief Holds the report data for the motion request.
+ */
+struct motion_request_report {
+  uint8_t report_id;    /**< The ID of the report - 0x2B. */
+  uint8_t seq_num;    /**< The sequence number of the report. */
+  uint8_t status;    /**< The status of the sensor. */
+  uint8_t delay;    /**< Report delay in 100us. */
+  uint8_t intent;   /**< The motion intent provided to the sensor hub. See SH-2 Reference Manual for more details. */
+  uint8_t request;    /**< An enumeration of the motion request. See the SH-2 Reference Manual for more details. */
+};
+
+/**
+ * @struct optical_flow_report
+ *
+ * Reports the raw optical flow sensor data.
+ * 
+ * @brief Holds the report data for the optical flow sensor. NOT CURRENTLY SUPPORTED.
+ */
+struct optical_flow_report {};
+
+/**
+ * @struct dead_reckoning_pose_report
+ *
+ * Provides the linear position, angular position, linear velocity, and angular velocity as determined by the Dead Reackoning system. The units and formats are as follows:
+ * - Timestamp: Units in microseconds
+ * - Linear Position: Units in metres and a Q point of 15
+ * - Angular Position: A unit quaternion and a Q point of 30
+ * - Linear Velocity: Units in m/s with a Q point of 25
+ * - Angular Velocity: Units in rad/s with a Q point of 25
+ *
+ * @brief Holds the report data for the Dead Reckoning position report.
+ */
+struct dead_reckoning_pose_report {
+  uint8_t report_id;    /**< The ID of the report - 0x2D. */
+  uint8_t seq_num;    /**< The sequence number of the report. */
+  uint8_t status;    /**< The status of the sensor. */
+  uint8_t delay;    /**< Report delay in 100us. */
+  uint32_t timestamp;	/**< The timestamp of the reading. */
+  int32_t x_linear_pos;	  /**< The x component of the linear position. */
+  int32_t y_linear_pos;	  /**< The y component of the linear position. */
+  int32_t z_linear_pos;	  /**< The z component of the linear position. */
+  int32_t i_angular_pos;    /**< The i component of the angular position quaternion. */
+  int32_t j_angular_pos;    /**< The j component of the angular position quaternion. */
+  int32_t k_angular_pos;    /**< The k component of the angular position quaternion. */
+  int32_t real_angular_pos;   /**< The real component of the angular position quaternion. */
+  int32_t x_linear_vel;	  /**< The x component of the linear velocity. */
+  int32_t y_linear_vel;	  /**< The y component of the linear velocity. */
+  int32_t z_linear_vel;	  /**< The z component of the linear velocity. */
+  int32_t x_angular_vel;    /**< The x component of the angular velocity. */
+  int32_t y_angular_vel;    /**< The y component of the angular velocity. */
+  int32_t z_angular_vel;    /**< The z component of the angular velocity. */
 };
 
 //=================================================================================================//
@@ -642,7 +705,6 @@ union input_report {
   struct raw_accelerometer_report raw_accelerometer;    /**< Stores the raw accelerometer report. */
   struct raw_gyroscope_report raw_gyroscope;    /**< Stores the raw gyroscope report. */
   struct raw_magnetometer_report raw_magnetometer;    /**< Stores the raw magnetometer report. */
-  struct sar_report sar;    /**< Stores the SAR report. */
   struct step_detector_report step_detector;    /**< Stores the step detector report. */
   struct shake_detector_report shake_detector;    /**< Stores the shake detector report. */
   struct flip_detector_report flip_detector;    /**< Stores the flip detector report. */

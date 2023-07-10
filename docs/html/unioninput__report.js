@@ -23,7 +23,6 @@ var unioninput__report =
     [ "raw_gyroscope", "unioninput__report.html#ae9abd2918fb1e1e0da87ef00c75af7da", null ],
     [ "raw_magnetometer", "unioninput__report.html#ad4e94cb0679e5da500d3bc76e80535b3", null ],
     [ "rotation_vector", "unioninput__report.html#abac8829242ad8cb6444aa9f9bc769fef", null ],
-    [ "sar", "unioninput__report.html#a73079181027f88f598741f3a03f518bc", null ],
     [ "shake_detector", "unioninput__report.html#a1dc0a42707e528b1d5027208f88be291", null ],
     [ "significant_motion", "unioninput__report.html#a3a857340499a9b4273a061ad6092d6cf", null ],
     [ "sleep_detector", "unioninput__report.html#a98cdb280bbb9351e447ea8f271e00541", null ],

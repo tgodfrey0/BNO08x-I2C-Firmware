@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['magnetic_5ffield_5freport_0',['magnetic_field_report',['../structmagnetic__field__report.html',1,'']]]
+  ['linear_5facceleration_5freport_0',['linear_acceleration_report',['../structlinear__acceleration__report.html',1,'']]]
 ];

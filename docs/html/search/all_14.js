@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['value_0',['value',['../structpressure__report.html#a17956fe0129d3d4c94ebc06cfef2ad82',1,'pressure_report::value()'],['../structambient__light__report.html#a17956fe0129d3d4c94ebc06cfef2ad82',1,'ambient_light_report::value()'],['../structhumidity__report.html#a17956fe0129d3d4c94ebc06cfef2ad82',1,'humidity_report::value()'],['../structtemperature__report.html#a17956fe0129d3d4c94ebc06cfef2ad82',1,'temperature_report::value()']]]
+  ['uncalibrated_5fgyroscope_0',['uncalibrated_gyroscope',['../unioninput__report.html#ada89e9bdfd1f40d3e9254c88c63cbb6a',1,'input_report']]],
+  ['uncalibrated_5fgyroscope_5freport_1',['uncalibrated_gyroscope_report',['../structuncalibrated__gyroscope__report.html',1,'']]],
+  ['uncalibrated_5fmagnetic_5ffield_2',['uncalibrated_magnetic_field',['../unioninput__report.html#ac6263f1e254b053bf6bf9dcec16f6855',1,'input_report']]],
+  ['uncalibrated_5fmagnetic_5ffield_5freport_3',['uncalibrated_magnetic_field_report',['../structuncalibrated__magnetic__field__report.html',1,'']]]
 ];
