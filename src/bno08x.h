@@ -21,7 +21,7 @@
 /**
  * @struct accelerometer_report
  *
- * Reports the acceleration of the device, including gravity. Units are in m/s^2 and the Q point is 8.
+ * The acceleration of the device, including gravity. Units are in m/s^2 and the Q point is 8.
  * 
  * @brief Holds the report data for the accelerometer.
  */
@@ -51,10 +51,20 @@ struct magnetic_field_report {};
 
 /**
  * @struct linear_acceleration_report
+ *
+ * The linear acceleration of the device, does not include gravity. Units are in m/s^2 and the Q point is 8.
  * 
  * @brief Holds the report data for the linear acceleration.
  */
-struct linear_acceleration_report {};
+struct linear_acceleration_report {
+	uint8_t report_id;		/**< The ID of the report - 0x04 for the accelerometer */
+	uint8_t seq_num;		/**< The sequence number of the report */
+	uint8_t status;		/**< The status of the sensor */
+	uint8_t delay;		/**< Report delay in 100us */
+	float x;		/**< x component of the acceleration */
+	float y;		/**< y component of the acceleration */
+	float z;		/**< z component of the acceleration */
+};
 
 /**
  * @struct rotation_vector_report

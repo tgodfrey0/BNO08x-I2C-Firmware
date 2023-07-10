@@ -2,7 +2,7 @@
 
 #include "defs.h"
 
-#include "bno085.h"
+#include "bno08x.h"
 
 int main(){
 	printf("Hello World!\n");

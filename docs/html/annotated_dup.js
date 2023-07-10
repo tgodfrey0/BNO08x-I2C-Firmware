@@ -14,7 +14,7 @@ var annotated_dup =
     [ "humidity_report", "structhumidity__report.html", null ],
     [ "i2c_interface", "structi2c__interface.html", "structi2c__interface" ],
     [ "i2c_message", "structi2c__message.html", "structi2c__message" ],
-    [ "linear_acceleration_report", "structlinear__acceleration__report.html", null ],
+    [ "linear_acceleration_report", "structlinear__acceleration__report.html", "structlinear__acceleration__report" ],
     [ "magnetic_field_report", "structmagnetic__field__report.html", null ],
     [ "personal_activity_classifier_report", "structpersonal__activity__classifier__report.html", null ],
     [ "pickup_detector_report", "structpickup__detector__report.html", null ],

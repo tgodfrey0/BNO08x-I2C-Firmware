@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_0',['x',['../structaccelerometer__report.html#ad0da36b2558901e21e7a30f6c227a45e',1,'accelerometer_report']]]
+  ['x_0',['x',['../structaccelerometer__report.html#ad0da36b2558901e21e7a30f6c227a45e',1,'accelerometer_report::x()'],['../structlinear__acceleration__report.html#ad0da36b2558901e21e7a30f6c227a45e',1,'linear_acceleration_report::x()']]]
 ];

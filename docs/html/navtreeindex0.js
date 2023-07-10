@@ -1,7 +1,7 @@
 var NAVTREEINDEX0 =
 {
 "annotated.html":[0,0],
-"bno085_8h_source.html":[1,0,0,0],
+"bno08x_8h_source.html":[1,0,0,0],
 "classes.html":[0,1],
 "defs_8h_source.html":[1,0,0,1],
 "dir_68267d1309a1af8e8297ef4c3efbcdba.html":[1,0,0],
@@ -42,6 +42,13 @@ var NAVTREEINDEX0 =
 "structi2c__message.html#a503afcd7f8134fc802daf761891e9590":[0,0,13,0],
 "structi2c__message.html#aa5cbdad2c57e9b3f949e1a4d96382b66":[0,0,13,1],
 "structlinear__acceleration__report.html":[0,0,14],
+"structlinear__acceleration__report.html#a70fbd315df33bf9039e036725b569e7f":[0,0,14,0],
+"structlinear__acceleration__report.html#a725a13d8d43f65c0f5e8adc271f71573":[0,0,14,1],
+"structlinear__acceleration__report.html#aa4f0d3eebc3c443f9be81bf48561a217":[0,0,14,5],
+"structlinear__acceleration__report.html#ac117f9690109b1aeb49da826aff1cca6":[0,0,14,2],
+"structlinear__acceleration__report.html#ad0da36b2558901e21e7a30f6c227a45e":[0,0,14,4],
+"structlinear__acceleration__report.html#ade818037fd6c985038ff29656089758d":[0,0,14,3],
+"structlinear__acceleration__report.html#af73583b1e980b0aa03f9884812e9fd4d":[0,0,14,6],
 "structmagnetic__field__report.html":[0,0,15],
 "structpersonal__activity__classifier__report.html":[0,0,16],
 "structpickup__detector__report.html":[0,0,17],
