@@ -111,10 +111,28 @@ Data Fields</h2></td></tr>
 <tr class="separator:ade818037fd6c985038ff29656089758d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70fbd315df33bf9039e036725b569e7f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstability__classifier__report.html#a70fbd315df33bf9039e036725b569e7f">delay</a></td></tr>
 <tr class="separator:a70fbd315df33bf9039e036725b569e7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac191fd22a909ac8a30d8ad1433566655"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstability__classifier__report.html#ac191fd22a909ac8a30d8ad1433566655">classification</a></td></tr>
+<tr class="separator:ac191fd22a909ac8a30d8ad1433566655"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Holds the report data for the stability classifier. </p>
+<p>Reports the type of stability detected. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
+<a id="ac191fd22a909ac8a30d8ad1433566655" name="ac191fd22a909ac8a30d8ad1433566655"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac191fd22a909ac8a30d8ad1433566655">&#9670;&#160;</a></span>classification</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t classification</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The state of the device based on its movement: 0 - unknown, 1 - on table, 2 - stationary, 3 - stable, 4 - motion, 5-255 - reserved </p>
+
+</div>
+</div>
 <a id="a70fbd315df33bf9039e036725b569e7f" name="a70fbd315df33bf9039e036725b569e7f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a70fbd315df33bf9039e036725b569e7f">&#9670;&#160;</a></span>delay</h2>
 
@@ -141,7 +159,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The ID of the report - 0x06 for gravity </p>
+<p>The ID of the report - 0x13 for stability classification </p>
 
 </div>
 </div>

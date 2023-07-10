@@ -301,32 +301,38 @@ struct step_counter_report {
   uint8_t seq_num;    /**< The sequence number of the report */
   uint8_t status;    /**< The status of the sensor */
   uint8_t delay;    /**< Report delay in 100us */
-  uint32_t latency;	  /**< The latency of the detection */
+  uint32_t latency;	  /**< The latency of the detection in us from the time when the last step being counter occurred until the time the step was reported */
   uint16_t steps;   /**< The number of steps */
 };
 
 /**
  * @struct significant_motion_report
+ *
+ * Sends a single report when it detects significant motion.
  * 
  * @brief Holds the report data for the significant motion.
  */
 struct significant_motion_report {
-  uint8_t report_id;    /**< The ID of the report - 0x06 for gravity */
+  uint8_t report_id;    /**< The ID of the report - 0x12 for significant motion detection */
   uint8_t seq_num;    /**< The sequence number of the report */
   uint8_t status;    /**< The status of the sensor */
   uint8_t delay;    /**< Report delay in 100us */
+  uint16_t motion;    /**< Indicates motion being reported. 1 if significant motion has been detected, all other values are reserved. */ 
 };
 
 /**
  * @struct stability_classifier_report
+ *
+ * Reports the type of stability detected.
  * 
  * @brief Holds the report data for the stability classifier.
  */
 struct stability_classifier_report {
-  uint8_t report_id;    /**< The ID of the report - 0x06 for gravity */
+  uint8_t report_id;    /**< The ID of the report - 0x13 for stability classification */
   uint8_t seq_num;    /**< The sequence number of the report */
   uint8_t status;    /**< The status of the sensor */
   uint8_t delay;    /**< Report delay in 100us */
+  uint8_t classification;   /**< The state of the device based on its movement: 0 - unknown, 1 - on table, 2 - stationary, 3 - stable, 4 - motion, 5-255 - reserved */
 };
 
 /**
@@ -335,7 +341,7 @@ struct stability_classifier_report {
  * @brief Holds the report data for the raw accelerometer.
  */
 struct raw_accelerometer_report {
-  uint8_t report_id;    /**< The ID of the report - 0x06 for gravity */
+  uint8_t report_id;    /**< The ID of the report - 0x */
   uint8_t seq_num;    /**< The sequence number of the report */
   uint8_t status;    /**< The status of the sensor */
   uint8_t delay;    /**< Report delay in 100us */
@@ -384,7 +390,7 @@ struct raw_magnetometer_report {
  * @brief Holds the report data for the SAR.
  */
 struct sar_report {
-  uint8_t report_id;    /**< The ID of the report - 0x06 for gravity */
+  uint8_t report_id;    /**< The ID of the report - 0x */
   uint8_t seq_num;    /**< The sequence number of the report */
   uint8_t status;    /**< The status of the sensor */
   uint8_t delay;    /**< Report delay in 100us */
@@ -402,151 +408,196 @@ struct step_detector_report {
   uint8_t seq_num;    /**< The sequence number of the report */
   uint8_t status;    /**< The status of the sensor */
   uint8_t delay;    /**< Report delay in 100us */
-  uint32_t latency;   /**< The latency of the detection */
+  uint32_t latency;   /**< The latency of the detection in us from the time when the last step being counter occurred until the time the step was reported */
 };
 
 /**
  * @struct shake_detector_report
+ *
+ * Reports each time a shake is detected.
  * 
  * @brief Holds the report data for the shake detector.
  */
 struct shake_detector_report {
-  uint8_t report_id;    /**< The ID of the report - 0x06 for gravity */
+  uint8_t report_id;    /**< The ID of the report - 0x19 for the shake detector */
   uint8_t seq_num;    /**< The sequence number of the report */
   uint8_t status;    /**< The status of the sensor */
   uint8_t delay;    /**< Report delay in 100us */
+  uint16_t shake;   /**< A bit vector to indicate a shake. Bit 0 - x axis shake, bit 1 - y axis shake, bit 2 - z axis shake, bits 3-15 are reserved */
 };
 
 /**
  * @struct flip_detector_report
+ *
+ * Report for each flip detected.
  * 
  * @brief Holds the report data for the flip detector.
  */
 struct flip_detector_report {
-  uint8_t report_id;    /**< The ID of the report - 0x06 for gravity */
+  uint8_t report_id;    /**< The ID of the report - 0x1A for the flip detector */
   uint8_t seq_num;    /**< The sequence number of the report */
   uint8_t status;    /**< The status of the sensor */
   uint8_t delay;    /**< Report delay in 100us */
+  uint16_t flip;    /**< Indicates a flip. 1 for a flip, other values are reserved */
 };
 
 /**
  * @struct pickup_detector_report
+ *
+ * A report for each pickup detected.
  * 
  * @brief Holds the report data for the pickup detector.
  */
 struct pickup_detector_report {
-  uint8_t report_id;    /**< The ID of the report - 0x06 for gravity */
+  uint8_t report_id;    /**< The ID of the report - 0x1B for the pickup detector */
   uint8_t seq_num;    /**< The sequence number of the report */
   uint8_t status;    /**< The status of the sensor */
   uint8_t delay;    /**< Report delay in 100us */
+  uint16_t pickup;    /**< Indicates a pickup: 1 - level to not-level, 2 - stopped within tilt region, 3 - both level to not-level and stopped within tilt region. All other values are reserved */
 };
 
 /**
  * @struct stability_detector_report
+ *
+ * Reports each time it detects entry in or exit from a stable state.
  * 
  * @brief Holds the report data for the stability detector.
  */
 struct stability_detector_report {
-  uint8_t report_id;    /**< The ID of the report - 0x06 for gravity */
+  uint8_t report_id;    /**< The ID of the report - 0x1C for stability detection */
   uint8_t seq_num;    /**< The sequence number of the report */
   uint8_t status;    /**< The status of the sensor */
   uint8_t delay;    /**< Report delay in 100us */
+  uint16_t stability;	/**< Bit field indicating the events. Bit 0 - stable state entered, bit 1 - state state exited. All other bits are reserved */
 };
 
 /**
  * @struct personal_activity_classifier_report
+ *
+ * Classifies the type of activity. See the SH-2 Reference Manual for classifications and more information.
  * 
  * @brief Holds the report data for the personal activity classifier.
  */
 struct personal_activity_classifier_report {
-  uint8_t report_id;    /**< The ID of the report - 0x06 for gravity */
+  uint8_t report_id;    /**< The ID of the report - 0x1E for the personal activity classifier */
   uint8_t seq_num;    /**< The sequence number of the report */
   uint8_t status;    /**< The status of the sensor */
   uint8_t delay;    /**< Report delay in 100us */
+  uint8_t page_number;	  /**< The page number + EOS. The MSB is set if this is the last input report for a set of classification results. The MSB is cleared if more input reports follow this one */
+  uint8_t most_likely_state;	/**< Indicates the most likely state */
+  uint8_t confidence[10];   /**< Indicates the confidence in the current state classification */
 };
 
 /**
  * @struct sleep_detector_report
+ *
+ * Sends a report for each new sleep state.
  * 
  * @brief Holds the report data for the sleep detector.
  */
 struct sleep_detector_report {
-  uint8_t report_id;    /**< The ID of the report - 0x06 for gravity */
+  uint8_t report_id;    /**< The ID of the report - 0x1F for the sleep detector */
   uint8_t seq_num;    /**< The sequence number of the report */
   uint8_t status;    /**< The status of the sensor */
   uint8_t delay;    /**< Report delay in 100us */
+  uint8_t state;    /**< The current sleep state. 0 - hard wake, 1 - soft wake, 2 - light sleep, 3 - deep sleep, 4 - unknown. All other values are reserved */
 };
 
 /**
  * @struct tilt_detector_report
+ *
+ * Reports each detected tilt.
  * 
  * @brief Holds the report data for the tilt detector.
  */
 struct tilt_detector_report {
-  uint8_t report_id;    /**< The ID of the report - 0x06 for gravity */
+  uint8_t report_id;    /**< The ID of the report - 0x20 for the tilt detector */
   uint8_t seq_num;    /**< The sequence number of the report */
   uint8_t status;    /**< The status of the sensor */
   uint8_t delay;    /**< Report delay in 100us */
+  uint16_t tilt;    /**< Indicates that tilt was detected. 1 if tilt is detected, all other values are reserved */
 };
 
 /**
  * @struct pocket_detector_report
+ *
+ * Detects entry in or exit from a pocket state. 
  * 
  * @brief Holds the report data for the pocket detector.
  */
 struct pocket_detector_report {
-  uint8_t report_id;    /**< The ID of the report - 0x06 for gravity */
+  uint8_t report_id;    /**< The ID of the report - 0x21 for the pocket detector */
   uint8_t seq_num;    /**< The sequence number of the report */
   uint8_t status;    /**< The status of the sensor */
   uint8_t delay;    /**< Report delay in 100us */
+  uint16_t pocket;    /**< Bit field indicating pocket events. Bit 0 - entered in pocket state, bit 1 - entered out of pocket state. All other bits are reserved */
 };
 
 /**
  * @struct circle_detector_report
+ *
+ * Reports each time a double circle gesture is detected. 
  * 
  * @brief Holds the report data for the circle detector.
  */
 struct circle_detector_report {
-  uint8_t report_id;    /**< The ID of the report - 0x06 for gravity */
+  uint8_t report_id;    /**< The ID of the report - 0x22 */
   uint8_t seq_num;    /**< The sequence number of the report */
   uint8_t status;    /**< The status of the sensor */
   uint8_t delay;    /**< Report delay in 100us */
+  uint16_t circle;    /**< Indicates that a circle was detected. 1 for positive detection, all other values are reserved */
 };
 
 /**
  * @struct heart_rate_monitor_report
+ *
+ * Reports the user's heart rate. Units are beats per minute (BPM).
  * 
  * @brief Holds the report data for the heart rate monitor.
  */
 struct heart_rate_monitor_report {
-  uint8_t report_id;    /**< The ID of the report - 0x06 for gravity */
+  uint8_t report_id;    /**< The ID of the report - 0x23 */
   uint8_t seq_num;    /**< The sequence number of the report */
   uint8_t status;    /**< The status of the sensor */
   uint8_t delay;    /**< Report delay in 100us */
+  uint16_t hr;	  /**< Heart rate value */
 };
 
 /**
  * @struct arvr_stabilised_rotation_vector_report
+ *
+ * Reports the orientation of the device. Accumulated errors are corrected while the device is in motion, which limits the appearance of discontinuities. The format of the rotation vector is a unit quaternion and the Q point is 14. In addition, a heading accuracy estimate is also provided. The units for this heading accuracy estimate are radians and the Q point is 12. 
  * 
  * @brief Holds the report data for the ARVR stabilised rotation vector.
  */
 struct arvr_stabilised_rotation_vector_report {
-  uint8_t report_id;    /**< The ID of the report - 0x06 for gravity */
+  uint8_t report_id;    /**< The ID of the report - 0x28 */
   uint8_t seq_num;    /**< The sequence number of the report */
   uint8_t status;    /**< The status of the sensor */
   uint8_t delay;    /**< Report delay in 100us */
+  float i;    /**< The unit quaternion i component */
+  float j;    /**< The unit quaternion j component */
+  float k;    /**< The unit quaternion k component */
+  float real;	/**< The unit quaternion real component */
+  int16_t accuracy;   /**< An accuracy estimate */
 };
 
 /**
  * @struct arvr_stabilised_game_rotation_vector_report
+ *
+ * Reports the orientation of the device. Accumulated errors are corrected while the device is in motion, which limits the appearance of discontinuities. The format of the rotation vector is a unit quaternion and the Q point is 14.
  * 
  * @brief Holds the report data for the ARVR stabilised game rotation vector.
  */
 struct arvr_stabilised_game_rotation_vector_report {
-  uint8_t report_id;    /**< The ID of the report - 0x06 for gravity */
+  uint8_t report_id;    /**< The ID of the report - 0x */
   uint8_t seq_num;    /**< The sequence number of the report */
   uint8_t status;    /**< The status of the sensor */
   uint8_t delay;    /**< Report delay in 100us */
+  float i;    /**< The unit quaternion i component */
+  float j;    /**< The unit quaternion j component */
+  float k;    /**< The unit quaternion k component */
+  float real;	/**< The unit quaternion real component */
 };
 
 //**********************************************************************//

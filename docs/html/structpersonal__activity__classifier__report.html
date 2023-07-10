@@ -111,10 +111,32 @@ Data Fields</h2></td></tr>
 <tr class="separator:ade818037fd6c985038ff29656089758d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70fbd315df33bf9039e036725b569e7f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpersonal__activity__classifier__report.html#a70fbd315df33bf9039e036725b569e7f">delay</a></td></tr>
 <tr class="separator:a70fbd315df33bf9039e036725b569e7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f1c5e13e89ff3d1c49ce061cf2c5d68"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpersonal__activity__classifier__report.html#a1f1c5e13e89ff3d1c49ce061cf2c5d68">page_number</a></td></tr>
+<tr class="separator:a1f1c5e13e89ff3d1c49ce061cf2c5d68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2409218e5d962c8d686f9a59bcb42b24"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpersonal__activity__classifier__report.html#a2409218e5d962c8d686f9a59bcb42b24">most_likely_state</a></td></tr>
+<tr class="separator:a2409218e5d962c8d686f9a59bcb42b24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a447024251b33ce2057dbf4c8ac22e3ed"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpersonal__activity__classifier__report.html#a447024251b33ce2057dbf4c8ac22e3ed">confidence</a> [10]</td></tr>
+<tr class="separator:a447024251b33ce2057dbf4c8ac22e3ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Holds the report data for the personal activity classifier. </p>
+<p>Classifies the type of activity. See the SH-2 Reference Manual for classifications and more information. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
+<a id="a447024251b33ce2057dbf4c8ac22e3ed" name="a447024251b33ce2057dbf4c8ac22e3ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a447024251b33ce2057dbf4c8ac22e3ed">&#9670;&#160;</a></span>confidence</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t confidence[10]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indicates the confidence in the current state classification </p>
+
+</div>
+</div>
 <a id="a70fbd315df33bf9039e036725b569e7f" name="a70fbd315df33bf9039e036725b569e7f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a70fbd315df33bf9039e036725b569e7f">&#9670;&#160;</a></span>delay</h2>
 
@@ -130,6 +152,36 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a id="a2409218e5d962c8d686f9a59bcb42b24" name="a2409218e5d962c8d686f9a59bcb42b24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2409218e5d962c8d686f9a59bcb42b24">&#9670;&#160;</a></span>most_likely_state</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t most_likely_state</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indicates the most likely state </p>
+
+</div>
+</div>
+<a id="a1f1c5e13e89ff3d1c49ce061cf2c5d68" name="a1f1c5e13e89ff3d1c49ce061cf2c5d68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f1c5e13e89ff3d1c49ce061cf2c5d68">&#9670;&#160;</a></span>page_number</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t page_number</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The page number + EOS. The MSB is set if this is the last input report for a set of classification results. The MSB is cleared if more input reports follow this one </p>
+
+</div>
+</div>
 <a id="a725a13d8d43f65c0f5e8adc271f71573" name="a725a13d8d43f65c0f5e8adc271f71573"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a725a13d8d43f65c0f5e8adc271f71573">&#9670;&#160;</a></span>report_id</h2>
 
@@ -141,7 +193,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The ID of the report - 0x06 for gravity </p>
+<p>The ID of the report - 0x1E for the personal activity classifier </p>
 
 </div>
 </div>

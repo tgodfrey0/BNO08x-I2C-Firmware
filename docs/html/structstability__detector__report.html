@@ -111,9 +111,12 @@ Data Fields</h2></td></tr>
 <tr class="separator:ade818037fd6c985038ff29656089758d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70fbd315df33bf9039e036725b569e7f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstability__detector__report.html#a70fbd315df33bf9039e036725b569e7f">delay</a></td></tr>
 <tr class="separator:a70fbd315df33bf9039e036725b569e7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a621d66ba371e69c616b1c0950f16e46c"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstability__detector__report.html#a621d66ba371e69c616b1c0950f16e46c">stability</a></td></tr>
+<tr class="separator:a621d66ba371e69c616b1c0950f16e46c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Holds the report data for the stability detector. </p>
+<p>Reports each time it detects entry in or exit from a stable state. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a70fbd315df33bf9039e036725b569e7f" name="a70fbd315df33bf9039e036725b569e7f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a70fbd315df33bf9039e036725b569e7f">&#9670;&#160;</a></span>delay</h2>
@@ -141,7 +144,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The ID of the report - 0x06 for gravity </p>
+<p>The ID of the report - 0x1C for stability detection </p>
 
 </div>
 </div>
@@ -157,6 +160,21 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>The sequence number of the report </p>
+
+</div>
+</div>
+<a id="a621d66ba371e69c616b1c0950f16e46c" name="a621d66ba371e69c616b1c0950f16e46c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a621d66ba371e69c616b1c0950f16e46c">&#9670;&#160;</a></span>stability</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t stability</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Bit field indicating the events. Bit 0 - stable state entered, bit 1 - state state exited. All other bits are reserved </p>
 
 </div>
 </div>

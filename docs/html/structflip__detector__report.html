@@ -111,9 +111,12 @@ Data Fields</h2></td></tr>
 <tr class="separator:ade818037fd6c985038ff29656089758d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70fbd315df33bf9039e036725b569e7f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structflip__detector__report.html#a70fbd315df33bf9039e036725b569e7f">delay</a></td></tr>
 <tr class="separator:a70fbd315df33bf9039e036725b569e7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9db22d7f2afb40fcb112b060bf67f66"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structflip__detector__report.html#ad9db22d7f2afb40fcb112b060bf67f66">flip</a></td></tr>
+<tr class="separator:ad9db22d7f2afb40fcb112b060bf67f66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Holds the report data for the flip detector. </p>
+<p>Report for each flip detected. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a70fbd315df33bf9039e036725b569e7f" name="a70fbd315df33bf9039e036725b569e7f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a70fbd315df33bf9039e036725b569e7f">&#9670;&#160;</a></span>delay</h2>
@@ -130,6 +133,21 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a id="ad9db22d7f2afb40fcb112b060bf67f66" name="ad9db22d7f2afb40fcb112b060bf67f66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9db22d7f2afb40fcb112b060bf67f66">&#9670;&#160;</a></span>flip</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t flip</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indicates a flip. 1 for a flip, other values are reserved </p>
+
+</div>
+</div>
 <a id="a725a13d8d43f65c0f5e8adc271f71573" name="a725a13d8d43f65c0f5e8adc271f71573"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a725a13d8d43f65c0f5e8adc271f71573">&#9670;&#160;</a></span>report_id</h2>
 
@@ -141,7 +159,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The ID of the report - 0x06 for gravity </p>
+<p>The ID of the report - 0x1A for the flip detector </p>
 
 </div>
 </div>

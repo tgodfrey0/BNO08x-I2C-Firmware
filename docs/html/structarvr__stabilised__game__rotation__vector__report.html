@@ -111,9 +111,18 @@ Data Fields</h2></td></tr>
 <tr class="separator:ade818037fd6c985038ff29656089758d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70fbd315df33bf9039e036725b569e7f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structarvr__stabilised__game__rotation__vector__report.html#a70fbd315df33bf9039e036725b569e7f">delay</a></td></tr>
 <tr class="separator:a70fbd315df33bf9039e036725b569e7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58e739b7bdf8275493686ae76e3705c3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structarvr__stabilised__game__rotation__vector__report.html#a58e739b7bdf8275493686ae76e3705c3">i</a></td></tr>
+<tr class="separator:a58e739b7bdf8275493686ae76e3705c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac25976cf079d34d71c9da8ca3517dfb5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structarvr__stabilised__game__rotation__vector__report.html#ac25976cf079d34d71c9da8ca3517dfb5">j</a></td></tr>
+<tr class="separator:ac25976cf079d34d71c9da8ca3517dfb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fc4cca635a26c692681a7071e379aa7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structarvr__stabilised__game__rotation__vector__report.html#a9fc4cca635a26c692681a7071e379aa7">k</a></td></tr>
+<tr class="separator:a9fc4cca635a26c692681a7071e379aa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06ed4269b34924d748f2f77b17db7d21"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structarvr__stabilised__game__rotation__vector__report.html#a06ed4269b34924d748f2f77b17db7d21">real</a></td></tr>
+<tr class="separator:a06ed4269b34924d748f2f77b17db7d21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Holds the report data for the ARVR stabilised game rotation vector. </p>
+<p>Reports the orientation of the device. Accumulated errors are corrected while the device is in motion, which limits the appearance of discontinuities. The format of the rotation vector is a unit quaternion and the Q point is 14. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a70fbd315df33bf9039e036725b569e7f" name="a70fbd315df33bf9039e036725b569e7f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a70fbd315df33bf9039e036725b569e7f">&#9670;&#160;</a></span>delay</h2>
@@ -130,6 +139,66 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a id="a58e739b7bdf8275493686ae76e3705c3" name="a58e739b7bdf8275493686ae76e3705c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58e739b7bdf8275493686ae76e3705c3">&#9670;&#160;</a></span>i</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float i</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The unit quaternion i component </p>
+
+</div>
+</div>
+<a id="ac25976cf079d34d71c9da8ca3517dfb5" name="ac25976cf079d34d71c9da8ca3517dfb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac25976cf079d34d71c9da8ca3517dfb5">&#9670;&#160;</a></span>j</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float j</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The unit quaternion j component </p>
+
+</div>
+</div>
+<a id="a9fc4cca635a26c692681a7071e379aa7" name="a9fc4cca635a26c692681a7071e379aa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fc4cca635a26c692681a7071e379aa7">&#9670;&#160;</a></span>k</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float k</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The unit quaternion k component </p>
+
+</div>
+</div>
+<a id="a06ed4269b34924d748f2f77b17db7d21" name="a06ed4269b34924d748f2f77b17db7d21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06ed4269b34924d748f2f77b17db7d21">&#9670;&#160;</a></span>real</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float real</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The unit quaternion real component </p>
+
+</div>
+</div>
 <a id="a725a13d8d43f65c0f5e8adc271f71573" name="a725a13d8d43f65c0f5e8adc271f71573"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a725a13d8d43f65c0f5e8adc271f71573">&#9670;&#160;</a></span>report_id</h2>
 
@@ -141,7 +210,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The ID of the report - 0x06 for gravity </p>
+<p>The ID of the report - 0x </p>
 
 </div>
 </div>
