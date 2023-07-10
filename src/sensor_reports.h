@@ -615,7 +615,7 @@ struct arvr_stabilised_game_rotation_vector_report {
 //**********************************************************************//
 
 /**
- * @union report    Stores a report struct for a single sensor
+ * @union report
  *
  * @brief Stores a single report struct.
  */
