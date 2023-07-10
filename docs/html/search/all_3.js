@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['delay_0',['delay',['../structaccelerometer__report.html#a70fbd315df33bf9039e036725b569e7f',1,'accelerometer_report::delay()'],['../structlinear__acceleration__report.html#a70fbd315df33bf9039e036725b569e7f',1,'linear_acceleration_report::delay()']]]
+  ['delay_0',['delay',['../structaccelerometer__report.html#a70fbd315df33bf9039e036725b569e7f',1,'accelerometer_report::delay()'],['../structgyroscope__report.html#a70fbd315df33bf9039e036725b569e7f',1,'gyroscope_report::delay()'],['../structlinear__acceleration__report.html#a70fbd315df33bf9039e036725b569e7f',1,'linear_acceleration_report::delay()'],['../structgravity__report.html#a70fbd315df33bf9039e036725b569e7f',1,'gravity_report::delay()'],['../structuncalibrated__gyroscope__report.html#a70fbd315df33bf9039e036725b569e7f',1,'uncalibrated_gyroscope_report::delay()'],['../structraw__gyroscope__report.html#a70fbd315df33bf9039e036725b569e7f',1,'raw_gyroscope_report::delay()'],['../structraw__magnetometer__report.html#a70fbd315df33bf9039e036725b569e7f',1,'raw_magnetometer_report::delay()']]]
 ];

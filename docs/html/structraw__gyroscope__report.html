@@ -90,6 +90,8 @@ $(document).ready(function(){initNavTree('structraw__gyroscope__report.html','')
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle"><div class="title">raw_gyroscope_report Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -98,9 +100,168 @@ $(document).ready(function(){initNavTree('structraw__gyroscope__report.html','')
  <a href="structraw__gyroscope__report.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="bno08x_8h_source.html">bno08x.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a725a13d8d43f65c0f5e8adc271f71573"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structraw__gyroscope__report.html#a725a13d8d43f65c0f5e8adc271f71573">report_id</a></td></tr>
+<tr class="separator:a725a13d8d43f65c0f5e8adc271f71573"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac117f9690109b1aeb49da826aff1cca6"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structraw__gyroscope__report.html#ac117f9690109b1aeb49da826aff1cca6">seq_num</a></td></tr>
+<tr class="separator:ac117f9690109b1aeb49da826aff1cca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade818037fd6c985038ff29656089758d"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structraw__gyroscope__report.html#ade818037fd6c985038ff29656089758d">status</a></td></tr>
+<tr class="separator:ade818037fd6c985038ff29656089758d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70fbd315df33bf9039e036725b569e7f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structraw__gyroscope__report.html#a70fbd315df33bf9039e036725b569e7f">delay</a></td></tr>
+<tr class="separator:a70fbd315df33bf9039e036725b569e7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1c2d516777e6b42af0d281c9ecc7375"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structraw__gyroscope__report.html#ae1c2d516777e6b42af0d281c9ecc7375">x</a></td></tr>
+<tr class="separator:ae1c2d516777e6b42af0d281c9ecc7375"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af77b1a54442f2443cf64a4766f916bcd"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structraw__gyroscope__report.html#af77b1a54442f2443cf64a4766f916bcd">y</a></td></tr>
+<tr class="separator:af77b1a54442f2443cf64a4766f916bcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd938edbea27ed4f351dc19d69039222"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structraw__gyroscope__report.html#abd938edbea27ed4f351dc19d69039222">z</a></td></tr>
+<tr class="separator:abd938edbea27ed4f351dc19d69039222"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4af92569ea830250443045233c9bf5fb"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structraw__gyroscope__report.html#a4af92569ea830250443045233c9bf5fb">temperature</a></td></tr>
+<tr class="separator:a4af92569ea830250443045233c9bf5fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab20b0c7772544cf5d318507f34231fbe"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structraw__gyroscope__report.html#ab20b0c7772544cf5d318507f34231fbe">timestamp</a></td></tr>
+<tr class="separator:ab20b0c7772544cf5d318507f34231fbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Holds the report data for the raw gyroscope. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<p>Raw readings from the physical gyroscope MEMS sensor. Units are ADCs. Interpretation of the reported values is sensor dependent. </p>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="a70fbd315df33bf9039e036725b569e7f" name="a70fbd315df33bf9039e036725b569e7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70fbd315df33bf9039e036725b569e7f">&#9670;&#160;</a></span>delay</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t delay</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Report delay in 100us </p>
+
+</div>
+</div>
+<a id="a725a13d8d43f65c0f5e8adc271f71573" name="a725a13d8d43f65c0f5e8adc271f71573"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a725a13d8d43f65c0f5e8adc271f71573">&#9670;&#160;</a></span>report_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t report_id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The ID of the report - 0x15 for the raw gyroscope </p>
+
+</div>
+</div>
+<a id="ac117f9690109b1aeb49da826aff1cca6" name="ac117f9690109b1aeb49da826aff1cca6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac117f9690109b1aeb49da826aff1cca6">&#9670;&#160;</a></span>seq_num</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t seq_num</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The sequence number of the report </p>
+
+</div>
+</div>
+<a id="ade818037fd6c985038ff29656089758d" name="ade818037fd6c985038ff29656089758d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade818037fd6c985038ff29656089758d">&#9670;&#160;</a></span>status</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t status</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The status of the sensor </p>
+
+</div>
+</div>
+<a id="a4af92569ea830250443045233c9bf5fb" name="a4af92569ea830250443045233c9bf5fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4af92569ea830250443045233c9bf5fb">&#9670;&#160;</a></span>temperature</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t temperature</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The sensor temperature </p>
+
+</div>
+</div>
+<a id="ab20b0c7772544cf5d318507f34231fbe" name="ab20b0c7772544cf5d318507f34231fbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab20b0c7772544cf5d318507f34231fbe">&#9670;&#160;</a></span>timestamp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t timestamp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The time the sample was measured, in us </p>
+
+</div>
+</div>
+<a id="ae1c2d516777e6b42af0d281c9ecc7375" name="ae1c2d516777e6b42af0d281c9ecc7375"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1c2d516777e6b42af0d281c9ecc7375">&#9670;&#160;</a></span>x</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t x</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>x component of the raw gyroscope </p>
+
+</div>
+</div>
+<a id="af77b1a54442f2443cf64a4766f916bcd" name="af77b1a54442f2443cf64a4766f916bcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af77b1a54442f2443cf64a4766f916bcd">&#9670;&#160;</a></span>y</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>y component of the raw gyroscope </p>
+
+</div>
+</div>
+<a id="abd938edbea27ed4f351dc19d69039222" name="abd938edbea27ed4f351dc19d69039222"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd938edbea27ed4f351dc19d69039222">&#9670;&#160;</a></span>z</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t z</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>z component of the raw gyroscope </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>/home/toby/Code/BNO085-I2C-Firmware/src/<a class="el" href="bno08x_8h_source.html">bno08x.h</a></li>
 </ul>
 </div><!-- contents -->

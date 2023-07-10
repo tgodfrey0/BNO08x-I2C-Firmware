@@ -21,12 +21,12 @@
 /**
  * @struct accelerometer_report
  *
- * The acceleration of the device, including gravity. Units are in m/s^2 and the Q point is 8.
+ * The acceleration of the device, including gravity. Units are m/s^2 and the Q point is 8.
  * 
  * @brief Holds the report data for the accelerometer.
  */
 struct accelerometer_report {
-	uint8_t report_id;		/**< The ID of the report - 0x01 for the accelerometer */
+	uint8_t report_id;		/**< The ID of the report - 0x01 for acceleration */
 	uint8_t seq_num;		/**< The sequence number of the report */
 	uint8_t status;		/**< The status of the sensor */
 	uint8_t delay;		/**< Report delay in 100us */
@@ -37,258 +37,474 @@ struct accelerometer_report {
 
 /**
  * @struct gyroscope_report
+ *
+ * The calibrated gyroscope (drift-compensated rotational velocity). Units are rad/s and the Q point is 9.
  * 
  * @brief Holds the report data for the gyroscope.
  */
-struct gyroscope_report {};
+struct gyroscope_report {
+	uint8_t report_id;		/**< The ID of the report - 0x02 for the calibrated gyroscope */
+	uint8_t seq_num;		/**< The sequence number of the report */
+	uint8_t status;		/**< The status of the sensor */
+	uint8_t delay;		/**< Report delay in 100us */
+	float x;		/**< x component of the calibrated gyroscope */
+	float y;		/**< y component of the calibrated gyroscope */
+	float z;		/**< z component of the calibrated gyroscope */
+};
 
 /**
  * @struct magnetic_field_report
+ *
+ * The calibrated magentic field sensor; calibrated for hard and soft iron effects such that the vector is aligned with the declination and heading of Earth's magnetic field. Untis are uTesla and the Q point is 4.
  * 
  * @brief Holds the report data for the magnetic field.
  */
-struct magnetic_field_report {};
+struct magnetic_field_report {
+	uint8_t report_id;		/**< The ID of the report - 0x03 for the calibrated magnetic field sensor */
+	uint8_t seq_num;		/**< The sequence number of the report */
+	uint8_t status;		/**< The status of the sensor */
+	uint8_t delay;		/**< Report delay in 100us */
+	float x;		/**< x component of the calibrated magnetic field */
+	float y;		/**< y component of the calibrated magnetic field */
+	float z;		/**< z component of the calibrated magnetic field */
+};
 
 /**
  * @struct linear_acceleration_report
  *
- * The linear acceleration of the device, does not include gravity. Units are in m/s^2 and the Q point is 8.
+ * The linear acceleration of the device, does not include gravity. Units are m/s^2 and the Q point is 8.
  * 
  * @brief Holds the report data for the linear acceleration.
  */
 struct linear_acceleration_report {
-	uint8_t report_id;		/**< The ID of the report - 0x04 for the accelerometer */
+	uint8_t report_id;		/**< The ID of the report - 0x04 for linear acceleration */
+	uint8_t seq_num;		/**< The sequence number of the report */
+	uint8_t status;		/**< The status of the sensor */
+	uint8_t delay;		/**< Report delay in 100us */
+	float x;		/**< x component of the linear acceleration */
+	float y;		/**< y component of the linear acceleration */
+	float z;		/**< z component of the linear acceleration */
+};
+
+/**
+ * @struct rotation_vector_report
+ *
+ * The orientation of the device. The format is a unit quaternion. The Q point is 14. An estimate of the heading accuracy is report. The units for the accuracy estimate are radians and the Q point is 12. 
+ * 
+ * @brief Holds the report data for the rotation vector.
+ */
+struct rotation_vector_report {
+	uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+	uint8_t seq_num;		/**< The sequence number of the report */
+	uint8_t status;		/**< The status of the sensor */
+	uint8_t delay;		/**< Report delay in 100us */
+};
+
+/**
+ * @struct gravity_report
+ *
+ * The gravity in the device's coordinate frame. Units are m/s^2 and the Q point is 8.
+ * 
+ * @brief Holds the report data for the gravity.
+ */
+struct gravity_report {
+	uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+	uint8_t seq_num;		/**< The sequence number of the report */
+	uint8_t status;		/**< The status of the sensor */
+	uint8_t delay;		/**< Report delay in 100us */
+	float x;		/**< x component of gravity */
+	float y;		/**< y component of gravity */
+	float z;		/**< z component of gravity */
+};
+
+/**
+ * @struct uncalibrated_gyroscope_report
+ *
+ * The rotational velocity without drift compensation. An estimate of drift is also provided. Units are rad/s and the Q point is 9.
+ * 
+ * @brief Holds the report data for the uncalibrated gyroscope.
+ */
+struct uncalibrated_gyroscope_report {
+	uint8_t report_id;		/**< The ID of the report - 0x07 for the uncalibrated gyroscope */
 	uint8_t seq_num;		/**< The sequence number of the report */
 	uint8_t status;		/**< The status of the sensor */
 	uint8_t delay;		/**< Report delay in 100us */
 	float x;		/**< x component of the acceleration */
 	float y;		/**< y component of the acceleration */
 	float z;		/**< z component of the acceleration */
+	float x_bias;		/**< x drift rate */
+	float y_bias;		/**< y drift rate */
+	float z_bias;		/**< z drift rate */
 };
-
-/**
- * @struct rotation_vector_report
- * 
- * @brief Holds the report data for the rotation vector.
- */
-struct rotation_vector_report {};
-
-/**
- * @struct gravity_report
- * 
- * @brief Holds the report data for the gravity.
- */
-struct gravity_report {};
-
-/**
- * @struct uncalibrated_gyroscope_report
- * 
- * @brief Holds the report data for the uncalibrated gyroscope.
- */
-struct uncalibrated_gyroscope_report {};
 
 /**
  * @struct game_rotation_vector_report
  * 
  * @brief Holds the report data for the game rotation vector.
  */
-struct game_rotation_vector_report {};
+struct game_rotation_vector_report {
+	uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+	uint8_t seq_num;		/**< The sequence number of the report */
+	uint8_t status;		/**< The status of the sensor */
+	uint8_t delay;		/**< Report delay in 100us */
+};
 
 /**
  * @struct geomagnetic_rotation_vector_report
  * 
  * @brief Holds the report data for the geomagnetic rotation vector.
  */
-struct geomagnetic_rotation_vector_report {};
+struct geomagnetic_rotation_vector_report {
+  uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+  uint8_t seq_num;		/**< The sequence number of the report */
+  uint8_t status;		/**< The status of the sensor */
+  uint8_t delay;		/**< Report delay in 100us */
+};
 
 /**
  * @struct pressure_report
  * 
  * @brief Holds the report data for the pressure.
  */
-struct pressure_report {};
+struct pressure_report {
+  uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+  uint8_t seq_num;		/**< The sequence number of the report */
+  uint8_t status;		/**< The status of the sensor */
+  uint8_t delay;		/**< Report delay in 100us */
+};
 
 /**
  * @struct ambient_light_report
  * 
  * @brief Holds the report data for the ambient light.
  */
-struct ambient_light_report {};
+struct ambient_light_report {
+  uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+  uint8_t seq_num;		/**< The sequence number of the report */
+  uint8_t status;		/**< The status of the sensor */
+  uint8_t delay;		/**< Report delay in 100us */
+};
 
 /**
  * @struct humidity_report
  * 
  * @brief Holds the report data for the humidity.
  */
-struct humidity_report {};
+struct humidity_report {
+  uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+  uint8_t seq_num;		/**< The sequence number of the report */
+  uint8_t status;		/**< The status of the sensor */
+  uint8_t delay;		/**< Report delay in 100us */
+};
 
 /**
  * @struct proximity_report
  * 
  * @brief Holds the report data for the proximity.
  */
-struct proximity_report {};
+struct proximity_report {
+  uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+  uint8_t seq_num;		/**< The sequence number of the report */
+  uint8_t status;		/**< The status of the sensor */
+  uint8_t delay;		/**< Report delay in 100us */
+};
 
 /**
  * @struct temperature_report
  * 
  * @brief Holds the report data for the temperature.
  */
-struct temperature_report {};
+struct temperature_report {
+  uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+  uint8_t seq_num;		/**< The sequence number of the report */
+  uint8_t status;		/**< The status of the sensor */
+  uint8_t delay;		/**< Report delay in 100us */
+};
 
 /**
  * @struct uncalibrated_magnetic_field_report
+ *
+ * Uncalibrated magnetic field reading; reports the geomagnetic field calibrated for soft iron effects only. Estimates for the hard iron bias are also reported. Units are in uTesla and the Q point is 4.
  * 
  * @brief Holds the report data for the uncalibrated magnetic field.
  */
-struct uncalibrated_magnetic_field_report {};
+struct uncalibrated_magnetic_field_report {
+	uint8_t report_id;		/**< The ID of the report - 0x0F for the uncalibrated magnetic field */
+	uint8_t seq_num;		/**< The sequence number of the report */
+	uint8_t status;		/**< The status of the sensor */
+	uint8_t delay;		/**< Report delay in 100us */
+	float x;		/**< x component of the uncalibrated gyroscope */
+	float y;		/**< y component of the uncalibrated gyroscope */
+	float z;		/**< z component of the uncalibrated gyroscope */
+	float x_bias;		/**< x hard iron bias */
+	float y_bias;		/**< y hard iron bias */
+	float z_bias;		/**< z hard iron bias */
+};
 
 /**
  * @struct tap_detector_report
  * 
  * @brief Holds the report data for the tap detector.
  */
-struct tap_detector_report {};
+struct tap_detector_report {
+  uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+  uint8_t seq_num;		/**< The sequence number of the report */
+  uint8_t status;		/**< The status of the sensor */
+  uint8_t delay;		/**< Report delay in 100us */
+};
 
 /**
  * @struct step_counter_report
  * 
  * @brief Holds the report data for the step counter.
  */
-struct step_counter_report {};
+struct step_counter_report {
+  uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+  uint8_t seq_num;		/**< The sequence number of the report */
+  uint8_t status;		/**< The status of the sensor */
+  uint8_t delay;		/**< Report delay in 100us */
+};
 
 /**
  * @struct significant_motion_report
  * 
  * @brief Holds the report data for the significant motion.
  */
-struct significant_motion_report {};
+struct significant_motion_report {
+  uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+  uint8_t seq_num;		/**< The sequence number of the report */
+  uint8_t status;		/**< The status of the sensor */
+  uint8_t delay;		/**< Report delay in 100us */
+};
 
 /**
  * @struct stability_classifier_report
  * 
  * @brief Holds the report data for the stability classifier.
  */
-struct stability_classifier_report {};
+struct stability_classifier_report {
+  uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+  uint8_t seq_num;		/**< The sequence number of the report */
+  uint8_t status;		/**< The status of the sensor */
+  uint8_t delay;		/**< Report delay in 100us */
+};
 
 /**
  * @struct raw_accelerometer_report
  * 
  * @brief Holds the report data for the raw accelerometer.
  */
-struct raw_accelerometer_report {};
+struct raw_accelerometer_report {
+  uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+  uint8_t seq_num;		/**< The sequence number of the report */
+  uint8_t status;		/**< The status of the sensor */
+  uint8_t delay;		/**< Report delay in 100us */
+};
 
 /**
  * @struct raw_gyroscope_report
+ *
+ * Raw readings from the physical gyroscope MEMS sensor. Units are ADCs. Interpretation of the reported values is sensor dependent.
  * 
  * @brief Holds the report data for the raw gyroscope.
  */
-struct raw_gyroscope_report {};
+struct raw_gyroscope_report {
+	uint8_t report_id;		/**< The ID of the report - 0x15 for the raw gyroscope */
+	uint8_t seq_num;		/**< The sequence number of the report */
+	uint8_t status;		/**< The status of the sensor */
+	uint8_t delay;		/**< Report delay in 100us */
+	int16_t x;		/**< x component of the raw gyroscope */
+	int16_t y;		/**< y component of the raw gyroscope */
+	int16_t z;		/**< z component of the raw gyroscope */
+	int16_t temperature;		/**< The sensor temperature */
+	uint32_t timestamp;		/**< The time the sample was measured, in us */
+};
 
 /**
  * @struct raw_magnetometer_report
+ *
+ * Raw readings from the physical magnetometer sensor. Units are ADCs. Interpretation of the reported values is sensor dependent.
  * 
  * @brief Holds the report data for the raw magnetometer.
  */
-struct raw_magnetometer_report {};
+struct raw_magnetometer_report {
+	uint8_t report_id;		/**< The ID of the report - 0x16 for the raw magnetometer */
+	uint8_t seq_num;		/**< The sequence number of the report */
+	uint8_t status;		/**< The status of the sensor */
+	uint8_t delay;		/**< Report delay in 100us */
+	int16_t x;		/**< x component of the raw gyroscope */
+	int16_t y;		/**< y component of the raw gyroscope */
+	int16_t z;		/**< z component of the raw gyroscope */
+	uint32_t timestamp;		/**< The time the sample was measured, in us */
+};
 
 /**
  * @struct sar_report
  * 
  * @brief Holds the report data for the SAR.
  */
-struct sar_report {};
+struct sar_report {
+  uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+  uint8_t seq_num;		/**< The sequence number of the report */
+  uint8_t status;		/**< The status of the sensor */
+  uint8_t delay;		/**< Report delay in 100us */
+};
 
 /**
  * @struct step_detector_report
  * 
  * @brief Holds the report data for the step detector.
  */
-struct step_detector_report {};
+struct step_detector_report {
+  uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+  uint8_t seq_num;		/**< The sequence number of the report */
+  uint8_t status;		/**< The status of the sensor */
+  uint8_t delay;		/**< Report delay in 100us */
+};
 
 /**
  * @struct shake_detector_report
  * 
  * @brief Holds the report data for the shake detector.
  */
-struct shake_detector_report {};
+struct shake_detector_report {
+  uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+  uint8_t seq_num;		/**< The sequence number of the report */
+  uint8_t status;		/**< The status of the sensor */
+  uint8_t delay;		/**< Report delay in 100us */
+};
 
 /**
  * @struct flip_detector_report
  * 
  * @brief Holds the report data for the flip detector.
  */
-struct flip_detector_report {};
+struct flip_detector_report {
+  uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+  uint8_t seq_num;		/**< The sequence number of the report */
+  uint8_t status;		/**< The status of the sensor */
+  uint8_t delay;		/**< Report delay in 100us */
+};
 
 /**
  * @struct pickup_detector_report
  * 
  * @brief Holds the report data for the pickup detector.
  */
-struct pickup_detector_report {};
+struct pickup_detector_report {
+  uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+  uint8_t seq_num;		/**< The sequence number of the report */
+  uint8_t status;		/**< The status of the sensor */
+  uint8_t delay;		/**< Report delay in 100us */
+};
 
 /**
  * @struct stability_detector_report
  * 
  * @brief Holds the report data for the stability detector.
  */
-struct stability_detector_report {};
+struct stability_detector_report {
+  uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+  uint8_t seq_num;		/**< The sequence number of the report */
+  uint8_t status;		/**< The status of the sensor */
+  uint8_t delay;		/**< Report delay in 100us */
+};
 
 /**
  * @struct personal_activity_classifier_report
  * 
  * @brief Holds the report data for the personal activity classifier.
  */
-struct personal_activity_classifier_report {};
+struct personal_activity_classifier_report {
+  uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+  uint8_t seq_num;		/**< The sequence number of the report */
+  uint8_t status;		/**< The status of the sensor */
+  uint8_t delay;		/**< Report delay in 100us */
+};
 
 /**
  * @struct sleep_detector_report
  * 
  * @brief Holds the report data for the sleep detector.
  */
-struct sleep_detector_report {};
+struct sleep_detector_report {
+  uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+  uint8_t seq_num;		/**< The sequence number of the report */
+  uint8_t status;		/**< The status of the sensor */
+  uint8_t delay;		/**< Report delay in 100us */
+};
 
 /**
  * @struct tilt_detector_report
  * 
  * @brief Holds the report data for the tilt detector.
  */
-struct tilt_detector_report {};
+struct tilt_detector_report {
+  uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+  uint8_t seq_num;		/**< The sequence number of the report */
+  uint8_t status;		/**< The status of the sensor */
+  uint8_t delay;		/**< Report delay in 100us */
+};
 
 /**
  * @struct pocket_detector_report
  * 
  * @brief Holds the report data for the pocket detector.
  */
-struct pocket_detector_report {};
+struct pocket_detector_report {
+  uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+  uint8_t seq_num;		/**< The sequence number of the report */
+  uint8_t status;		/**< The status of the sensor */
+  uint8_t delay;		/**< Report delay in 100us */
+};
 
 /**
  * @struct circle_detector_report
  * 
  * @brief Holds the report data for the circle detector.
  */
-struct circle_detector_report {};
+struct circle_detector_report {
+  uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+  uint8_t seq_num;		/**< The sequence number of the report */
+  uint8_t status;		/**< The status of the sensor */
+  uint8_t delay;		/**< Report delay in 100us */
+};
 
 /**
  * @struct heart_rate_monitor_report
  * 
  * @brief Holds the report data for the heart rate monitor.
  */
-struct heart_rate_monitor_report {};
+struct heart_rate_monitor_report {
+  uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+  uint8_t seq_num;		/**< The sequence number of the report */
+  uint8_t status;		/**< The status of the sensor */
+  uint8_t delay;		/**< Report delay in 100us */
+};
 
 /**
  * @struct arvr_stabilised_rotation_vector_report
  * 
  * @brief Holds the report data for the ARVR stabilised rotation vector.
  */
-struct arvr_stabilised_rotation_vector_report {};
+struct arvr_stabilised_rotation_vector_report {
+  uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+  uint8_t seq_num;		/**< The sequence number of the report */
+  uint8_t status;		/**< The status of the sensor */
+  uint8_t delay;		/**< Report delay in 100us */
+};
 
 /**
  * @struct arvr_stabilised_game_rotation_vector_report
  * 
  * @brief Holds the report data for the ARVR stabilised game rotation vector.
  */
-struct arvr_stabilised_game_rotation_vector_report {};
+struct arvr_stabilised_game_rotation_vector_report {
+  uint8_t report_id;		/**< The ID of the report - 0x06 for gravity */
+  uint8_t seq_num;		/**< The sequence number of the report */
+  uint8_t status;		/**< The status of the sensor */
+  uint8_t delay;		/**< Report delay in 100us */
+};
 
 //**********************************************************************//
 //	Sensor report union
