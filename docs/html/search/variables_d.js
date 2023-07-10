@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['uncalibrated_5fgyroscope_0',['uncalibrated_gyroscope',['../unionreport.html#ada89e9bdfd1f40d3e9254c88c63cbb6a',1,'report']]],
-  ['uncalibrated_5fmagnetic_5ffield_1',['uncalibrated_magnetic_field',['../unionreport.html#ac6263f1e254b053bf6bf9dcec16f6855',1,'report']]]
+  ['tap_5fdetector_0',['tap_detector',['../unionreport.html#a07543e62225a90508edffe3d2738a6fb',1,'report']]],
+  ['temperature_1',['temperature',['../unionreport.html#a9fe3942b2a47e347093933ea914df45d',1,'report']]],
+  ['tilt_5fdetector_2',['tilt_detector',['../unionreport.html#aa0f0bbf9527a94fcbbd42e526fb45d21',1,'report']]]
 ];

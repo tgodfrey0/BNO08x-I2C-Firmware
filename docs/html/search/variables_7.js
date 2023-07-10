@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['length_0',['length',['../structi2c__message.html#a503afcd7f8134fc802daf761891e9590',1,'i2c_message']]],
-  ['linear_5facceleration_1',['linear_acceleration',['../unionreport.html#a89cba08a9a8d55bcdc80bfa2fb743da1',1,'report']]]
+  ['initialise_0',['initialise',['../structi2c__interface.html#a69828b3de203441326c526b86f46263f',1,'i2c_interface']]],
+  ['initialised_1',['initialised',['../structi2c__interface.html#ad86e7ae1ce88f3a7655a02558318afc3',1,'i2c_interface']]]
 ];

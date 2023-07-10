@@ -1,6 +1,6 @@
 var annotated_dup =
 [
-    [ "accelerometer_report", "structaccelerometer__report.html", null ],
+    [ "accelerometer_report", "structaccelerometer__report.html", "structaccelerometer__report" ],
     [ "ambient_light_report", "structambient__light__report.html", null ],
     [ "arvr_stabilised_game_rotation_vector_report", "structarvr__stabilised__game__rotation__vector__report.html", null ],
     [ "arvr_stabilised_rotation_vector_report", "structarvr__stabilised__rotation__vector__report.html", null ],
