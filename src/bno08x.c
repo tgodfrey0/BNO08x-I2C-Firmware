@@ -11,5 +11,10 @@
 
 
 bool enable_sensor(const struct sensor* sensor){
+  return false;
+}
 
+
+bool read_sensor(const struct sensor* sensor){
+  return false;
 }
