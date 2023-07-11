@@ -25,5 +25,14 @@ var group__Sensors =
     [ "shake_detector", "structshake__detector.html", null ],
     [ "flip_detector", "structflip__detector.html", null ],
     [ "pickup_detector", "structpickup__detector.html", null ],
-    [ "stability_detector", "structstability__detector.html", null ]
+    [ "stability_detector", "structstability__detector.html", null ],
+    [ "personal_activity_classifier", "structpersonal__activity__classifier.html", null ],
+    [ "sleep_detector", "structsleep__detector.html", null ],
+    [ "tilt_detector", "structtilt__detector.html", null ],
+    [ "pocket_detector", "structpocket__detector.html", null ],
+    [ "circle_detector", "structcircle__detector.html", null ],
+    [ "heart_rate_monitor", "structheart__rate__monitor.html", null ],
+    [ "arvr_stabilised_rotation_vector", "structarvr__stabilised__rotation__vector.html", null ],
+    [ "arvr_stabilised_game_rotation_vector", "structarvr__stabilised__game__rotation__vector.html", null ],
+    [ "gyro_integrated_rotation_vector", "structgyro__integrated__rotation__vector.html", null ]
 ];

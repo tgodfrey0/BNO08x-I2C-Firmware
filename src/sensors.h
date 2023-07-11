@@ -709,85 +709,223 @@ const struct sensor* stability_detector = &(struct sensor) {
 };
 
 /**
- * @struct accelerometer
+ * @struct personal_activity_classifier
  * 
- * @brief The accelerometer instance.
+ * @brief The personal activity classifier instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* personal_activity_classifier;
+const struct sensor* personal_activity_classifier = &(struct sensor) {
+	.name = "Personal Activity Classifier",
+	.id = PERSONAL_ACTIVITY_CLASSIFIER,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.personal_activity_classifier = (struct personal_activity_classifier_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.page_number = 0,
+			.most_likely_state = 0,
+			.confidence = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct sleep_detector
  * 
- * @brief The accelerometer instance.
+ * @brief The sleep detector instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* sleep_detector;
+const struct sensor* sleep_detector = &(struct sensor) {
+	.name = "Sleep Detector",
+	.id = SLEEP_DETECTOR,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.sleep_detector = (struct sleep_detector_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.state = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct tilt_detector
  * 
- * @brief The accelerometer instance.
+ * @brief The tilt detector instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* tilt_detector;
+const struct sensor* tilt_detector = &(struct sensor) {
+	.name = "Tilt Detector",
+	.id = TILT_DETECTOR,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.tilt_detector = (struct tilt_detector_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.tilt = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct pocket_detector
  * 
- * @brief The accelerometer instance.
+ * @brief The pocket detector instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* pocket_detector;
+const struct sensor* pocket_detector = &(struct sensor) {
+	.name = "Pocket Detector",
+	.id = POCKET_DETECTOR,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.pocket_detector = (struct pocket_detector_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.pocket = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct circle_detector
  * 
- * @brief The accelerometer instance.
+ * @brief The circle detector instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* circle_detector;
+const struct sensor* circle_detector = &(struct sensor) {
+	.name = "Circle Detector",
+	.id = CIRCLE_DETECTOR,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.circle_detector = (struct circle_detector_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.circle = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct heart_rate_monitor
  * 
- * @brief The accelerometer instance.
+ * @brief The heart rate monitor instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* heart_rate_monitor;
+const struct sensor* heart_rate_monitor = &(struct sensor) {
+	.name = "Heart Rate Monitor",
+	.id = HEART_RATE_MONITOR,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.heart_rate_monitor = (struct heart_rate_monitor_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.hr = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct arvr_stabilised_rotation_vector
  * 
- * @brief The accelerometer instance.
+ * @brief The ARVR stabilised rotation vector instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* arvr_stabilised_rotation_vector;
+const struct sensor* arvr_stabilised_rotation_vector = &(struct sensor) {
+	.name = "ARVR Stabilised Rotation Vector",
+	.id = ARVR_STABILISED_ROTATION_VECTOR,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.arvr_stabilised_rotation_vector = (struct arvr_stabilised_rotation_vector_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.i = 0,
+			.j = 0,
+			.k = 0,
+			.real = 0,
+			.accuracy = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct arvr_stabilised_game_rotation_vector
  * 
- * @brief The accelerometer instance.
+ * @brief The ARVR stabilised game rotation vector instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* arvr_stabilised_game_rotation_vector;
+const struct sensor* arvr_stabilised_game_rotation_vector = &(struct sensor) {
+	.name = "ARVR Stabilised Game Rotation Vector",
+	.id = ARVR_STABILISED_GAME_ROTATION_VECTOR,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.arvr_stabilised_game_rotation_vector = (struct arvr_stabilised_game_rotation_vector_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.i = 0,
+			.j = 0,
+			.k = 0,
+			.real = 0,
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct gyro_integrated_rotation_vector
  * 
- * @brief The accelerometer instance.
+ * @brief The gyro-integrated rotation vector instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* gyro_integrated_rotation_vector;
+const struct sensor* gyro_integrated_rotation_vector = &(struct sensor) {
+	.name = "Gyro-Integrated Rotation Vector",
+	.id = GYRO_INTEGRATED_ROTATION_VECTOR,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		
+	}
+}
 
 /**
  * @struct accelerometer
