@@ -23,6 +23,8 @@ bool enable_sensor(const struct i2c_interface i2c, struct sensor* sensor, uint32
   period[2] = (period_us >> 16) & 0xFF;
   period[3] = (period_us >> 24) & 0xFF;
 
+  len = 0x15;
+
   uint8_t pkt[] = {
     0x15, // Length LSB
     0x00, // Length MSB
@@ -53,8 +55,10 @@ bool enable_sensor(const struct i2c_interface i2c, struct sensor* sensor, uint32
   });
 
   if(res == ERROR_GENERIC || res == ERROR_TIMEOUT){
+    printf("%s could not be enabled\n", sensor->name);
     return false;
   } else {
+    printf("%s has been successfully enabled\n", sensor->name);
     sensor->enabled = true;
     return true;
   }
