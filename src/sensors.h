@@ -5,6 +5,8 @@
 * @author Toby Godfrey
 ****************************************************************************************************/
 
+#pragma once
+
 #include "bno08x.h"
 #include "sensor_reports.h"
 
@@ -29,6 +31,7 @@ const struct sensor* accelerometer = &(struct sensor) {
 	.id = ACCELEROMETER,
 	.channel = 255,
 	.q_point = 0,
+	.enabled = false,
 	.input_report = (union input_report) {
 		.accelerometer = (struct accelerometer_report) {
 			.report_id = 0,
@@ -39,8 +42,7 @@ const struct sensor* accelerometer = &(struct sensor) {
 			.y = 0,
 			.z = 0
 		} 
-	},
-	.enabled = false
+	}
 };
 
 /**
@@ -55,8 +57,9 @@ const struct sensor* gyroscope = &(struct sensor) {
 	.id = GYROSCOPE,
 	.channel = 255,
 	.q_point = 0,
+	.enabled = false,
 	.input_report = (union input_report) {
-		.accelerometer = (struct accelerometer_report) {
+		.gyroscope = (struct gyroscope_report) {
 			.report_id = 0,
 			.seq_num = 0,
 			.status = 0,
@@ -65,55 +68,144 @@ const struct sensor* gyroscope = &(struct sensor) {
 			.y = 0,
 			.z = 0
 		} 
-	},
-	.enabled = false
+	}
 };
 
 
 /**
- * @struct accelerometer
+ * @struct magnetic_field
  * 
- * @brief The accelerometer instance.
+ * @brief The magnetic field instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* magnetic_field;
+const struct sensor* magnetic_field = &(struct sensor) {
+	.name = "Magnetic Field",
+	.id = MAGNETIC_FIELD,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.magnetic_field = (struct magnetic_field_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.x = 0,
+			.y = 0,
+			.z = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct linear_acceleration
  * 
- * @brief The accelerometer instance.
+ * @brief The linear acceleration instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* linear_acceleration;
+const struct sensor* linear_acceleration = &(struct sensor) {
+	.name = "Linear Acceleration",
+	.id = LINEAR_ACCELERATION,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.linear_acceleration = (struct linear_acceleration_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.x = 0,
+			.y = 0,
+			.z = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct rotation vector
  * 
- * @brief The accelerometer instance.
+ * @brief The rotation vector instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* rotation_vector;
+const struct sensor* rotation_vector = &(struct sensor) {
+	.name = "Rotation Vector",
+	.id = ROTATION_VECTOR,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.rotation_vector = (struct rotation_vector_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.i = 0,
+			.j = 0,
+			.k = 0,
+			.real = 0,
+			.accuracy = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct gravity
  * 
- * @brief The accelerometer instance.
+ * @brief The gravity instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* gravity;
+const struct sensor* gravity = &(struct sensor) {
+	.name = "Gravity",
+	.id = GRAVITY,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.gravity = (struct gravity_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.x = 0,
+			.y = 0,
+			.z = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct uncalibrated_gyroscope
  * 
- * @brief The accelerometer instance.
+ * @brief The uncalibrated gyroscope instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* uncalibrated_gyroscope;
+const struct sensor* uncalibrated_gyroscope = &(struct sensor) {
+	.name = "Uncalibrated Gyroscope",
+	.id = UNCALIBRATED_GYROSCOPE,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.uncalibrated_gyroscope = (struct uncalibrated_gyroscope_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.x = 0,
+			.y = 0,
+			.z = 0,
+			.x_bias = 0,
+			.y_bias = 0,
+			.z_bias = 0
+		}
+	}
+};
 
 /**
  * @struct accelerometer
