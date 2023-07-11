@@ -1,6 +1,6 @@
 /****************************************************************************************************
 * @file sensor_reports.h
-* @brief Definitions for all input reports available from the BNO08x
+* @brief Definitions for all input reports available from the BNO08x.
 *
 * @author Toby Godfrey
 ****************************************************************************************************/

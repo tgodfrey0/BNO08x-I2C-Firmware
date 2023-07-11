@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"structproximity__report.html#ade818037fd6c985038ff29656089758d":[1,0,25,3],
+"structraw__accelerometer__report.html":[1,0,26],
 "structraw__accelerometer__report.html#a70fbd315df33bf9039e036725b569e7f":[1,0,26,0],
 "structraw__accelerometer__report.html#a725a13d8d43f65c0f5e8adc271f71573":[1,0,26,1],
 "structraw__accelerometer__report.html#ab20b0c7772544cf5d318507f34231fbe":[1,0,26,4],
@@ -43,7 +45,7 @@ var NAVTREEINDEX1 =
 "structsensor.html#a8740ba80e30dd75e71d09fa1dcf04f3d":[1,0,31,1],
 "structsensor.html#a8f8f80d37794cde9472343e4487ba3eb":[1,0,31,4],
 "structsensor.html#aaf5084f4159dd8e5e8ad7446241194bf":[1,0,31,5],
-"structsensor.html#ade712c66fd8db2ec7e963c9597d8b0a1":[1,0,31,3],
+"structsensor.html#adb2bff821836a28632fdc702826fef1c":[1,0,31,3],
 "structshake__detector__report.html":[1,0,32],
 "structshake__detector__report.html#a70fbd315df33bf9039e036725b569e7f":[1,0,32,0],
 "structshake__detector__report.html#a725a13d8d43f65c0f5e8adc271f71573":[1,0,32,1],

@@ -5,6 +5,6 @@ var searchData=
   ['id_2',['id',['../structsensor.html#a5d61fdce1be542abed960dd7d2f68cf9',1,'sensor']]],
   ['initialise_3',['initialise',['../structi2c__interface.html#a69828b3de203441326c526b86f46263f',1,'i2c_interface']]],
   ['initialised_4',['initialised',['../structi2c__interface.html#ad86e7ae1ce88f3a7655a02558318afc3',1,'i2c_interface']]],
-  ['input_5freport_5',['input_report',['../structsensor.html#ade712c66fd8db2ec7e963c9597d8b0a1',1,'sensor']]],
+  ['input_5freport_5',['input_report',['../structsensor.html#adb2bff821836a28632fdc702826fef1c',1,'sensor']]],
   ['intent_6',['intent',['../structmotion__request__report.html#a27e37ac3aba98d0c4009819e8dce35ed',1,'motion_request_report']]]
 ];

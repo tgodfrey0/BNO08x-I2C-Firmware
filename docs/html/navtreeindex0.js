@@ -59,11 +59,13 @@ var NAVTREEINDEX0 =
 "functions_y.html":[1,2,0,23],
 "functions_z.html":[1,2,0,24],
 "group__Enumerations.html":[0,0],
+"group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957":[0,0,0],
 "i2c_8h_source.html":[2,0,0,2],
 "index.html":[],
 "modules.html":[0],
 "pages.html":[],
 "sensor__reports_8h_source.html":[2,0,0,3],
+"sensors_8h_source.html":[2,0,0,4],
 "structaccelerometer__report.html":[1,0,0],
 "structaccelerometer__report.html#a70fbd315df33bf9039e036725b569e7f":[1,0,0,0],
 "structaccelerometer__report.html#a725a13d8d43f65c0f5e8adc271f71573":[1,0,0,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX0 =
 "structproximity__report.html":[1,0,25],
 "structproximity__report.html#a70fbd315df33bf9039e036725b569e7f":[1,0,25,0],
 "structproximity__report.html#a725a13d8d43f65c0f5e8adc271f71573":[1,0,25,1],
-"structproximity__report.html#ac117f9690109b1aeb49da826aff1cca6":[1,0,25,2],
-"structproximity__report.html#ade818037fd6c985038ff29656089758d":[1,0,25,3],
-"structraw__accelerometer__report.html":[1,0,26]
+"structproximity__report.html#ac117f9690109b1aeb49da826aff1cca6":[1,0,25,2]
 };
