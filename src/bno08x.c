@@ -5,6 +5,8 @@
 * @author Toby Godfrey
 ****************************************************************************************************/
 
+#include <stdio.h>
+
 #include "bno08x.h"
 #include "i2c.h"
 #include "sensor_reports.h"
@@ -66,5 +68,16 @@ bool enable_sensor(const struct i2c_interface i2c, struct sensor* sensor, uint32
 
 
 bool read_sensor(struct sensor* sensor){
+  
+  uint8_t header[4];
+
+#if !defined(MAX_PAYLOAD_SIZE)
+  #warning MAX_PAYLOAD_SIZE required
+  puts("MAX_PAYLOAD_SIZE must be defined\n");
+  return false;
+#endif
+
+
+
   return false;
 }
