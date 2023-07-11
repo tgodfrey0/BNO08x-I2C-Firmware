@@ -208,85 +208,231 @@ const struct sensor* uncalibrated_gyroscope = &(struct sensor) {
 };
 
 /**
- * @struct accelerometer
+ * @struct game_rotation_vector
  * 
- * @brief The accelerometer instance.
+ * @brief The game rotation vector instance instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* game_rotation_vector;
+const struct sensor* game_rotation_vector = &(struct sensor){
+	.name = "Game Rotation Vector",
+	.id = GAME_ROTATION_VECTOR,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.game_rotation_vector = (struct game_rotation_vector_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.i = 0,
+			.j = 0,
+			.k = 0,
+			.real = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct geomagnetic_rotation_vector
  * 
- * @brief The accelerometer instance.
+ * @brief The geomagnetic rotation vector instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* geomagnetic_rotation_vector;
+const struct sensor* geomagnetic_rotation_vector = &(struct sensor) {
+	.name = "Geomagnetic Rotation Vector",
+	.id = GEOMAGNETIC_ROTATION_VECTOR,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.geomagnetic_rotation_vector = (struct geomagnetic_rotation_vector_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.i = 0,
+			.j = 0,
+			.k = 0,
+			.real = 0,
+			.accuracy = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct pressure
  * 
- * @brief The accelerometer instance.
+ * @brief The pressure instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* pressure;
+const struct sensor* pressure = &(struct sensor) {
+	.name = "Pressure",
+	.id = PRESSURE,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.pressure = (struct pressure_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.value = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct ambient_light
  * 
- * @brief The accelerometer instance.
+ * @brief The ambient light instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* ambient_light;
+const struct sensor* ambient_light = &(struct sensor) {
+	.name = "Ambient Light",
+	.id = AMBIENT_LIGHT,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.ambient_light = (struct ambient_light_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.value = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct humidity
  * 
- * @brief The accelerometer instance.
+ * @brief The humidity instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* humidity;
+const struct sensor* humidity = &(struct sensor) {
+	.name = "Humidity",
+	.id = HUMIDITY,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.humidity = (struct humidity_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.value = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct proximity
  * 
- * @brief The accelerometer instance.
+ * @brief The proximity instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* proximity;
+const struct sensor* proximity = &(struct sensor) {
+	.name = "Proximity",
+	.id = PROXIMITY,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.proximity = (struct proximity_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.value = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct temperature
  * 
- * @brief The accelerometer instance.
+ * @brief The temperature instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* temperature;
+const struct sensor* temperature = &(struct sensor) {
+	.name = "Temperature",
+	.id = TEMPERATURE,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.temperature = (struct temperature_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.value = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct uncalibrated_magnetic_field
  * 
- * @brief The accelerometer instance.
+ * @brief The uncalibrated magnetic field instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* uncalibrated_magnetic_field;
+const struct sensor* uncalibrated_magnetic_field = &(struct sensor) {
+	.name = "Uncalibrated Magnetic Field",
+	.id = UNCALIBRATED_MAGNETIC_FIELD,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.uncalibrated_magnetic_field = (struct uncalibrated_magnetic_field_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.x = 0,
+			.y = 0,
+			.z = 0,
+			.x_bias = 0,
+			.y_bias = 0,
+			.z_bias = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct tap_detector
  * 
- * @brief The accelerometer instance.
+ * @brief The tap_detector instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* tap_detector;
+const struct sensor* tap_detector = &(struct sensor) {
+	.name = "Tap Detector",
+	.id = TAP_DETECTOR,
+	.channel = 255,
+	.q_point = 0,
+	.input_report = (union input_report) {
+		.tap_detector = (struct tap_detector_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.taps = 0
+		}
+	}
+};
 
 /**
  * @struct accelerometer

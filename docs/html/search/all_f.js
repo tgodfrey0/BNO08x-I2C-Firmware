@@ -10,8 +10,8 @@ var searchData=
   ['pocket_7',['pocket',['../structpocket__detector__report.html#a001ce4f102739b282713477a00750e86',1,'pocket_detector_report']]],
   ['pocket_5fdetector_8',['pocket_detector',['../unioninput__report.html#a5a972952dbe587290abcfdc6d6757e3b',1,'input_report']]],
   ['pocket_5fdetector_5freport_9',['pocket_detector_report',['../structpocket__detector__report.html',1,'']]],
-  ['pressure_10',['pressure',['../unioninput__report.html#a6821147ad3930dc2bf945af51bd4531e',1,'input_report']]],
+  ['pressure_10',['pressure',['../structpressure.html',1,'pressure'],['../unioninput__report.html#a6821147ad3930dc2bf945af51bd4531e',1,'input_report::pressure()']]],
   ['pressure_5freport_11',['pressure_report',['../structpressure__report.html',1,'']]],
-  ['proximity_12',['proximity',['../unioninput__report.html#a3f6093bd6636ef8649577dc30ca7424b',1,'input_report']]],
+  ['proximity_12',['proximity',['../structproximity.html',1,'proximity'],['../unioninput__report.html#a3f6093bd6636ef8649577dc30ca7424b',1,'input_report::proximity()']]],
   ['proximity_5freport_13',['proximity_report',['../structproximity__report.html',1,'']]]
 ];
