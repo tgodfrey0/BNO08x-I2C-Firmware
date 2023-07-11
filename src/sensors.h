@@ -423,6 +423,7 @@ const struct sensor* tap_detector = &(struct sensor) {
 	.id = TAP_DETECTOR,
 	.channel = 255,
 	.q_point = 0,
+	.enabled = false,
 	.input_report = (union input_report) {
 		.tap_detector = (struct tap_detector_report) {
 			.report_id = 0,
@@ -435,103 +436,277 @@ const struct sensor* tap_detector = &(struct sensor) {
 };
 
 /**
- * @struct accelerometer
+ * @struct step_counter
  * 
- * @brief The accelerometer instance.
+ * @brief The step counter instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* step_counter;
+const struct sensor* step_counter = &(struct sensor) {
+	.name = "Step Counter",
+	.id = STEP_COUNTER,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.step_counter = (struct step_counter_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.steps = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct significant_motion
  * 
- * @brief The accelerometer instance.
+ * @brief The significant motion instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* significant_motion;
+const struct sensor* significant_motion = &(struct sensor) {
+	.name = "Significant Motion",
+	.id = SIGNIFICANT_MOTION,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.significant_motion = (struct significant_motion_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.motion = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct stability_classifier
  * 
- * @brief The accelerometer instance.
+ * @brief The stability classifier instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* stability_classifier;
+const struct sensor* stability_classifier = &(struct sensor) {
+	.name = "Stability Classifier",
+	.id = STABILITY_CLASSIFIER,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.stability_classifier = (struct stability_classifier_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.classification = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct raw_accelerometer
  * 
- * @brief The accelerometer instance.
+ * @brief The raw accelerometer instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* raw_accelerometer;
+const struct sensor* raw_accelerometer = &(struct sensor) {
+	.name = "Raw Accelerometer",
+	.id = RAW_ACCELEROMETER,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.raw_accelerometer = (struct raw_accelerometer_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.x = 0,
+			.y = 0,
+			.z = 0,
+			.timestamp = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct raw gyroscope
  * 
- * @brief The accelerometer instance.
+ * @brief The raw gyroscope instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* raw_gyroscope;
+const struct sensor* raw_gyroscope = &(struct sensor) {
+	.name = "Raw Gyroscope",
+	.id = RAW_GYROSCOPE,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.raw_gyroscope = (struct raw_gyroscope_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.x = 0,
+			.y = 0,
+			.z = 0,
+			.timestamp = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct raw magnetometer
  * 
- * @brief The accelerometer instance.
+ * @brief The raw magnetometer instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* raw_magnetometer;
+const struct sensor* raw_magnetometer = &(struct sensor) {
+	.name = "Raw Magnetometer",
+	.id = RAW_MAGNETOMETER,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.raw_magnetometer = (struct raw_magnetometer_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.x = 0,
+			.y = 0,
+			.z = 0,
+			.timestamp = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct step_detector
  * 
- * @brief The accelerometer instance.
+ * @brief The step detector instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* step_detector;
+const struct sensor* step_detector = &(struct sensor) {
+	.name = "Step Detector",
+	.id = STEP_DETECTOR,
+	.channel = 0,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.step_detector = (struct step_detector_report){
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.latency = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct shake_detector
  * 
- * @brief The accelerometer instance.
+ * @brief The shake detector instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* shake_detector;
+const struct sensor* shake_detector = &(struct sensor) {
+	.name = "Shake Detector",
+	.id = SHAKE_DETECTOR,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.shake_detector = (struct shake_detector_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.shake = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct flip_detector
  * 
- * @brief The accelerometer instance.
+ * @brief The flip detector instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* flip_detector;
+const struct sensor* flip_detector = &(struct sensor) {
+	.name = "Flip Detector",
+	.id = FLIP_DETECTOR,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.flip_detector = (struct flip_detector_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.flip = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct pickup_detector
  * 
- * @brief The accelerometer instance.
+ * @brief The pickup detector instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* pickup_detector;
+const struct sensor* pickup_detector = &(struct sensor) {
+	.name = "Pickup Detector",
+	.id = PICKUP_DETECTOR,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.pickup_detector = (struct pickup_detector_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.pickup = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct stability_detector
  * 
- * @brief The accelerometer instance.
+ * @brief The stability detector instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* stability_detector;
+const struct sensor* stability_detector = &(struct sensor) {
+	.name = "Stability Detector",
+	.id = STABILITY_DETECTOR,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.stability_detector = (struct stability_detector_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.stability = 0
+		}
+	}
+};
 
 /**
  * @struct accelerometer

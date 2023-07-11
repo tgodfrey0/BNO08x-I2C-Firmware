@@ -5,7 +5,7 @@ var searchData=
   ['personal_5factivity_5fclassifier_2',['personal_activity_classifier',['../unioninput__report.html#ae5597879dfbf7e138120fe1b1be932ce',1,'input_report']]],
   ['personal_5factivity_5fclassifier_5freport_3',['personal_activity_classifier_report',['../structpersonal__activity__classifier__report.html',1,'']]],
   ['pickup_4',['pickup',['../structpickup__detector__report.html#a1319adb54584145ee6d543618f078823',1,'pickup_detector_report']]],
-  ['pickup_5fdetector_5',['pickup_detector',['../unioninput__report.html#a7678aa6a5ddd19f86fb8a744f190d920',1,'input_report']]],
+  ['pickup_5fdetector_5',['pickup_detector',['../structpickup__detector.html',1,'pickup_detector'],['../unioninput__report.html#a7678aa6a5ddd19f86fb8a744f190d920',1,'input_report::pickup_detector()']]],
   ['pickup_5fdetector_5freport_6',['pickup_detector_report',['../structpickup__detector__report.html',1,'']]],
   ['pocket_7',['pocket',['../structpocket__detector__report.html#a001ce4f102739b282713477a00750e86',1,'pocket_detector_report']]],
   ['pocket_5fdetector_8',['pocket_detector',['../unioninput__report.html#a5a972952dbe587290abcfdc6d6757e3b',1,'input_report']]],

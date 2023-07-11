@@ -15,5 +15,15 @@ var group__Sensors =
     [ "proximity", "structproximity.html", null ],
     [ "temperature", "structtemperature.html", null ],
     [ "uncalibrated_magnetic_field", "structuncalibrated__magnetic__field.html", null ],
-    [ "tap_detector", "structtap__detector.html", null ]
+    [ "tap_detector", "structtap__detector.html", null ],
+    [ "step_counter", "structstep__counter.html", null ],
+    [ "significant_motion", "structsignificant__motion.html", null ],
+    [ "stability_classifier", "structstability__classifier.html", null ],
+    [ "raw_accelerometer", "structraw__accelerometer.html", null ],
+    [ "raw", "structraw.html", null ],
+    [ "step_detector", "structstep__detector.html", null ],
+    [ "shake_detector", "structshake__detector.html", null ],
+    [ "flip_detector", "structflip__detector.html", null ],
+    [ "pickup_detector", "structpickup__detector.html", null ],
+    [ "stability_detector", "structstability__detector.html", null ]
 ];
