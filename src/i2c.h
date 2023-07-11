@@ -27,7 +27,7 @@ extern uint8_t sequence_number;		/**< The sequence number for outbound packets. 
  * 
  * @brief Possible I2C response codes.
  * 
- * \ingroup Enumerations
+ * @ingroup Enumerations
  */
 enum I2C_RESPONSE {
 	SUCCESS,

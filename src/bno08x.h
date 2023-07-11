@@ -25,9 +25,9 @@
 /**
  * @enum SENSOR_ID
  *
- * @ingroup Enumerations
- *
  * @brief Stores the ID for each sensor.
+ * 
+ * @ingroup Enumerations
  */
 enum SENSOR_ID {
 	ACCELEROMETER = 0x01,
