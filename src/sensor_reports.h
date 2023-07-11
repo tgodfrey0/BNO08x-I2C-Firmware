@@ -678,7 +678,7 @@ struct dead_reckoning_pose_report {
 //**********************************************************************//
 
 /**
- * @union report
+ * @union input_report
  *
  * @brief Stores a single report struct.
  */

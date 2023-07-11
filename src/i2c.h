@@ -10,6 +10,32 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+
+//=================================================================================================//
+//		Global Variables & Constants
+//=================================================================================================//
+
+extern const uint8_t BNO08x_ADDR;		/**< The address of the sensor (given SA0 is low). */
+extern uint8_t sequence_number;		/**< The sequence number for outbound packets. */
+
+//=================================================================================================//
+//		Enums
+//=================================================================================================//
+
+/**
+ * @enum I2C_RESPONSE
+ * 
+ * @brief Possible I2C response codes.
+ * 
+ * \ingroup Enumerations
+ */
+enum I2C_RESPONSE {
+	SUCCESS,
+	ERROR_GENERIC,
+	ERROR_TIMEOUT
+};
+
+
 //=================================================================================================//
 //	Structs
 //=================================================================================================//
@@ -44,7 +70,7 @@ struct i2c_interface {
 	* @param add				The I2C address of the device to write data to
 	* @param message		A message struct to send on the bus
 	*/
-	uint8_t (*write)(const uint8_t addr, const struct i2c_message* message);
+	enum I2C_RESPONSE (*write)(const uint8_t addr, const struct i2c_message* message);
 
 	/**
 	* @brief Callback to read data from the I2C bus.
@@ -55,14 +81,14 @@ struct i2c_interface {
 	* @param message		The message struct to store the resulting data
 	* @param n				The number of bytes to read from the bus
 	*/
-	uint8_t (*read)(const uint8_t addr, struct i2c_message* message, const uint16_t n);
+	enum I2C_RESPONSE (*read)(const uint8_t addr, struct i2c_message* message, const uint16_t n);
 
 	/**
 	* @brief Callback to initialise the I2C interface.
 	*
 	* @param self		The struct for the interface being initialised
 	*/
-	void (*initialise)(struct i2c_interface* self);
+	enum I2C_RESPONSE (*initialise)(struct i2c_interface* self);
 };
 
 
@@ -70,3 +96,11 @@ struct i2c_interface {
 //	Functions
 //=================================================================================================//
 
+/**
+ * @brief Return the sequence number then increment it.
+ * 
+ * @return uint8_t		The sequence number to use
+ */
+inline uint8_t get_seq_num(){
+	return (sequence_number++);
+}

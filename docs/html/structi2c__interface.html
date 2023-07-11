@@ -111,15 +111,15 @@ Data Fields</h2></td></tr>
 <tr class="separator:a00cf77886a8476a35f990d052e440aa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad86e7ae1ce88f3a7655a02558318afc3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structi2c__interface.html#ad86e7ae1ce88f3a7655a02558318afc3">initialised</a></td></tr>
 <tr class="separator:ad86e7ae1ce88f3a7655a02558318afc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ed72b3f1362cbbd3bdf8cd256cef2e7"><td class="memItemLeft" align="right" valign="top">uint8_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structi2c__interface.html#a4ed72b3f1362cbbd3bdf8cd256cef2e7">write</a> )(const uint8_t addr, const struct <a class="el" href="structi2c__message.html">i2c_message</a> *message)</td></tr>
-<tr class="memdesc:a4ed72b3f1362cbbd3bdf8cd256cef2e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback to write data on to the I2C bus.  <br /></td></tr>
-<tr class="separator:a4ed72b3f1362cbbd3bdf8cd256cef2e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa758dd5929419b707f4905fe1d41db25"><td class="memItemLeft" align="right" valign="top">uint8_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structi2c__interface.html#aa758dd5929419b707f4905fe1d41db25">read</a> )(const uint8_t addr, struct <a class="el" href="structi2c__message.html">i2c_message</a> *message, const uint16_t n)</td></tr>
-<tr class="memdesc:aa758dd5929419b707f4905fe1d41db25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback to read data from the I2C bus.  <br /></td></tr>
-<tr class="separator:aa758dd5929419b707f4905fe1d41db25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69828b3de203441326c526b86f46263f"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structi2c__interface.html#a69828b3de203441326c526b86f46263f">initialise</a> )(struct <a class="el" href="structi2c__interface.html">i2c_interface</a> *self)</td></tr>
-<tr class="memdesc:a69828b3de203441326c526b86f46263f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback to initialise the I2C interface.  <br /></td></tr>
-<tr class="separator:a69828b3de203441326c526b86f46263f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a6321b7022867f2ece19437491e1391"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="group__Enumerations.html#ga1be58a16c8c5ada6066b62182cdb3540">I2C_RESPONSE</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structi2c__interface.html#a0a6321b7022867f2ece19437491e1391">write</a> )(const uint8_t addr, const struct <a class="el" href="structi2c__message.html">i2c_message</a> *message)</td></tr>
+<tr class="memdesc:a0a6321b7022867f2ece19437491e1391"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback to write data on to the I2C bus.  <br /></td></tr>
+<tr class="separator:a0a6321b7022867f2ece19437491e1391"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae039547c05b5ebf04aecbc4baac3d51c"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="group__Enumerations.html#ga1be58a16c8c5ada6066b62182cdb3540">I2C_RESPONSE</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structi2c__interface.html#ae039547c05b5ebf04aecbc4baac3d51c">read</a> )(const uint8_t addr, struct <a class="el" href="structi2c__message.html">i2c_message</a> *message, const uint16_t n)</td></tr>
+<tr class="memdesc:ae039547c05b5ebf04aecbc4baac3d51c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback to read data from the I2C bus.  <br /></td></tr>
+<tr class="separator:ae039547c05b5ebf04aecbc4baac3d51c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b029a80e90944058da87d6544294625"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="group__Enumerations.html#ga1be58a16c8c5ada6066b62182cdb3540">I2C_RESPONSE</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structi2c__interface.html#a2b029a80e90944058da87d6544294625">initialise</a> )(struct <a class="el" href="structi2c__interface.html">i2c_interface</a> *self)</td></tr>
+<tr class="memdesc:a2b029a80e90944058da87d6544294625"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback to initialise the I2C interface.  <br /></td></tr>
+<tr class="separator:a2b029a80e90944058da87d6544294625"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Holds the data relevant to the I2C interface configuration. </p>
@@ -140,14 +140,14 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="a69828b3de203441326c526b86f46263f" name="a69828b3de203441326c526b86f46263f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69828b3de203441326c526b86f46263f">&#9670;&#160;</a></span>initialise</h2>
+<a id="a2b029a80e90944058da87d6544294625" name="a2b029a80e90944058da87d6544294625"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b029a80e90944058da87d6544294625">&#9670;&#160;</a></span>initialise</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* initialise) (struct <a class="el" href="structi2c__interface.html">i2c_interface</a> *self)</td>
+          <td class="memname">enum <a class="el" href="group__Enumerations.html#ga1be58a16c8c5ada6066b62182cdb3540">I2C_RESPONSE</a>(* initialise) (struct <a class="el" href="structi2c__interface.html">i2c_interface</a> *self)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -177,14 +177,14 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="aa758dd5929419b707f4905fe1d41db25" name="aa758dd5929419b707f4905fe1d41db25"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa758dd5929419b707f4905fe1d41db25">&#9670;&#160;</a></span>read</h2>
+<a id="ae039547c05b5ebf04aecbc4baac3d51c" name="ae039547c05b5ebf04aecbc4baac3d51c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae039547c05b5ebf04aecbc4baac3d51c">&#9670;&#160;</a></span>read</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t(* read) (const uint8_t addr, struct <a class="el" href="structi2c__message.html">i2c_message</a> *message, const uint16_t n)</td>
+          <td class="memname">enum <a class="el" href="group__Enumerations.html#ga1be58a16c8c5ada6066b62182cdb3540">I2C_RESPONSE</a>(* read) (const uint8_t addr, struct <a class="el" href="structi2c__message.html">i2c_message</a> *message, const uint16_t n)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -232,14 +232,14 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="a4ed72b3f1362cbbd3bdf8cd256cef2e7" name="a4ed72b3f1362cbbd3bdf8cd256cef2e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ed72b3f1362cbbd3bdf8cd256cef2e7">&#9670;&#160;</a></span>write</h2>
+<a id="a0a6321b7022867f2ece19437491e1391" name="a0a6321b7022867f2ece19437491e1391"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a6321b7022867f2ece19437491e1391">&#9670;&#160;</a></span>write</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t(* write) (const uint8_t addr, const struct <a class="el" href="structi2c__message.html">i2c_message</a> *message)</td>
+          <td class="memname">enum <a class="el" href="group__Enumerations.html#ga1be58a16c8c5ada6066b62182cdb3540">I2C_RESPONSE</a>(* write) (const uint8_t addr, const struct <a class="el" href="structi2c__message.html">i2c_message</a> *message)</td>
         </tr>
       </table>
 </div><div class="memdoc">

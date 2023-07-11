@@ -7,8 +7,7 @@
 
 
 /*! 
-	\defgroup Enumerations
-		Public enumeration types
+	\defgroup Enumerations Public enumeration types
 */
 
 #pragma once
@@ -16,6 +15,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+#include "i2c.h"
 #include "sensor_reports.h"
 
 //=================================================================================================//
@@ -99,13 +99,15 @@ struct sensor {
 /**
  * @brief Enable a sensor and populate the struct pointer.
  *
+ * @param i2c		The I2C interface struct to send the data on
  * @param sensor		The sensor to enable
+ * @param sample_rate_ms		The sample rate of the sensor in microseconds
  */
-bool enable_sensor(const struct sensor* sensor);
+bool enable_sensor(const struct i2c_interface i2c, struct sensor* sensor, uint32_t sample_rate_ms);
 
 /**
  * @brief Read a sensor and store the result in the input report in the struct. 
  *
  * @param sensor		The sensor struct to read
  */ 
-bool read_sensor(const struct sensor* sensor);
+bool read_sensor(struct sensor* sensor);

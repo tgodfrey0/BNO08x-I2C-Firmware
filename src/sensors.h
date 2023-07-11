@@ -11,8 +11,7 @@
 #include "sensor_reports.h"
 
 /*! 
-	\defgroup Sensors
-		Structs storing the instance of each sensor
+	\defgroup Sensors Structs storing the instance of each sensor
 */
 
 //=================================================================================================//
@@ -125,7 +124,7 @@ const struct sensor* linear_acceleration = &(struct sensor) {
 };
 
 /**
- * @struct rotation vector
+ * @struct rotation_vector
  * 
  * @brief The rotation vector instance.
  * 
@@ -535,7 +534,7 @@ const struct sensor* raw_accelerometer = &(struct sensor) {
 };
 
 /**
- * @struct raw gyroscope
+ * @struct raw_gyroscope
  * 
  * @brief The raw gyroscope instance.
  * 
@@ -562,7 +561,7 @@ const struct sensor* raw_gyroscope = &(struct sensor) {
 };
 
 /**
- * @struct raw magnetometer
+ * @struct raw_magnetometer
  * 
  * @brief The raw magnetometer instance.
  * 
