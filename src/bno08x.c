@@ -12,6 +12,13 @@
 const uint8_t BNO08x_ADDR = 0x4A; 
 uint8_t sequence_number = 0;
 
+/**
+ * @brief Enable a sensor and populate the struct pointer.
+ *
+ * @param i2c		The I2C interface struct to send the data on
+ * @param sensor		The sensor to enable
+ * @param sample_rate_ms		The sample rate of the sensor in microseconds
+ */
 bool enable_sensor(const struct i2c_interface i2c, struct sensor* sensor, uint32_t sample_rate_ms){
   uint64_t period_us = sample_rate_ms * 1000;
 

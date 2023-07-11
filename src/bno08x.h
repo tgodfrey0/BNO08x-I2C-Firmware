@@ -96,13 +96,7 @@ struct sensor {
 //    Functions
 //=================================================================================================//
 
-/**
- * @brief Enable a sensor and populate the struct pointer.
- *
- * @param i2c		The I2C interface struct to send the data on
- * @param sensor		The sensor to enable
- * @param sample_rate_ms		The sample rate of the sensor in microseconds
- */
+
 bool enable_sensor(const struct i2c_interface i2c, struct sensor* sensor, uint32_t sample_rate_ms);
 
 /**

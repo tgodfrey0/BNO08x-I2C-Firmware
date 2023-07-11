@@ -153,6 +153,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Callback to initialise the I2C interface. </p>
+<p>This must be run before any other operations can be applied to the struct.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">self</td><td>The struct for the interface being initialised </td></tr>
@@ -190,7 +191,6 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Callback to read data from the I2C bus. </p>
-<p>This must be run before any other operations can be applied to the struct.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">addr</td><td>The address to read data from </td></tr>

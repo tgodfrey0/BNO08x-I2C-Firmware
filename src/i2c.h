@@ -75,8 +75,6 @@ struct i2c_interface {
 	/**
 	* @brief Callback to read data from the I2C bus.
 	*
-	* This must be run before any other operations can be applied to the struct.
-	*
 	* @param addr				The address to read data from
 	* @param message		The message struct to store the resulting data
 	* @param n				The number of bytes to read from the bus
@@ -85,6 +83,8 @@ struct i2c_interface {
 
 	/**
 	* @brief Callback to initialise the I2C interface.
+  *
+	* This must be run before any other operations can be applied to the struct.
 	*
 	* @param self		The struct for the interface being initialised
 	*/
