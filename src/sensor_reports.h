@@ -55,7 +55,7 @@ struct gyroscope_report {
 /**
  * @struct magnetic_field_report
  *
- * The calibrated magentic field sensor; calibrated for hard and soft iron effects such that the vector is aligned with the declination and heading of Earth's magnetic field. Untis are uTesla and the Q point is 4.
+ * The calibrated magnetic field sensor; calibrated for hard and soft iron effects such that the vector is aligned with the declination and heading of Earth's magnetic field. Units are uTesla and the Q point is 4.
  * 
  * @brief Holds the report data for the magnetic field.
  */
@@ -182,7 +182,7 @@ struct geomagnetic_rotation_vector_report {
 /**
  * @struct pressure_report
  *
- * Reports the atmoshperic pressure. Units are hectohascals and the Q points is 20.
+ * Reports the atmospheric pressure. Units are HPa and the Q points is 20.
  * 
  * @brief Holds the report data for the pressure.
  */
@@ -242,7 +242,7 @@ struct proximity_report {
 /**
  * @struct temperature_report
  *
- * Reports the ambient temperature. Units are in Celcius and the Q point is 7.
+ * Reports the ambient temperature. Units are in Celsius and the Q point is 7.
  * 
  * @brief Holds the report data for the temperature.
  */
@@ -639,7 +639,7 @@ struct optical_flow_report {};
 /**
  * @struct dead_reckoning_pose_report
  *
- * Provides the linear position, angular position, linear velocity, and angular velocity as determined by the Dead Reackoning system. The units and formats are as follows:
+ * Provides the linear position, angular position, linear velocity, and angular velocity as determined by the Dead Reckoning system. The units and formats are as follows:
  * - Timestamp: Units in microseconds
  * - Linear Position: Units in metres and a Q point of 15
  * - Angular Position: A unit quaternion and a Q point of 30

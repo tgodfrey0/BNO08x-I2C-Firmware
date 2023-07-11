@@ -89,7 +89,7 @@ struct sensor {
 	const uint8_t channel;		/**< The channel the sensor communicates on. */
 	const int8_t q_point;		/**< The Q point of the sensor. Values <0 indicate no Q point. */
 	bool enabled;		/**< Whether the sensor has been configured and enabled. */
-	union input_report input_report;		/**< Stores the retured data from the sensor. */
+	union input_report input_report;		/**< Stores the returned data from the sensor. */
 };
 
 //=================================================================================================//
@@ -99,12 +99,12 @@ struct sensor {
 /**
  * @brief Enable a sensor and populate the struct pointer.
  *
- * @param id		The ID of the sensor to enable
+ * @param sensor		The sensor to enable
  */
-bool enable_sensor(const enum SENSOR_ID id);
+bool enable_sensor(const struct sensor* sensor);
 
 /**
- * @brief Read a sensor and store the restult in the input report in the struct. 
+ * @brief Read a sensor and store the result in the input report in the struct. 
  *
  * @param sensor		The sensor struct to read
  */ 

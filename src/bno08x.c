@@ -8,3 +8,8 @@
 #include "bno08x.h"
 #include "sensor_reports.h"
 
+
+
+bool enable_sensor(const struct sensor* sensor){
+
+}
