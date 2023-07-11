@@ -761,16 +761,66 @@ $(document).ready(function(){initNavTree('sensors_8h_source.html',''); initResiz
 <div class="line"><a id="l00923" name="l00923"></a><span class="lineno">  923</span>    .q_point = 0,</div>
 <div class="line"><a id="l00924" name="l00924"></a><span class="lineno">  924</span>    .enabled = <span class="keyword">false</span>,</div>
 <div class="line"><a id="l00925" name="l00925"></a><span class="lineno">  925</span>    .input_report = (<span class="keyword">union </span><a class="code hl_union" href="unioninput__report.html">input_report</a>) {</div>
-<div class="line"><a id="l00926" name="l00926"></a><span class="lineno">  926</span>        </div>
-<div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span>    }</div>
-<div class="line"><a id="l00928" name="l00928"></a><span class="lineno">  928</span>}</div>
-<div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span> </div>
-<div class="line"><a id="l00937" name="l00937"></a><span class="lineno">  937</span><span class="keyword">const</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* motion_request;</div>
-<div class="line"><a id="l00938" name="l00938"></a><span class="lineno">  938</span> </div>
-<div class="line"><a id="l00946" name="l00946"></a><span class="lineno">  946</span><span class="keyword">const</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* optical_flow;</div>
-<div class="line"><a id="l00947" name="l00947"></a><span class="lineno">  947</span> </div>
-<div class="line"><a id="l00955" name="l00955"></a><span class="lineno">  955</span><span class="keyword">const</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* dead_reckoning_pose;</div>
-<div class="line"><a id="l00956" name="l00956"></a><span class="lineno">  956</span> </div>
+<div class="line"><a id="l00926" name="l00926"></a><span class="lineno">  926</span>        .gyro_integrated_rotation_vector = (<span class="keyword">struct </span><a class="code hl_struct" href="structgyro__integrated__rotation__vector__report.html">gyro_integrated_rotation_vector_report</a>) {</div>
+<div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span>            .i = 0,</div>
+<div class="line"><a id="l00928" name="l00928"></a><span class="lineno">  928</span>            .j = 0,</div>
+<div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span>            .k = 0,</div>
+<div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span>            .real = 0,</div>
+<div class="line"><a id="l00931" name="l00931"></a><span class="lineno">  931</span>            .x = 0,</div>
+<div class="line"><a id="l00932" name="l00932"></a><span class="lineno">  932</span>            .y = 0,</div>
+<div class="line"><a id="l00933" name="l00933"></a><span class="lineno">  933</span>            .z = 0</div>
+<div class="line"><a id="l00934" name="l00934"></a><span class="lineno">  934</span>        }</div>
+<div class="line"><a id="l00935" name="l00935"></a><span class="lineno">  935</span>    }</div>
+<div class="line"><a id="l00936" name="l00936"></a><span class="lineno">  936</span>};</div>
+<div class="line"><a id="l00937" name="l00937"></a><span class="lineno">  937</span> </div>
+<div class="line"><a id="l00945" name="l00945"></a><span class="lineno">  945</span><span class="keyword">const</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structmotion__request.html">motion_request</a> = &amp;(<span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>) {</div>
+<div class="line"><a id="l00946" name="l00946"></a><span class="lineno">  946</span>    .name = <span class="stringliteral">&quot;Motion Request&quot;</span>,</div>
+<div class="line"><a id="l00947" name="l00947"></a><span class="lineno">  947</span>    .id = MOTION_REQUEST,</div>
+<div class="line"><a id="l00948" name="l00948"></a><span class="lineno">  948</span>    .channel = 255,</div>
+<div class="line"><a id="l00949" name="l00949"></a><span class="lineno">  949</span>    .q_point = 0,</div>
+<div class="line"><a id="l00950" name="l00950"></a><span class="lineno">  950</span>    .enabled = <span class="keyword">false</span>,</div>
+<div class="line"><a id="l00951" name="l00951"></a><span class="lineno">  951</span>    .input_report = (<span class="keyword">union </span><a class="code hl_union" href="unioninput__report.html">input_report</a>) {</div>
+<div class="line"><a id="l00952" name="l00952"></a><span class="lineno">  952</span>        .motion_request = (<span class="keyword">struct </span><a class="code hl_struct" href="structmotion__request__report.html">motion_request_report</a>) {</div>
+<div class="line"><a id="l00953" name="l00953"></a><span class="lineno">  953</span>            .report_id = 0,</div>
+<div class="line"><a id="l00954" name="l00954"></a><span class="lineno">  954</span>            .seq_num = 0,</div>
+<div class="line"><a id="l00955" name="l00955"></a><span class="lineno">  955</span>            .status = 0,</div>
+<div class="line"><a id="l00956" name="l00956"></a><span class="lineno">  956</span>            .delay = 0,</div>
+<div class="line"><a id="l00957" name="l00957"></a><span class="lineno">  957</span>            .intent = 0,</div>
+<div class="line"><a id="l00958" name="l00958"></a><span class="lineno">  958</span>            .request = 0</div>
+<div class="line"><a id="l00959" name="l00959"></a><span class="lineno">  959</span>        }</div>
+<div class="line"><a id="l00960" name="l00960"></a><span class="lineno">  960</span>    }</div>
+<div class="line"><a id="l00961" name="l00961"></a><span class="lineno">  961</span>};</div>
+<div class="line"><a id="l00962" name="l00962"></a><span class="lineno">  962</span> </div>
+<div class="line"><a id="l00970" name="l00970"></a><span class="lineno">  970</span><span class="keyword">const</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structdead__reckoning__pose.html">dead_reckoning_pose</a> = &amp;(<span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>) {</div>
+<div class="line"><a id="l00971" name="l00971"></a><span class="lineno">  971</span>    .name = <span class="stringliteral">&quot;Dead Reckoning Pose&quot;</span>,</div>
+<div class="line"><a id="l00972" name="l00972"></a><span class="lineno">  972</span>    .id = DEAD_RECKONING_POSE,</div>
+<div class="line"><a id="l00973" name="l00973"></a><span class="lineno">  973</span>    .channel = 255,</div>
+<div class="line"><a id="l00974" name="l00974"></a><span class="lineno">  974</span>    .q_point = 0,</div>
+<div class="line"><a id="l00975" name="l00975"></a><span class="lineno">  975</span>    .enabled = <span class="keyword">false</span>,</div>
+<div class="line"><a id="l00976" name="l00976"></a><span class="lineno">  976</span>    .input_report = (<span class="keyword">union </span><a class="code hl_union" href="unioninput__report.html">input_report</a>) {</div>
+<div class="line"><a id="l00977" name="l00977"></a><span class="lineno">  977</span>        .dead_reckoning_pose = (<span class="keyword">struct </span><a class="code hl_struct" href="structdead__reckoning__pose__report.html">dead_reckoning_pose_report</a>) {</div>
+<div class="line"><a id="l00978" name="l00978"></a><span class="lineno">  978</span>            .report_id = 0,</div>
+<div class="line"><a id="l00979" name="l00979"></a><span class="lineno">  979</span>            .seq_num = 0,</div>
+<div class="line"><a id="l00980" name="l00980"></a><span class="lineno">  980</span>            .status = 0,</div>
+<div class="line"><a id="l00981" name="l00981"></a><span class="lineno">  981</span>            .delay = 0,</div>
+<div class="line"><a id="l00982" name="l00982"></a><span class="lineno">  982</span>            .timestamp = 0,</div>
+<div class="line"><a id="l00983" name="l00983"></a><span class="lineno">  983</span>            .x_linear_pos = 0,</div>
+<div class="line"><a id="l00984" name="l00984"></a><span class="lineno">  984</span>            .y_linear_pos = 0,</div>
+<div class="line"><a id="l00985" name="l00985"></a><span class="lineno">  985</span>            .z_linear_pos = 0,</div>
+<div class="line"><a id="l00986" name="l00986"></a><span class="lineno">  986</span>            .i_angular_pos = 0,</div>
+<div class="line"><a id="l00987" name="l00987"></a><span class="lineno">  987</span>            .j_angular_pos = 0,</div>
+<div class="line"><a id="l00988" name="l00988"></a><span class="lineno">  988</span>            .k_angular_pos = 0,</div>
+<div class="line"><a id="l00989" name="l00989"></a><span class="lineno">  989</span>            .real_angular_pos = 0,</div>
+<div class="line"><a id="l00990" name="l00990"></a><span class="lineno">  990</span>            .x_linear_vel = 0,</div>
+<div class="line"><a id="l00991" name="l00991"></a><span class="lineno">  991</span>            .y_linear_vel = 0,</div>
+<div class="line"><a id="l00992" name="l00992"></a><span class="lineno">  992</span>            .z_linear_vel = 0,</div>
+<div class="line"><a id="l00993" name="l00993"></a><span class="lineno">  993</span>            .x_angular_vel = 0,</div>
+<div class="line"><a id="l00994" name="l00994"></a><span class="lineno">  994</span>            .y_angular_vel = 0,</div>
+<div class="line"><a id="l00995" name="l00995"></a><span class="lineno">  995</span>            .z_angular_vel = 0</div>
+<div class="line"><a id="l00996" name="l00996"></a><span class="lineno">  996</span>        }</div>
+<div class="line"><a id="l00997" name="l00997"></a><span class="lineno">  997</span>    }</div>
+<div class="line"><a id="l00998" name="l00998"></a><span class="lineno">  998</span>};</div>
+<div class="line"><a id="l00999" name="l00999"></a><span class="lineno">  999</span> </div>
 <div class="ttc" id="astructaccelerometer__report_html"><div class="ttname"><a href="structaccelerometer__report.html">accelerometer_report</a></div><div class="ttdoc">Holds the report data for the accelerometer.</div><div class="ttdef"><b>Definition:</b> sensor_reports.h:28</div></div>
 <div class="ttc" id="astructaccelerometer_html"><div class="ttname"><a href="structaccelerometer.html">accelerometer</a></div><div class="ttdoc">The accelerometer instance.</div></div>
 <div class="ttc" id="astructambient__light__report_html"><div class="ttname"><a href="structambient__light__report.html">ambient_light_report</a></div><div class="ttdoc">Holds the report data for the ambient light.</div><div class="ttdef"><b>Definition:</b> sensor_reports.h:204</div></div>
@@ -781,6 +831,8 @@ $(document).ready(function(){initNavTree('sensors_8h_source.html',''); initResiz
 <div class="ttc" id="astructarvr__stabilised__rotation__vector_html"><div class="ttname"><a href="structarvr__stabilised__rotation__vector.html">arvr_stabilised_rotation_vector</a></div><div class="ttdoc">The ARVR stabilised rotation vector instance.</div></div>
 <div class="ttc" id="astructcircle__detector__report_html"><div class="ttname"><a href="structcircle__detector__report.html">circle_detector_report</a></div><div class="ttdoc">Holds the report data for the circle detector.</div><div class="ttdef"><b>Definition:</b> sensor_reports.h:537</div></div>
 <div class="ttc" id="astructcircle__detector_html"><div class="ttname"><a href="structcircle__detector.html">circle_detector</a></div><div class="ttdoc">The circle detector instance.</div></div>
+<div class="ttc" id="astructdead__reckoning__pose__report_html"><div class="ttname"><a href="structdead__reckoning__pose__report.html">dead_reckoning_pose_report</a></div><div class="ttdoc">Holds the report data for the Dead Reckoning position report.</div><div class="ttdef"><b>Definition:</b> sensor_reports.h:651</div></div>
+<div class="ttc" id="astructdead__reckoning__pose_html"><div class="ttname"><a href="structdead__reckoning__pose.html">dead_reckoning_pose</a></div><div class="ttdoc">The dead reckoning pose instance.</div></div>
 <div class="ttc" id="astructflip__detector__report_html"><div class="ttname"><a href="structflip__detector__report.html">flip_detector_report</a></div><div class="ttdoc">Holds the report data for the flip detector.</div><div class="ttdef"><b>Definition:</b> sensor_reports.h:430</div></div>
 <div class="ttc" id="astructflip__detector_html"><div class="ttname"><a href="structflip__detector.html">flip_detector</a></div><div class="ttdoc">The flip detector instance.</div></div>
 <div class="ttc" id="astructgame__rotation__vector__report_html"><div class="ttname"><a href="structgame__rotation__vector__report.html">game_rotation_vector_report</a></div><div class="ttdoc">Holds the report data for the game rotation vector.</div><div class="ttdef"><b>Definition:</b> sensor_reports.h:152</div></div>
@@ -789,6 +841,7 @@ $(document).ready(function(){initNavTree('sensors_8h_source.html',''); initResiz
 <div class="ttc" id="astructgeomagnetic__rotation__vector_html"><div class="ttname"><a href="structgeomagnetic__rotation__vector.html">geomagnetic_rotation_vector</a></div><div class="ttdoc">The geomagnetic rotation vector instance.</div></div>
 <div class="ttc" id="astructgravity__report_html"><div class="ttname"><a href="structgravity__report.html">gravity_report</a></div><div class="ttdoc">Holds the report data for the gravity.</div><div class="ttdef"><b>Definition:</b> sensor_reports.h:115</div></div>
 <div class="ttc" id="astructgravity_html"><div class="ttname"><a href="structgravity.html">gravity</a></div><div class="ttdoc">The gravity instance.</div></div>
+<div class="ttc" id="astructgyro__integrated__rotation__vector__report_html"><div class="ttname"><a href="structgyro__integrated__rotation__vector__report.html">gyro_integrated_rotation_vector_report</a></div><div class="ttdoc">Holds the report data for the gyro-integrated rotation vector.</div><div class="ttdef"><b>Definition:</b> sensor_reports.h:604</div></div>
 <div class="ttc" id="astructgyro__integrated__rotation__vector_html"><div class="ttname"><a href="structgyro__integrated__rotation__vector.html">gyro_integrated_rotation_vector</a></div><div class="ttdoc">The gyro-integrated rotation vector instance.</div></div>
 <div class="ttc" id="astructgyroscope__report_html"><div class="ttname"><a href="structgyroscope__report.html">gyroscope_report</a></div><div class="ttdoc">Holds the report data for the gyroscope.</div><div class="ttdef"><b>Definition:</b> sensor_reports.h:45</div></div>
 <div class="ttc" id="astructgyroscope_html"><div class="ttname"><a href="structgyroscope.html">gyroscope</a></div><div class="ttdoc">The gyroscope instance.</div></div>
@@ -800,6 +853,8 @@ $(document).ready(function(){initNavTree('sensors_8h_source.html',''); initResiz
 <div class="ttc" id="astructlinear__acceleration_html"><div class="ttname"><a href="structlinear__acceleration.html">linear_acceleration</a></div><div class="ttdoc">The linear acceleration instance.</div></div>
 <div class="ttc" id="astructmagnetic__field__report_html"><div class="ttname"><a href="structmagnetic__field__report.html">magnetic_field_report</a></div><div class="ttdoc">Holds the report data for the magnetic field.</div><div class="ttdef"><b>Definition:</b> sensor_reports.h:62</div></div>
 <div class="ttc" id="astructmagnetic__field_html"><div class="ttname"><a href="structmagnetic__field.html">magnetic_field</a></div><div class="ttdoc">The magnetic field instance.</div></div>
+<div class="ttc" id="astructmotion__request__report_html"><div class="ttname"><a href="structmotion__request__report.html">motion_request_report</a></div><div class="ttdoc">Holds the report data for the motion request.</div><div class="ttdef"><b>Definition:</b> sensor_reports.h:621</div></div>
+<div class="ttc" id="astructmotion__request_html"><div class="ttname"><a href="structmotion__request.html">motion_request</a></div><div class="ttdoc">The motion request instance.</div></div>
 <div class="ttc" id="astructpersonal__activity__classifier__report_html"><div class="ttname"><a href="structpersonal__activity__classifier__report.html">personal_activity_classifier_report</a></div><div class="ttdoc">Holds the report data for the personal activity classifier.</div><div class="ttdef"><b>Definition:</b> sensor_reports.h:475</div></div>
 <div class="ttc" id="astructpersonal__activity__classifier_html"><div class="ttname"><a href="structpersonal__activity__classifier.html">personal_activity_classifier</a></div><div class="ttdoc">The personal activity classifier instance.</div></div>
 <div class="ttc" id="astructpickup__detector__report_html"><div class="ttname"><a href="structpickup__detector__report.html">pickup_detector_report</a></div><div class="ttdoc">Holds the report data for the pickup detector.</div><div class="ttdef"><b>Definition:</b> sensor_reports.h:445</div></div>

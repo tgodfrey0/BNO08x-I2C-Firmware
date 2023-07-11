@@ -719,7 +719,7 @@ union input_report {
   struct arvr_stabilised_rotation_vector_report arvr_stabilised_rotation_vector;    /**< Stores the ARVR stabilised rotation vector report. */
   struct arvr_stabilised_game_rotation_vector_report arvr_stabilised_game_rotation_vector;    /**< Stores the ARVR stabilised game rotation vector report. */
   struct gyro_integrated_rotation_vector_report gyro_integrated_rotation_vector;    /**< Stores the gyro-integrated rotation vector report. */
-  struct arvr_stabilised_game_rotation_vector_report arvr_stabilised_game_rotation_vector;    /**< Stores the ARVR stabilised game rotation vector report. */
-  struct arvr_stabilised_game_rotation_vector_report arvr_stabilised_game_rotation_vector;    /**< Stores the ARVR stabilised game rotation vector report. */
+  struct motion_request_report motion_request;    /**< Stores the motion request report. */
+  struct dead_reckoning_pose_report dead_reckoning_pose;    /**< Stores the dead reckoning pose report. */
 };
 

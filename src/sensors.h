@@ -923,34 +923,77 @@ const struct sensor* gyro_integrated_rotation_vector = &(struct sensor) {
 	.q_point = 0,
 	.enabled = false,
 	.input_report = (union input_report) {
-		
+		.gyro_integrated_rotation_vector = (struct gyro_integrated_rotation_vector_report) {
+			.i = 0,
+			.j = 0,
+			.k = 0,
+			.real = 0,
+			.x = 0,
+			.y = 0,
+			.z = 0
+		}
 	}
-}
+};
 
 /**
- * @struct accelerometer
+ * @struct motion_request
  * 
- * @brief The accelerometer instance.
+ * @brief The motion request instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* motion_request;
+const struct sensor* motion_request = &(struct sensor) {
+	.name = "Motion Request",
+	.id = MOTION_REQUEST,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.motion_request = (struct motion_request_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.intent = 0,
+			.request = 0
+		}
+	}
+};
 
 /**
- * @struct accelerometer
+ * @struct dead_reckoning_pose
  * 
- * @brief The accelerometer instance.
+ * @brief The dead reckoning pose instance.
  * 
  * @ingroup Sensors
  */
-const struct sensor* optical_flow;
-
-/**
- * @struct accelerometer
- * 
- * @brief The accelerometer instance.
- * 
- * @ingroup Sensors
- */
-const struct sensor* dead_reckoning_pose;
+const struct sensor* dead_reckoning_pose = &(struct sensor) {
+	.name = "Dead Reckoning Pose",
+	.id = DEAD_RECKONING_POSE,
+	.channel = 255,
+	.q_point = 0,
+	.enabled = false,
+	.input_report = (union input_report) {
+		.dead_reckoning_pose = (struct dead_reckoning_pose_report) {
+			.report_id = 0,
+			.seq_num = 0,
+			.status = 0,
+			.delay = 0,
+			.timestamp = 0,
+			.x_linear_pos = 0,
+			.y_linear_pos = 0,
+			.z_linear_pos = 0,
+			.i_angular_pos = 0,
+			.j_angular_pos = 0,
+			.k_angular_pos = 0,
+			.real_angular_pos = 0,
+			.x_linear_vel = 0,
+			.y_linear_vel = 0,
+			.z_linear_vel = 0,
+			.x_angular_vel = 0,
+			.y_angular_vel = 0,
+			.z_angular_vel = 0
+		}
+	}
+};
 

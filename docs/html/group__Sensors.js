@@ -34,5 +34,7 @@ var group__Sensors =
     [ "heart_rate_monitor", "structheart__rate__monitor.html", null ],
     [ "arvr_stabilised_rotation_vector", "structarvr__stabilised__rotation__vector.html", null ],
     [ "arvr_stabilised_game_rotation_vector", "structarvr__stabilised__game__rotation__vector.html", null ],
-    [ "gyro_integrated_rotation_vector", "structgyro__integrated__rotation__vector.html", null ]
+    [ "gyro_integrated_rotation_vector", "structgyro__integrated__rotation__vector.html", null ],
+    [ "motion_request", "structmotion__request.html", null ],
+    [ "dead_reckoning_pose", "structdead__reckoning__pose.html", null ]
 ];
