@@ -718,5 +718,8 @@ union input_report {
   struct heart_rate_monitor_report heart_rate_monitor;    /**< Stores the hear rate monitor report. */
   struct arvr_stabilised_rotation_vector_report arvr_stabilised_rotation_vector;    /**< Stores the ARVR stabilised rotation vector report. */
   struct arvr_stabilised_game_rotation_vector_report arvr_stabilised_game_rotation_vector;    /**< Stores the ARVR stabilised game rotation vector report. */
+  struct gyro_integrated_rotation_vector_report gyro_integrated_rotation_vector;    /**< Stores the gyro-integrated rotation vector report. */
+  struct arvr_stabilised_game_rotation_vector_report arvr_stabilised_game_rotation_vector;    /**< Stores the ARVR stabilised game rotation vector report. */
+  struct arvr_stabilised_game_rotation_vector_report arvr_stabilised_game_rotation_vector;    /**< Stores the ARVR stabilised game rotation vector report. */
 };
 
