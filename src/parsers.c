@@ -163,8 +163,6 @@ void parse_dead_reckoning_pose_data(struct i2c_message msg){
   warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
 }
 
-
-
 void parse_msg(struct i2c_message msg){
   info("Message received from sensor with msg.payload[0] %d", msg.payload[0]);
   switch (msg.payload[0]) {
