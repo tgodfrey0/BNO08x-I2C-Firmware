@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.c']]]
+  ['enable_5fsensor_0',['enable_sensor',['../bno08x_8h.html#a00c7a3721ffe437a13e8da61c2a7fecd',1,'bno08x.c']]]
 ];

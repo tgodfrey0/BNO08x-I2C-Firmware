@@ -1,9 +1,13 @@
-/****************************************************************************************************
-* @file i2c.h
-* @brief I2C related definitions
-*
-* @author Toby Godfrey
-****************************************************************************************************/
+/**
+ * @file i2c.h
+ * @author Toby Godfrey (me@tgodfrey.com)
+ * @brief I2C related definitions.
+ * @version 0.1
+ * @date 2023-07-12
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 
 #pragma once
 
@@ -16,7 +20,6 @@
 //=================================================================================================//
 
 extern const uint8_t BNO08x_ADDR;		/**< The address of the sensor (given SA0 is low). */
-extern uint8_t sequence_number;		/**< The sequence number for outbound packets. */
 
 //=================================================================================================//
 //		Enums
@@ -97,10 +100,13 @@ struct i2c_interface {
 //=================================================================================================//
 
 /**
- * @brief Return the sequence number then increment it.
+ * @brief Get the next sequence number to use.
  * 
- * @return uint8_t		The sequence number to use
+ * The sequence number is used for outbound packets.
+ * 
+ * @return uint8_t the sequence number to use for the next message
  */
-inline uint8_t get_seq_num(){
+static inline uint8_t get_seq_num(){
+	static uint8_t sequence_number = 0;
 	return (sequence_number++);
 }

@@ -1,9 +1,13 @@
-/****************************************************************************************************
-* @file sensor_reports.h
-* @brief Definitions for all input reports available from the BNO08x.
-*
-* @author Toby Godfrey
-****************************************************************************************************/
+/**
+ * @file sensor_reports.h
+ * @author Toby Godfrey (me@tgodfrey.com)
+ * @brief Definitions for all input reports available from the BNO08x.
+ * @version 0.1
+ * @date 2023-07-12
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 
 #pragma once
 

@@ -1,9 +1,13 @@
-/****************************************************************************************************
-* @file bno08x.h
-* @brief BNO08x related definitions.
-*
-* @author Toby Godfrey
-****************************************************************************************************/
+/**
+ * @file bno08x.h
+ * @author Toby Godfrey (me@tgodfrey.com)
+ * @brief Defines the top level entities for the library.
+ * @version 0.1
+ * @date 2023-07-12
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 
 /**
  * @mainpage BNO08x I2C Library
@@ -12,11 +16,11 @@
  * 
  * @section instructions Instructions for Use
  * 
- * In order to use the library, several functions must be declared before use. These are the I2C functions found in the \ref i2c_interface. The initialise function must also be run before any communication takes place.
+ * In order to use the library, several functions must be declared before use. These are the I2C functions found in the \ref i2c_interface "i2c_interface". The initialise function must also be run before any communication takes place.
  * 
  * A `MAX_PAYLOAD_SIZE` value must also be defined.
  * 
- * Before sensors can be read, the \ref init_sensors function must be run.
+ * Before sensors can be read, the sensor initialisation function must be run (found in \ref sensors.h).
  */
 
 /*! 
@@ -110,21 +114,21 @@ struct sensor {
 //=================================================================================================//
 
 /**
- * @fn enable_sensor
+ * @brief Enables a specified sensor with a fixed report rate.
  * 
- * @brief Enable a sensor and populate the struct pointer.
- *
- * @param i2c		The I2C interface struct to send the data on
- * @param sensor		The sensor to enable
- * @param sample_rate_ms		The sample rate of the sensor in microseconds
+ * @param i2c is the I2C interface to communicate with the sensor on
+ * @param sensor is the sensor to enable
+ * @param sample_rate_ms is the desired report rate in miliseconds 
+ * @return `true` if the sensor was successfully enabled
+ * @return `false` if the sensor could not be enabled
  */
 bool enable_sensor(const struct i2c_interface i2c, struct sensor* sensor, uint32_t sample_rate_ms);
 
 /**
- * @fn read_sensor
+ * @brief Read the latest sensor report on the bus.
  * 
- * @brief Read the next sensor message on the bus and store the result in the input report in the struct. 
- *
- * @param i2c		The I2C interface struct to send the data on
- */ 
+ * @param i2c is the I2C interface to communicate with the sensor on
+ * @return `true`	if the read was successful
+ * @return `false` if an error occurred
+ */
 bool read_sensor(const struct i2c_interface i2c);

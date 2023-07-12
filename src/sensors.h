@@ -1,9 +1,13 @@
-/****************************************************************************************************
-* @file sensors.h
-* @brief Global sensor struct instances.
-*
-* @author Toby Godfrey
-****************************************************************************************************/
+/**
+ * @file sensors.h
+ * @author Toby Godfrey (me@tgodfrey.com)
+ * @brief Sensor related definitions.
+ * @version 0.1
+ * @date 2023-07-12
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 
 #pragma once
 
@@ -366,7 +370,7 @@ extern struct sensor dead_reckoning_pose;
 //=================================================================================================//
 
 /**
- * @brief Initialise the struct for each sensor.
+ * @brief Initialises the struct for each sensor.
  * 
  * This function populates the struct for each sensor with default value. This should be run once before any other operations.
  * 
