@@ -1,6 +1,6 @@
 var structi2c__interface =
 [
-    [ "baud_rate_hz", "structi2c__interface.html#a00cf77886a8476a35f990d052e440aa8", null ],
+    [ "baud_rate_hz", "structi2c__interface.html#a618628e93521717de29a2d007da2bdf3", null ],
     [ "initialise", "structi2c__interface.html#a2b029a80e90944058da87d6544294625", null ],
     [ "initialised", "structi2c__interface.html#ad86e7ae1ce88f3a7655a02558318afc3", null ],
     [ "read", "structi2c__interface.html#ae039547c05b5ebf04aecbc4baac3d51c", null ],

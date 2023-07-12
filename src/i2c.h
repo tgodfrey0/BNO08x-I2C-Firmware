@@ -61,7 +61,7 @@ struct i2c_message {
 struct i2c_interface {
 	uint8_t sda_pin;				/**< The SDA pin number */
 	uint8_t scl_pin;				/**< The SCL pin number */
-	uint8_t baud_rate_hz;		/**< The desired I2C bus speed in Hertz */
+	uint32_t baud_rate_hz;		/**< The desired I2C bus speed in Hertz */
 	bool initialised;				/**< Stores true if the interface has been successfully initialised */
 
 	/**

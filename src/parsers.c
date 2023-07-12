@@ -12,6 +12,7 @@
 
 void parse_msg(struct i2c_message msg){
   uint8_t id = msg.payload[0];
+  info("Message received from sensor with ID %d", id);
   switch (id) {
     case ACCELEROMETER:
       break;
