@@ -1,5 +1,5 @@
 /****************************************************************************************************
-* \@file parsers.c
+* @file parsers.c
 * @brief BNO08x frame parsers.
 *
 * @author Toby Godfrey
