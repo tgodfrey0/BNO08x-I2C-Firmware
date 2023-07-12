@@ -6,6 +6,6 @@ enum LEVEL {
   CRIT = 2
 };
 
-void info(const char* message);
-void warn(const char* message);
-void crit(const char* message);
+void info(const char* message, ...);
+void warn(const char* message, ...);
+void crit(const char* message, ...);

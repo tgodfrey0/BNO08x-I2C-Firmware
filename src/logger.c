@@ -1,3 +1,4 @@
+#include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -6,26 +7,52 @@
 
 static enum LEVEL log_level = INFO;
 
-void logger(enum LEVEL level, const char* tag, const char* message) {
-  if(level < log_level){
+void info(const char* msg, ...){
+  if(INFO < log_level){
     return;
   }
 
-   time_t now;
-   time(&now);
-   printf("%s [%s]: %s\n", ctime(&now), tag, message);
+  va_list argp;
+  va_start(argp, msg);
+
+  time_t now;
+  time(&now);
+  printf("%s [INFO]: ", ctime(&now));
+  vprintf(msg, argp);
+
+  va_end(argp);
 }
 
-void info(const char* message){
-  logger(INFO, "INFO", message);
+void warn(const char* msg, ...){
+  if(WARN < log_level){
+    return;
+  }
+
+  va_list argp;
+  va_start(argp, msg);
+
+  time_t now;
+  time(&now);
+  printf("%s [WARN]: ", ctime(&now));
+  vprintf(msg, argp);
+
+  va_end(argp);
 }
 
-void warn(const char* message){
-  logger(WARN, "WARN", message);
-}
+void crit(const char* msg, ...){
+  if(CRIT < log_level){
+    return;
+  }
 
-void crit(const char* message){
-  logger(CRIT, "CRIT", message);
+  va_list argp;
+  va_start(argp, msg);
+
+  time_t now;
+  time(&now);
+  printf("%s [CRIT]: ", ctime(&now));
+  vprintf(msg, argp);
+
+  va_end(argp);
 }
 
 void set_log_level(enum LEVEL level){

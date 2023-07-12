@@ -9,6 +9,7 @@
 
 #include "bno08x.h"
 #include "i2c.h"
+#include "logger.h"
 #include "sensor_reports.h"
 
 const uint8_t BNO08x_ADDR = 0x4A; 
@@ -53,10 +54,10 @@ bool enable_sensor(const struct i2c_interface i2c, struct sensor* sensor, uint32
   });
 
   if(res == ERROR_GENERIC || res == ERROR_TIMEOUT){
-    printf("%s could not be enabled\n", sensor->name);
+    warn("%s could not be enabled\n", sensor->name);
     return false;
   } else {
-    printf("%s has been successfully enabled\n", sensor->name);
+    warn("%s has been successfully enabled\n", sensor->name);
     sensor->enabled = true;
     return true;
   }
@@ -111,7 +112,7 @@ bool read_sensor(const struct i2c_interface i2c, struct sensor* sensor){
     return false;
   }
 
-  
+
 
   return true;
 }
