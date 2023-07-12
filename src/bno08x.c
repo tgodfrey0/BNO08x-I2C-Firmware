@@ -10,6 +10,7 @@
 #include "bno08x.h"
 #include "i2c.h"
 #include "logger.h"
+#include "parsers.h"
 #include "sensor_reports.h"
 
 const uint8_t BNO08x_ADDR = 0x4A; 
@@ -57,14 +58,13 @@ bool enable_sensor(const struct i2c_interface i2c, struct sensor* sensor, uint32
     warn("%s could not be enabled\n", sensor->name);
     return false;
   } else {
-    warn("%s has been successfully enabled\n", sensor->name);
+    info("%s has been successfully enabled\n", sensor->name);
     sensor->enabled = true;
     return true;
   }
 }
 
-
-bool read_sensor(const struct i2c_interface i2c, struct sensor* sensor){
+bool read_sensors(const struct i2c_interface i2c){
   enum I2C_RESPONSE res;
 
 #if !defined(MAX_PAYLOAD_SIZE)
@@ -83,12 +83,12 @@ bool read_sensor(const struct i2c_interface i2c, struct sensor* sensor){
   res = i2c.read(BNO08x_ADDR, &header, 4);
 
   if(res == ERROR_GENERIC || ERROR_TIMEOUT){
-    printf("Failed to read header\n");
+    warn("Failed to read header\n");
     return false;
   }
 
   if(header.length != 4){
-    printf("Failed to read full header. 4 bytes should be read, but %d bytes were read\n", header.length);
+    warn("Failed to read full header. 4 bytes should be read, but %d bytes were read\n", header.length);
     return false;
   }
 
@@ -103,16 +103,16 @@ bool read_sensor(const struct i2c_interface i2c, struct sensor* sensor){
   res = i2c.read(BNO08x_ADDR, &cargo, cargo_length);
 
   if(res == ERROR_GENERIC || res == ERROR_TIMEOUT){
-    printf("Failed to read cargo\n");
+    warn("Failed to read cargo\n");
     return false;
   }
 
   if(cargo.length != cargo_length){
-    printf("Failed to read full cargo, expected %d bytes but received %d bytes\n", cargo_length, cargo.length);
+    warn("Failed to read full cargo, expected %d bytes but received %d bytes\n", cargo_length, cargo.length);
     return false;
   }
 
-
+  parse_msg(cargo);
 
   return true;
 }

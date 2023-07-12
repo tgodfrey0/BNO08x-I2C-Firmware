@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"structpickup__detector.html":[0,1,25],
 "structpickup__detector__report.html":[1,0,41],
 "structpickup__detector__report.html#a1319adb54584145ee6d543618f078823":[1,0,41,1],
 "structpickup__detector__report.html#a70fbd315df33bf9039e036725b569e7f":[1,0,41,0],

@@ -67,8 +67,9 @@ var NAVTREEINDEX0 =
 "logger_8h_source.html":[2,0,0,3],
 "modules.html":[0],
 "pages.html":[],
-"sensor__reports_8h_source.html":[2,0,0,4],
-"sensors_8h_source.html":[2,0,0,5],
+"parsers_8h_source.html":[2,0,0,4],
+"sensor__reports_8h_source.html":[2,0,0,5],
+"sensors_8h_source.html":[2,0,0,6],
 "structaccelerometer.html":[0,1,0],
 "structaccelerometer__report.html":[1,0,1],
 "structaccelerometer__report.html#a70fbd315df33bf9039e036725b569e7f":[1,0,1,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "structpersonal__activity__classifier__report.html#a70fbd315df33bf9039e036725b569e7f":[1,0,39,1],
 "structpersonal__activity__classifier__report.html#a725a13d8d43f65c0f5e8adc271f71573":[1,0,39,4],
 "structpersonal__activity__classifier__report.html#ac117f9690109b1aeb49da826aff1cca6":[1,0,39,5],
-"structpersonal__activity__classifier__report.html#ade818037fd6c985038ff29656089758d":[1,0,39,6],
-"structpickup__detector.html":[0,1,25]
+"structpersonal__activity__classifier__report.html#ade818037fd6c985038ff29656089758d":[1,0,39,6]
 };

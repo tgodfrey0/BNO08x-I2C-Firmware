@@ -11,7 +11,7 @@
 #include "sensor_reports.h"
 
 /*! 
-	\defgroup Sensors Structs storing the instance of each sensor
+	\defgroup Sensors Sensor instances
 */
 
 //=================================================================================================//

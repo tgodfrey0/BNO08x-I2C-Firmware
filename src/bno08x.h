@@ -110,9 +110,8 @@ bool enable_sensor(const struct i2c_interface i2c, struct sensor* sensor, uint32
 /**
  * @fn read_sensor
  * 
- * @brief Read a sensor and store the result in the input report in the struct. 
+ * @brief Read the next sensor message on the bus and store the result in the input report in the struct. 
  *
  * @param i2c		The I2C interface struct to send the data on
- * @param sensor		The sensor struct to read
  */ 
-bool read_sensor(const struct i2c_interface i2c, struct sensor* sensor);
+bool read_sensor(const struct i2c_interface i2c);
