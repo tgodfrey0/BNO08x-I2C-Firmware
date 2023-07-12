@@ -11,6 +11,7 @@
 #include "i2c.h"
 #include "logger.h"
 #include "parsers.h"
+#include "sensors.h"
 #include "sensor_reports.h"
 
 const uint8_t BNO08x_ADDR = 0x4A; 
