@@ -10,11 +10,13 @@
  * 
  * This library is designed to be platform independent and allow for a microcontroller to communicate with a BNO08x sensor over I2C. 
  * 
- * @section Instructions for Use
+ * @section instructions Instructions for Use
  * 
- * In order to use the library, several functions must be declared before use. These are the I2C functions found in the \ref i2c_interface.
+ * In order to use the library, several functions must be declared before use. These are the I2C functions found in the \ref i2c_interface. The initialise function must also be run before any communication takes place.
  * 
- * A MAX_PAYLOAD_SIZE value must be defined also,
+ * A MAX_PAYLOAD_SIZE value must also be defined.
+ * 
+ * Before sensors can be read, the \ref init_sensors() function must be run.
  * 
  */
 

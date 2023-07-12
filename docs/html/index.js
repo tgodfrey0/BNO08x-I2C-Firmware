@@ -1,4 +1,4 @@
 var index =
 [
-    [ "for Use", "index.html#Instructions", null ]
+    [ "Instructions for Use", "index.html#instructions", null ]
 ];

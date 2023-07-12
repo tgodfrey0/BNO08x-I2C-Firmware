@@ -65,7 +65,7 @@ var NAVTREEINDEX0 =
 "i2c_8h_source.html":[3,0,0,2],
 "index.html":[],
 "index.html":[0],
-"index.html#Instructions":[0,0],
+"index.html#instructions":[0,0],
 "logger_8h_source.html":[3,0,0,3],
 "modules.html":[1],
 "pages.html":[],

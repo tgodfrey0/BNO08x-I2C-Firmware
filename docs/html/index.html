@@ -94,10 +94,11 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>This library is designed to be platform independent and allow for a microcontroller to communicate with a BNO08x sensor over I2C.</p>
-<h1><a class="anchor" id="Instructions"></a>
-for Use</h1>
-<p>In order to use the library, several functions must be declared before use. These are the I2C functions found in the <a class="el" href="structi2c__interface.html">i2c_interface</a>.</p>
-<p>A MAX_PAYLOAD_SIZE value must be defined also, </p>
+<h1><a class="anchor" id="instructions"></a>
+Instructions for Use</h1>
+<p>In order to use the library, several functions must be declared before use. These are the I2C functions found in the <a class="el" href="structi2c__interface.html">i2c_interface</a>. The initialise function must also be run before any communication takes place.</p>
+<p>A MAX_PAYLOAD_SIZE value must also be defined.</p>
+<p>Before sensors can be read, the init_sensors() function must be run. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
