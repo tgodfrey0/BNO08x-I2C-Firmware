@@ -361,5 +361,15 @@ extern const struct sensor motion_request;
  */
 extern const struct sensor dead_reckoning_pose;
 
+//=================================================================================================//
+//		Functions
+//=================================================================================================//
+
+/**
+ * @brief Initialise the struct for each sensor.
+ * 
+ * This function populates the struct for each sensor with default value. This should be run once before any other operations.
+ * 
+ */
 void init_sensors();
 
