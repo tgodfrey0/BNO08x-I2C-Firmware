@@ -5,6 +5,18 @@
 * @author Toby Godfrey
 ****************************************************************************************************/
 
+/**
+ * @mainpage BNO08x I2C Library
+ * 
+ * This library is designed to be platform independent and allow for a microcontroller to communicate with a BNO08x sensor over I2C. 
+ * 
+ * @section Instructions for Use
+ * 
+ * In order to use the library, several functions must be declared before use. These are the I2C functions found in the \ref i2c_interface.
+ * 
+ * A MAX_PAYLOAD_SIZE value must be defined also,
+ * 
+ */
 
 /*! 
 	\defgroup Enumerations Public enumeration types

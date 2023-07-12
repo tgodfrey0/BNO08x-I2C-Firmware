@@ -4,7 +4,8 @@ var indexSectionsWithContent =
   1: "acdfghilmoprstu",
   2: "abcdefghijklmnpqrstuvwxyz",
   3: "is",
-  4: "ps"
+  4: "ps",
+  5: "b"
 };
 
 var indexSectionNames =
@@ -13,7 +14,8 @@ var indexSectionNames =
   1: "classes",
   2: "variables",
   3: "enums",
-  4: "groups"
+  4: "groups",
+  5: "pages"
 };
 
 var indexSectionLabels =
@@ -22,6 +24,7 @@ var indexSectionLabels =
   1: "Data Structures",
   2: "Variables",
   3: "Enumerations",
-  4: "Modules"
+  4: "Modules",
+  5: "Pages"
 };
 

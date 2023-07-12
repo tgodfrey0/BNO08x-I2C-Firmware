@@ -12,6 +12,6 @@
 /**
  * @brief Receives a raw frame and forwards it to the sensor-specific function
  * 
- * @param msg   The raw data frame
+ * @param msg   The raw data frame to process
  */
 void parse_msg(struct i2c_message msg);
