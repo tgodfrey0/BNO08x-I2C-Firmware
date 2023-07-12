@@ -17,15 +17,11 @@ uint8_t sequence_number = 0;
 bool enable_sensor(const struct i2c_interface i2c, struct sensor* sensor, uint32_t sample_rate_ms){
   uint64_t period_us = sample_rate_ms * 1000;
 
-  uint8_t len = 4;
-
-  uint8_t period[len];
+  uint8_t period[4];
   period[0] = period_us & 0xFF;
   period[1] = (period_us >> 8) & 0xFF;
   period[2] = (period_us >> 16) & 0xFF;
   period[3] = (period_us >> 24) & 0xFF;
-
-  len = 0x15;
 
   uint8_t pkt[] = {
     0x15, // Length LSB
@@ -53,7 +49,7 @@ bool enable_sensor(const struct i2c_interface i2c, struct sensor* sensor, uint32
 
   enum I2C_RESPONSE res = i2c.write(BNO08x_ADDR, &(struct i2c_message) {
     .payload = pkt,
-    .length = &len
+    .length = 0x15
   });
 
   if(res == ERROR_GENERIC || res == ERROR_TIMEOUT){
@@ -67,9 +63,8 @@ bool enable_sensor(const struct i2c_interface i2c, struct sensor* sensor, uint32
 }
 
 
-bool read_sensor(struct sensor* sensor){
-  
-  uint8_t header[4];
+bool read_sensor(const struct i2c_interface i2c, struct sensor* sensor){
+  enum I2C_RESPONSE res;
 
 #if !defined(MAX_PAYLOAD_SIZE)
   #warning MAX_PAYLOAD_SIZE required
@@ -77,7 +72,46 @@ bool read_sensor(struct sensor* sensor){
   return false;
 #endif
 
+  uint8_t header_content[4];
 
+  struct i2c_message header = {
+    .payload = header_content,
+    .length = 0
+  };
 
-  return false;
+  res = i2c.read(BNO08x_ADDR, &header, 4);
+
+  if(res == ERROR_GENERIC || ERROR_TIMEOUT){
+    printf("Failed to read header\n");
+    return false;
+  }
+
+  if(header.length != 4){
+    printf("Failed to read full header. 4 bytes should be read, but %d bytes were read\n", header.length);
+    return false;
+  }
+
+  uint16_t cargo_length = header.payload[0] | (header.payload[1] << 8);
+  uint8_t cargo_content[cargo_length];
+
+  struct i2c_message cargo = {
+    .payload = cargo_content,
+    .length = 0
+  };
+
+  res = i2c.read(BNO08x_ADDR, &cargo, cargo_length);
+
+  if(res == ERROR_GENERIC || res == ERROR_TIMEOUT){
+    printf("Failed to read cargo\n");
+    return false;
+  }
+
+  if(cargo.length != cargo_length){
+    printf("Failed to read full cargo, expected %d bytes but received %d bytes\n", cargo_length, cargo.length);
+    return false;
+  }
+
+  
+
+  return true;
 }

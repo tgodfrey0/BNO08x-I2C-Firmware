@@ -64,10 +64,11 @@ var NAVTREEINDEX0 =
 "group__Sensors.html":[0,1],
 "i2c_8h_source.html":[2,0,0,2],
 "index.html":[],
+"logger_8h_source.html":[2,0,0,3],
 "modules.html":[0],
 "pages.html":[],
-"sensor__reports_8h_source.html":[2,0,0,3],
-"sensors_8h_source.html":[2,0,0,4],
+"sensor__reports_8h_source.html":[2,0,0,4],
+"sensors_8h_source.html":[2,0,0,5],
 "structaccelerometer.html":[0,1,0],
 "structaccelerometer__report.html":[1,0,1],
 "structaccelerometer__report.html#a70fbd315df33bf9039e036725b569e7f":[1,0,1,0],
@@ -210,8 +211,8 @@ var NAVTREEINDEX0 =
 "structi2c__interface.html#ad86e7ae1ce88f3a7655a02558318afc3":[1,0,28,2],
 "structi2c__interface.html#ae039547c05b5ebf04aecbc4baac3d51c":[1,0,28,3],
 "structi2c__message.html":[1,0,29],
-"structi2c__message.html#a503afcd7f8134fc802daf761891e9590":[1,0,29,0],
 "structi2c__message.html#aa5cbdad2c57e9b3f949e1a4d96382b66":[1,0,29,1],
+"structi2c__message.html#ab2b3adeb2a67e656ff030b56727fd0ac":[1,0,29,0],
 "structlinear__acceleration.html":[0,1,3],
 "structlinear__acceleration__report.html":[1,0,32],
 "structlinear__acceleration__report.html#a70fbd315df33bf9039e036725b569e7f":[1,0,32,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "structpersonal__activity__classifier__report.html#a725a13d8d43f65c0f5e8adc271f71573":[1,0,39,4],
 "structpersonal__activity__classifier__report.html#ac117f9690109b1aeb49da826aff1cca6":[1,0,39,5],
 "structpersonal__activity__classifier__report.html#ade818037fd6c985038ff29656089758d":[1,0,39,6],
-"structpickup__detector.html":[0,1,25],
-"structpickup__detector__report.html":[1,0,41]
+"structpickup__detector.html":[0,1,25]
 };

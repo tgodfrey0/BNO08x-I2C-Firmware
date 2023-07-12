@@ -47,7 +47,7 @@ enum I2C_RESPONSE {
  */
 struct i2c_message {
 	uint8_t* payload;		/**< The data itself */
-	uint8_t* length;		/**< The length of the data */
+	uint8_t length;		/**< The length of the data */
 };
 
 /**
