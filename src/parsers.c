@@ -169,124 +169,121 @@ void parse_msg(struct i2c_message msg){
   info("Message received from sensor with msg.payload[0] %d", msg.payload[0]);
   switch (msg.payload[0]) {
     case ACCELEROMETER:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_accelerometer_data(msg);
       break;
     case GYROSCOPE:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_gyroscope_data(msg);
       break;
     case MAGNETIC_FIELD:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_magnetic_field_data(msg);
       break;
     case LINEAR_ACCELERATION:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_linear_acceleration_data(msg);
       break;
     case ROTATION_VECTOR:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_rotation_vector_data(msg);
       break;
     case GRAVITY:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_gravity_data(msg);
       break;
     case UNCALIBRATED_GYROSCOPE:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_uncalibrated_gyroscope_data(msg);
       break;
     case GAME_ROTATION_VECTOR:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_game_rotation_vector_data(msg);
       break;
     case GEOMAGNETIC_ROTATION_VECTOR:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_geomagnetic_rotation_vector_data(msg);
       break;
     case PRESSURE:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_pressure_data(msg);
       break;
     case AMBIENT_LIGHT:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_ambient_light_data(msg);
       break;
     case HUMIDITY:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_humidity_data(msg);
       break;
     case PROXIMITY:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_proximity_data(msg);
       break;
     case TEMPERATURE:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_temperature_data(msg);
       break;
     case UNCALIBRATED_MAGNETIC_FIELD:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_uncalibrated_magnetic_field_data(msg);
       break;
     case TAP_DETECTOR:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_tap_detector_data(msg);
       break;
     case STEP_COUNTER:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_step_counter_data(msg);
       break;
     case SIGNIFICANT_MOTION:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_significant_motion_data(msg);
       break;
     case STABILITY_CLASSIFIER:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_stability_classifier_data(msg);
       break;
     case RAW_ACCELEROMETER:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_raw_accelerometer_data(msg);
       break;
     case RAW_GYROSCOPE:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_raw_gyroscope_data(msg);
       break;
     case RAW_MAGNETOMETER:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
-      break;
-    case RESERVED:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_raw_magnetometer_data(msg);
       break;
     case STEP_DETECTOR:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_step_detector_data(msg);
       break;
     case SHAKE_DETECTOR:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_shake_detector_data(msg);
       break;
     case FLIP_DETECTOR:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_flip_detector_data(msg);
       break;
     case PICKUP_DETECTOR:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_pickup_detector_data(msg);
       break;
     case STABILITY_DETECTOR:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_stability_detector_data(msg);
       break;
     case PERSONAL_ACTIVITY_CLASSIFIER:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_personal_activity_classifier_data(msg);
       break;
     case SLEEP_DETECTOR:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_sleep_detector_data(msg);
       break;
     case TILT_DETECTOR:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_tilt_detector_data(msg);
       break;
     case POCKET_DETECTOR:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_pocket_detector_data(msg);
       break;
     case CIRCLE_DETECTOR:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_circle_detector_data(msg);
       break;
     case HEART_RATE_MONITOR:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_heart_rate_monitor_data(msg);
       break;
     case ARVR_STABILISED_ROTATION_VECTOR:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_arvr_stabilised_rotation_vector_data(msg);
       break;
     case ARVR_STABILISED_GAME_ROTATION_VECTOR:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_arvr_stabilised_game_rotation_vector_data(msg);
       break;
     case GYRO_INTEGRATED_ROTATION_VECTOR:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_gyro_integrated_rotation_vector_data(msg);
       break;
     case MOTION_REQUEST:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_motion_request_data(msg);
       break;
     case OPTICAL_FLOW:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      warn("Optical flow frames are not supported\n");
       break;
     case DEAD_RECKONING_POSE:
-      warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+      parse_dead_reckoning_pose_data(msg);
       break;
     default:
       warn("Unrecognised sensor msg.payload[0] - %d", msg.payload[0]);
