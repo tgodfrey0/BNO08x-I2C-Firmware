@@ -9,7 +9,7 @@
 
 void init_sensors(){
 
-  const struct sensor accelerometer = {
+  struct sensor accelerometer = {
     .name = "Accelerometer",
     .id = ACCELEROMETER,
     .channel = 255,
@@ -28,7 +28,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor gyroscope = {
+  struct sensor gyroscope = {
     .name = "Gyroscope",
     .id = GYROSCOPE,
     .channel = 255,
@@ -47,7 +47,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor magnetic_field = {
+  struct sensor magnetic_field = {
     .name = "Magnetic Field",
     .id = MAGNETIC_FIELD,
     .channel = 255,
@@ -66,7 +66,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor linear_acceleration = {
+  struct sensor linear_acceleration = {
     .name = "Linear Acceleration",
     .id = LINEAR_ACCELERATION,
     .channel = 255,
@@ -85,7 +85,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor rotation_vector = {
+  struct sensor rotation_vector = {
     .name = "Rotation Vector",
     .id = ROTATION_VECTOR,
     .channel = 255,
@@ -106,7 +106,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor gravity = {
+  struct sensor gravity = {
     .name = "Gravity",
     .id = GRAVITY,
     .channel = 255,
@@ -125,7 +125,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor uncalibrated_gyroscope = {
+  struct sensor uncalibrated_gyroscope = {
     .name = "Uncalibrated Gyroscope",
     .id = UNCALIBRATED_GYROSCOPE,
     .channel = 255,
@@ -147,7 +147,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor game_rotation_vector = &(struct sensor){
+  struct sensor game_rotation_vector = &(struct sensor){
     .name = "Game Rotation Vector",
     .id = GAME_ROTATION_VECTOR,
     .channel = 255,
@@ -167,7 +167,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor geomagnetic_rotation_vector = {
+  struct sensor geomagnetic_rotation_vector = {
     .name = "Geomagnetic Rotation Vector",
     .id = GEOMAGNETIC_ROTATION_VECTOR,
     .channel = 255,
@@ -188,7 +188,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor pressure = {
+  struct sensor pressure = {
     .name = "Pressure",
     .id = PRESSURE,
     .channel = 255,
@@ -205,7 +205,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor ambient_light = {
+  struct sensor ambient_light = {
     .name = "Ambient Light",
     .id = AMBIENT_LIGHT,
     .channel = 255,
@@ -222,7 +222,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor humidity = {
+  struct sensor humidity = {
     .name = "Humidity",
     .id = HUMIDITY,
     .channel = 255,
@@ -239,7 +239,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor proximity = {
+  struct sensor proximity = {
     .name = "Proximity",
     .id = PROXIMITY,
     .channel = 255,
@@ -256,7 +256,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor temperature = {
+  struct sensor temperature = {
     .name = "Temperature",
     .id = TEMPERATURE,
     .channel = 255,
@@ -273,7 +273,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor uncalibrated_magnetic_field = {
+  struct sensor uncalibrated_magnetic_field = {
     .name = "Uncalibrated Magnetic Field",
     .id = UNCALIBRATED_MAGNETIC_FIELD,
     .channel = 255,
@@ -295,7 +295,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor tap_detector = {
+  struct sensor tap_detector = {
     .name = "Tap Detector",
     .id = TAP_DETECTOR,
     .channel = 255,
@@ -312,7 +312,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor step_counter = {
+  struct sensor step_counter = {
     .name = "Step Counter",
     .id = STEP_COUNTER,
     .channel = 255,
@@ -329,7 +329,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor significant_motion = {
+  struct sensor significant_motion = {
     .name = "Significant Motion",
     .id = SIGNIFICANT_MOTION,
     .channel = 255,
@@ -346,7 +346,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor stability_classifier = {
+  struct sensor stability_classifier = {
     .name = "Stability Classifier",
     .id = STABILITY_CLASSIFIER,
     .channel = 255,
@@ -363,7 +363,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor raw_accelerometer = {
+  struct sensor raw_accelerometer = {
     .name = "Raw Accelerometer",
     .id = RAW_ACCELEROMETER,
     .channel = 255,
@@ -383,7 +383,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor raw_gyroscope = {
+  struct sensor raw_gyroscope = {
     .name = "Raw Gyroscope",
     .id = RAW_GYROSCOPE,
     .channel = 255,
@@ -403,7 +403,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor raw_magnetometer = {
+  struct sensor raw_magnetometer = {
     .name = "Raw Magnetometer",
     .id = RAW_MAGNETOMETER,
     .channel = 255,
@@ -423,7 +423,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor step_detector = {
+  struct sensor step_detector = {
     .name = "Step Detector",
     .id = STEP_DETECTOR,
     .channel = 0,
@@ -440,7 +440,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor shake_detector = {
+  struct sensor shake_detector = {
     .name = "Shake Detector",
     .id = SHAKE_DETECTOR,
     .channel = 255,
@@ -457,7 +457,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor flip_detector = {
+  struct sensor flip_detector = {
     .name = "Flip Detector",
     .id = FLIP_DETECTOR,
     .channel = 255,
@@ -474,7 +474,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor pickup_detector = {
+  struct sensor pickup_detector = {
     .name = "Pickup Detector",
     .id = PICKUP_DETECTOR,
     .channel = 255,
@@ -491,7 +491,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor stability_detector = {
+  struct sensor stability_detector = {
     .name = "Stability Detector",
     .id = STABILITY_DETECTOR,
     .channel = 255,
@@ -508,7 +508,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor personal_activity_classifier = {
+  struct sensor personal_activity_classifier = {
     .name = "Personal Activity Classifier",
     .id = PERSONAL_ACTIVITY_CLASSIFIER,
     .channel = 255,
@@ -527,7 +527,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor sleep_detector = {
+  struct sensor sleep_detector = {
     .name = "Sleep Detector",
     .id = SLEEP_DETECTOR,
     .channel = 255,
@@ -544,7 +544,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor tilt_detector = {
+  struct sensor tilt_detector = {
     .name = "Tilt Detector",
     .id = TILT_DETECTOR,
     .channel = 255,
@@ -561,7 +561,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor pocket_detector = {
+  struct sensor pocket_detector = {
     .name = "Pocket Detector",
     .id = POCKET_DETECTOR,
     .channel = 255,
@@ -578,7 +578,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor circle_detector = {
+  struct sensor circle_detector = {
     .name = "Circle Detector",
     .id = CIRCLE_DETECTOR,
     .channel = 255,
@@ -595,7 +595,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor heart_rate_monitor = {
+  struct sensor heart_rate_monitor = {
     .name = "Heart Rate Monitor",
     .id = HEART_RATE_MONITOR,
     .channel = 255,
@@ -612,7 +612,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor arvr_stabilised_rotation_vector = {
+  struct sensor arvr_stabilised_rotation_vector = {
     .name = "ARVR Stabilised Rotation Vector",
     .id = ARVR_STABILISED_ROTATION_VECTOR,
     .channel = 255,
@@ -633,7 +633,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor arvr_stabilised_game_rotation_vector = {
+  struct sensor arvr_stabilised_game_rotation_vector = {
     .name = "ARVR Stabilised Game Rotation Vector",
     .id = ARVR_STABILISED_GAME_ROTATION_VECTOR,
     .channel = 255,
@@ -653,7 +653,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor gyro_integrated_rotation_vector = {
+  struct sensor gyro_integrated_rotation_vector = {
     .name = "Gyro-Integrated Rotation Vector",
     .id = GYRO_INTEGRATED_ROTATION_VECTOR,
     .channel = 255,
@@ -672,7 +672,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor motion_request = {
+  struct sensor motion_request = {
     .name = "Motion Request",
     .id = MOTION_REQUEST,
     .channel = 255,
@@ -690,7 +690,7 @@ void init_sensors(){
     }
   };
 
-  const struct sensor dead_reckoning_pose = {
+  struct sensor dead_reckoning_pose = {
     .name = "Dead Reckoning Pose",
     .id = DEAD_RECKONING_POSE,
     .channel = 255,

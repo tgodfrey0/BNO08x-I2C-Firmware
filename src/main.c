@@ -1,7 +1,6 @@
 #include <stdio.h>
 
 #include "defs.h"
-
 #include "bno08x.h"
 #include "i2c.h"
 

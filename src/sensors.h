@@ -25,7 +25,7 @@
  * 
  * @ingroup Sensors
  */
-extern const struct sensor accelerometer;
+extern struct sensor accelerometer;
 
 /**
  * @struct gyroscope
@@ -34,7 +34,7 @@ extern const struct sensor accelerometer;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor gyroscope;
+extern struct sensor gyroscope;
 
 
 /**
@@ -44,7 +44,7 @@ extern const struct sensor gyroscope;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor magnetic_field;
+extern struct sensor magnetic_field;
 
 /**
  * @struct linear_acceleration
@@ -53,7 +53,7 @@ extern const struct sensor magnetic_field;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor linear_acceleration;
+extern struct sensor linear_acceleration;
 
 /**
  * @struct rotation_vector
@@ -62,7 +62,7 @@ extern const struct sensor linear_acceleration;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor rotation_vector;
+extern struct sensor rotation_vector;
 
 /**
  * @struct gravity
@@ -71,7 +71,7 @@ extern const struct sensor rotation_vector;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor gravity;
+extern struct sensor gravity;
 
 /**
  * @struct uncalibrated_gyroscope
@@ -80,7 +80,7 @@ extern const struct sensor gravity;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor uncalibrated_gyroscope;
+extern struct sensor uncalibrated_gyroscope;
 
 /**
  * @struct game_rotation_vector
@@ -89,7 +89,7 @@ extern const struct sensor uncalibrated_gyroscope;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor game_rotation_vector;
+extern struct sensor game_rotation_vector;
 
 /**
  * @struct geomagnetic_rotation_vector
@@ -98,7 +98,7 @@ extern const struct sensor game_rotation_vector;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor geomagnetic_rotation_vector;
+extern struct sensor geomagnetic_rotation_vector;
 
 /**
  * @struct pressure
@@ -107,7 +107,7 @@ extern const struct sensor geomagnetic_rotation_vector;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor pressure;
+extern struct sensor pressure;
 
 /**
  * @struct ambient_light
@@ -116,7 +116,7 @@ extern const struct sensor pressure;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor ambient_light;
+extern struct sensor ambient_light;
 
 /**
  * @struct humidity
@@ -125,7 +125,7 @@ extern const struct sensor ambient_light;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor humidity;
+extern struct sensor humidity;
 
 /**
  * @struct proximity
@@ -134,7 +134,7 @@ extern const struct sensor humidity;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor proximity;
+extern struct sensor proximity;
 
 /**
  * @struct temperature
@@ -143,7 +143,7 @@ extern const struct sensor proximity;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor temperature;
+extern struct sensor temperature;
 
 /**
  * @struct uncalibrated_magnetic_field
@@ -152,7 +152,7 @@ extern const struct sensor temperature;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor uncalibrated_magnetic_field;
+extern struct sensor uncalibrated_magnetic_field;
 
 /**
  * @struct tap_detector
@@ -161,7 +161,7 @@ extern const struct sensor uncalibrated_magnetic_field;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor tap_detector;
+extern struct sensor tap_detector;
 
 /**
  * @struct step_counter
@@ -170,7 +170,7 @@ extern const struct sensor tap_detector;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor step_counter;
+extern struct sensor step_counter;
 
 /**
  * @struct significant_motion
@@ -179,7 +179,7 @@ extern const struct sensor step_counter;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor significant_motion;
+extern struct sensor significant_motion;
 
 /**
  * @struct stability_classifier
@@ -188,7 +188,7 @@ extern const struct sensor significant_motion;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor stability_classifier;
+extern struct sensor stability_classifier;
 
 /**
  * @struct raw_accelerometer
@@ -197,7 +197,7 @@ extern const struct sensor stability_classifier;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor raw_accelerometer;
+extern struct sensor raw_accelerometer;
 
 /**
  * @struct raw_gyroscope
@@ -206,7 +206,7 @@ extern const struct sensor raw_accelerometer;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor raw_gyroscope;
+extern struct sensor raw_gyroscope;
 
 /**
  * @struct raw_magnetometer
@@ -215,7 +215,7 @@ extern const struct sensor raw_gyroscope;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor raw_magnetometer;
+extern struct sensor raw_magnetometer;
 
 /**
  * @struct step_detector
@@ -224,7 +224,7 @@ extern const struct sensor raw_magnetometer;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor step_detector;
+extern struct sensor step_detector;
 
 /**
  * @struct shake_detector
@@ -233,7 +233,7 @@ extern const struct sensor step_detector;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor shake_detector;
+extern struct sensor shake_detector;
 
 /**
  * @struct flip_detector
@@ -242,7 +242,7 @@ extern const struct sensor shake_detector;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor flip_detector;
+extern struct sensor flip_detector;
 
 /**
  * @struct pickup_detector
@@ -251,7 +251,7 @@ extern const struct sensor flip_detector;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor pickup_detector;
+extern struct sensor pickup_detector;
 
 /**
  * @struct stability_detector
@@ -260,7 +260,7 @@ extern const struct sensor pickup_detector;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor stability_detector;
+extern struct sensor stability_detector;
 
 /**
  * @struct personal_activity_classifier
@@ -269,7 +269,7 @@ extern const struct sensor stability_detector;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor personal_activity_classifier;
+extern struct sensor personal_activity_classifier;
 
 /**
  * @struct sleep_detector
@@ -278,7 +278,7 @@ extern const struct sensor personal_activity_classifier;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor sleep_detector;
+extern struct sensor sleep_detector;
 
 /**
  * @struct tilt_detector
@@ -287,7 +287,7 @@ extern const struct sensor sleep_detector;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor tilt_detector;
+extern struct sensor tilt_detector;
 
 /**
  * @struct pocket_detector
@@ -296,7 +296,7 @@ extern const struct sensor tilt_detector;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor pocket_detector;
+extern struct sensor pocket_detector;
 
 /**
  * @struct circle_detector
@@ -305,7 +305,7 @@ extern const struct sensor pocket_detector;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor circle_detector;
+extern struct sensor circle_detector;
 
 /**
  * @struct heart_rate_monitor
@@ -314,7 +314,7 @@ extern const struct sensor circle_detector;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor heart_rate_monitor;
+extern struct sensor heart_rate_monitor;
 
 /**
  * @struct arvr_stabilised_rotation_vector
@@ -323,7 +323,7 @@ extern const struct sensor heart_rate_monitor;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor arvr_stabilised_rotation_vector;
+extern struct sensor arvr_stabilised_rotation_vector;
 
 /**
  * @struct arvr_stabilised_game_rotation_vector
@@ -332,7 +332,7 @@ extern const struct sensor arvr_stabilised_rotation_vector;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor arvr_stabilised_game_rotation_vector;
+extern struct sensor arvr_stabilised_game_rotation_vector;
 
 /**
  * @struct gyro_integrated_rotation_vector
@@ -341,7 +341,7 @@ extern const struct sensor arvr_stabilised_game_rotation_vector;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor gyro_integrated_rotation_vector;
+extern struct sensor gyro_integrated_rotation_vector;
 
 /**
  * @struct motion_request
@@ -350,7 +350,7 @@ extern const struct sensor gyro_integrated_rotation_vector;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor motion_request;
+extern struct sensor motion_request;
 
 /**
  * @struct dead_reckoning_pose
@@ -359,7 +359,7 @@ extern const struct sensor motion_request;
  * 
  * @ingroup Sensors
  */
-extern const struct sensor dead_reckoning_pose;
+extern struct sensor dead_reckoning_pose;
 
 //=================================================================================================//
 //		Functions

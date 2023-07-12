@@ -14,9 +14,9 @@
  * 
  * In order to use the library, several functions must be declared before use. These are the I2C functions found in the \ref i2c_interface. The initialise function must also be run before any communication takes place.
  * 
- * A \code MAX_PAYLOAD_SIZE \endcode value must also be defined.
+ * A `MAX_PAYLOAD_SIZE` value must also be defined.
  * 
- * Before sensors can be read, the \ref init_sensors() function must be run.
+ * Before sensors can be read, the \ref init_sensors function must be run.
  */
 
 /*! 

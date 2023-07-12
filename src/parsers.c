@@ -11,8 +11,16 @@
 #include "parsers.h"
 #include "sensors.h"
 
+uint16_t read_two_bytes(uint8_t* p){
+  return (*p | (*(p + 1) << 8));
+}
+
+uint32_t read_four_bytes(uint8_t* p){
+  return (*p | (*(p + 1) << 8) | (*(p + 2) << 16) | (*(p + 3) << 24));
+}
+
 void parse_accelerometer_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  accelerometer.input_report.accelerometer.report_id = msg.payload[0];
 }
 
 void parse_gyroscope_data(struct i2c_message msg){
