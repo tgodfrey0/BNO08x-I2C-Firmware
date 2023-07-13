@@ -128,9 +128,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a1d5d3cd271a769f6a97e7593b624a656"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bno08x_8h.html#a1d5d3cd271a769f6a97e7593b624a656">enable_sensor</a> (const struct <a class="el" href="structi2c__interface.html">i2c_interface</a> i2c, enum <a class="el" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a> id, uint32_t sample_rate_ms)</td></tr>
 <tr class="memdesc:a1d5d3cd271a769f6a97e7593b624a656"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables a specified sensor with a fixed report rate.  <br /></td></tr>
 <tr class="separator:a1d5d3cd271a769f6a97e7593b624a656"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9525704d6c0800d55595d6dead18b0c7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bno08x_8h.html#a9525704d6c0800d55595d6dead18b0c7">read_sensor</a> (const struct <a class="el" href="structi2c__interface.html">i2c_interface</a> i2c)</td></tr>
-<tr class="memdesc:a9525704d6c0800d55595d6dead18b0c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the latest sensor report on the bus.  <br /></td></tr>
-<tr class="separator:a9525704d6c0800d55595d6dead18b0c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fe53c189b9a6802d63543d9fd4bbd30"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bno08x_8h.html#a3fe53c189b9a6802d63543d9fd4bbd30">read_sensors</a> (const struct <a class="el" href="structi2c__interface.html">i2c_interface</a> i2c)</td></tr>
+<tr class="memdesc:a3fe53c189b9a6802d63543d9fd4bbd30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the latest sensor report on the bus.  <br /></td></tr>
+<tr class="separator:a3fe53c189b9a6802d63543d9fd4bbd30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a4a2fbc309874626ccc066f9273e07b"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structsensor.html">sensor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bno08x_8h.html#a3a4a2fbc309874626ccc066f9273e07b">get_sensor</a> (enum <a class="el" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a> id)</td></tr>
 <tr class="memdesc:a3a4a2fbc309874626ccc066f9273e07b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the sensor struct from a given ID.  <br /></td></tr>
 <tr class="separator:a3a4a2fbc309874626ccc066f9273e07b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -243,14 +243,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a9525704d6c0800d55595d6dead18b0c7" name="a9525704d6c0800d55595d6dead18b0c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9525704d6c0800d55595d6dead18b0c7">&#9670;&#160;</a></span>read_sensor()</h2>
+<a id="a3fe53c189b9a6802d63543d9fd4bbd30" name="a3fe53c189b9a6802d63543d9fd4bbd30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fe53c189b9a6802d63543d9fd4bbd30">&#9670;&#160;</a></span>read_sensors()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool read_sensor </td>
+          <td class="memname">bool read_sensors </td>
           <td>(</td>
           <td class="paramtype">const struct <a class="el" href="structi2c__interface.html">i2c_interface</a>&#160;</td>
           <td class="paramname"><em>i2c</em></td><td>)</td>

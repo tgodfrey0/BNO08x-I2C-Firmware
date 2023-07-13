@@ -72,7 +72,7 @@ int main(){
 	enable_sensor(i2c, ROTATION_VECTOR, 100);
 
 	for(;;){
-		if(read_sensor(i2c)) print_last_frame();
+		if(read_sensors(i2c)) print_last_frame();
 	}
 	
 	return 0;

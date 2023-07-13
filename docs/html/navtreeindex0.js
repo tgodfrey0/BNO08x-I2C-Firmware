@@ -4,7 +4,7 @@ var NAVTREEINDEX0 =
 "bno08x_8h.html":[3,0,0,0],
 "bno08x_8h.html#a1d5d3cd271a769f6a97e7593b624a656":[3,0,0,0,2],
 "bno08x_8h.html#a3a4a2fbc309874626ccc066f9273e07b":[3,0,0,0,3],
-"bno08x_8h.html#a9525704d6c0800d55595d6dead18b0c7":[3,0,0,0,5],
+"bno08x_8h.html#a3fe53c189b9a6802d63543d9fd4bbd30":[3,0,0,0,5],
 "bno08x_8h.html#abcc9a057fb9f5df6fc44080e1c5a10f6":[3,0,0,0,4],
 "bno08x_8h_source.html":[3,0,0,0],
 "classes.html":[2,1],

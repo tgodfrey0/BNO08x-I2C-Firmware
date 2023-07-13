@@ -141,7 +141,7 @@ bool enable_sensor(const struct i2c_interface i2c, enum SENSOR_ID id, uint32_t s
  * @return `true`	if the read was successful
  * @return `false` if an error occurred
  */
-bool read_sensor(const struct i2c_interface i2c);
+bool read_sensors(const struct i2c_interface i2c);
 
 /**
  * @brief Get the sensor struct from a given ID.
