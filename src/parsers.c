@@ -5,34 +5,102 @@
 * @author Toby Godfrey
 ****************************************************************************************************/
 
+#include <stdio.h>
+
 #include "bno08x.h"
 #include "i2c.h"
 #include "logger.h"
 #include "parsers.h"
+#include "q_points.h"
 #include "sensors.h"
 
-uint16_t read_two_bytes(uint8_t* p){
+float scale_q(uint8_t q){
+  if(q == 0) return 1;
+  return (1.0f / (1 << q));
+}
+
+uint16_t read_16(uint8_t* p){
   return (*p | (*(p + 1) << 8));
 }
 
-uint32_t read_four_bytes(uint8_t* p){
+float read_16_scale(uint8_t* p, uint8_t q){
+  return (read_16(p) * scale_q(q));
+}
+
+uint32_t read_32(uint8_t* p){
   return (*p | (*(p + 1) << 8) | (*(p + 2) << 16) | (*(p + 3) << 24));
 }
 
+float read_32_scale(uint8_t* p, uint8_t q){
+  return (read_32(p) * scale_q(q));
+}
+
 void parse_accelerometer_data(struct i2c_message msg){
+  if(msg.length != 10){
+    warn("Invalid accelerometer report, expected 10 bytes, received %d bytes\n", msg.length);
+    return;
+  }
+
   accelerometer.input_report.accelerometer.report_id = msg.payload[0];
+  accelerometer.input_report.accelerometer.seq_num = msg.payload[1];
+  accelerometer.input_report.accelerometer.status = msg.payload[2];
+  accelerometer.input_report.accelerometer.delay = msg.payload[3];
+  accelerometer.input_report.accelerometer.x = read_16_scale(&msg.payload[4], Q_ACCELEROMETER);
+  accelerometer.input_report.accelerometer.y = read_16_scale(&msg.payload[6], Q_ACCELEROMETER);
+  accelerometer.input_report.accelerometer.z = read_16_scale(&msg.payload[8], Q_ACCELEROMETER);
+
+  printf("Successfully parsed accelerometer data\n");
 }
 
 void parse_gyroscope_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  if(msg.length != 10){
+    warn("Invalid gyroscope report, expected 10 bytes, received %d bytes\n", msg.length);
+    return;
+  }
+
+  gyroscope.input_report.gyroscope.report_id = msg.payload[0];
+  gyroscope.input_report.gyroscope.seq_num = msg.payload[1];
+  gyroscope.input_report.gyroscope.status = msg.payload[2];
+  gyroscope.input_report.gyroscope.delay = msg.payload[3];
+  gyroscope.input_report.gyroscope.x = read_16_scale(&msg.payload[4], Q_GYROSCOPE);
+  gyroscope.input_report.gyroscope.y = read_16_scale(&msg.payload[6], Q_GYROSCOPE);
+  gyroscope.input_report.gyroscope.z = read_16_scale(&msg.payload[8], Q_GYROSCOPE);
+
+  printf("Successfully parsed gyroscope data\n");
 }
 
 void parse_magnetic_field_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  if(msg.length != 10){
+    warn("Invalid magnetic field report, expected 10 bytes, received %d bytes\n", msg.length);
+    return;
+  }
+
+  magnetic_field.input_report.magnetic_field.report_id = msg.payload[0];
+  magnetic_field.input_report.magnetic_field.seq_num = msg.payload[1];
+  magnetic_field.input_report.magnetic_field.status = msg.payload[2];
+  magnetic_field.input_report.magnetic_field.delay = msg.payload[3];
+  magnetic_field.input_report.magnetic_field.x = read_16_scale(&msg.payload[4], Q_MAGNETIC_FIELD);
+  magnetic_field.input_report.magnetic_field.y = read_16_scale(&msg.payload[6], Q_MAGNETIC_FIELD);
+  magnetic_field.input_report.magnetic_field.z = read_16_scale(&msg.payload[8], Q_MAGNETIC_FIELD);
+
+  printf("Successfully parsed magnetic field data\n");
 }
 
 void parse_linear_acceleration_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  if(msg.length != 10){
+    warn("Invalid linear acceleration report, expected 10 bytes, received %d bytes\n", msg.length);
+    return;
+  }
+
+  linear_acceleration.input_report.linear_acceleration.report_id = msg.payload[0];
+  linear_acceleration.input_report.linear_acceleration.seq_num = msg.payload[1];
+  linear_acceleration.input_report.linear_acceleration.status = msg.payload[2];
+  linear_acceleration.input_report.linear_acceleration.delay = msg.payload[3];
+  linear_acceleration.input_report.linear_acceleration.x = read_16_scale(&msg.payload[4], Q_LINEAR_ACCELERATION);
+  linear_acceleration.input_report.linear_acceleration.y = read_16_scale(&msg.payload[6], Q_LINEAR_ACCELERATION);
+  linear_acceleration.input_report.linear_acceleration.z = read_16_scale(&msg.payload[8], Q_LINEAR_ACCELERATION);
+
+  printf("Successfully parsed linear acceleration data\n");
 }
 
 void parse_rotation_vector_data(struct i2c_message msg){

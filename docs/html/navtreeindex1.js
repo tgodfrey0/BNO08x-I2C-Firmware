@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"structmotion__request.html":[1,1,36],
 "structmotion__request__report.html":[2,0,36],
 "structmotion__request__report.html#a27e37ac3aba98d0c4009819e8dce35ed":[2,0,36,1],
 "structmotion__request__report.html#a4b3fd0df70d658055a7acf59d2783863":[2,0,36,3],
@@ -91,7 +92,6 @@ var NAVTREEINDEX1 =
 "structsensor.html#a5d61fdce1be542abed960dd7d2f68cf9":[2,0,56,2],
 "structsensor.html#a8740ba80e30dd75e71d09fa1dcf04f3d":[2,0,56,1],
 "structsensor.html#a8f8f80d37794cde9472343e4487ba3eb":[2,0,56,4],
-"structsensor.html#aaf5084f4159dd8e5e8ad7446241194bf":[2,0,56,5],
 "structsensor.html#adb2bff821836a28632fdc702826fef1c":[2,0,56,3],
 "structshake__detector.html":[1,1,23],
 "structshake__detector__report.html":[2,0,58],

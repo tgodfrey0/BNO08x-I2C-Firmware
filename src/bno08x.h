@@ -104,7 +104,6 @@ struct sensor {
 	const char* name;		/**< A human-readable name for the sensor. Useful for outputting results. */
 	const enum SENSOR_ID id;		/**< The sensor ID. This should be the same as the report_id in the report returned from the sensor. */
 	const uint8_t channel;		/**< The channel the sensor communicates on. */
-	const int8_t q_point;		/**< The Q point of the sensor. Values <0 indicate no Q point. */
 	bool enabled;		/**< Whether the sensor has been configured and enabled. */
 	union input_report input_report;		/**< Stores the returned data from the sensor. */
 };

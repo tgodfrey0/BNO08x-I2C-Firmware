@@ -6,7 +6,6 @@ void init_sensors(){
     .name = "Accelerometer",
     .id = ACCELEROMETER,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .accelerometer = (struct accelerometer_report) {
@@ -25,7 +24,6 @@ void init_sensors(){
     .name = "Gyroscope",
     .id = GYROSCOPE,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .gyroscope = (struct gyroscope_report) {
@@ -44,7 +42,6 @@ void init_sensors(){
     .name = "Magnetic Field",
     .id = MAGNETIC_FIELD,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .magnetic_field = (struct magnetic_field_report) {
@@ -63,7 +60,6 @@ void init_sensors(){
     .name = "Linear Acceleration",
     .id = LINEAR_ACCELERATION,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .linear_acceleration = (struct linear_acceleration_report) {
@@ -82,7 +78,6 @@ void init_sensors(){
     .name = "Rotation Vector",
     .id = ROTATION_VECTOR,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .rotation_vector = (struct rotation_vector_report) {
@@ -103,7 +98,6 @@ void init_sensors(){
     .name = "Gravity",
     .id = GRAVITY,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .gravity = (struct gravity_report) {
@@ -122,7 +116,6 @@ void init_sensors(){
     .name = "Uncalibrated Gyroscope",
     .id = UNCALIBRATED_GYROSCOPE,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .uncalibrated_gyroscope = (struct uncalibrated_gyroscope_report) {
@@ -144,7 +137,6 @@ void init_sensors(){
     .name = "Game Rotation Vector",
     .id = GAME_ROTATION_VECTOR,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .game_rotation_vector = (struct game_rotation_vector_report) {
@@ -164,7 +156,6 @@ void init_sensors(){
     .name = "Geomagnetic Rotation Vector",
     .id = GEOMAGNETIC_ROTATION_VECTOR,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .geomagnetic_rotation_vector = (struct geomagnetic_rotation_vector_report) {
@@ -185,7 +176,6 @@ void init_sensors(){
     .name = "Pressure",
     .id = PRESSURE,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .pressure = (struct pressure_report) {
@@ -202,7 +192,6 @@ void init_sensors(){
     .name = "Ambient Light",
     .id = AMBIENT_LIGHT,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .ambient_light = (struct ambient_light_report) {
@@ -219,7 +208,6 @@ void init_sensors(){
     .name = "Humidity",
     .id = HUMIDITY,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .humidity = (struct humidity_report) {
@@ -236,7 +224,6 @@ void init_sensors(){
     .name = "Proximity",
     .id = PROXIMITY,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .proximity = (struct proximity_report) {
@@ -253,7 +240,6 @@ void init_sensors(){
     .name = "Temperature",
     .id = TEMPERATURE,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .temperature = (struct temperature_report) {
@@ -270,7 +256,6 @@ void init_sensors(){
     .name = "Uncalibrated Magnetic Field",
     .id = UNCALIBRATED_MAGNETIC_FIELD,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .uncalibrated_magnetic_field = (struct uncalibrated_magnetic_field_report) {
@@ -292,7 +277,6 @@ void init_sensors(){
     .name = "Tap Detector",
     .id = TAP_DETECTOR,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .tap_detector = (struct tap_detector_report) {
@@ -309,7 +293,6 @@ void init_sensors(){
     .name = "Step Counter",
     .id = STEP_COUNTER,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .step_counter = (struct step_counter_report) {
@@ -326,7 +309,6 @@ void init_sensors(){
     .name = "Significant Motion",
     .id = SIGNIFICANT_MOTION,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .significant_motion = (struct significant_motion_report) {
@@ -343,7 +325,6 @@ void init_sensors(){
     .name = "Stability Classifier",
     .id = STABILITY_CLASSIFIER,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .stability_classifier = (struct stability_classifier_report) {
@@ -360,7 +341,6 @@ void init_sensors(){
     .name = "Raw Accelerometer",
     .id = RAW_ACCELEROMETER,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .raw_accelerometer = (struct raw_accelerometer_report) {
@@ -380,7 +360,6 @@ void init_sensors(){
     .name = "Raw Gyroscope",
     .id = RAW_GYROSCOPE,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .raw_gyroscope = (struct raw_gyroscope_report) {
@@ -400,7 +379,6 @@ void init_sensors(){
     .name = "Raw Magnetometer",
     .id = RAW_MAGNETOMETER,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .raw_magnetometer = (struct raw_magnetometer_report) {
@@ -420,7 +398,6 @@ void init_sensors(){
     .name = "Step Detector",
     .id = STEP_DETECTOR,
     .channel = 0,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .step_detector = (struct step_detector_report){
@@ -437,7 +414,6 @@ void init_sensors(){
     .name = "Shake Detector",
     .id = SHAKE_DETECTOR,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .shake_detector = (struct shake_detector_report) {
@@ -454,7 +430,6 @@ void init_sensors(){
     .name = "Flip Detector",
     .id = FLIP_DETECTOR,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .flip_detector = (struct flip_detector_report) {
@@ -471,7 +446,6 @@ void init_sensors(){
     .name = "Pickup Detector",
     .id = PICKUP_DETECTOR,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .pickup_detector = (struct pickup_detector_report) {
@@ -488,7 +462,6 @@ void init_sensors(){
     .name = "Stability Detector",
     .id = STABILITY_DETECTOR,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .stability_detector = (struct stability_detector_report) {
@@ -505,7 +478,6 @@ void init_sensors(){
     .name = "Personal Activity Classifier",
     .id = PERSONAL_ACTIVITY_CLASSIFIER,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .personal_activity_classifier = (struct personal_activity_classifier_report) {
@@ -524,7 +496,6 @@ void init_sensors(){
     .name = "Sleep Detector",
     .id = SLEEP_DETECTOR,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .sleep_detector = (struct sleep_detector_report) {
@@ -541,7 +512,6 @@ void init_sensors(){
     .name = "Tilt Detector",
     .id = TILT_DETECTOR,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .tilt_detector = (struct tilt_detector_report) {
@@ -558,7 +528,6 @@ void init_sensors(){
     .name = "Pocket Detector",
     .id = POCKET_DETECTOR,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .pocket_detector = (struct pocket_detector_report) {
@@ -575,7 +544,6 @@ void init_sensors(){
     .name = "Circle Detector",
     .id = CIRCLE_DETECTOR,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .circle_detector = (struct circle_detector_report) {
@@ -592,7 +560,6 @@ void init_sensors(){
     .name = "Heart Rate Monitor",
     .id = HEART_RATE_MONITOR,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .heart_rate_monitor = (struct heart_rate_monitor_report) {
@@ -609,7 +576,6 @@ void init_sensors(){
     .name = "ARVR Stabilised Rotation Vector",
     .id = ARVR_STABILISED_ROTATION_VECTOR,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .arvr_stabilised_rotation_vector = (struct arvr_stabilised_rotation_vector_report) {
@@ -630,7 +596,6 @@ void init_sensors(){
     .name = "ARVR Stabilised Game Rotation Vector",
     .id = ARVR_STABILISED_GAME_ROTATION_VECTOR,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .arvr_stabilised_game_rotation_vector = (struct arvr_stabilised_game_rotation_vector_report) {
@@ -650,7 +615,6 @@ void init_sensors(){
     .name = "Gyro-Integrated Rotation Vector",
     .id = GYRO_INTEGRATED_ROTATION_VECTOR,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .gyro_integrated_rotation_vector = (struct gyro_integrated_rotation_vector_report) {
@@ -669,7 +633,6 @@ void init_sensors(){
     .name = "Motion Request",
     .id = MOTION_REQUEST,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .motion_request = (struct motion_request_report) {
@@ -687,7 +650,6 @@ void init_sensors(){
     .name = "Dead Reckoning Pose",
     .id = DEAD_RECKONING_POSE,
     .channel = 255,
-    .q_point = 0,
     .enabled = false,
     .input_report = (union input_report) {
       .dead_reckoning_pose = (struct dead_reckoning_pose_report) {

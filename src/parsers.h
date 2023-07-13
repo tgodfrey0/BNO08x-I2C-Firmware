@@ -19,3 +19,11 @@
  * @param msg is the raw frame received from the sensor
  */
 void parse_msg(struct i2c_message msg);
+
+/**
+ * @brief Scale a value relative to the sensor's Q point.
+ * 
+ * @param q is the Q point of the sensor
+ * @return The proportional scale value
+ */
+float scale_q(uint8_t q);
