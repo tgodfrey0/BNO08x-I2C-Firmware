@@ -12,6 +12,7 @@
 #include "logger.h"
 #include "parsers.h"
 #include "q_points.h"
+#include "response_sizes.h"
 #include "sensors.h"
 
 float scale_q(uint8_t q){
@@ -36,7 +37,7 @@ float read_32_scale(uint8_t* p, uint8_t q){
 }
 
 void parse_accelerometer_data(struct i2c_message msg){
-  if(msg.length != 10){
+  if(msg.length != RES_ACCELEROMETER){
     warn("Invalid accelerometer report, expected 10 bytes, received %d bytes\n", msg.length);
     return;
   }
@@ -49,11 +50,12 @@ void parse_accelerometer_data(struct i2c_message msg){
   accelerometer.input_report.accelerometer.y = read_16_scale(&msg.payload[6], Q_ACCELEROMETER);
   accelerometer.input_report.accelerometer.z = read_16_scale(&msg.payload[8], Q_ACCELEROMETER);
 
+  last_received = msg.payload[0];
   printf("Successfully parsed accelerometer data\n");
 }
 
 void parse_gyroscope_data(struct i2c_message msg){
-  if(msg.length != 10){
+  if(msg.length != RES_GYROSCOPE){
     warn("Invalid gyroscope report, expected 10 bytes, received %d bytes\n", msg.length);
     return;
   }
@@ -66,11 +68,12 @@ void parse_gyroscope_data(struct i2c_message msg){
   gyroscope.input_report.gyroscope.y = read_16_scale(&msg.payload[6], Q_GYROSCOPE);
   gyroscope.input_report.gyroscope.z = read_16_scale(&msg.payload[8], Q_GYROSCOPE);
 
+  last_received = msg.payload[0];
   printf("Successfully parsed gyroscope data\n");
 }
 
 void parse_magnetic_field_data(struct i2c_message msg){
-  if(msg.length != 10){
+  if(msg.length != RES_MAGNETIC_FIELD){
     warn("Invalid magnetic field report, expected 10 bytes, received %d bytes\n", msg.length);
     return;
   }
@@ -83,11 +86,12 @@ void parse_magnetic_field_data(struct i2c_message msg){
   magnetic_field.input_report.magnetic_field.y = read_16_scale(&msg.payload[6], Q_MAGNETIC_FIELD);
   magnetic_field.input_report.magnetic_field.z = read_16_scale(&msg.payload[8], Q_MAGNETIC_FIELD);
 
+  last_received = msg.payload[0];
   printf("Successfully parsed magnetic field data\n");
 }
 
 void parse_linear_acceleration_data(struct i2c_message msg){
-  if(msg.length != 10){
+  if(msg.length != RES_LINEAR_ACCELERATION){
     warn("Invalid linear acceleration report, expected 10 bytes, received %d bytes\n", msg.length);
     return;
   }
@@ -100,11 +104,28 @@ void parse_linear_acceleration_data(struct i2c_message msg){
   linear_acceleration.input_report.linear_acceleration.y = read_16_scale(&msg.payload[6], Q_LINEAR_ACCELERATION);
   linear_acceleration.input_report.linear_acceleration.z = read_16_scale(&msg.payload[8], Q_LINEAR_ACCELERATION);
 
+  last_received = msg.payload[0];
   printf("Successfully parsed linear acceleration data\n");
 }
 
 void parse_rotation_vector_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  if(msg.length != RES_ROTATION_VECTOR){
+    warn("Invalid rotation vector report, expected 14 bytes, received %d bytes\n", msg.length);
+    return;
+  }
+
+  rotation_vector.input_report.rotation_vector.report_id = msg.payload[0];
+  rotation_vector.input_report.rotation_vector.seq_num = msg.payload[1];
+  rotation_vector.input_report.rotation_vector.status = msg.payload[2];
+  rotation_vector.input_report.rotation_vector.delay = msg.payload[3];
+  rotation_vector.input_report.rotation_vector.i = read_16_scale(&msg.payload[4], Q_ROTATION_VECTOR);
+  rotation_vector.input_report.rotation_vector.j = read_16_scale(&msg.payload[6], Q_ROTATION_VECTOR);
+  rotation_vector.input_report.rotation_vector.k = read_16_scale(&msg.payload[8], Q_ROTATION_VECTOR);
+  rotation_vector.input_report.rotation_vector.real = read_16_scale(&msg.payload[10], Q_ROTATION_VECTOR);
+  rotation_vector.input_report.rotation_vector.accuracy = read_16_scale(&msg.payload[12], Q_ROTATION_VECTOR_ACCURACY);
+
+  last_received = msg.payload[0];
+  printf("Successfully parsed linear acceleration data\n");
 }
 
 void parse_gravity_data(struct i2c_message msg){
