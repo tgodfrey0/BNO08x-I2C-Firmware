@@ -96,99 +96,91 @@ $(document).ready(function(){initNavTree('sensors_8h_source.html',''); initResiz
 <a href="sensors_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="bno08x_8h.html">bno08x.h</a>&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="sensor__reports_8h.html">sensor_reports.h</a>&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">//=================================================================================================//</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">//      Sensor Struct Declarations</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">//=================================================================================================//</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structaccelerometer.html">accelerometer</a>;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structgyroscope.html">gyroscope</a>;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="bno08x_8h.html">bno08x.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">//=================================================================================================//</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">//      Sensor Struct Declarations</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">//=================================================================================================//</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structaccelerometer.html">accelerometer</a> = NULL;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structgyroscope.html">gyroscope</a> = NULL;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structmagnetic__field.html">magnetic_field</a>;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structlinear__acceleration.html">linear_acceleration</a>;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structrotation__vector.html">rotation_vector</a>;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structgravity.html">gravity</a>;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structuncalibrated__gyroscope.html">uncalibrated_gyroscope</a>;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structgame__rotation__vector.html">game_rotation_vector</a>;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structgeomagnetic__rotation__vector.html">geomagnetic_rotation_vector</a>;</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structpressure.html">pressure</a>;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structambient__light.html">ambient_light</a>;</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structhumidity.html">humidity</a>;</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structproximity.html">proximity</a>;</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structtemperature.html">temperature</a>;</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structuncalibrated__magnetic__field.html">uncalibrated_magnetic_field</a>;</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structtap__detector.html">tap_detector</a>;</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structstep__counter.html">step_counter</a>;</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structsignificant__motion.html">significant_motion</a>;</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structstability__classifier.html">stability_classifier</a>;</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structraw__accelerometer.html">raw_accelerometer</a>;</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structraw__gyroscope.html">raw_gyroscope</a>;</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structraw__magnetometer.html">raw_magnetometer</a>;</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structstep__detector.html">step_detector</a>;</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structshake__detector.html">shake_detector</a>;</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structflip__detector.html">flip_detector</a>;</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span> </div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structpickup__detector.html">pickup_detector</a>;</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structstability__detector.html">stability_detector</a>;</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> </div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structpersonal__activity__classifier.html">personal_activity_classifier</a>;</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structsleep__detector.html">sleep_detector</a>;</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structtilt__detector.html">tilt_detector</a>;</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span> </div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structpocket__detector.html">pocket_detector</a>;</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span> </div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structcircle__detector.html">circle_detector</a>;</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span> </div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structheart__rate__monitor.html">heart_rate_monitor</a>;</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span> </div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structarvr__stabilised__rotation__vector.html">arvr_stabilised_rotation_vector</a>;</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span> </div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structarvr__stabilised__game__rotation__vector.html">arvr_stabilised_game_rotation_vector</a>;</div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span> </div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structgyro__integrated__rotation__vector.html">gyro_integrated_rotation_vector</a>;</div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span> </div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structmotion__request.html">motion_request</a>;</div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span> </div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> <a class="code hl_struct" href="structdead__reckoning__pose.html">dead_reckoning_pose</a>;</div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span> </div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span><span class="comment">//=================================================================================================//</span></div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span><span class="comment">//      Functions</span></div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span><span class="comment">//=================================================================================================//</span></div>
-<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span> </div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span><span class="keywordtype">void</span> <a class="code hl_function" href="sensors_8h.html#ac74850003fab6eb3269bfe043d0f939c">init_sensors</a>();</div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structmagnetic__field.html">magnetic_field</a> = NULL;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structlinear__acceleration.html">linear_acceleration</a> = NULL;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structrotation__vector.html">rotation_vector</a> = NULL;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structgravity.html">gravity</a> = NULL;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structuncalibrated__gyroscope.html">uncalibrated_gyroscope</a> = NULL;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structgame__rotation__vector.html">game_rotation_vector</a> = NULL;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structgeomagnetic__rotation__vector.html">geomagnetic_rotation_vector</a> = NULL;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structpressure.html">pressure</a> = NULL;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structambient__light.html">ambient_light</a> = NULL;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structhumidity.html">humidity</a> = NULL;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structproximity.html">proximity</a> = NULL;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structtemperature.html">temperature</a> = NULL;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structuncalibrated__magnetic__field.html">uncalibrated_magnetic_field</a> = NULL;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structtap__detector.html">tap_detector</a> = NULL;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structstep__counter.html">step_counter</a> = NULL;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structsignificant__motion.html">significant_motion</a> = NULL;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structstability__classifier.html">stability_classifier</a> = NULL;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structraw__accelerometer.html">raw_accelerometer</a> = NULL;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structraw__gyroscope.html">raw_gyroscope</a> = NULL;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structraw__magnetometer.html">raw_magnetometer</a> = NULL;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structstep__detector.html">step_detector</a> = NULL;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structshake__detector.html">shake_detector</a> = NULL;</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structflip__detector.html">flip_detector</a> = NULL;</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span> </div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structpickup__detector.html">pickup_detector</a> = NULL;</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structstability__detector.html">stability_detector</a> = NULL;</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structpersonal__activity__classifier.html">personal_activity_classifier</a> = NULL;</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structsleep__detector.html">sleep_detector</a> = NULL;</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structtilt__detector.html">tilt_detector</a> = NULL;</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span> </div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structpocket__detector.html">pocket_detector</a> = NULL;</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span> </div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structcircle__detector.html">circle_detector</a> = NULL;</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span> </div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structheart__rate__monitor.html">heart_rate_monitor</a> = NULL;</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span> </div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structarvr__stabilised__rotation__vector.html">arvr_stabilised_rotation_vector</a> = NULL;</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span> </div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structarvr__stabilised__game__rotation__vector.html">arvr_stabilised_game_rotation_vector</a> = NULL;</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span> </div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structgyro__integrated__rotation__vector.html">gyro_integrated_rotation_vector</a> = NULL;</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span> </div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structmotion__request.html">motion_request</a> = NULL;</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span> </div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structdead__reckoning__pose.html">dead_reckoning_pose</a> = NULL;</div>
 <div class="ttc" id="abno08x_8h_html"><div class="ttname"><a href="bno08x_8h.html">bno08x.h</a></div><div class="ttdoc">Defines the top level entities for the library.</div></div>
-<div class="ttc" id="asensor__reports_8h_html"><div class="ttname"><a href="sensor__reports_8h.html">sensor_reports.h</a></div><div class="ttdoc">Definitions for all input reports available from the BNO08x.</div></div>
-<div class="ttc" id="asensors_8h_html_ac74850003fab6eb3269bfe043d0f939c"><div class="ttname"><a href="sensors_8h.html#ac74850003fab6eb3269bfe043d0f939c">init_sensors</a></div><div class="ttdeci">void init_sensors()</div><div class="ttdoc">Initialises the struct for each sensor.</div><div class="ttdef"><b>Definition:</b> sensors.c:3</div></div>
 <div class="ttc" id="astructaccelerometer_html"><div class="ttname"><a href="structaccelerometer.html">accelerometer</a></div><div class="ttdoc">The accelerometer instance.</div></div>
 <div class="ttc" id="astructambient__light_html"><div class="ttname"><a href="structambient__light.html">ambient_light</a></div><div class="ttdoc">The ambient light instance.</div></div>
 <div class="ttc" id="astructarvr__stabilised__game__rotation__vector_html"><div class="ttname"><a href="structarvr__stabilised__game__rotation__vector.html">arvr_stabilised_game_rotation_vector</a></div><div class="ttdoc">The ARVR stabilised game rotation vector instance.</div></div>
@@ -215,7 +207,7 @@ $(document).ready(function(){initNavTree('sensors_8h_source.html',''); initResiz
 <div class="ttc" id="astructraw__gyroscope_html"><div class="ttname"><a href="structraw__gyroscope.html">raw_gyroscope</a></div><div class="ttdoc">The raw gyroscope instance.</div></div>
 <div class="ttc" id="astructraw__magnetometer_html"><div class="ttname"><a href="structraw__magnetometer.html">raw_magnetometer</a></div><div class="ttdoc">The raw magnetometer instance.</div></div>
 <div class="ttc" id="astructrotation__vector_html"><div class="ttname"><a href="structrotation__vector.html">rotation_vector</a></div><div class="ttdoc">The rotation vector instance.</div></div>
-<div class="ttc" id="astructsensor_html"><div class="ttname"><a href="structsensor.html">sensor</a></div><div class="ttdoc">Stores an instance of a single sensor.</div><div class="ttdef"><b>Definition:</b> bno08x.h:105</div></div>
+<div class="ttc" id="astructsensor_html"><div class="ttname"><a href="structsensor.html">sensor</a></div><div class="ttdoc">Stores an instance of a single sensor.</div><div class="ttdef"><b>Definition:</b> bno08x.h:106</div></div>
 <div class="ttc" id="astructshake__detector_html"><div class="ttname"><a href="structshake__detector.html">shake_detector</a></div><div class="ttdoc">The shake detector instance.</div></div>
 <div class="ttc" id="astructsignificant__motion_html"><div class="ttname"><a href="structsignificant__motion.html">significant_motion</a></div><div class="ttdoc">The significant motion instance.</div></div>
 <div class="ttc" id="astructsleep__detector_html"><div class="ttname"><a href="structsleep__detector.html">sleep_detector</a></div><div class="ttdoc">The sleep detector instance.</div></div>

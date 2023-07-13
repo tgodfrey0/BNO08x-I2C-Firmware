@@ -100,66 +100,66 @@ $(document).ready(function(){initNavTree('bno08x_8h_source.html',''); initResiza
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;<a class="code" href="i2c_8h.html">i2c.h</a>&quot;</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &quot;<a class="code" href="sensor__reports_8h.html">sensor_reports.h</a>&quot;</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">//=================================================================================================//</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">//      Enums</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">//=================================================================================================//</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">   49</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a> {</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    ACCELEROMETER = 0x01,</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    GYROSCOPE = 0x02,</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    MAGNETIC_FIELD = 0x03,</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    LINEAR_ACCELERATION = 0x04,</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    ROTATION_VECTOR = 0x05,</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    GRAVITY = 0x06,</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    UNCALIBRATED_GYROSCOPE = 0x07,</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    GAME_ROTATION_VECTOR = 0x08,</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    GEOMAGNETIC_ROTATION_VECTOR = 0x09,</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    PRESSURE = 0x0A,</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    AMBIENT_LIGHT = 0x0B,</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    HUMIDITY = 0x0C,</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    PROXIMITY = 0x0D,</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    TEMPERATURE = 0x0E,</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    UNCALIBRATED_MAGNETIC_FIELD = 0x0F,</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    TAP_DETECTOR = 0x10,</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    STEP_COUNTER = 0x11,</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    SIGNIFICANT_MOTION = 0x12,</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    STABILITY_CLASSIFIER = 0x13,</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    RAW_ACCELEROMETER = 0x14,</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    RAW_GYROSCOPE = 0x15,</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    RAW_MAGNETOMETER = 0x16,</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    RESERVED = 0x17,</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    STEP_DETECTOR = 0x18,</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    SHAKE_DETECTOR = 0x19,</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    FLIP_DETECTOR = 0x1A,</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    PICKUP_DETECTOR = 0x1B,</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    STABILITY_DETECTOR = 0x1C,</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    PERSONAL_ACTIVITY_CLASSIFIER = 0x1E,</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    SLEEP_DETECTOR = 0x1F,</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    TILT_DETECTOR = 0x20,</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    POCKET_DETECTOR = 0x21,</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    CIRCLE_DETECTOR = 0x22,</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    HEART_RATE_MONITOR = 0x23,</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    ARVR_STABILISED_ROTATION_VECTOR = 0x28,</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    ARVR_STABILISED_GAME_ROTATION_VECTOR = 0x29,</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    GYRO_INTEGRATED_ROTATION_VECTOR = 0x2A,</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    MOTION_REQUEST = 0x2B,</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    OPTICAL_FLOW = 0x2C,</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    DEAD_RECKONING_POSE = 0x2D,</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>};</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="keyword">static</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a> last_received; </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment">//=================================================================================================//</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment">//    Structs</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">//=================================================================================================//</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="structsensor.html">  105</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> {</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="structsensor.html#a8f8f80d37794cde9472343e4487ba3eb">  106</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_variable" href="structsensor.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>;       </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="structsensor.html#a5d61fdce1be542abed960dd7d2f68cf9">  107</a></span>    <span class="keyword">const</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a> <a class="code hl_variable" href="structsensor.html#a5d61fdce1be542abed960dd7d2f68cf9">id</a>;        </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="structsensor.html#a5046e6f54140eb093ab5edab0e30b209">  108</a></span>    <span class="keyword">const</span> uint8_t <a class="code hl_variable" href="structsensor.html#a5046e6f54140eb093ab5edab0e30b209">channel</a>;      </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="structsensor.html#a8740ba80e30dd75e71d09fa1dcf04f3d">  109</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structsensor.html#a8740ba80e30dd75e71d09fa1dcf04f3d">enabled</a>;       </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &quot;<a class="code" href="sensors_8h.html">sensors.h</a>&quot;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;<a class="code" href="sensor__reports_8h.html">sensor_reports.h</a>&quot;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">//=================================================================================================//</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">//      Enums</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">//=================================================================================================//</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">   50</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a> {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    ACCELEROMETER = 0x01,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    GYROSCOPE = 0x02,</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    MAGNETIC_FIELD = 0x03,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    LINEAR_ACCELERATION = 0x04,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    ROTATION_VECTOR = 0x05,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    GRAVITY = 0x06,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    UNCALIBRATED_GYROSCOPE = 0x07,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    GAME_ROTATION_VECTOR = 0x08,</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    GEOMAGNETIC_ROTATION_VECTOR = 0x09,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    PRESSURE = 0x0A,</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    AMBIENT_LIGHT = 0x0B,</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    HUMIDITY = 0x0C,</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    PROXIMITY = 0x0D,</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    TEMPERATURE = 0x0E,</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    UNCALIBRATED_MAGNETIC_FIELD = 0x0F,</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    TAP_DETECTOR = 0x10,</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    STEP_COUNTER = 0x11,</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    SIGNIFICANT_MOTION = 0x12,</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    STABILITY_CLASSIFIER = 0x13,</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    RAW_ACCELEROMETER = 0x14,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    RAW_GYROSCOPE = 0x15,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    RAW_MAGNETOMETER = 0x16,</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    RESERVED = 0x17,</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    STEP_DETECTOR = 0x18,</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    SHAKE_DETECTOR = 0x19,</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    FLIP_DETECTOR = 0x1A,</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    PICKUP_DETECTOR = 0x1B,</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    STABILITY_DETECTOR = 0x1C,</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    PERSONAL_ACTIVITY_CLASSIFIER = 0x1E,</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    SLEEP_DETECTOR = 0x1F,</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    TILT_DETECTOR = 0x20,</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    POCKET_DETECTOR = 0x21,</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    CIRCLE_DETECTOR = 0x22,</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    HEART_RATE_MONITOR = 0x23,</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    ARVR_STABILISED_ROTATION_VECTOR = 0x28,</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    ARVR_STABILISED_GAME_ROTATION_VECTOR = 0x29,</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    GYRO_INTEGRATED_ROTATION_VECTOR = 0x2A,</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    MOTION_REQUEST = 0x2B,</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    OPTICAL_FLOW = 0x2C,</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    DEAD_RECKONING_POSE = 0x2D,</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>};</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keyword">static</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a> last_received; </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment">//=================================================================================================//</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">//    Structs</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment">//=================================================================================================//</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="structsensor.html">  106</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="structsensor.html#a8f8f80d37794cde9472343e4487ba3eb">  107</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_variable" href="structsensor.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>;       </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="structsensor.html#a5d61fdce1be542abed960dd7d2f68cf9">  108</a></span>    <span class="keyword">const</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a> <a class="code hl_variable" href="structsensor.html#a5d61fdce1be542abed960dd7d2f68cf9">id</a>;        </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="comment">//const uint8_t channel;        /**&lt; The channel the sensor communicates on. */</span></div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="structsensor.html#adb2bff821836a28632fdc702826fef1c">  110</a></span>    <span class="keyword">union </span><a class="code hl_union" href="unioninput__report.html">input_report</a> <a class="code hl_union" href="unioninput__report.html">input_report</a>;        </div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>};</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
@@ -169,21 +169,142 @@ $(document).ready(function(){initNavTree('bno08x_8h_source.html',''); initResiza
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="keywordtype">void</span> <a class="code hl_function" href="bno08x_8h.html#abcc9a057fb9f5df6fc44080e1c5a10f6">init</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structi2c__interface.html">i2c_interface</a> i2c);</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="keywordtype">bool</span> <a class="code hl_function" href="bno08x_8h.html#a00c7a3721ffe437a13e8da61c2a7fecd">enable_sensor</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structi2c__interface.html">i2c_interface</a> i2c, <span class="keyword">struct</span> <a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structsensor.html">sensor</a>, uint32_t sample_rate_ms);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="keywordtype">bool</span> <a class="code hl_function" href="bno08x_8h.html#a1d5d3cd271a769f6a97e7593b624a656">enable_sensor</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structi2c__interface.html">i2c_interface</a> i2c, <span class="keyword">enum</span> <a class="code hl_enumeration" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a> <span class="keywordtype">id</span>, uint32_t sample_rate_ms);</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="bno08x_8h.html#a9525704d6c0800d55595d6dead18b0c7">  144</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="bno08x_8h.html#a9525704d6c0800d55595d6dead18b0c7">read_sensor</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structi2c__interface.html">i2c_interface</a> i2c);</div>
-<div class="ttc" id="abno08x_8h_html_a00c7a3721ffe437a13e8da61c2a7fecd"><div class="ttname"><a href="bno08x_8h.html#a00c7a3721ffe437a13e8da61c2a7fecd">enable_sensor</a></div><div class="ttdeci">bool enable_sensor(const struct i2c_interface i2c, struct sensor *sensor, uint32_t sample_rate_ms)</div><div class="ttdoc">Enables a specified sensor with a fixed report rate.</div><div class="ttdef"><b>Definition:</b> bno08x.c:44</div></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_function" href="bno08x_8h.html#a3a4a2fbc309874626ccc066f9273e07b">get_sensor</a>(<span class="keyword">enum</span> <a class="code hl_enumeration" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a> <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="comment">//=================================================================================================//</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="comment">//      Sensor struct instances</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="comment">//=================================================================================================//</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structaccelerometer.html">accelerometer</a>;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structgyroscope.html">gyroscope</a>;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structmagnetic__field.html">magnetic_field</a>;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structlinear__acceleration.html">linear_acceleration</a>;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structrotation__vector.html">rotation_vector</a>;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structgravity.html">gravity</a>;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structuncalibrated__gyroscope.html">uncalibrated_gyroscope</a>;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structgame__rotation__vector.html">game_rotation_vector</a>;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structgeomagnetic__rotation__vector.html">geomagnetic_rotation_vector</a>;</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structpressure.html">pressure</a>;</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structambient__light.html">ambient_light</a>;</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structhumidity.html">humidity</a>;</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structproximity.html">proximity</a>;</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structtemperature.html">temperature</a>;</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structuncalibrated__magnetic__field.html">uncalibrated_magnetic_field</a>;</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span> </div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structtap__detector.html">tap_detector</a>;</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span> </div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structstep__counter.html">step_counter</a>;</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span> </div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structsignificant__motion.html">significant_motion</a>;</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span> </div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structstability__classifier.html">stability_classifier</a>;</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span> </div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structraw__accelerometer.html">raw_accelerometer</a>;</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span> </div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structraw__gyroscope.html">raw_gyroscope</a>;</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span> </div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structraw__magnetometer.html">raw_magnetometer</a>;</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span> </div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structstep__detector.html">step_detector</a>;</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span> </div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structshake__detector.html">shake_detector</a>;</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span> </div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structflip__detector.html">flip_detector</a>;</div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span> </div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structpickup__detector.html">pickup_detector</a>;</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span> </div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structstability__detector.html">stability_detector</a>;</div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span> </div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structpersonal__activity__classifier.html">personal_activity_classifier</a>;</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span> </div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structsleep__detector.html">sleep_detector</a>;</div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span> </div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structtilt__detector.html">tilt_detector</a>;</div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span> </div>
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structpocket__detector.html">pocket_detector</a>;</div>
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span> </div>
+<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structcircle__detector.html">circle_detector</a>;</div>
+<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span> </div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structheart__rate__monitor.html">heart_rate_monitor</a>;</div>
+<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span> </div>
+<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structarvr__stabilised__rotation__vector.html">arvr_stabilised_rotation_vector</a>;</div>
+<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span> </div>
+<div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structarvr__stabilised__game__rotation__vector.html">arvr_stabilised_game_rotation_vector</a>;</div>
+<div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span> </div>
+<div class="line"><a id="l00481" name="l00481"></a><span class="lineno">  481</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structgyro__integrated__rotation__vector.html">gyro_integrated_rotation_vector</a>;</div>
+<div class="line"><a id="l00482" name="l00482"></a><span class="lineno">  482</span> </div>
+<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structmotion__request.html">motion_request</a>;</div>
+<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span> </div>
+<div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_struct" href="structdead__reckoning__pose.html">dead_reckoning_pose</a>;</div>
+<div class="ttc" id="abno08x_8h_html_a1d5d3cd271a769f6a97e7593b624a656"><div class="ttname"><a href="bno08x_8h.html#a1d5d3cd271a769f6a97e7593b624a656">enable_sensor</a></div><div class="ttdeci">bool enable_sensor(const struct i2c_interface i2c, enum SENSOR_ID id, uint32_t sample_rate_ms)</div><div class="ttdoc">Enables a specified sensor with a fixed report rate.</div><div class="ttdef"><b>Definition:</b> bno08x.c:369</div></div>
+<div class="ttc" id="abno08x_8h_html_a3a4a2fbc309874626ccc066f9273e07b"><div class="ttname"><a href="bno08x_8h.html#a3a4a2fbc309874626ccc066f9273e07b">get_sensor</a></div><div class="ttdeci">struct sensor * get_sensor(enum SENSOR_ID id)</div><div class="ttdoc">Get the sensor struct from a given ID.</div><div class="ttdef"><b>Definition:</b> bno08x.c:41</div></div>
 <div class="ttc" id="abno08x_8h_html_a9525704d6c0800d55595d6dead18b0c7"><div class="ttname"><a href="bno08x_8h.html#a9525704d6c0800d55595d6dead18b0c7">read_sensor</a></div><div class="ttdeci">bool read_sensor(const struct i2c_interface i2c)</div><div class="ttdoc">Read the latest sensor report on the bus.</div></div>
-<div class="ttc" id="abno08x_8h_html_abcc9a057fb9f5df6fc44080e1c5a10f6"><div class="ttname"><a href="bno08x_8h.html#abcc9a057fb9f5df6fc44080e1c5a10f6">init</a></div><div class="ttdeci">void init(const struct i2c_interface i2c)</div><div class="ttdoc">Turn on the sensor and open the channel.</div><div class="ttdef"><b>Definition:</b> bno08x.c:30</div></div>
-<div class="ttc" id="agroup__Enumerations_html_ga5397f7a91d2d43051e74cfdee22f5957"><div class="ttname"><a href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a></div><div class="ttdeci">SENSOR_ID</div><div class="ttdoc">Stores the ID for each sensor.</div><div class="ttdef"><b>Definition:</b> bno08x.h:49</div></div>
+<div class="ttc" id="abno08x_8h_html_abcc9a057fb9f5df6fc44080e1c5a10f6"><div class="ttname"><a href="bno08x_8h.html#abcc9a057fb9f5df6fc44080e1c5a10f6">init</a></div><div class="ttdeci">void init(const struct i2c_interface i2c)</div><div class="ttdoc">Turn on the sensor and open the channel.</div><div class="ttdef"><b>Definition:</b> bno08x.c:29</div></div>
+<div class="ttc" id="agroup__Enumerations_html_ga5397f7a91d2d43051e74cfdee22f5957"><div class="ttname"><a href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a></div><div class="ttdeci">SENSOR_ID</div><div class="ttdoc">Stores the ID for each sensor.</div><div class="ttdef"><b>Definition:</b> bno08x.h:50</div></div>
 <div class="ttc" id="ai2c_8h_html"><div class="ttname"><a href="i2c_8h.html">i2c.h</a></div><div class="ttdoc">I2C related definitions.</div></div>
 <div class="ttc" id="asensor__reports_8h_html"><div class="ttname"><a href="sensor__reports_8h.html">sensor_reports.h</a></div><div class="ttdoc">Definitions for all input reports available from the BNO08x.</div></div>
+<div class="ttc" id="asensors_8h_html"><div class="ttname"><a href="sensors_8h.html">sensors.h</a></div><div class="ttdoc">Sensor related definitions.</div></div>
+<div class="ttc" id="astructaccelerometer_html"><div class="ttname"><a href="structaccelerometer.html">accelerometer</a></div><div class="ttdoc">The accelerometer instance.</div></div>
+<div class="ttc" id="astructambient__light_html"><div class="ttname"><a href="structambient__light.html">ambient_light</a></div><div class="ttdoc">The ambient light instance.</div></div>
+<div class="ttc" id="astructarvr__stabilised__game__rotation__vector_html"><div class="ttname"><a href="structarvr__stabilised__game__rotation__vector.html">arvr_stabilised_game_rotation_vector</a></div><div class="ttdoc">The ARVR stabilised game rotation vector instance.</div></div>
+<div class="ttc" id="astructarvr__stabilised__rotation__vector_html"><div class="ttname"><a href="structarvr__stabilised__rotation__vector.html">arvr_stabilised_rotation_vector</a></div><div class="ttdoc">The ARVR stabilised rotation vector instance.</div></div>
+<div class="ttc" id="astructcircle__detector_html"><div class="ttname"><a href="structcircle__detector.html">circle_detector</a></div><div class="ttdoc">The circle detector instance.</div></div>
+<div class="ttc" id="astructdead__reckoning__pose_html"><div class="ttname"><a href="structdead__reckoning__pose.html">dead_reckoning_pose</a></div><div class="ttdoc">The dead reckoning pose instance.</div></div>
+<div class="ttc" id="astructflip__detector_html"><div class="ttname"><a href="structflip__detector.html">flip_detector</a></div><div class="ttdoc">The flip detector instance.</div></div>
+<div class="ttc" id="astructgame__rotation__vector_html"><div class="ttname"><a href="structgame__rotation__vector.html">game_rotation_vector</a></div><div class="ttdoc">The game rotation vector instance instance.</div></div>
+<div class="ttc" id="astructgeomagnetic__rotation__vector_html"><div class="ttname"><a href="structgeomagnetic__rotation__vector.html">geomagnetic_rotation_vector</a></div><div class="ttdoc">The geomagnetic rotation vector instance.</div></div>
+<div class="ttc" id="astructgravity_html"><div class="ttname"><a href="structgravity.html">gravity</a></div><div class="ttdoc">The gravity instance.</div></div>
+<div class="ttc" id="astructgyro__integrated__rotation__vector_html"><div class="ttname"><a href="structgyro__integrated__rotation__vector.html">gyro_integrated_rotation_vector</a></div><div class="ttdoc">The gyro-integrated rotation vector instance.</div></div>
+<div class="ttc" id="astructgyroscope_html"><div class="ttname"><a href="structgyroscope.html">gyroscope</a></div><div class="ttdoc">The gyroscope instance.</div></div>
+<div class="ttc" id="astructheart__rate__monitor_html"><div class="ttname"><a href="structheart__rate__monitor.html">heart_rate_monitor</a></div><div class="ttdoc">The heart rate monitor instance.</div></div>
+<div class="ttc" id="astructhumidity_html"><div class="ttname"><a href="structhumidity.html">humidity</a></div><div class="ttdoc">The humidity instance.</div></div>
 <div class="ttc" id="astructi2c__interface_html"><div class="ttname"><a href="structi2c__interface.html">i2c_interface</a></div><div class="ttdoc">Holds the data relevant to the I2C interface configuration.</div><div class="ttdef"><b>Definition:</b> i2c.h:64</div></div>
-<div class="ttc" id="astructsensor_html"><div class="ttname"><a href="structsensor.html">sensor</a></div><div class="ttdoc">Stores an instance of a single sensor.</div><div class="ttdef"><b>Definition:</b> bno08x.h:105</div></div>
-<div class="ttc" id="astructsensor_html_a5046e6f54140eb093ab5edab0e30b209"><div class="ttname"><a href="structsensor.html#a5046e6f54140eb093ab5edab0e30b209">sensor::channel</a></div><div class="ttdeci">const uint8_t channel</div><div class="ttdef"><b>Definition:</b> bno08x.h:108</div></div>
-<div class="ttc" id="astructsensor_html_a5d61fdce1be542abed960dd7d2f68cf9"><div class="ttname"><a href="structsensor.html#a5d61fdce1be542abed960dd7d2f68cf9">sensor::id</a></div><div class="ttdeci">enum SENSOR_ID id</div><div class="ttdef"><b>Definition:</b> bno08x.h:107</div></div>
-<div class="ttc" id="astructsensor_html_a8740ba80e30dd75e71d09fa1dcf04f3d"><div class="ttname"><a href="structsensor.html#a8740ba80e30dd75e71d09fa1dcf04f3d">sensor::enabled</a></div><div class="ttdeci">bool enabled</div><div class="ttdef"><b>Definition:</b> bno08x.h:109</div></div>
-<div class="ttc" id="astructsensor_html_a8f8f80d37794cde9472343e4487ba3eb"><div class="ttname"><a href="structsensor.html#a8f8f80d37794cde9472343e4487ba3eb">sensor::name</a></div><div class="ttdeci">const char * name</div><div class="ttdef"><b>Definition:</b> bno08x.h:106</div></div>
+<div class="ttc" id="astructlinear__acceleration_html"><div class="ttname"><a href="structlinear__acceleration.html">linear_acceleration</a></div><div class="ttdoc">The linear acceleration instance.</div></div>
+<div class="ttc" id="astructmagnetic__field_html"><div class="ttname"><a href="structmagnetic__field.html">magnetic_field</a></div><div class="ttdoc">The magnetic field instance.</div></div>
+<div class="ttc" id="astructmotion__request_html"><div class="ttname"><a href="structmotion__request.html">motion_request</a></div><div class="ttdoc">The motion request instance.</div></div>
+<div class="ttc" id="astructpersonal__activity__classifier_html"><div class="ttname"><a href="structpersonal__activity__classifier.html">personal_activity_classifier</a></div><div class="ttdoc">The personal activity classifier instance.</div></div>
+<div class="ttc" id="astructpickup__detector_html"><div class="ttname"><a href="structpickup__detector.html">pickup_detector</a></div><div class="ttdoc">The pickup detector instance.</div></div>
+<div class="ttc" id="astructpocket__detector_html"><div class="ttname"><a href="structpocket__detector.html">pocket_detector</a></div><div class="ttdoc">The pocket detector instance.</div></div>
+<div class="ttc" id="astructpressure_html"><div class="ttname"><a href="structpressure.html">pressure</a></div><div class="ttdoc">The pressure instance.</div></div>
+<div class="ttc" id="astructproximity_html"><div class="ttname"><a href="structproximity.html">proximity</a></div><div class="ttdoc">The proximity instance.</div></div>
+<div class="ttc" id="astructraw__accelerometer_html"><div class="ttname"><a href="structraw__accelerometer.html">raw_accelerometer</a></div><div class="ttdoc">The raw accelerometer instance.</div></div>
+<div class="ttc" id="astructraw__gyroscope_html"><div class="ttname"><a href="structraw__gyroscope.html">raw_gyroscope</a></div><div class="ttdoc">The raw gyroscope instance.</div></div>
+<div class="ttc" id="astructraw__magnetometer_html"><div class="ttname"><a href="structraw__magnetometer.html">raw_magnetometer</a></div><div class="ttdoc">The raw magnetometer instance.</div></div>
+<div class="ttc" id="astructrotation__vector_html"><div class="ttname"><a href="structrotation__vector.html">rotation_vector</a></div><div class="ttdoc">The rotation vector instance.</div></div>
+<div class="ttc" id="astructsensor_html"><div class="ttname"><a href="structsensor.html">sensor</a></div><div class="ttdoc">Stores an instance of a single sensor.</div><div class="ttdef"><b>Definition:</b> bno08x.h:106</div></div>
+<div class="ttc" id="astructsensor_html_a5d61fdce1be542abed960dd7d2f68cf9"><div class="ttname"><a href="structsensor.html#a5d61fdce1be542abed960dd7d2f68cf9">sensor::id</a></div><div class="ttdeci">enum SENSOR_ID id</div><div class="ttdef"><b>Definition:</b> bno08x.h:108</div></div>
+<div class="ttc" id="astructsensor_html_a8f8f80d37794cde9472343e4487ba3eb"><div class="ttname"><a href="structsensor.html#a8f8f80d37794cde9472343e4487ba3eb">sensor::name</a></div><div class="ttdeci">const char * name</div><div class="ttdef"><b>Definition:</b> bno08x.h:107</div></div>
+<div class="ttc" id="astructshake__detector_html"><div class="ttname"><a href="structshake__detector.html">shake_detector</a></div><div class="ttdoc">The shake detector instance.</div></div>
+<div class="ttc" id="astructsignificant__motion_html"><div class="ttname"><a href="structsignificant__motion.html">significant_motion</a></div><div class="ttdoc">The significant motion instance.</div></div>
+<div class="ttc" id="astructsleep__detector_html"><div class="ttname"><a href="structsleep__detector.html">sleep_detector</a></div><div class="ttdoc">The sleep detector instance.</div></div>
+<div class="ttc" id="astructstability__classifier_html"><div class="ttname"><a href="structstability__classifier.html">stability_classifier</a></div><div class="ttdoc">The stability classifier instance.</div></div>
+<div class="ttc" id="astructstability__detector_html"><div class="ttname"><a href="structstability__detector.html">stability_detector</a></div><div class="ttdoc">The stability detector instance.</div></div>
+<div class="ttc" id="astructstep__counter_html"><div class="ttname"><a href="structstep__counter.html">step_counter</a></div><div class="ttdoc">The step counter instance.</div></div>
+<div class="ttc" id="astructstep__detector_html"><div class="ttname"><a href="structstep__detector.html">step_detector</a></div><div class="ttdoc">The step detector instance.</div></div>
+<div class="ttc" id="astructtap__detector_html"><div class="ttname"><a href="structtap__detector.html">tap_detector</a></div><div class="ttdoc">The tap_detector instance.</div></div>
+<div class="ttc" id="astructtemperature_html"><div class="ttname"><a href="structtemperature.html">temperature</a></div><div class="ttdoc">The temperature instance.</div></div>
+<div class="ttc" id="astructtilt__detector_html"><div class="ttname"><a href="structtilt__detector.html">tilt_detector</a></div><div class="ttdoc">The tilt detector instance.</div></div>
+<div class="ttc" id="astructuncalibrated__gyroscope_html"><div class="ttname"><a href="structuncalibrated__gyroscope.html">uncalibrated_gyroscope</a></div><div class="ttdoc">The uncalibrated gyroscope instance.</div></div>
+<div class="ttc" id="astructuncalibrated__magnetic__field_html"><div class="ttname"><a href="structuncalibrated__magnetic__field.html">uncalibrated_magnetic_field</a></div><div class="ttdoc">The uncalibrated magnetic field instance.</div></div>
 <div class="ttc" id="aunioninput__report_html"><div class="ttname"><a href="unioninput__report.html">input_report</a></div><div class="ttdoc">Stores a single report struct.</div><div class="ttdef"><b>Definition:</b> sensor_reports.h:689</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

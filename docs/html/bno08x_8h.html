@@ -103,6 +103,7 @@ $(document).ready(function(){initNavTree('bno08x_8h.html',''); initResizable(); 
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="i2c_8h_source.html">i2c.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="sensors_8h_source.html">sensors.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="sensor__reports_8h_source.html">sensor_reports.h</a>&quot;</code><br />
 </div>
 <p><a href="bno08x_8h_source.html">Go to the source code of this file.</a></p>
@@ -124,12 +125,15 @@ Functions</h2></td></tr>
 <tr class="memitem:abcc9a057fb9f5df6fc44080e1c5a10f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bno08x_8h.html#abcc9a057fb9f5df6fc44080e1c5a10f6">init</a> (const struct <a class="el" href="structi2c__interface.html">i2c_interface</a> i2c)</td></tr>
 <tr class="memdesc:abcc9a057fb9f5df6fc44080e1c5a10f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn on the sensor and open the channel.  <br /></td></tr>
 <tr class="separator:abcc9a057fb9f5df6fc44080e1c5a10f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00c7a3721ffe437a13e8da61c2a7fecd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bno08x_8h.html#a00c7a3721ffe437a13e8da61c2a7fecd">enable_sensor</a> (const struct <a class="el" href="structi2c__interface.html">i2c_interface</a> i2c, struct <a class="el" href="structsensor.html">sensor</a> *<a class="el" href="structsensor.html">sensor</a>, uint32_t sample_rate_ms)</td></tr>
-<tr class="memdesc:a00c7a3721ffe437a13e8da61c2a7fecd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables a specified sensor with a fixed report rate.  <br /></td></tr>
-<tr class="separator:a00c7a3721ffe437a13e8da61c2a7fecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d5d3cd271a769f6a97e7593b624a656"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bno08x_8h.html#a1d5d3cd271a769f6a97e7593b624a656">enable_sensor</a> (const struct <a class="el" href="structi2c__interface.html">i2c_interface</a> i2c, enum <a class="el" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a> id, uint32_t sample_rate_ms)</td></tr>
+<tr class="memdesc:a1d5d3cd271a769f6a97e7593b624a656"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables a specified sensor with a fixed report rate.  <br /></td></tr>
+<tr class="separator:a1d5d3cd271a769f6a97e7593b624a656"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9525704d6c0800d55595d6dead18b0c7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bno08x_8h.html#a9525704d6c0800d55595d6dead18b0c7">read_sensor</a> (const struct <a class="el" href="structi2c__interface.html">i2c_interface</a> i2c)</td></tr>
 <tr class="memdesc:a9525704d6c0800d55595d6dead18b0c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the latest sensor report on the bus.  <br /></td></tr>
 <tr class="separator:a9525704d6c0800d55595d6dead18b0c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a4a2fbc309874626ccc066f9273e07b"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structsensor.html">sensor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bno08x_8h.html#a3a4a2fbc309874626ccc066f9273e07b">get_sensor</a> (enum <a class="el" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a> id)</td></tr>
+<tr class="memdesc:a3a4a2fbc309874626ccc066f9273e07b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the sensor struct from a given ID.  <br /></td></tr>
+<tr class="separator:a3a4a2fbc309874626ccc066f9273e07b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines the top level entities for the library. </p>
@@ -138,8 +142,8 @@ Functions</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>2023-07-12</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2023 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a00c7a3721ffe437a13e8da61c2a7fecd" name="a00c7a3721ffe437a13e8da61c2a7fecd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00c7a3721ffe437a13e8da61c2a7fecd">&#9670;&#160;</a></span>enable_sensor()</h2>
+<a id="a1d5d3cd271a769f6a97e7593b624a656" name="a1d5d3cd271a769f6a97e7593b624a656"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d5d3cd271a769f6a97e7593b624a656">&#9670;&#160;</a></span>enable_sensor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -153,8 +157,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">struct <a class="el" href="structsensor.html">sensor</a> *&#160;</td>
-          <td class="paramname"><em>sensor</em>, </td>
+          <td class="paramtype">enum <a class="el" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a>&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -174,7 +178,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">i2c</td><td>is the I2C interface to communicate with the sensor on </td></tr>
-    <tr><td class="paramname">sensor</td><td>is the sensor to enable </td></tr>
+    <tr><td class="paramname">id</td><td>is the ID of the sensor to enable </td></tr>
     <tr><td class="paramname">sample_rate_ms</td><td>is the desired report rate in miliseconds </td></tr>
   </table>
   </dd>
@@ -182,6 +186,33 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the sensor was successfully enabled </dd>
 <dd>
 <code>false</code> if the sensor could not be enabled </dd></dl>
+
+</div>
+</div>
+<a id="a3a4a2fbc309874626ccc066f9273e07b" name="a3a4a2fbc309874626ccc066f9273e07b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a4a2fbc309874626ccc066f9273e07b">&#9670;&#160;</a></span>get_sensor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structsensor.html">sensor</a> * get_sensor </td>
+          <td>(</td>
+          <td class="paramtype">enum <a class="el" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a>&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the sensor struct from a given ID. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>is the ID of the sensor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the sensor struct pointer </dd></dl>
 
 </div>
 </div>

@@ -4,7 +4,6 @@
 #include "parsers.h"
 #include "q_points.h"
 #include "response_sizes.h"
-#include "sensors.h"
 
 float scale_q(uint8_t q){
   if(q == 0) return 1;
@@ -33,13 +32,13 @@ void parse_accelerometer_data(struct i2c_message msg){
     return;
   }
 
-  accelerometer.input_report.accelerometer.report_id = msg.payload[0];
-  accelerometer.input_report.accelerometer.seq_num = msg.payload[1];
-  accelerometer.input_report.accelerometer.status = msg.payload[2];
-  accelerometer.input_report.accelerometer.delay = msg.payload[3];
-  accelerometer.input_report.accelerometer.x = read_16_scale(&msg.payload[4], Q_ACCELEROMETER);
-  accelerometer.input_report.accelerometer.y = read_16_scale(&msg.payload[6], Q_ACCELEROMETER);
-  accelerometer.input_report.accelerometer.z = read_16_scale(&msg.payload[8], Q_ACCELEROMETER);
+  accelerometer->input_report.accelerometer.report_id = msg.payload[0];
+  accelerometer->input_report.accelerometer.seq_num = msg.payload[1];
+  accelerometer->input_report.accelerometer.status = msg.payload[2];
+  accelerometer->input_report.accelerometer.delay = msg.payload[3];
+  accelerometer->input_report.accelerometer.x = read_16_scale(&msg.payload[4], Q_ACCELEROMETER);
+  accelerometer->input_report.accelerometer.y = read_16_scale(&msg.payload[6], Q_ACCELEROMETER);
+  accelerometer->input_report.accelerometer.z = read_16_scale(&msg.payload[8], Q_ACCELEROMETER);
 
   last_received = msg.payload[0];
   info("Successfully parsed accelerometer data\n");
@@ -51,13 +50,13 @@ void parse_gyroscope_data(struct i2c_message msg){
     return;
   }
 
-  gyroscope.input_report.gyroscope.report_id = msg.payload[0];
-  gyroscope.input_report.gyroscope.seq_num = msg.payload[1];
-  gyroscope.input_report.gyroscope.status = msg.payload[2];
-  gyroscope.input_report.gyroscope.delay = msg.payload[3];
-  gyroscope.input_report.gyroscope.x = read_16_scale(&msg.payload[4], Q_GYROSCOPE);
-  gyroscope.input_report.gyroscope.y = read_16_scale(&msg.payload[6], Q_GYROSCOPE);
-  gyroscope.input_report.gyroscope.z = read_16_scale(&msg.payload[8], Q_GYROSCOPE);
+  gyroscope->input_report.gyroscope.report_id = msg.payload[0];
+  gyroscope->input_report.gyroscope.seq_num = msg.payload[1];
+  gyroscope->input_report.gyroscope.status = msg.payload[2];
+  gyroscope->input_report.gyroscope.delay = msg.payload[3];
+  gyroscope->input_report.gyroscope.x = read_16_scale(&msg.payload[4], Q_GYROSCOPE);
+  gyroscope->input_report.gyroscope.y = read_16_scale(&msg.payload[6], Q_GYROSCOPE);
+  gyroscope->input_report.gyroscope.z = read_16_scale(&msg.payload[8], Q_GYROSCOPE);
 
   last_received = msg.payload[0];
   info("Successfully parsed gyroscope data\n");
@@ -69,13 +68,13 @@ void parse_magnetic_field_data(struct i2c_message msg){
     return;
   }
 
-  magnetic_field.input_report.magnetic_field.report_id = msg.payload[0];
-  magnetic_field.input_report.magnetic_field.seq_num = msg.payload[1];
-  magnetic_field.input_report.magnetic_field.status = msg.payload[2];
-  magnetic_field.input_report.magnetic_field.delay = msg.payload[3];
-  magnetic_field.input_report.magnetic_field.x = read_16_scale(&msg.payload[4], Q_MAGNETIC_FIELD);
-  magnetic_field.input_report.magnetic_field.y = read_16_scale(&msg.payload[6], Q_MAGNETIC_FIELD);
-  magnetic_field.input_report.magnetic_field.z = read_16_scale(&msg.payload[8], Q_MAGNETIC_FIELD);
+  magnetic_field->input_report.magnetic_field.report_id = msg.payload[0];
+  magnetic_field->input_report.magnetic_field.seq_num = msg.payload[1];
+  magnetic_field->input_report.magnetic_field.status = msg.payload[2];
+  magnetic_field->input_report.magnetic_field.delay = msg.payload[3];
+  magnetic_field->input_report.magnetic_field.x = read_16_scale(&msg.payload[4], Q_MAGNETIC_FIELD);
+  magnetic_field->input_report.magnetic_field.y = read_16_scale(&msg.payload[6], Q_MAGNETIC_FIELD);
+  magnetic_field->input_report.magnetic_field.z = read_16_scale(&msg.payload[8], Q_MAGNETIC_FIELD);
 
   last_received = msg.payload[0];
   info("Successfully parsed magnetic field data\n");
@@ -87,13 +86,13 @@ void parse_linear_acceleration_data(struct i2c_message msg){
     return;
   }
 
-  linear_acceleration.input_report.linear_acceleration.report_id = msg.payload[0];
-  linear_acceleration.input_report.linear_acceleration.seq_num = msg.payload[1];
-  linear_acceleration.input_report.linear_acceleration.status = msg.payload[2];
-  linear_acceleration.input_report.linear_acceleration.delay = msg.payload[3];
-  linear_acceleration.input_report.linear_acceleration.x = read_16_scale(&msg.payload[4], Q_LINEAR_ACCELERATION);
-  linear_acceleration.input_report.linear_acceleration.y = read_16_scale(&msg.payload[6], Q_LINEAR_ACCELERATION);
-  linear_acceleration.input_report.linear_acceleration.z = read_16_scale(&msg.payload[8], Q_LINEAR_ACCELERATION);
+  linear_acceleration->input_report.linear_acceleration.report_id = msg.payload[0];
+  linear_acceleration->input_report.linear_acceleration.seq_num = msg.payload[1];
+  linear_acceleration->input_report.linear_acceleration.status = msg.payload[2];
+  linear_acceleration->input_report.linear_acceleration.delay = msg.payload[3];
+  linear_acceleration->input_report.linear_acceleration.x = read_16_scale(&msg.payload[4], Q_LINEAR_ACCELERATION);
+  linear_acceleration->input_report.linear_acceleration.y = read_16_scale(&msg.payload[6], Q_LINEAR_ACCELERATION);
+  linear_acceleration->input_report.linear_acceleration.z = read_16_scale(&msg.payload[8], Q_LINEAR_ACCELERATION);
 
   last_received = msg.payload[0];
   info("Successfully parsed linear acceleration data\n");
@@ -105,15 +104,15 @@ void parse_rotation_vector_data(struct i2c_message msg){
     return;
   }
 
-  rotation_vector.input_report.rotation_vector.report_id = msg.payload[0];
-  rotation_vector.input_report.rotation_vector.seq_num = msg.payload[1];
-  rotation_vector.input_report.rotation_vector.status = msg.payload[2];
-  rotation_vector.input_report.rotation_vector.delay = msg.payload[3];
-  rotation_vector.input_report.rotation_vector.i = read_16_scale(&msg.payload[4], Q_ROTATION_VECTOR);
-  rotation_vector.input_report.rotation_vector.j = read_16_scale(&msg.payload[6], Q_ROTATION_VECTOR);
-  rotation_vector.input_report.rotation_vector.k = read_16_scale(&msg.payload[8], Q_ROTATION_VECTOR);
-  rotation_vector.input_report.rotation_vector.real = read_16_scale(&msg.payload[10], Q_ROTATION_VECTOR);
-  rotation_vector.input_report.rotation_vector.accuracy = read_16_scale(&msg.payload[12], Q_ROTATION_VECTOR_ACCURACY);
+  rotation_vector->input_report.rotation_vector.report_id = msg.payload[0];
+  rotation_vector->input_report.rotation_vector.seq_num = msg.payload[1];
+  rotation_vector->input_report.rotation_vector.status = msg.payload[2];
+  rotation_vector->input_report.rotation_vector.delay = msg.payload[3];
+  rotation_vector->input_report.rotation_vector.i = read_16_scale(&msg.payload[4], Q_ROTATION_VECTOR);
+  rotation_vector->input_report.rotation_vector.j = read_16_scale(&msg.payload[6], Q_ROTATION_VECTOR);
+  rotation_vector->input_report.rotation_vector.k = read_16_scale(&msg.payload[8], Q_ROTATION_VECTOR);
+  rotation_vector->input_report.rotation_vector.real = read_16_scale(&msg.payload[10], Q_ROTATION_VECTOR);
+  rotation_vector->input_report.rotation_vector.accuracy = read_16_scale(&msg.payload[12], Q_ROTATION_VECTOR_ACCURACY);
 
   last_received = msg.payload[0];
   info("Successfully parsed linear acceleration data\n");

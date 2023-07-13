@@ -1,6 +1,10 @@
 var searchData=
 [
-  ['heart_5frate_5fmonitor_0',['heart_rate_monitor',['../unioninput__report.html#a95508e5a23f51a80626f7fb8beccbe52',1,'input_report']]],
-  ['hr_1',['hr',['../structheart__rate__monitor__report.html#aa6d165cfc88fbaeeabbbd18951801e03',1,'heart_rate_monitor_report']]],
-  ['humidity_2',['humidity',['../unioninput__report.html#a628f7cb50215dc7063394d7d2843ccea',1,'input_report']]]
+  ['i_0',['i',['../structrotation__vector__report.html#a58e739b7bdf8275493686ae76e3705c3',1,'rotation_vector_report::i()'],['../structgame__rotation__vector__report.html#a58e739b7bdf8275493686ae76e3705c3',1,'game_rotation_vector_report::i()'],['../structgeomagnetic__rotation__vector__report.html#a58e739b7bdf8275493686ae76e3705c3',1,'geomagnetic_rotation_vector_report::i()'],['../structarvr__stabilised__rotation__vector__report.html#a58e739b7bdf8275493686ae76e3705c3',1,'arvr_stabilised_rotation_vector_report::i()'],['../structarvr__stabilised__game__rotation__vector__report.html#a58e739b7bdf8275493686ae76e3705c3',1,'arvr_stabilised_game_rotation_vector_report::i()'],['../structgyro__integrated__rotation__vector__report.html#a58e739b7bdf8275493686ae76e3705c3',1,'gyro_integrated_rotation_vector_report::i()']]],
+  ['i_5fangular_5fpos_1',['i_angular_pos',['../structdead__reckoning__pose__report.html#a95b396253a02b341ffd8df5096943b7c',1,'dead_reckoning_pose_report']]],
+  ['id_2',['id',['../structsensor.html#a5d61fdce1be542abed960dd7d2f68cf9',1,'sensor']]],
+  ['initialise_3',['initialise',['../structi2c__interface.html#a2b029a80e90944058da87d6544294625',1,'i2c_interface']]],
+  ['initialised_4',['initialised',['../structi2c__interface.html#ad86e7ae1ce88f3a7655a02558318afc3',1,'i2c_interface']]],
+  ['input_5freport_5',['input_report',['../structsensor.html#adb2bff821836a28632fdc702826fef1c',1,'sensor']]],
+  ['intent_6',['intent',['../structmotion__request__report.html#a27e37ac3aba98d0c4009819e8dce35ed',1,'motion_request_report']]]
 ];

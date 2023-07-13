@@ -1,7 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"structgravity__report.html#ade818037fd6c985038ff29656089758d":[2,0,19,3],
-"structgravity__report.html#af73583b1e980b0aa03f9884812e9fd4d":[2,0,19,6],
 "structgyro__integrated__rotation__vector.html":[1,1,35],
 "structgyro__integrated__rotation__vector__report.html":[2,0,21],
 "structgyro__integrated__rotation__vector__report.html#a06ed4269b34924d748f2f77b17db7d21":[2,0,21,3],
@@ -151,11 +149,9 @@ var NAVTREEINDEX1 =
 "structrotation__vector__report.html#ade818037fd6c985038ff29656089758d":[2,0,55,8],
 "structrotation__vector__report.html#af3de58c4299b63bcdc8812fdf52342d5":[2,0,55,0],
 "structsensor.html":[2,0,56],
-"structsensor.html#a5046e6f54140eb093ab5edab0e30b209":[2,0,56,0],
-"structsensor.html#a5d61fdce1be542abed960dd7d2f68cf9":[2,0,56,2],
-"structsensor.html#a8740ba80e30dd75e71d09fa1dcf04f3d":[2,0,56,1],
-"structsensor.html#a8f8f80d37794cde9472343e4487ba3eb":[2,0,56,4],
-"structsensor.html#adb2bff821836a28632fdc702826fef1c":[2,0,56,3],
+"structsensor.html#a5d61fdce1be542abed960dd7d2f68cf9":[2,0,56,0],
+"structsensor.html#a8f8f80d37794cde9472343e4487ba3eb":[2,0,56,2],
+"structsensor.html#adb2bff821836a28632fdc702826fef1c":[2,0,56,1],
 "structshake__detector.html":[1,1,23],
 "structshake__detector__report.html":[2,0,58],
 "structshake__detector__report.html#a70fbd315df33bf9039e036725b569e7f":[2,0,58,0],
@@ -249,5 +245,9 @@ var NAVTREEINDEX1 =
 "structuncalibrated__magnetic__field__report.html#aa4f0d3eebc3c443f9be81bf48561a217":[2,0,80,6],
 "structuncalibrated__magnetic__field__report.html#ac117f9690109b1aeb49da826aff1cca6":[2,0,80,2],
 "structuncalibrated__magnetic__field__report.html#ad0da36b2558901e21e7a30f6c227a45e":[2,0,80,4],
-"structuncalibrated__magnetic__field__report.html#ade818037fd6c985038ff29656089758d":[2,0,80,3]
+"structuncalibrated__magnetic__field__report.html#ade818037fd6c985038ff29656089758d":[2,0,80,3],
+"structuncalibrated__magnetic__field__report.html#af73583b1e980b0aa03f9884812e9fd4d":[2,0,80,8],
+"unioninput__report.html":[2,0,30],
+"unioninput__report.html#a01d40ac9949c8ab5b7ae95e0ed46e1f5":[2,0,30,29],
+"unioninput__report.html#a07543e62225a90508edffe3d2738a6fb":[2,0,30,33]
 };

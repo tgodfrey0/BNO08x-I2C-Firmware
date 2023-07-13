@@ -13,7 +13,6 @@
 #include "i2c.h"
 #include "logger.h"
 #include "output.h"
-#include "sensors.h"
 
 enum I2C_RESPONSE write_i2c(const uint8_t addr, const struct i2c_message* message){
 	if(i2c_write_blocking(I2C_INST, addr, message->payload, message->length, false) != PICO_ERROR_GENERIC){
@@ -66,13 +65,11 @@ int main(){
 
 	init(i2c);
 
-	// TODO: Combine init_sensor with enable_sensor
-
-	enable_sensor(i2c, &accelerometer, 100);
-	enable_sensor(i2c, &gyroscope, 100);
-	enable_sensor(i2c, &magnetic_field, 100);
-	enable_sensor(i2c, &linear_acceleration, 100);
-	enable_sensor(i2c, &rotation_vector, 100);
+	enable_sensor(i2c, ACCELEROMETER, 100);
+	enable_sensor(i2c, GYROSCOPE, 100);
+	enable_sensor(i2c, MAGNETIC_FIELD, 100);
+	enable_sensor(i2c, LINEAR_ACCELERATION, 100);
+	enable_sensor(i2c, ROTATION_VECTOR, 100);
 
 	for(;;){
 		if(read_sensor(i2c)) print_last_frame();

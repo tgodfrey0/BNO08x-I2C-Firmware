@@ -11,8 +11,9 @@
 
 #pragma once
 
+#include <stddef.h>
+
 #include "bno08x.h"
-#include "sensor_reports.h"
 
 /*! 
 	\defgroup Sensors Sensor instances
@@ -29,7 +30,7 @@
  * 
  * @ingroup Sensors
  */
-extern struct sensor accelerometer;
+struct sensor* accelerometer = NULL;
 
 /**
  * @struct gyroscope
@@ -38,7 +39,7 @@ extern struct sensor accelerometer;
  * 
  * @ingroup Sensors
  */
-extern struct sensor gyroscope;
+struct sensor* gyroscope = NULL;
 
 
 /**
@@ -48,7 +49,7 @@ extern struct sensor gyroscope;
  * 
  * @ingroup Sensors
  */
-extern struct sensor magnetic_field;
+struct sensor* magnetic_field = NULL;
 
 /**
  * @struct linear_acceleration
@@ -57,7 +58,7 @@ extern struct sensor magnetic_field;
  * 
  * @ingroup Sensors
  */
-extern struct sensor linear_acceleration;
+struct sensor* linear_acceleration = NULL;
 
 /**
  * @struct rotation_vector
@@ -66,7 +67,7 @@ extern struct sensor linear_acceleration;
  * 
  * @ingroup Sensors
  */
-extern struct sensor rotation_vector;
+struct sensor* rotation_vector = NULL;
 
 /**
  * @struct gravity
@@ -75,7 +76,7 @@ extern struct sensor rotation_vector;
  * 
  * @ingroup Sensors
  */
-extern struct sensor gravity;
+struct sensor* gravity = NULL;
 
 /**
  * @struct uncalibrated_gyroscope
@@ -84,7 +85,7 @@ extern struct sensor gravity;
  * 
  * @ingroup Sensors
  */
-extern struct sensor uncalibrated_gyroscope;
+struct sensor* uncalibrated_gyroscope = NULL;
 
 /**
  * @struct game_rotation_vector
@@ -93,7 +94,7 @@ extern struct sensor uncalibrated_gyroscope;
  * 
  * @ingroup Sensors
  */
-extern struct sensor game_rotation_vector;
+struct sensor* game_rotation_vector = NULL;
 
 /**
  * @struct geomagnetic_rotation_vector
@@ -102,7 +103,7 @@ extern struct sensor game_rotation_vector;
  * 
  * @ingroup Sensors
  */
-extern struct sensor geomagnetic_rotation_vector;
+struct sensor* geomagnetic_rotation_vector = NULL;
 
 /**
  * @struct pressure
@@ -111,7 +112,7 @@ extern struct sensor geomagnetic_rotation_vector;
  * 
  * @ingroup Sensors
  */
-extern struct sensor pressure;
+struct sensor* pressure = NULL;
 
 /**
  * @struct ambient_light
@@ -120,7 +121,7 @@ extern struct sensor pressure;
  * 
  * @ingroup Sensors
  */
-extern struct sensor ambient_light;
+struct sensor* ambient_light = NULL;
 
 /**
  * @struct humidity
@@ -129,7 +130,7 @@ extern struct sensor ambient_light;
  * 
  * @ingroup Sensors
  */
-extern struct sensor humidity;
+struct sensor* humidity = NULL;
 
 /**
  * @struct proximity
@@ -138,7 +139,7 @@ extern struct sensor humidity;
  * 
  * @ingroup Sensors
  */
-extern struct sensor proximity;
+struct sensor* proximity = NULL;
 
 /**
  * @struct temperature
@@ -147,7 +148,7 @@ extern struct sensor proximity;
  * 
  * @ingroup Sensors
  */
-extern struct sensor temperature;
+struct sensor* temperature = NULL;
 
 /**
  * @struct uncalibrated_magnetic_field
@@ -156,7 +157,7 @@ extern struct sensor temperature;
  * 
  * @ingroup Sensors
  */
-extern struct sensor uncalibrated_magnetic_field;
+struct sensor* uncalibrated_magnetic_field = NULL;
 
 /**
  * @struct tap_detector
@@ -165,7 +166,7 @@ extern struct sensor uncalibrated_magnetic_field;
  * 
  * @ingroup Sensors
  */
-extern struct sensor tap_detector;
+struct sensor* tap_detector = NULL;
 
 /**
  * @struct step_counter
@@ -174,7 +175,7 @@ extern struct sensor tap_detector;
  * 
  * @ingroup Sensors
  */
-extern struct sensor step_counter;
+struct sensor* step_counter = NULL;
 
 /**
  * @struct significant_motion
@@ -183,7 +184,7 @@ extern struct sensor step_counter;
  * 
  * @ingroup Sensors
  */
-extern struct sensor significant_motion;
+struct sensor* significant_motion = NULL;
 
 /**
  * @struct stability_classifier
@@ -192,7 +193,7 @@ extern struct sensor significant_motion;
  * 
  * @ingroup Sensors
  */
-extern struct sensor stability_classifier;
+struct sensor* stability_classifier = NULL;
 
 /**
  * @struct raw_accelerometer
@@ -201,7 +202,7 @@ extern struct sensor stability_classifier;
  * 
  * @ingroup Sensors
  */
-extern struct sensor raw_accelerometer;
+struct sensor* raw_accelerometer = NULL;
 
 /**
  * @struct raw_gyroscope
@@ -210,7 +211,7 @@ extern struct sensor raw_accelerometer;
  * 
  * @ingroup Sensors
  */
-extern struct sensor raw_gyroscope;
+struct sensor* raw_gyroscope = NULL;
 
 /**
  * @struct raw_magnetometer
@@ -219,7 +220,7 @@ extern struct sensor raw_gyroscope;
  * 
  * @ingroup Sensors
  */
-extern struct sensor raw_magnetometer;
+struct sensor* raw_magnetometer = NULL;
 
 /**
  * @struct step_detector
@@ -228,7 +229,7 @@ extern struct sensor raw_magnetometer;
  * 
  * @ingroup Sensors
  */
-extern struct sensor step_detector;
+struct sensor* step_detector = NULL;
 
 /**
  * @struct shake_detector
@@ -237,7 +238,7 @@ extern struct sensor step_detector;
  * 
  * @ingroup Sensors
  */
-extern struct sensor shake_detector;
+struct sensor* shake_detector = NULL;
 
 /**
  * @struct flip_detector
@@ -246,7 +247,7 @@ extern struct sensor shake_detector;
  * 
  * @ingroup Sensors
  */
-extern struct sensor flip_detector;
+struct sensor* flip_detector = NULL;
 
 /**
  * @struct pickup_detector
@@ -255,7 +256,7 @@ extern struct sensor flip_detector;
  * 
  * @ingroup Sensors
  */
-extern struct sensor pickup_detector;
+struct sensor* pickup_detector = NULL;
 
 /**
  * @struct stability_detector
@@ -264,7 +265,7 @@ extern struct sensor pickup_detector;
  * 
  * @ingroup Sensors
  */
-extern struct sensor stability_detector;
+struct sensor* stability_detector = NULL;
 
 /**
  * @struct personal_activity_classifier
@@ -273,7 +274,7 @@ extern struct sensor stability_detector;
  * 
  * @ingroup Sensors
  */
-extern struct sensor personal_activity_classifier;
+struct sensor* personal_activity_classifier = NULL;
 
 /**
  * @struct sleep_detector
@@ -282,7 +283,7 @@ extern struct sensor personal_activity_classifier;
  * 
  * @ingroup Sensors
  */
-extern struct sensor sleep_detector;
+struct sensor* sleep_detector = NULL;
 
 /**
  * @struct tilt_detector
@@ -291,7 +292,7 @@ extern struct sensor sleep_detector;
  * 
  * @ingroup Sensors
  */
-extern struct sensor tilt_detector;
+struct sensor* tilt_detector = NULL;
 
 /**
  * @struct pocket_detector
@@ -300,7 +301,7 @@ extern struct sensor tilt_detector;
  * 
  * @ingroup Sensors
  */
-extern struct sensor pocket_detector;
+struct sensor* pocket_detector = NULL;
 
 /**
  * @struct circle_detector
@@ -309,7 +310,7 @@ extern struct sensor pocket_detector;
  * 
  * @ingroup Sensors
  */
-extern struct sensor circle_detector;
+struct sensor* circle_detector = NULL;
 
 /**
  * @struct heart_rate_monitor
@@ -318,7 +319,7 @@ extern struct sensor circle_detector;
  * 
  * @ingroup Sensors
  */
-extern struct sensor heart_rate_monitor;
+struct sensor* heart_rate_monitor = NULL;
 
 /**
  * @struct arvr_stabilised_rotation_vector
@@ -327,7 +328,7 @@ extern struct sensor heart_rate_monitor;
  * 
  * @ingroup Sensors
  */
-extern struct sensor arvr_stabilised_rotation_vector;
+struct sensor* arvr_stabilised_rotation_vector = NULL;
 
 /**
  * @struct arvr_stabilised_game_rotation_vector
@@ -336,7 +337,7 @@ extern struct sensor arvr_stabilised_rotation_vector;
  * 
  * @ingroup Sensors
  */
-extern struct sensor arvr_stabilised_game_rotation_vector;
+struct sensor* arvr_stabilised_game_rotation_vector = NULL;
 
 /**
  * @struct gyro_integrated_rotation_vector
@@ -345,7 +346,7 @@ extern struct sensor arvr_stabilised_game_rotation_vector;
  * 
  * @ingroup Sensors
  */
-extern struct sensor gyro_integrated_rotation_vector;
+struct sensor* gyro_integrated_rotation_vector = NULL;
 
 /**
  * @struct motion_request
@@ -354,7 +355,7 @@ extern struct sensor gyro_integrated_rotation_vector;
  * 
  * @ingroup Sensors
  */
-extern struct sensor motion_request;
+struct sensor* motion_request = NULL;
 
 /**
  * @struct dead_reckoning_pose
@@ -363,17 +364,4 @@ extern struct sensor motion_request;
  * 
  * @ingroup Sensors
  */
-extern struct sensor dead_reckoning_pose;
-
-//=================================================================================================//
-//		Functions
-//=================================================================================================//
-
-/**
- * @brief Initialises the struct for each sensor.
- * 
- * This function populates the struct for each sensor with default value. This should be run once before any other operations.
- * 
- */
-void init_sensors();
-
+struct sensor* dead_reckoning_pose = NULL;

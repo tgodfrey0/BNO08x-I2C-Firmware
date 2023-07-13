@@ -6,6 +6,7 @@
   ],
   "files.associations": {
     "platform.h": "c",
-    "sensors.h": "c"
+    "sensors.h": "c",
+    "output.h": "c"
   }
 }
