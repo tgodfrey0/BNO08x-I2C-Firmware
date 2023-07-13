@@ -1,4 +1,4 @@
 var sensors_8h =
 [
-    [ "init_sensors", "sensors_8h.html#ac74850003fab6eb3269bfe043d0f939c", null ]
+    [ "accelerometer", "sensors_8h.html#af7508d9d82cc51a183b369e49daae8ef", null ]
 ];

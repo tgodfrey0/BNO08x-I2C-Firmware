@@ -3,7 +3,9 @@
 #include "logger.h"
 #include "parsers.h"
 #include "q_points.h"
+#include "sensors.h"
 #include "response_sizes.h"
+
 
 float scale_q(uint8_t q){
   if(q == 0) return 1;

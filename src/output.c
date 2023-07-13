@@ -1,6 +1,7 @@
 #include "bno08x.h"
 #include "logger.h"
 #include "output.h"
+#include "sensors.h"
 
 char* print_status(uint8_t s){
   uint8_t status = s & 0x03; // Only want the firs two bits
