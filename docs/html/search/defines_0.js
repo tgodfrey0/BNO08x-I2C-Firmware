@@ -13,10 +13,9 @@ var searchData=
   ['q_5fhumidity_10',['Q_HUMIDITY',['../q__points_8h.html#ada426642b7655c8ca96e9dec6e6e21d1',1,'q_points.h']]],
   ['q_5flinear_5facceleration_11',['Q_LINEAR_ACCELERATION',['../q__points_8h.html#ac1c21d5c6f79f757f5cd3288fd65220d',1,'q_points.h']]],
   ['q_5fmagnetic_5ffield_12',['Q_MAGNETIC_FIELD',['../q__points_8h.html#a0dd5798474861fb624bb3b4263fce37e',1,'q_points.h']]],
-  ['q_5fpoints_2eh_13',['q_points.h',['../q__points_8h.html',1,'']]],
-  ['q_5fpressure_14',['Q_PRESSURE',['../q__points_8h.html#ac716562718ab347dc2df43f65f328292',1,'q_points.h']]],
-  ['q_5fproximity_15',['Q_PROXIMITY',['../q__points_8h.html#a866a54b6f5db4f6d942d9ee53d4dbbf1',1,'q_points.h']]],
-  ['q_5frotation_5fvector_16',['Q_ROTATION_VECTOR',['../q__points_8h.html#ad8a47eed3418148ce19f39e3f9081478',1,'q_points.h']]],
-  ['q_5frotation_5fvector_5faccuracy_17',['Q_ROTATION_VECTOR_ACCURACY',['../q__points_8h.html#ae07b25651c0d5899cd2dba79ae98fc2e',1,'q_points.h']]],
-  ['q_5ftemperature_18',['Q_TEMPERATURE',['../q__points_8h.html#ad056e05a6335cd5edbab45d898b55d29',1,'q_points.h']]]
+  ['q_5fpressure_13',['Q_PRESSURE',['../q__points_8h.html#ac716562718ab347dc2df43f65f328292',1,'q_points.h']]],
+  ['q_5fproximity_14',['Q_PROXIMITY',['../q__points_8h.html#a866a54b6f5db4f6d942d9ee53d4dbbf1',1,'q_points.h']]],
+  ['q_5frotation_5fvector_15',['Q_ROTATION_VECTOR',['../q__points_8h.html#ad8a47eed3418148ce19f39e3f9081478',1,'q_points.h']]],
+  ['q_5frotation_5fvector_5faccuracy_16',['Q_ROTATION_VECTOR_ACCURACY',['../q__points_8h.html#ae07b25651c0d5899cd2dba79ae98fc2e',1,'q_points.h']]],
+  ['q_5ftemperature_17',['Q_TEMPERATURE',['../q__points_8h.html#ad056e05a6335cd5edbab45d898b55d29',1,'q_points.h']]]
 ];
