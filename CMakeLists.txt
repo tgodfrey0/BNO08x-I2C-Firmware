@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.12)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 
-set(PRJ_NAME "your-project-name-here")
+set(PRJ_NAME "bno08x-firmware")
 
 if(NOT CMAKE_BUILD_TYPE)
   message("Defaulting CMAKE_BUILD_TYPE=Debug")
@@ -19,6 +19,7 @@ pico_add_extra_outputs(${PRJ_NAME})
 
 target_link_libraries(${PRJ_NAME}
   pico_stdlib
+  hardware_i2c
 )
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
