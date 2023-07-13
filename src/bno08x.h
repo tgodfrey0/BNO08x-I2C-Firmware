@@ -115,6 +115,15 @@ struct sensor {
 //=================================================================================================//
 
 /**
+ * @brief Turn on the sensor and open the channel.
+ * 
+ * This *must* be run before any other sensor operation.
+ * 
+ * @param i2c is the I2C interface to communicate with the sensor on
+ */
+void init(const struct i2c_interface i2c);
+
+/**
  * @brief Enables a specified sensor with a fixed report rate.
  * 
  * @param i2c is the I2C interface to communicate with the sensor on

@@ -121,6 +121,9 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:abcc9a057fb9f5df6fc44080e1c5a10f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bno08x_8h.html#abcc9a057fb9f5df6fc44080e1c5a10f6">init</a> (const struct <a class="el" href="structi2c__interface.html">i2c_interface</a> i2c)</td></tr>
+<tr class="memdesc:abcc9a057fb9f5df6fc44080e1c5a10f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn on the sensor and open the channel.  <br /></td></tr>
+<tr class="separator:abcc9a057fb9f5df6fc44080e1c5a10f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00c7a3721ffe437a13e8da61c2a7fecd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bno08x_8h.html#a00c7a3721ffe437a13e8da61c2a7fecd">enable_sensor</a> (const struct <a class="el" href="structi2c__interface.html">i2c_interface</a> i2c, struct <a class="el" href="structsensor.html">sensor</a> *<a class="el" href="structsensor.html">sensor</a>, uint32_t sample_rate_ms)</td></tr>
 <tr class="memdesc:a00c7a3721ffe437a13e8da61c2a7fecd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables a specified sensor with a fixed report rate.  <br /></td></tr>
 <tr class="separator:a00c7a3721ffe437a13e8da61c2a7fecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -179,6 +182,33 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the sensor was successfully enabled </dd>
 <dd>
 <code>false</code> if the sensor could not be enabled </dd></dl>
+
+</div>
+</div>
+<a id="abcc9a057fb9f5df6fc44080e1c5a10f6" name="abcc9a057fb9f5df6fc44080e1c5a10f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcc9a057fb9f5df6fc44080e1c5a10f6">&#9670;&#160;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="structi2c__interface.html">i2c_interface</a>&#160;</td>
+          <td class="paramname"><em>i2c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Turn on the sensor and open the channel. </p>
+<p>This <em>must</em> be run before any other sensor operation.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i2c</td><td>is the I2C interface to communicate with the sensor on </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

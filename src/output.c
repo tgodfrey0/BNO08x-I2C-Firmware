@@ -1,6 +1,7 @@
 #include "bno08x.h"
 #include "logger.h"
 #include "output.h"
+#include "sensors.h"
 
 char* print_status(uint8_t s){
   uint8_t status = s & 0x03; // Only want the firs two bits
@@ -43,140 +44,140 @@ void print_linear_acceleration_data(){
 void print_rotation_vector_data(){
   info("Rotation Vector Frame:\n");
   info("Sensor status is \"%s\", delay is %d us", print_status(rotation_vector.input_report.rotation_vector.status), (rotation_vector.input_report.rotation_vector.delay * 100));
-  info("Quaternion: %d + %di + %dj + %dk", rotation_vector.input_report.rotation_vector.rea;, rotation_vector.input_report.rotation_vector.i, rotation_vector.input_report.rotation_vector.j, rotation_vector.input_report.rotation_vector.k);
+  info("Quaternion: %d + %di + %dj + %dk", rotation_vector.input_report.rotation_vector.real, rotation_vector.input_report.rotation_vector.i, rotation_vector.input_report.rotation_vector.j, rotation_vector.input_report.rotation_vector.k);
   info("Accuracy: %d rad", rotation_vector.input_report.rotation_vector.accuracy);
 }
 
 void print_gravity_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_uncalibrated_gyroscope_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_game_rotation_vector_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_geomagnetic_rotation_vector_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_pressure_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_ambient_light_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_humidity_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_proximity_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_temperature_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_uncalibrated_magnetic_field_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_tap_detector_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_step_counter_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_significant_motion_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_stability_classifier_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_raw_accelerometer_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_raw_gyroscope_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_raw_magnetometer_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_step_detector_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_shake_detector_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_flip_detector_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_pickup_detector_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_stability_detector_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_personal_activity_classifier_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_sleep_detector_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_tilt_detector_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_pocket_detector_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_circle_detector_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_heart_rate_monitor_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_arvr_stabilised_rotation_vector_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_arvr_stabilised_game_rotation_vector_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_gyro_integrated_rotation_vector_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_motion_request_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_dead_reckoning_pose_data(){
-  warn("Printer for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Printer for frames from sensor %d has not yet been implemented", last_received);
 }
 
 void print_last_frame(){
@@ -299,7 +300,7 @@ void print_last_frame(){
       print_dead_reckoning_pose_data();
       break;
     default:
-      warn("Unrecognised sensor msg.payload[0] - %d", msg.payload[0]);
+      warn("Unrecognised sensor ID - %d", last_received);
       break;
   }
 }

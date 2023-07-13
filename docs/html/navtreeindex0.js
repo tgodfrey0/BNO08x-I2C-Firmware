@@ -3,7 +3,8 @@ var NAVTREEINDEX0 =
 "annotated.html":[2,0],
 "bno08x_8h.html":[3,0,0,0],
 "bno08x_8h.html#a00c7a3721ffe437a13e8da61c2a7fecd":[3,0,0,0,2],
-"bno08x_8h.html#a9525704d6c0800d55595d6dead18b0c7":[3,0,0,0,3],
+"bno08x_8h.html#a9525704d6c0800d55595d6dead18b0c7":[3,0,0,0,4],
+"bno08x_8h.html#abcc9a057fb9f5df6fc44080e1c5a10f6":[3,0,0,0,3],
 "bno08x_8h_source.html":[3,0,0,0],
 "classes.html":[2,1],
 "defs_8h_source.html":[3,0,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "structgravity__report.html#a725a13d8d43f65c0f5e8adc271f71573":[2,0,19,1],
 "structgravity__report.html#aa4f0d3eebc3c443f9be81bf48561a217":[2,0,19,5],
 "structgravity__report.html#ac117f9690109b1aeb49da826aff1cca6":[2,0,19,2],
-"structgravity__report.html#ad0da36b2558901e21e7a30f6c227a45e":[2,0,19,4],
-"structgravity__report.html#ade818037fd6c985038ff29656089758d":[2,0,19,3]
+"structgravity__report.html#ad0da36b2558901e21e7a30f6c227a45e":[2,0,19,4]
 };

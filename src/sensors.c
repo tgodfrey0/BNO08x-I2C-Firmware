@@ -133,7 +133,7 @@ void init_sensors(){
     }
   };
 
-  struct sensor game_rotation_vector = &(struct sensor){
+  struct sensor game_rotation_vector = {
     .name = "Game Rotation Vector",
     .id = GAME_ROTATION_VECTOR,
     .channel = 255,

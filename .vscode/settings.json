@@ -1,6 +1,11 @@
 {
   "cSpell.words": [
     "arvr",
+    "PICO",
     "stabilised"
-  ]
+  ],
+  "files.associations": {
+    "platform.h": "c",
+    "sensors.h": "c"
+  }
 }

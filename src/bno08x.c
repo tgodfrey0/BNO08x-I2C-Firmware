@@ -10,6 +10,37 @@
 const uint8_t BNO08x_ADDR = 0x4A; 
 uint8_t sequence_number = 0;
 
+enum I2C_RESPONSE open_channel(const struct i2c_interface i2c){
+  /*
+   *  Byte  | Value
+   *   0,1  | Length = 5
+   *   2    | Channel = 1 (Executable)
+   *   3    | Sequence Number = 0
+   *   4    | Payload = CMD 2 (On)
+   */
+  uint8_t pkt[] = {5, 0, 1, get_seq_num(), 2};
+
+  return i2c.write(BNO08x_ADDR, &(struct i2c_message) {
+    .payload = pkt,
+    .length = 5
+  });
+}
+
+
+void init(const struct i2c_interface i2c){
+  if(!i2c.initialised){
+    crit("I2C interface must be initialised first\n");
+    for(;;);
+  }
+
+  if(open_channel(i2c) != SUCCESS){
+    crit("Failed to open channel to sensor\n");
+    for(;;);
+  }
+
+  init_sensors();
+}
+
 bool enable_sensor(const struct i2c_interface i2c, struct sensor* sensor, uint32_t sample_rate_ms){
   uint64_t period_us = sample_rate_ms * 1000;
 
