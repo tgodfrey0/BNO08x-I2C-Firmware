@@ -87,7 +87,7 @@ struct i2c_interface {
 	/**
 	* @brief Callback to initialise the I2C interface.
   *
-	* This must be run before any other operations can be applied to the struct.
+	* This must be run before any other operations can be applied to the struct. This function *must* set the `initialised` flag of \p self to true if successful. Failure to do this will cause an error to occur and the system to enter a tight loop.
 	*
 	* @param self		The struct for the interface being initialised
 	*/

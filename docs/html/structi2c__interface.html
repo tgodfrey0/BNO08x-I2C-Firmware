@@ -153,7 +153,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Callback to initialise the I2C interface. </p>
-<p>This must be run before any other operations can be applied to the struct.</p>
+<p>This must be run before any other operations can be applied to the struct. This function <em>must</em> set the <code>initialised</code> flag of <code>self</code> to true if successful. Failure to do this will cause an error to occur and the system to enter a tight loop.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">self</td><td>The struct for the interface being initialised </td></tr>
