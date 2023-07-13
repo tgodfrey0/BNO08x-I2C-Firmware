@@ -20,7 +20,7 @@
  * 
  * A `MAX_PAYLOAD_SIZE` value must also be defined.
  * 
- * Before sensors can be read, the sensor initialisation function must be run (found in \ref sensors.h).
+ * Before sensors can be read, the sensor must be enabled (found in \ref sensors.h).
  */
 
 /*! 
