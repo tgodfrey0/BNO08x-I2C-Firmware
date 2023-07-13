@@ -15,7 +15,7 @@
 #include "output.h"
 
 enum I2C_RESPONSE write_i2c(const uint8_t addr, const struct i2c_message* message){
-	if(i2c_write_blocking(I2C_INST, addr, message->payload, message->length, false) != PICO_ERROR_GENERIC){
+	if(i2c_write_blocking(I2C_INST, addr, message->payload, message->length, false) == PICO_OK){
 		return SUCCESS;
   } else return ERROR_GENERIC;
 }
@@ -25,7 +25,7 @@ enum I2C_RESPONSE read_i2c(const uint8_t addr, struct i2c_message* message, cons
 
 	uint8_t res = i2c_read_blocking(I2C_INST, addr, buf, n, false);
 
-  if(res == PICO_ERROR_GENERIC){
+  if(res != PICO_OK){
     return ERROR_GENERIC;
   } else {
     memcpy(message->payload, buf, n);
