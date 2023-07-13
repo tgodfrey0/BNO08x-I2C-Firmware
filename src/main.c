@@ -43,6 +43,8 @@ enum I2C_RESPONSE init_i2c(struct i2c_interface* self){
   gpio_pull_up(SCL_PIN);
   gpio_pull_up(SDA_PIN);
 
+	self->initialised = true;
+
   info("I2C interface successfully configured\n");
 	return SUCCESS;
 }
@@ -72,6 +74,9 @@ int main(){
 
 	init(i2c);
 
+	sleep_ms(1000);
+	gpio_put(PICO_DEFAULT_LED_PIN, 0);
+
 	enable_sensor(i2c, ACCELEROMETER, 100);
 	enable_sensor(i2c, GYROSCOPE, 100);
 	enable_sensor(i2c, MAGNETIC_FIELD, 100);
@@ -79,7 +84,10 @@ int main(){
 	enable_sensor(i2c, ROTATION_VECTOR, 100);
 
 	for(;;){
+		gpio_put(PICO_DEFAULT_LED_PIN, 0);
+		sleep_ms(50);
 		if(read_sensors(i2c)) print_last_frame();
+		gpio_put(PICO_DEFAULT_LED_PIN, 1);
 		sleep_ms(50);
 	}
 	
