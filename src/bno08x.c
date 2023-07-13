@@ -427,7 +427,7 @@ bool read_sensors(const struct i2c_interface i2c){
 
   res = i2c.read(BNO08x_ADDR, &header, 4);
 
-  if(res == ERROR_GENERIC || ERROR_TIMEOUT){
+  if(res != SUCCESS){
     warn("Failed to read header\n");
     return false;
   }
@@ -447,7 +447,7 @@ bool read_sensors(const struct i2c_interface i2c){
 
   res = i2c.read(BNO08x_ADDR, &cargo, cargo_length);
 
-  if(res == ERROR_GENERIC || res == ERROR_TIMEOUT){
+  if(res != SUCCESS){
     warn("Failed to read cargo\n");
     return false;
   }
