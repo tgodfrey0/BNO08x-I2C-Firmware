@@ -6,5 +6,3 @@
 #define SDA_PIN		16
 #define SCL_PIN		17
 #define TIMEOUT_MS	10000
-
-#define MAX_PAYLOAD_SIZE  512

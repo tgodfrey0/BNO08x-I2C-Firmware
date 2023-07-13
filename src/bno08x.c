@@ -7,7 +7,6 @@
 #include "sensors.h"
 #include "sensor_reports.h"
 
-
 const uint8_t BNO08x_ADDR = 0x4A; 
 uint8_t sequence_number = 0;
 
@@ -32,7 +31,7 @@ void init(const struct i2c_interface i2c){
     crit("I2C interface must be initialised first\n");
     for(;;);
   }
-
+  
   if(open_channel(i2c) != SUCCESS){
     crit("Failed to open channel to sensor\n");
     for(;;);
@@ -419,12 +418,6 @@ bool enable_sensor(const struct i2c_interface i2c, enum SENSOR_ID id, uint32_t s
 bool read_sensors(const struct i2c_interface i2c){
   enum I2C_RESPONSE res;
 
-#if !defined(MAX_PAYLOAD_SIZE)
-  #warning MAX_PAYLOAD_SIZE required
-  puts("MAX_PAYLOAD_SIZE must be defined\n");
-  return false;
-#endif
-
   uint8_t header_content[4];
 
   struct i2c_message header = {
@@ -444,7 +437,7 @@ bool read_sensors(const struct i2c_interface i2c){
     return false;
   }
 
-  uint16_t cargo_length = header.payload[0] | (header.payload[1] << 8);
+  uint16_t cargo_length = (header.payload[0] | (header.payload[1] << 8)) & ~0x8000;
   uint8_t cargo_content[cargo_length];
 
   struct i2c_message cargo = {

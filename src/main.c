@@ -51,6 +51,13 @@ int main(){
 
 	stdio_init_all();
 
+	gpio_init(PICO_DEFAULT_LED_PIN);
+	gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
+	gpio_pull_down(PICO_DEFAULT_LED_PIN);
+	gpio_put(PICO_DEFAULT_LED_PIN, 1);
+
+	info("Initialising data structures\n");
+
 	struct i2c_interface i2c = {
 		.sda_pin = SDA_PIN,
 		.scl_pin = SCL_PIN,
@@ -73,6 +80,7 @@ int main(){
 
 	for(;;){
 		if(read_sensors(i2c)) print_last_frame();
+		sleep_ms(50);
 	}
 	
 	return 0;
