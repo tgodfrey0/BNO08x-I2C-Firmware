@@ -14,7 +14,8 @@ var searchData=
   ['pocket_5fdetector_5freport_11',['pocket_detector_report',['../structpocket__detector__report.html',1,'']]],
   ['pressure_12',['pressure',['../structpressure.html',1,'pressure'],['../unioninput__report.html#a6821147ad3930dc2bf945af51bd4531e',1,'input_report::pressure()']]],
   ['pressure_5freport_13',['pressure_report',['../structpressure__report.html',1,'']]],
-  ['proximity_14',['proximity',['../structproximity.html',1,'proximity'],['../unioninput__report.html#a3f6093bd6636ef8649577dc30ca7424b',1,'input_report::proximity()']]],
-  ['proximity_5freport_15',['proximity_report',['../structproximity__report.html',1,'']]],
-  ['public_20enumeration_20types_16',['Public enumeration types',['../group__Enumerations.html',1,'']]]
+  ['print_5flast_5fframe_14',['print_last_frame',['../output_8h.html#a0b0f4e90a29e4be245e840c490a8235b',1,'output.c']]],
+  ['proximity_15',['proximity',['../structproximity.html',1,'proximity'],['../unioninput__report.html#a3f6093bd6636ef8649577dc30ca7424b',1,'input_report::proximity()']]],
+  ['proximity_5freport_16',['proximity_report',['../structproximity__report.html',1,'']]],
+  ['public_20enumeration_20types_17',['Public enumeration types',['../group__Enumerations.html',1,'']]]
 ];

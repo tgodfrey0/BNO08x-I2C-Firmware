@@ -1,12 +1,3 @@
-/****************************************************************************************************
-* @file parsers.c
-* @brief BNO08x frame parsers.
-*
-* @author Toby Godfrey
-****************************************************************************************************/
-
-#include <stdio.h>
-
 #include "bno08x.h"
 #include "i2c.h"
 #include "logger.h"
@@ -51,7 +42,7 @@ void parse_accelerometer_data(struct i2c_message msg){
   accelerometer.input_report.accelerometer.z = read_16_scale(&msg.payload[8], Q_ACCELEROMETER);
 
   last_received = msg.payload[0];
-  printf("Successfully parsed accelerometer data\n");
+  info("Successfully parsed accelerometer data\n");
 }
 
 void parse_gyroscope_data(struct i2c_message msg){
@@ -69,7 +60,7 @@ void parse_gyroscope_data(struct i2c_message msg){
   gyroscope.input_report.gyroscope.z = read_16_scale(&msg.payload[8], Q_GYROSCOPE);
 
   last_received = msg.payload[0];
-  printf("Successfully parsed gyroscope data\n");
+  info("Successfully parsed gyroscope data\n");
 }
 
 void parse_magnetic_field_data(struct i2c_message msg){
@@ -87,7 +78,7 @@ void parse_magnetic_field_data(struct i2c_message msg){
   magnetic_field.input_report.magnetic_field.z = read_16_scale(&msg.payload[8], Q_MAGNETIC_FIELD);
 
   last_received = msg.payload[0];
-  printf("Successfully parsed magnetic field data\n");
+  info("Successfully parsed magnetic field data\n");
 }
 
 void parse_linear_acceleration_data(struct i2c_message msg){
@@ -105,7 +96,7 @@ void parse_linear_acceleration_data(struct i2c_message msg){
   linear_acceleration.input_report.linear_acceleration.z = read_16_scale(&msg.payload[8], Q_LINEAR_ACCELERATION);
 
   last_received = msg.payload[0];
-  printf("Successfully parsed linear acceleration data\n");
+  info("Successfully parsed linear acceleration data\n");
 }
 
 void parse_rotation_vector_data(struct i2c_message msg){
@@ -125,7 +116,7 @@ void parse_rotation_vector_data(struct i2c_message msg){
   rotation_vector.input_report.rotation_vector.accuracy = read_16_scale(&msg.payload[12], Q_ROTATION_VECTOR_ACCURACY);
 
   last_received = msg.payload[0];
-  printf("Successfully parsed linear acceleration data\n");
+  info("Successfully parsed linear acceleration data\n");
 }
 
 void parse_gravity_data(struct i2c_message msg){
