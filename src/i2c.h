@@ -65,7 +65,7 @@ struct i2c_interface {
 	uint8_t sda_pin;				/**< The SDA pin number */
 	uint8_t scl_pin;				/**< The SCL pin number */
 	uint32_t baud_rate_hz;		/**< The desired I2C bus speed in Hertz */
-	bool initialised;				/**< Stores true if the interface has been successfully initialised */
+	bool initialised;				/**< Stores `true` if the interface has been successfully initialised */
 
 	/**
 	* @brief Callback to write data on to the I2C bus.
