@@ -300,7 +300,7 @@ void print_last_frame(){
       print_dead_reckoning_pose_data();
       break;
     default:
-      warn("Unrecognised sensor ID %d\n", last_received);
+      warn("Unrecognised sensor ID 0x%x\n", last_received);
       break;
   }
 }

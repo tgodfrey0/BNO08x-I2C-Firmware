@@ -138,7 +138,7 @@ struct sensor* get_sensor(enum SENSOR_ID id){
     case DEAD_RECKONING_POSE:
       return dead_reckoning_pose;
     default:
-      warn("Unrecognised sensor ID %d\n", id);
+      warn("Unrecognised sensor ID 0x%x\n", id);
       return NULL;
   }
 }
@@ -377,7 +377,7 @@ void populate_struct(const enum SENSOR_ID id){
       };
       break;
     default:
-      warn("Unrecognised sensor ID %d\n", id);
+      warn("Unrecognised sensor ID 0x%x\n", id);
       return;
   }
 
