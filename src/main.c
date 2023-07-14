@@ -14,18 +14,32 @@
 #include "logger.h"
 #include "output.h"
 
+void flash(uint8_t n){
+	for(uint8_t i = 0; i < n; i++){
+		gpio_put(PICO_DEFAULT_LED_PIN, 1);
+		sleep_ms(500);
+		gpio_put(PICO_DEFAULT_LED_PIN, 0);
+		sleep_ms(500);
+	}
+	sleep_ms(1000);
+}
+
 enum I2C_RESPONSE write_i2c(const uint8_t addr, const struct i2c_message* message){
-	if(i2c_write_blocking(I2C_INST, addr, message->payload, message->length, false) == PICO_OK){
-		return SUCCESS;
-  } else return ERROR_GENERIC;
+	info("0x%x\n", addr);
+	info("%d\n", message->length);
+	int8_t res = i2c_write_blocking(I2C_INST, addr, message->payload, message->length, false);
+	info("%d\n", res);
+	if(res == PICO_ERROR_GENERIC || res == PICO_ERROR_TIMEOUT){
+		return ERROR_GENERIC;
+  } else return SUCCESS;
 }
 
 enum I2C_RESPONSE read_i2c(const uint8_t addr, struct i2c_message* message, const uint16_t n){
 	uint8_t buf[n];
 
-	uint8_t res = i2c_read_blocking(I2C_INST, addr, buf, n, false);
+	int8_t res = i2c_read_blocking(I2C_INST, addr, buf, n, false);
 
-  if(res != PICO_OK){
+  if(res == PICO_ERROR_GENERIC || res == PICO_ERROR_TIMEOUT){
     return ERROR_GENERIC;
   } else {
     memcpy(message->payload, buf, n);
@@ -56,7 +70,12 @@ int main(){
 	gpio_init(PICO_DEFAULT_LED_PIN);
 	gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
 	gpio_pull_down(PICO_DEFAULT_LED_PIN);
-	gpio_put(PICO_DEFAULT_LED_PIN, 1);
+
+	sleep_ms(500);
+
+	flash(3);
+
+	info("Starting initialisation process\n");
 
 	info("Initialising data structures\n");
 
@@ -74,14 +93,15 @@ int main(){
 
 	init(i2c);
 
-	sleep_ms(1000);
-	gpio_put(PICO_DEFAULT_LED_PIN, 0);
+	flash(5);
 
 	enable_sensor(i2c, ACCELEROMETER, 100);
 	enable_sensor(i2c, GYROSCOPE, 100);
 	enable_sensor(i2c, MAGNETIC_FIELD, 100);
 	enable_sensor(i2c, LINEAR_ACCELERATION, 100);
 	enable_sensor(i2c, ROTATION_VECTOR, 100);
+
+	info("Initialisation process complete\n");
 
 	for(;;){
 		gpio_put(PICO_DEFAULT_LED_PIN, 0);

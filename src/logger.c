@@ -15,9 +15,7 @@ void info(const char* msg, ...){
   va_list argp;
   va_start(argp, msg);
 
-  time_t now;
-  time(&now);
-  printf("%s [INFO]: ", ctime(&now));
+  printf("[INFO]: ");
   vprintf(msg, argp);
 
   va_end(argp);
@@ -31,9 +29,7 @@ void warn(const char* msg, ...){
   va_list argp;
   va_start(argp, msg);
 
-  time_t now;
-  time(&now);
-  printf("%s [WARN]: ", ctime(&now));
+  printf("[WARN]: ");
   vprintf(msg, argp);
 
   va_end(argp);
@@ -47,9 +43,7 @@ void crit(const char* msg, ...){
   va_list argp;
   va_start(argp, msg);
 
-  time_t now;
-  time(&now);
-  printf("%s [CRIT]: ", ctime(&now));
+  printf("[CRIT]: ");
   vprintf(msg, argp);
 
   va_end(argp);

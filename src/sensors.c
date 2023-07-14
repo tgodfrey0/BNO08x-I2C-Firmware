@@ -1,6 +1,3 @@
-
-#pragma once
-
 #include <stddef.h>
 
 #include "sensors.h"

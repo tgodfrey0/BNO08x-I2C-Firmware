@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"structgravity__report.html#ade818037fd6c985038ff29656089758d":[2,0,19,3],
 "structgravity__report.html#af73583b1e980b0aa03f9884812e9fd4d":[2,0,19,6],
 "structgyro__integrated__rotation__vector.html":[1,1,35],
 "structgyro__integrated__rotation__vector__report.html":[2,0,21],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "structuncalibrated__magnetic__field__report.html#ad0da36b2558901e21e7a30f6c227a45e":[2,0,80,4],
 "structuncalibrated__magnetic__field__report.html#ade818037fd6c985038ff29656089758d":[2,0,80,3],
 "structuncalibrated__magnetic__field__report.html#af73583b1e980b0aa03f9884812e9fd4d":[2,0,80,8],
-"unioninput__report.html":[2,0,30],
-"unioninput__report.html#a01d40ac9949c8ab5b7ae95e0ed46e1f5":[2,0,30,29]
+"unioninput__report.html":[2,0,30]
 };

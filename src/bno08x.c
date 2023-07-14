@@ -10,6 +10,24 @@
 const uint8_t BNO08x_ADDR = 0x4A; 
 uint8_t sequence_number = 0;
 
+#include "boards/pico.h"
+#include "hardware/gpio.h"
+#include "hardware/timer.h"
+#include "pico/platform.h"
+#include "pico/stdio.h"
+#include "pico/stdlib.h"
+#include "hardware/i2c.h"
+
+void flashh(uint8_t n){
+	for(uint8_t i = 0; i < n; i++){
+		gpio_put(PICO_DEFAULT_LED_PIN, 1);
+		sleep_ms(500);
+		gpio_put(PICO_DEFAULT_LED_PIN, 0);
+		sleep_ms(500);
+	}
+	sleep_ms(1000);
+}
+
 enum I2C_RESPONSE open_channel(const struct i2c_interface i2c){
   /*
    *  Byte  | Value
@@ -19,23 +37,37 @@ enum I2C_RESPONSE open_channel(const struct i2c_interface i2c){
    *   4    | Payload = CMD 2 (On)
    */
   uint8_t pkt[] = {5, 0, 1, get_seq_num(), 2};
+  enum SENSOR_ID res;
 
-  return i2c.write(BNO08x_ADDR, &(struct i2c_message) {
-    .payload = pkt,
-    .length = 5
-  });
+  for(uint8_t i = 0; i < OPEN_ATTEMPTS; i++){
+    res = i2c.write(BNO08x_ADDR, &(struct i2c_message) {
+      .payload = pkt,
+      .length = 5
+    });
+
+    if(res == SUCCESS) break;
+  }
+
+  return res; 
 }
 
 void init(const struct i2c_interface i2c){
+  flashh(4);
   if(!i2c.initialised){
     crit("I2C interface must be initialised first\n");
+    flashh(2);
     for(;;);
   }
+
+  flashh(4);
   
   if(open_channel(i2c) != SUCCESS){
     crit("Failed to open channel to sensor\n");
+    flashh(3);
     for(;;);
   }
+
+  info("Sensor channel opened\n");
 }
 
 struct sensor* get_sensor(enum SENSOR_ID id){

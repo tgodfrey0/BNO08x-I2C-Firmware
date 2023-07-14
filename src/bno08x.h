@@ -37,6 +37,7 @@
 #include "sensor_reports.h"
 
 #define MAX_PAYLOAD_SIZE  512 /**< The maximum buffer size for received messages. */
+#define OPEN_ATTEMPTS			5 /**< The number of tries to open a channel to the sensor. */
 
 //=================================================================================================//
 //		Enums
