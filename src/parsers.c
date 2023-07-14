@@ -121,139 +121,139 @@ void parse_rotation_vector_data(struct i2c_message msg){
 }
 
 void parse_gravity_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_uncalibrated_gyroscope_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_game_rotation_vector_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_geomagnetic_rotation_vector_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_pressure_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_ambient_light_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_humidity_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_proximity_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_temperature_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_uncalibrated_magnetic_field_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_tap_detector_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_step_counter_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_significant_motion_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_stability_classifier_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_raw_accelerometer_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_raw_gyroscope_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_raw_magnetometer_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_step_detector_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_shake_detector_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_flip_detector_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_pickup_detector_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_stability_detector_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_personal_activity_classifier_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_sleep_detector_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_tilt_detector_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_pocket_detector_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_circle_detector_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_heart_rate_monitor_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_arvr_stabilised_rotation_vector_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_arvr_stabilised_game_rotation_vector_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_gyro_integrated_rotation_vector_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_motion_request_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_dead_reckoning_pose_data(struct i2c_message msg){
-  warn("Parser for frames from sensor %d has not yet been implemented", msg.payload[0]);
+  warn("Parser for frames from sensor %d has not yet been implemented\n", msg.payload[0]);
 }
 
 void parse_msg(struct i2c_message msg){
-  info("Message received from sensor with msg.payload[0] %d", msg.payload[0]);
+  // info("Message received from sensor with ID %d\n", msg.payload[0]);
   switch (msg.payload[0]) {
     case ACCELEROMETER:
       parse_accelerometer_data(msg);
@@ -373,7 +373,7 @@ void parse_msg(struct i2c_message msg){
       parse_dead_reckoning_pose_data(msg);
       break;
     default:
-      warn("Unrecognised sensor msg.payload[0] - %d", msg.payload[0]);
+      warn("Unrecognised sensor ID %d\n", msg.payload[0]);
       break;
   }
 }

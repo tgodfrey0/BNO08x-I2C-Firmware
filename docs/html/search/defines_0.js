@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['max_5fpayload_5fsize_0',['MAX_PAYLOAD_SIZE',['../bno08x_8h.html#a6303f7392a2d06be5a121c54278d561b',1,'bno08x.h']]]
+  ['header_5ftimebase_5foffset_0',['HEADER_TIMEBASE_OFFSET',['../bno08x_8h.html#a692299f77cfde0792bb057bf8913912f',1,'bno08x.h']]]
 ];

@@ -36,8 +36,10 @@
 #include "sensors.h"
 #include "sensor_reports.h"
 
-#define MAX_PAYLOAD_SIZE  512 /**< The maximum buffer size for received messages. */
-#define OPEN_ATTEMPTS			5 /**< The number of tries to open a channel to the sensor. */
+#define MAX_PAYLOAD_SIZE		512 /**< The maximum buffer size for received messages. */
+#define OPEN_ATTEMPTS		5 /**< The number of tries to open a channel to the sensor. */
+#define min(a,b) ({ __typeof__ (a) _a = (a); __typeof__ (b) _b = (b); _a < _b ? _a : _b; }) /**< Macro to return the smaller of two numbers. */
+#define HEADER_TIMEBASE_OFFSET		9 /**< The number of bytes used for the header and timebase reference. */
 
 //=================================================================================================//
 //		Enums

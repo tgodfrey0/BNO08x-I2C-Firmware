@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 #include "bno08x.h"
 #include "i2c.h"
@@ -18,15 +19,6 @@ uint8_t sequence_number = 0;
 #include "pico/stdlib.h"
 #include "hardware/i2c.h"
 
-void flashh(uint8_t n){
-	for(uint8_t i = 0; i < n; i++){
-		gpio_put(PICO_DEFAULT_LED_PIN, 1);
-		sleep_ms(500);
-		gpio_put(PICO_DEFAULT_LED_PIN, 0);
-		sleep_ms(500);
-	}
-	sleep_ms(1000);
-}
 
 enum I2C_RESPONSE open_channel(const struct i2c_interface i2c){
   /*
@@ -52,18 +44,13 @@ enum I2C_RESPONSE open_channel(const struct i2c_interface i2c){
 }
 
 void init(const struct i2c_interface i2c){
-  flashh(4);
   if(!i2c.initialised){
     crit("I2C interface must be initialised first\n");
-    flashh(2);
     for(;;);
   }
-
-  flashh(4);
   
   if(open_channel(i2c) != SUCCESS){
     crit("Failed to open channel to sensor\n");
-    flashh(3);
     for(;;);
   }
 
@@ -448,7 +435,59 @@ bool enable_sensor(const struct i2c_interface i2c, enum SENSOR_ID id, uint32_t s
 }
 
 bool read_sensors(const struct i2c_interface i2c){
-  enum I2C_RESPONSE res;
+  // enum I2C_RESPONSE res;
+
+  // uint8_t header_content[4];
+
+  // struct i2c_message header = {
+  //   .payload = header_content,
+  //   .length = 0
+  // };
+
+  // res = i2c.read(BNO08x_ADDR, &header, 4);
+
+  // if(res != SUCCESS){
+  //   warn("Failed to read header\n");
+  //   return false;
+  // }
+
+  // if(header.length != 4){
+  //   warn("Failed to read full header. 4 bytes should be read, but %d bytes were read\n", header.length);
+  //   return false;
+  // }
+
+  // info("Header: ");
+  // for(uint8_t i = 0; i < header.length; i++){
+  //   printf("%d ", header.payload[i]);
+  // }
+
+  // uint16_t cargo_length = header.payload[0] | (header.payload[1] << 8);
+  // cargo_length &= 0x7FFF; // Remove the continuation bit
+  // cargo_length -= 4; // Header has already been read
+  // uint8_t cargo_content[cargo_length];
+
+  // info("Cargo length: %d\n", cargo_length);
+
+  // struct i2c_message cargo = {
+  //   .payload = cargo_content,
+  //   .length = 0
+  // };
+
+  // res = i2c.read(BNO08x_ADDR, &cargo, cargo_length);
+
+  // if(res != SUCCESS){
+  //   warn("Failed to read cargo\n");
+  //   return false;
+  // }
+
+  // if(cargo.length != cargo_length){
+  //   warn("Failed to read full cargo, expected %d bytes but received %d bytes\n", cargo_length, cargo.length);
+  //   return false;
+  // }
+
+  // parse_msg(cargo);
+
+  // return true;
 
   uint8_t header_content[4];
 
@@ -457,39 +496,67 @@ bool read_sensors(const struct i2c_interface i2c){
     .length = 0
   };
 
-  res = i2c.read(BNO08x_ADDR, &header, 4);
+  uint8_t res = i2c.read(BNO08x_ADDR, &header, 4);
 
   if(res != SUCCESS){
     warn("Failed to read header\n");
     return false;
   }
 
-  if(header.length != 4){
-    warn("Failed to read full header. 4 bytes should be read, but %d bytes were read\n", header.length);
+  uint16_t payload_size = (uint16_t)header.payload[0] | (uint16_t)header.payload[1] << 8;
+  payload_size &= ~0x8000; // Remove continuation bit
+
+  if(payload_size > MAX_PAYLOAD_SIZE){
+    warn("Payload too large for buffer\n");
     return false;
   }
 
-  uint16_t cargo_length = (header.payload[0] | (header.payload[1] << 8)) & ~0x8000;
-  uint8_t cargo_content[cargo_length];
+  uint16_t bytes_remaining = payload_size;
+  uint16_t read_size;
+  uint8_t payload[MAX_PAYLOAD_SIZE];
+  uint8_t* payload_ptr = payload; 
+  uint8_t i2c_buf[MAX_PAYLOAD_SIZE];
+  uint16_t payload_read_amount = 0;
+  bool first_read = true;
 
-  struct i2c_message cargo = {
-    .payload = cargo_content,
+  struct i2c_message p = {
+    .payload = payload,
     .length = 0
   };
 
-  res = i2c.read(BNO08x_ADDR, &cargo, cargo_length);
+  while(bytes_remaining > 0){
+    if(first_read) read_size = min(MAX_PAYLOAD_SIZE, (size_t)bytes_remaining);
+    else read_size = min(MAX_PAYLOAD_SIZE, (size_t)(bytes_remaining + 4));
 
-  if(res != SUCCESS){
-    warn("Failed to read cargo\n");
+    res = i2c.read(BNO08x_ADDR, &p, read_size);
+
+    if(first_read){
+      payload_read_amount = read_size;
+      memcpy(payload_ptr, i2c_buf, payload_read_amount);
+      first_read = false;
+    } else {
+      payload_read_amount = read_size - 4;
+      memcpy(payload_ptr, i2c_buf, payload_read_amount);
+    }
+
+    payload_ptr += payload_read_amount;
+    bytes_remaining -= payload_read_amount;
+  }
+
+  if(payload_size == 65535) { // 65535 indicates an error
+    warn("Error returned from sensor\n");
     return false;
   }
 
-  if(cargo.length != cargo_length){
-    warn("Failed to read full cargo, expected %d bytes but received %d bytes\n", cargo_length, cargo.length);
-    return false;
-  }
+  uint16_t payload_size_header_removed = payload_size - HEADER_TIMEBASE_OFFSET;
+  uint8_t cargo_payload[payload_size_header_removed];
+
+  memcpy(cargo_payload, (&payload + HEADER_TIMEBASE_OFFSET), payload_size_header_removed);
+
+  struct i2c_message cargo = {
+    .payload = cargo_payload,
+    .length = payload_size_header_removed
+  };
 
   parse_msg(cargo);
-
-  return true;
 }

@@ -25,10 +25,7 @@ void flash(uint8_t n){
 }
 
 enum I2C_RESPONSE write_i2c(const uint8_t addr, const struct i2c_message* message){
-	info("0x%x\n", addr);
-	info("%d\n", message->length);
 	int8_t res = i2c_write_blocking(I2C_INST, addr, message->payload, message->length, false);
-	info("%d\n", res);
 	if(res == PICO_ERROR_GENERIC || res == PICO_ERROR_TIMEOUT){
 		return ERROR_GENERIC;
   } else return SUCCESS;
@@ -71,8 +68,6 @@ int main(){
 	gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
 	gpio_pull_down(PICO_DEFAULT_LED_PIN);
 
-	sleep_ms(500);
-
 	flash(3);
 
 	info("Starting initialisation process\n");
@@ -93,8 +88,6 @@ int main(){
 
 	init(i2c);
 
-	flash(5);
-
 	enable_sensor(i2c, ACCELEROMETER, 100);
 	enable_sensor(i2c, GYROSCOPE, 100);
 	enable_sensor(i2c, MAGNETIC_FIELD, 100);
@@ -102,13 +95,14 @@ int main(){
 	enable_sensor(i2c, ROTATION_VECTOR, 100);
 
 	info("Initialisation process complete\n");
+	flash(5);
 
 	for(;;){
 		gpio_put(PICO_DEFAULT_LED_PIN, 0);
-		sleep_ms(50);
+		sleep_ms(100);
 		if(read_sensors(i2c)) print_last_frame();
 		gpio_put(PICO_DEFAULT_LED_PIN, 1);
-		sleep_ms(50);
+		sleep_ms(100);
 	}
 	
 	return 0;
