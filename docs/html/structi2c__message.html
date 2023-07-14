@@ -103,13 +103,14 @@ $(document).ready(function(){initNavTree('structi2c__message.html',''); initResi
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:aa5cbdad2c57e9b3f949e1a4d96382b66"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structi2c__message.html#aa5cbdad2c57e9b3f949e1a4d96382b66">payload</a></td></tr>
-<tr class="separator:aa5cbdad2c57e9b3f949e1a4d96382b66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1677d80e48189228cc0c188e9f78e57e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structi2c__message.html#a1677d80e48189228cc0c188e9f78e57e">payload</a> [<a class="el" href="i2c_8h.html#a6303f7392a2d06be5a121c54278d561b">MAX_PAYLOAD_SIZE</a>]</td></tr>
+<tr class="separator:a1677d80e48189228cc0c188e9f78e57e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2b3adeb2a67e656ff030b56727fd0ac"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structi2c__message.html#ab2b3adeb2a67e656ff030b56727fd0ac">length</a></td></tr>
 <tr class="separator:ab2b3adeb2a67e656ff030b56727fd0ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains the relevant data about messages on the bus. </p>
+<p>The <code>payload</code> field holds either the data received from a read or the data to send for a write. The <code>length</code> field holds the number of bytes to write to the bus. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="ab2b3adeb2a67e656ff030b56727fd0ac" name="ab2b3adeb2a67e656ff030b56727fd0ac"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab2b3adeb2a67e656ff030b56727fd0ac">&#9670;&#160;</a></span>length</h2>
@@ -126,14 +127,14 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="aa5cbdad2c57e9b3f949e1a4d96382b66" name="aa5cbdad2c57e9b3f949e1a4d96382b66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5cbdad2c57e9b3f949e1a4d96382b66">&#9670;&#160;</a></span>payload</h2>
+<a id="a1677d80e48189228cc0c188e9f78e57e" name="a1677d80e48189228cc0c188e9f78e57e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1677d80e48189228cc0c188e9f78e57e">&#9670;&#160;</a></span>payload</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t* payload</td>
+          <td class="memname">uint8_t payload[<a class="el" href="i2c_8h.html#a6303f7392a2d06be5a121c54278d561b">MAX_PAYLOAD_SIZE</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -92,6 +92,7 @@ $(document).ready(function(){initNavTree('i2c_8h.html',''); initResizable(); });
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
@@ -103,6 +104,7 @@ $(document).ready(function(){initNavTree('i2c_8h.html',''); initResizable(); });
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
 </div>
 <p><a href="i2c_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -115,6 +117,11 @@ Data Structures</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds the data relevant to the I2C interface configuration.  <a href="structi2c__interface.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a6303f7392a2d06be5a121c54278d561b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#a6303f7392a2d06be5a121c54278d561b">MAX_PAYLOAD_SIZE</a>&#160;&#160;&#160;512</td></tr>
+<tr class="separator:a6303f7392a2d06be5a121c54278d561b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:ga1be58a16c8c5ada6066b62182cdb3540"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Enumerations.html#ga1be58a16c8c5ada6066b62182cdb3540">I2C_RESPONSE</a> </td></tr>
@@ -126,6 +133,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aebc32a9ef92d3da9638843398af27520"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#aebc32a9ef92d3da9638843398af27520">get_seq_num</a> ()</td></tr>
 <tr class="memdesc:aebc32a9ef92d3da9638843398af27520"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next sequence number to use.  <br /></td></tr>
 <tr class="separator:aebc32a9ef92d3da9638843398af27520"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24ef60ebe34af9fef46b8ba392f7b010"><td class="memItemLeft" align="right" valign="top">static struct <a class="el" href="structi2c__message.html">i2c_message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#a24ef60ebe34af9fef46b8ba392f7b010">create_msg</a> (uint8_t arr[], uint8_t l)</td></tr>
+<tr class="memdesc:a24ef60ebe34af9fef46b8ba392f7b010"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a message struct.  <br /></td></tr>
+<tr class="separator:a24ef60ebe34af9fef46b8ba392f7b010"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -138,7 +148,69 @@ Variables</h2></td></tr>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2023-07-12</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2023 </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a6303f7392a2d06be5a121c54278d561b" name="a6303f7392a2d06be5a121c54278d561b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6303f7392a2d06be5a121c54278d561b">&#9670;&#160;</a></span>MAX_PAYLOAD_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_PAYLOAD_SIZE&#160;&#160;&#160;512</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The maximum buffer size for received messages. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a24ef60ebe34af9fef46b8ba392f7b010" name="a24ef60ebe34af9fef46b8ba392f7b010"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24ef60ebe34af9fef46b8ba392f7b010">&#9670;&#160;</a></span>create_msg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static struct <a class="el" href="structi2c__message.html">i2c_message</a> create_msg </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>arr</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>l</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create a message struct. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arr</td><td>is the array which forms the <code>payload</code> field </td></tr>
+    <tr><td class="paramname">l</td><td>is the length of <code>arr</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the <code><a class="el" href="structi2c__message.html" title="Contains the relevant data about messages on the bus.">i2c_message</a></code> struct </dd></dl>
+
+</div>
+</div>
 <a id="aebc32a9ef92d3da9638843398af27520" name="aebc32a9ef92d3da9638843398af27520"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aebc32a9ef92d3da9638843398af27520">&#9670;&#160;</a></span>get_seq_num()</h2>
 
@@ -164,7 +236,7 @@ Variables</h2></td></tr>
 
 <p>Get the next sequence number to use. </p>
 <p>The sequence number is used for outbound packets.</p>
-<dl class="section return"><dt>Returns</dt><dd>uint8_t the sequence number to use for the next message </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The sequence number to use for the next message </dd></dl>
 
 </div>
 </div>

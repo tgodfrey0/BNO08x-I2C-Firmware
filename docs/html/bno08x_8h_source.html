@@ -103,93 +103,92 @@ $(document).ready(function(){initNavTree('bno08x_8h_source.html',''); initResiza
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &quot;<a class="code" href="sensors_8h.html">sensors.h</a>&quot;</span></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;<a class="code" href="sensor__reports_8h.html">sensor_reports.h</a>&quot;</span></div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="bno08x_8h.html#a6303f7392a2d06be5a121c54278d561b">   39</a></span><span class="preprocessor">#define MAX_PAYLOAD_SIZE        512 </span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="bno08x_8h.html#afffe5576b28ba003f4f4beb6f045a0b6">   40</a></span><span class="preprocessor">#define OPEN_ATTEMPTS       5 </span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="bno08x_8h.html#ac6afabdc09a49a433ee19d8a9486056d">   41</a></span><span class="preprocessor">#define min(a,b) ({ __typeof__ (a) _a = (a); __typeof__ (b) _b = (b); _a &lt; _b ? _a : _b; }) </span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="bno08x_8h.html#a692299f77cfde0792bb057bf8913912f">   42</a></span><span class="preprocessor">#define HEADER_TIMEBASE_OFFSET      9 </span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">//=================================================================================================//</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">//      Enums</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">//=================================================================================================//</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">   55</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a> {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    ACCELEROMETER = 0x01,</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    GYROSCOPE = 0x02,</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    MAGNETIC_FIELD = 0x03,</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    LINEAR_ACCELERATION = 0x04,</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    ROTATION_VECTOR = 0x05,</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    GRAVITY = 0x06,</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    UNCALIBRATED_GYROSCOPE = 0x07,</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    GAME_ROTATION_VECTOR = 0x08,</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    GEOMAGNETIC_ROTATION_VECTOR = 0x09,</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    PRESSURE = 0x0A,</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    AMBIENT_LIGHT = 0x0B,</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    HUMIDITY = 0x0C,</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    PROXIMITY = 0x0D,</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    TEMPERATURE = 0x0E,</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    UNCALIBRATED_MAGNETIC_FIELD = 0x0F,</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    TAP_DETECTOR = 0x10,</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    STEP_COUNTER = 0x11,</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    SIGNIFICANT_MOTION = 0x12,</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    STABILITY_CLASSIFIER = 0x13,</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    RAW_ACCELEROMETER = 0x14,</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    RAW_GYROSCOPE = 0x15,</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    RAW_MAGNETOMETER = 0x16,</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    RESERVED = 0x17,</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    STEP_DETECTOR = 0x18,</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    SHAKE_DETECTOR = 0x19,</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    FLIP_DETECTOR = 0x1A,</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    PICKUP_DETECTOR = 0x1B,</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    STABILITY_DETECTOR = 0x1C,</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    PERSONAL_ACTIVITY_CLASSIFIER = 0x1E,</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    SLEEP_DETECTOR = 0x1F,</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    TILT_DETECTOR = 0x20,</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    POCKET_DETECTOR = 0x21,</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    CIRCLE_DETECTOR = 0x22,</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    HEART_RATE_MONITOR = 0x23,</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    ARVR_STABILISED_ROTATION_VECTOR = 0x28,</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    ARVR_STABILISED_GAME_ROTATION_VECTOR = 0x29,</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    GYRO_INTEGRATED_ROTATION_VECTOR = 0x2A,</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    MOTION_REQUEST = 0x2B,</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    OPTICAL_FLOW = 0x2C,</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    DEAD_RECKONING_POSE = 0x2D,</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>};</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keyword">static</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a> last_received; </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="comment">//=================================================================================================//</span></div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="comment">//    Structs</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="comment">//=================================================================================================//</span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="structsensor.html">  111</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> {</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="structsensor.html#a8f8f80d37794cde9472343e4487ba3eb">  112</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_variable" href="structsensor.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>;       </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="structsensor.html#a5d61fdce1be542abed960dd7d2f68cf9">  113</a></span>    <span class="keyword">const</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a> <a class="code hl_variable" href="structsensor.html#a5d61fdce1be542abed960dd7d2f68cf9">id</a>;        </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="comment">//const uint8_t channel;        /**&lt; The channel the sensor communicates on. */</span></div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="structsensor.html#adb2bff821836a28632fdc702826fef1c">  115</a></span>    <span class="keyword">union </span><a class="code hl_union" href="unioninput__report.html">input_report</a> <a class="code hl_union" href="unioninput__report.html">input_report</a>;        </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>};</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment">//=================================================================================================//</span></div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment">//    Functions</span></div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment">//=================================================================================================//</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="keywordtype">void</span> <a class="code hl_function" href="bno08x_8h.html#abcc9a057fb9f5df6fc44080e1c5a10f6">init</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structi2c__interface.html">i2c_interface</a> i2c);</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="keywordtype">bool</span> <a class="code hl_function" href="bno08x_8h.html#a1d5d3cd271a769f6a97e7593b624a656">enable_sensor</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structi2c__interface.html">i2c_interface</a> i2c, <span class="keyword">enum</span> <a class="code hl_enumeration" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a> <span class="keywordtype">id</span>, uint32_t sample_rate_ms);</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="keywordtype">bool</span> <a class="code hl_function" href="bno08x_8h.html#a3fe53c189b9a6802d63543d9fd4bbd30">read_sensors</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structi2c__interface.html">i2c_interface</a> i2c);</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_function" href="bno08x_8h.html#a3a4a2fbc309874626ccc066f9273e07b">get_sensor</a>(<span class="keyword">enum</span> <a class="code hl_enumeration" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a> <span class="keywordtype">id</span>);</div>
-<div class="ttc" id="abno08x_8h_html_a1d5d3cd271a769f6a97e7593b624a656"><div class="ttname"><a href="bno08x_8h.html#a1d5d3cd271a769f6a97e7593b624a656">enable_sensor</a></div><div class="ttdeci">bool enable_sensor(const struct i2c_interface i2c, enum SENSOR_ID id, uint32_t sample_rate_ms)</div><div class="ttdoc">Enables a specified sensor with a fixed report rate.</div><div class="ttdef"><b>Definition:</b> bno08x.c:388</div></div>
-<div class="ttc" id="abno08x_8h_html_a3a4a2fbc309874626ccc066f9273e07b"><div class="ttname"><a href="bno08x_8h.html#a3a4a2fbc309874626ccc066f9273e07b">get_sensor</a></div><div class="ttdeci">struct sensor * get_sensor(enum SENSOR_ID id)</div><div class="ttdoc">Get the sensor struct from a given ID.</div><div class="ttdef"><b>Definition:</b> bno08x.c:60</div></div>
-<div class="ttc" id="abno08x_8h_html_a3fe53c189b9a6802d63543d9fd4bbd30"><div class="ttname"><a href="bno08x_8h.html#a3fe53c189b9a6802d63543d9fd4bbd30">read_sensors</a></div><div class="ttdeci">bool read_sensors(const struct i2c_interface i2c)</div><div class="ttdoc">Read the latest sensor report on the bus.</div><div class="ttdef"><b>Definition:</b> bno08x.c:437</div></div>
-<div class="ttc" id="abno08x_8h_html_abcc9a057fb9f5df6fc44080e1c5a10f6"><div class="ttname"><a href="bno08x_8h.html#abcc9a057fb9f5df6fc44080e1c5a10f6">init</a></div><div class="ttdeci">void init(const struct i2c_interface i2c)</div><div class="ttdoc">Turn on the sensor and open the channel.</div><div class="ttdef"><b>Definition:</b> bno08x.c:46</div></div>
-<div class="ttc" id="agroup__Enumerations_html_ga5397f7a91d2d43051e74cfdee22f5957"><div class="ttname"><a href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a></div><div class="ttdeci">SENSOR_ID</div><div class="ttdoc">Stores the ID for each sensor.</div><div class="ttdef"><b>Definition:</b> bno08x.h:55</div></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="bno08x_8h.html#afffe5576b28ba003f4f4beb6f045a0b6">   39</a></span><span class="preprocessor">#define OPEN_ATTEMPTS       5 </span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="bno08x_8h.html#ac6afabdc09a49a433ee19d8a9486056d">   40</a></span><span class="preprocessor">#define min(a,b) ({ __typeof__ (a) _a = (a); __typeof__ (b) _b = (b); _a &lt; _b ? _a : _b; }) </span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="bno08x_8h.html#a692299f77cfde0792bb057bf8913912f">   41</a></span><span class="preprocessor">#define HEADER_TIMEBASE_OFFSET      9 </span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">//=================================================================================================//</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">//      Enums</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">//=================================================================================================//</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">   54</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a> {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    ACCELEROMETER = 0x01,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    GYROSCOPE = 0x02,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    MAGNETIC_FIELD = 0x03,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    LINEAR_ACCELERATION = 0x04,</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    ROTATION_VECTOR = 0x05,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    GRAVITY = 0x06,</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    UNCALIBRATED_GYROSCOPE = 0x07,</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    GAME_ROTATION_VECTOR = 0x08,</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    GEOMAGNETIC_ROTATION_VECTOR = 0x09,</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    PRESSURE = 0x0A,</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    AMBIENT_LIGHT = 0x0B,</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    HUMIDITY = 0x0C,</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    PROXIMITY = 0x0D,</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    TEMPERATURE = 0x0E,</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    UNCALIBRATED_MAGNETIC_FIELD = 0x0F,</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    TAP_DETECTOR = 0x10,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    STEP_COUNTER = 0x11,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    SIGNIFICANT_MOTION = 0x12,</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    STABILITY_CLASSIFIER = 0x13,</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    RAW_ACCELEROMETER = 0x14,</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    RAW_GYROSCOPE = 0x15,</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    RAW_MAGNETOMETER = 0x16,</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    RESERVED = 0x17,</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    STEP_DETECTOR = 0x18,</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    SHAKE_DETECTOR = 0x19,</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    FLIP_DETECTOR = 0x1A,</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    PICKUP_DETECTOR = 0x1B,</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    STABILITY_DETECTOR = 0x1C,</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    PERSONAL_ACTIVITY_CLASSIFIER = 0x1E,</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    SLEEP_DETECTOR = 0x1F,</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    TILT_DETECTOR = 0x20,</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    POCKET_DETECTOR = 0x21,</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    CIRCLE_DETECTOR = 0x22,</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    HEART_RATE_MONITOR = 0x23,</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    ARVR_STABILISED_ROTATION_VECTOR = 0x28,</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    ARVR_STABILISED_GAME_ROTATION_VECTOR = 0x29,</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    GYRO_INTEGRATED_ROTATION_VECTOR = 0x2A,</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    MOTION_REQUEST = 0x2B,</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    OPTICAL_FLOW = 0x2C,</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    DEAD_RECKONING_POSE = 0x2D,</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>};</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keyword">static</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a> last_received; </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="comment">//=================================================================================================//</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="comment">//    Structs</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="comment">//=================================================================================================//</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="structsensor.html">  110</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a> {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="structsensor.html#a8f8f80d37794cde9472343e4487ba3eb">  111</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_variable" href="structsensor.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>;       </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="structsensor.html#a5d61fdce1be542abed960dd7d2f68cf9">  112</a></span>    <span class="keyword">const</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a> <a class="code hl_variable" href="structsensor.html#a5d61fdce1be542abed960dd7d2f68cf9">id</a>;        </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="comment">//const uint8_t channel;        /**&lt; The channel the sensor communicates on. */</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="structsensor.html#adb2bff821836a28632fdc702826fef1c">  114</a></span>    <span class="keyword">union </span><a class="code hl_union" href="unioninput__report.html">input_report</a> <a class="code hl_union" href="unioninput__report.html">input_report</a>;        </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>};</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="comment">//=================================================================================================//</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment">//    Functions</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment">//=================================================================================================//</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="keywordtype">void</span> <a class="code hl_function" href="bno08x_8h.html#af794b30d0b44f9b11b0a7d48c14e93f3">init</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structi2c__interface.html">i2c_interface</a>* i2c);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="keywordtype">bool</span> <a class="code hl_function" href="bno08x_8h.html#afbd62a1bc344d4e67589be5580500f03">enable_sensor</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structi2c__interface.html">i2c_interface</a>* i2c, <span class="keyword">const</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a> <span class="keywordtype">id</span>, <span class="keyword">const</span> uint32_t sample_rate_ms);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="keywordtype">bool</span> <a class="code hl_function" href="bno08x_8h.html#a3e9cfd794bcd07fd1df61436bbbd9f17">read_sensors</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structi2c__interface.html">i2c_interface</a>* i2c);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="keyword">struct </span><a class="code hl_struct" href="structsensor.html">sensor</a>* <a class="code hl_function" href="bno08x_8h.html#adc2c27584639b6dc325d9f6e4a1dfcf5">get_sensor</a>(<span class="keyword">const</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a> <span class="keywordtype">id</span>);</div>
+<div class="ttc" id="abno08x_8h_html_a3e9cfd794bcd07fd1df61436bbbd9f17"><div class="ttname"><a href="bno08x_8h.html#a3e9cfd794bcd07fd1df61436bbbd9f17">read_sensors</a></div><div class="ttdeci">bool read_sensors(const struct i2c_interface *i2c)</div><div class="ttdoc">Read the latest sensor report on the bus.</div><div class="ttdef"><b>Definition:</b> bno08x.c:437</div></div>
+<div class="ttc" id="abno08x_8h_html_adc2c27584639b6dc325d9f6e4a1dfcf5"><div class="ttname"><a href="bno08x_8h.html#adc2c27584639b6dc325d9f6e4a1dfcf5">get_sensor</a></div><div class="ttdeci">struct sensor * get_sensor(const enum SENSOR_ID id)</div><div class="ttdoc">Get the sensor struct from a given ID.</div><div class="ttdef"><b>Definition:</b> bno08x.c:59</div></div>
+<div class="ttc" id="abno08x_8h_html_af794b30d0b44f9b11b0a7d48c14e93f3"><div class="ttname"><a href="bno08x_8h.html#af794b30d0b44f9b11b0a7d48c14e93f3">init</a></div><div class="ttdeci">void init(const struct i2c_interface *i2c)</div><div class="ttdoc">Turn on the sensor and open the channel.</div><div class="ttdef"><b>Definition:</b> bno08x.c:45</div></div>
+<div class="ttc" id="abno08x_8h_html_afbd62a1bc344d4e67589be5580500f03"><div class="ttname"><a href="bno08x_8h.html#afbd62a1bc344d4e67589be5580500f03">enable_sensor</a></div><div class="ttdeci">bool enable_sensor(const struct i2c_interface *i2c, const enum SENSOR_ID id, const uint32_t sample_rate_ms)</div><div class="ttdoc">Enables a specified sensor with a fixed report rate.</div><div class="ttdef"><b>Definition:</b> bno08x.c:387</div></div>
+<div class="ttc" id="agroup__Enumerations_html_ga5397f7a91d2d43051e74cfdee22f5957"><div class="ttname"><a href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a></div><div class="ttdeci">SENSOR_ID</div><div class="ttdoc">Stores the ID for each sensor.</div><div class="ttdef"><b>Definition:</b> bno08x.h:54</div></div>
 <div class="ttc" id="ai2c_8h_html"><div class="ttname"><a href="i2c_8h.html">i2c.h</a></div><div class="ttdoc">I2C related definitions.</div></div>
 <div class="ttc" id="asensor__reports_8h_html"><div class="ttname"><a href="sensor__reports_8h.html">sensor_reports.h</a></div><div class="ttdoc">Definitions for all input reports available from the BNO08x.</div></div>
 <div class="ttc" id="asensors_8h_html"><div class="ttname"><a href="sensors_8h.html">sensors.h</a></div><div class="ttdoc">Sensor related definitions.</div></div>
-<div class="ttc" id="astructi2c__interface_html"><div class="ttname"><a href="structi2c__interface.html">i2c_interface</a></div><div class="ttdoc">Holds the data relevant to the I2C interface configuration.</div><div class="ttdef"><b>Definition:</b> i2c.h:64</div></div>
-<div class="ttc" id="astructsensor_html"><div class="ttname"><a href="structsensor.html">sensor</a></div><div class="ttdoc">Stores an instance of a single sensor.</div><div class="ttdef"><b>Definition:</b> bno08x.h:111</div></div>
-<div class="ttc" id="astructsensor_html_a5d61fdce1be542abed960dd7d2f68cf9"><div class="ttname"><a href="structsensor.html#a5d61fdce1be542abed960dd7d2f68cf9">sensor::id</a></div><div class="ttdeci">enum SENSOR_ID id</div><div class="ttdef"><b>Definition:</b> bno08x.h:113</div></div>
-<div class="ttc" id="astructsensor_html_a8f8f80d37794cde9472343e4487ba3eb"><div class="ttname"><a href="structsensor.html#a8f8f80d37794cde9472343e4487ba3eb">sensor::name</a></div><div class="ttdeci">const char * name</div><div class="ttdef"><b>Definition:</b> bno08x.h:112</div></div>
+<div class="ttc" id="astructi2c__interface_html"><div class="ttname"><a href="structi2c__interface.html">i2c_interface</a></div><div class="ttdoc">Holds the data relevant to the I2C interface configuration.</div><div class="ttdef"><b>Definition:</b> i2c.h:68</div></div>
+<div class="ttc" id="astructsensor_html"><div class="ttname"><a href="structsensor.html">sensor</a></div><div class="ttdoc">Stores an instance of a single sensor.</div><div class="ttdef"><b>Definition:</b> bno08x.h:110</div></div>
+<div class="ttc" id="astructsensor_html_a5d61fdce1be542abed960dd7d2f68cf9"><div class="ttname"><a href="structsensor.html#a5d61fdce1be542abed960dd7d2f68cf9">sensor::id</a></div><div class="ttdeci">enum SENSOR_ID id</div><div class="ttdef"><b>Definition:</b> bno08x.h:112</div></div>
+<div class="ttc" id="astructsensor_html_a8f8f80d37794cde9472343e4487ba3eb"><div class="ttname"><a href="structsensor.html#a8f8f80d37794cde9472343e4487ba3eb">sensor::name</a></div><div class="ttdeci">const char * name</div><div class="ttdef"><b>Definition:</b> bno08x.h:111</div></div>
 <div class="ttc" id="aunioninput__report_html"><div class="ttname"><a href="unioninput__report.html">input_report</a></div><div class="ttdoc">Stores a single report struct.</div><div class="ttdef"><b>Definition:</b> sensor_reports.h:689</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

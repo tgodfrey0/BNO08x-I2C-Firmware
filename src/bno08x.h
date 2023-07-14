@@ -36,7 +36,6 @@
 #include "sensors.h"
 #include "sensor_reports.h"
 
-#define MAX_PAYLOAD_SIZE		512 /**< The maximum buffer size for received messages. */
 #define OPEN_ATTEMPTS		5 /**< The number of tries to open a channel to the sensor. */
 #define min(a,b) ({ __typeof__ (a) _a = (a); __typeof__ (b) _b = (b); _a < _b ? _a : _b; }) /**< Macro to return the smaller of two numbers. */
 #define HEADER_TIMEBASE_OFFSET		9 /**< The number of bytes used for the header and timebase reference. */
@@ -126,7 +125,7 @@ struct sensor {
  * 
  * @param i2c is the I2C interface to communicate with the sensor on
  */
-void init(const struct i2c_interface i2c);
+void init(const struct i2c_interface* i2c);
 
 /**
  * @brief Enables a specified sensor with a fixed report rate.
@@ -137,7 +136,7 @@ void init(const struct i2c_interface i2c);
  * @return `true` if the sensor was successfully enabled
  * @return `false` if the sensor could not be enabled
  */
-bool enable_sensor(const struct i2c_interface i2c, enum SENSOR_ID id, uint32_t sample_rate_ms);
+bool enable_sensor(const struct i2c_interface* i2c, const enum SENSOR_ID id, const uint32_t sample_rate_ms);
 
 /**
  * @brief Read the latest sensor report on the bus.
@@ -146,7 +145,7 @@ bool enable_sensor(const struct i2c_interface i2c, enum SENSOR_ID id, uint32_t s
  * @return `true`	if the read was successful
  * @return `false` if an error occurred
  */
-bool read_sensors(const struct i2c_interface i2c);
+bool read_sensors(const struct i2c_interface* i2c);
 
 /**
  * @brief Get the sensor struct from a given ID.
@@ -154,4 +153,4 @@ bool read_sensors(const struct i2c_interface i2c);
  * @param id is the ID of the sensor
  * @return the sensor struct pointer
  */
-struct sensor* get_sensor(enum SENSOR_ID id);
+struct sensor* get_sensor(const enum SENSOR_ID id);

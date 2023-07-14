@@ -4,7 +4,7 @@ var searchData=
   ['game_5frotation_5fvector_5freport_1',['game_rotation_vector_report',['../structgame__rotation__vector__report.html',1,'']]],
   ['geomagnetic_5frotation_5fvector_2',['geomagnetic_rotation_vector',['../structgeomagnetic__rotation__vector.html',1,'geomagnetic_rotation_vector'],['../unioninput__report.html#afb1a3110a2915f79282850a603cb2bf2',1,'input_report::geomagnetic_rotation_vector()']]],
   ['geomagnetic_5frotation_5fvector_5freport_3',['geomagnetic_rotation_vector_report',['../structgeomagnetic__rotation__vector__report.html',1,'']]],
-  ['get_5fsensor_4',['get_sensor',['../bno08x_8h.html#a3a4a2fbc309874626ccc066f9273e07b',1,'bno08x.c']]],
+  ['get_5fsensor_4',['get_sensor',['../bno08x_8h.html#adc2c27584639b6dc325d9f6e4a1dfcf5',1,'bno08x.c']]],
   ['get_5fseq_5fnum_5',['get_seq_num',['../i2c_8h.html#aebc32a9ef92d3da9638843398af27520',1,'i2c.h']]],
   ['gravity_6',['gravity',['../unioninput__report.html#a0fcc3d1225ed1ec0e364590628d87d3d',1,'input_report::gravity()'],['../structgravity.html',1,'gravity']]],
   ['gravity_5freport_7',['gravity_report',['../structgravity__report.html',1,'']]],

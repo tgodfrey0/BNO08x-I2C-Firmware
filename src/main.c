@@ -17,11 +17,11 @@
 void flash(uint8_t n){
 	for(uint8_t i = 0; i < n; i++){
 		gpio_put(PICO_DEFAULT_LED_PIN, 1);
-		sleep_ms(500);
+		sleep_ms(200);
 		gpio_put(PICO_DEFAULT_LED_PIN, 0);
-		sleep_ms(500);
+		sleep_ms(200);
 	}
-	sleep_ms(1000);
+	sleep_ms(500);
 }
 
 enum I2C_RESPONSE write_i2c(const uint8_t addr, const struct i2c_message* message){
@@ -74,7 +74,7 @@ int main(){
 
 	info("Initialising data structures\n");
 
-	struct i2c_interface i2c = {
+	struct i2c_interface* i2c = &(struct i2c_interface) {
 		.sda_pin = SDA_PIN,
 		.scl_pin = SCL_PIN,
 		.baud_rate_hz = FREQ_HZ,
@@ -84,25 +84,23 @@ int main(){
 		.initialise = &init_i2c
 	};
 
-	i2c.initialise(&i2c);
+	i2c->initialise(i2c);
 
 	init(i2c);
 
 	enable_sensor(i2c, ACCELEROMETER, 100);
-	enable_sensor(i2c, GYROSCOPE, 100);
-	enable_sensor(i2c, MAGNETIC_FIELD, 100);
-	enable_sensor(i2c, LINEAR_ACCELERATION, 100);
-	enable_sensor(i2c, ROTATION_VECTOR, 100);
+	// enable_sensor(i2c, GYROSCOPE, 100);
+	// enable_sensor(i2c, MAGNETIC_FIELD, 100);
+	// enable_sensor(i2c, LINEAR_ACCELERATION, 100);
+	// enable_sensor(i2c, ROTATION_VECTOR, 100);
 
 	info("Initialisation process complete\n");
 	flash(5);
 
 	for(;;){
 		gpio_put(PICO_DEFAULT_LED_PIN, 0);
-		sleep_ms(100);
 		if(read_sensors(i2c)) print_last_frame();
 		gpio_put(PICO_DEFAULT_LED_PIN, 1);
-		sleep_ms(100);
 	}
 	
 	return 0;

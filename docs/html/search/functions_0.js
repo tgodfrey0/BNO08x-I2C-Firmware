@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['enable_5fsensor_0',['enable_sensor',['../bno08x_8h.html#a1d5d3cd271a769f6a97e7593b624a656',1,'bno08x.c']]]
+  ['create_5fmsg_0',['create_msg',['../i2c_8h.html#a24ef60ebe34af9fef46b8ba392f7b010',1,'i2c.h']]]
 ];

@@ -20,7 +20,7 @@ uint8_t sequence_number = 0;
 #include "hardware/i2c.h"
 
 
-enum I2C_RESPONSE open_channel(const struct i2c_interface i2c){
+enum I2C_RESPONSE open_channel(const struct i2c_interface* i2c){
   /*
    *  Byte  | Value
    *   0,1  | Length = 5
@@ -31,11 +31,10 @@ enum I2C_RESPONSE open_channel(const struct i2c_interface i2c){
   uint8_t pkt[] = {5, 0, 1, get_seq_num(), 2};
   enum SENSOR_ID res;
 
+  struct i2c_message msg = create_msg(pkt, 5);
+
   for(uint8_t i = 0; i < OPEN_ATTEMPTS; i++){
-    res = i2c.write(BNO08x_ADDR, &(struct i2c_message) {
-      .payload = pkt,
-      .length = 5
-    });
+    res = i2c->write(BNO08x_ADDR, &msg);
 
     if(res == SUCCESS) break;
   }
@@ -43,8 +42,8 @@ enum I2C_RESPONSE open_channel(const struct i2c_interface i2c){
   return res; 
 }
 
-void init(const struct i2c_interface i2c){
-  if(!i2c.initialised){
+void init(const struct i2c_interface* i2c){
+  if(!i2c->initialised){
     crit("I2C interface must be initialised first\n");
     for(;;);
   }
@@ -139,12 +138,12 @@ struct sensor* get_sensor(enum SENSOR_ID id){
     case DEAD_RECKONING_POSE:
       return dead_reckoning_pose;
     default:
-      warn("Unrecognised sensor msg.payload[0] - %d", id);
+      warn("Unrecognised sensor ID %d\n", id);
       return NULL;
   }
 }
 
-void populate_struct(enum SENSOR_ID id){
+void populate_struct(const enum SENSOR_ID id){
   switch (id) {
     case ACCELEROMETER:
       accelerometer = &(struct sensor) {
@@ -378,14 +377,14 @@ void populate_struct(enum SENSOR_ID id){
       };
       break;
     default:
-      warn("Unrecognised sensor msg.payload[0] - %d", id);
+      warn("Unrecognised sensor ID %d\n", id);
       return;
   }
 
   info("Struct for sensor with ID 0x%x has been created\n", id);
 }
 
-bool enable_sensor(const struct i2c_interface i2c, enum SENSOR_ID id, uint32_t sample_rate_ms){
+bool enable_sensor(const struct i2c_interface* i2c, const enum SENSOR_ID id, const uint32_t sample_rate_ms){
   populate_struct(id);
 
   uint64_t period_us = sample_rate_ms * 1000;
@@ -420,10 +419,11 @@ bool enable_sensor(const struct i2c_interface i2c, enum SENSOR_ID id, uint32_t s
     0  // Sensor-specific configuration word MSB
   };
 
-  enum I2C_RESPONSE res = i2c.write(BNO08x_ADDR, &(struct i2c_message) {
-    .payload = pkt,
-    .length = 0x15
-  });
+  struct i2c_message msg;
+  memcpy(msg.payload, pkt, 0x15);
+  msg.length = 0x15;
+
+  enum I2C_RESPONSE res = i2c->write(BNO08x_ADDR, &msg);
 
   if(res == ERROR_GENERIC || res == ERROR_TIMEOUT){
     warn("%s could not be enabled\n", get_sensor(id)->name);
@@ -434,7 +434,7 @@ bool enable_sensor(const struct i2c_interface i2c, enum SENSOR_ID id, uint32_t s
   }
 }
 
-bool read_sensors(const struct i2c_interface i2c){
+bool read_sensors(const struct i2c_interface* i2c){
   // enum I2C_RESPONSE res;
 
   // uint8_t header_content[4];
@@ -489,74 +489,78 @@ bool read_sensors(const struct i2c_interface i2c){
 
   // return true;
 
-  uint8_t header_content[4];
+  struct i2c_message head;
 
-  struct i2c_message header = {
-    .payload = header_content,
-    .length = 0
-  };
-
-  uint8_t res = i2c.read(BNO08x_ADDR, &header, 4);
-
-  if(res != SUCCESS){
+  if (i2c->read(BNO08x_ADDR, &head, 4) != SUCCESS) {
     warn("Failed to read header\n");
     return false;
   }
 
-  uint16_t payload_size = (uint16_t)header.payload[0] | (uint16_t)header.payload[1] << 8;
-  payload_size &= ~0x8000; // Remove continuation bit
+  // Determine amount to read
+  uint16_t packet_size = (uint16_t)head.payload[0] | (uint16_t)head.payload[1] << 8;
+  // Unset the "continue" bit
+  packet_size &= ~0x8000;
 
-  if(payload_size > MAX_PAYLOAD_SIZE){
-    warn("Payload too large for buffer\n");
+  if (packet_size > MAX_PAYLOAD_SIZE) {
+    warn("Packet too large for buffer\n");
     return false;
   }
 
-  uint16_t bytes_remaining = payload_size;
+  // the number of non-header bytes to read
+  uint16_t cargo_remaining = packet_size;
   uint16_t read_size;
-  uint8_t payload[MAX_PAYLOAD_SIZE];
-  uint8_t* payload_ptr = payload; 
-  uint8_t i2c_buf[MAX_PAYLOAD_SIZE];
-  uint16_t payload_read_amount = 0;
+  uint16_t cargo_read_amount = 0;
   bool first_read = true;
 
-  struct i2c_message p = {
-    .payload = payload,
-    .length = 0
-  };
+  struct i2c_message cargo_tmp;
+  uint8_t* cargo_ptr = cargo_tmp.payload;
+  struct i2c_message final;
+  uint8_t* final_ptr = final.payload;
 
-  while(bytes_remaining > 0){
-    if(first_read) read_size = min(MAX_PAYLOAD_SIZE, (size_t)bytes_remaining);
-    else read_size = min(MAX_PAYLOAD_SIZE, (size_t)(bytes_remaining + 4));
+  // info("Size: %d\n", packet_size);
+  // info("Header: ");
+  // for(uint8_t i = 0; i < head.length; i++){
+  //   printf("%d ", head.payload[i]);
+  // }
+  // printf("\n");
 
-    res = i2c.read(BNO08x_ADDR, &p, read_size);
-
-    if(first_read){
-      payload_read_amount = read_size;
-      memcpy(payload_ptr, i2c_buf, payload_read_amount);
-      first_read = false;
+  while (cargo_remaining > 0) {
+    if (first_read) {
+      read_size = min(MAX_PAYLOAD_SIZE, (uint32_t)cargo_remaining);
     } else {
-      payload_read_amount = read_size - 4;
-      memcpy(payload_ptr, i2c_buf, payload_read_amount);
+      read_size = min(MAX_PAYLOAD_SIZE, (uint32_t)cargo_remaining + 4);
     }
 
-    payload_ptr += payload_read_amount;
-    bytes_remaining -= payload_read_amount;
+    // info("Reading from I2C: %d\n", read_size);
+    // info("Remaining to read: %d\n", cargo_remaining);
+
+    if (i2c->read(BNO08x_ADDR, &cargo_tmp, read_size) != SUCCESS) {
+      warn("Failed to read the remaining data\n");
+      return false;
+    }
+
+    if (first_read) {
+      // The first time we're saving the "original" header, so include it in the
+      // cargo count
+      cargo_read_amount = read_size;
+      memcpy(final_ptr, cargo_ptr, cargo_read_amount);
+      first_read = false;
+    } else {
+      // this is not the first read, so copy from 4 bytes after the beginning of
+      // the i2c buffer to skip the header included with every new i2c read and
+      // don't include the header in the amount of cargo read
+      cargo_read_amount = read_size - 4;
+      memcpy(final_ptr, cargo_ptr + 4, cargo_read_amount);
+    }
+    // advance our pointer by the amount of cargo read
+    final_ptr += cargo_read_amount;
+    // mark the cargo as received
+    cargo_remaining -= cargo_read_amount;
   }
 
-  if(payload_size == 65535) { // 65535 indicates an error
-    warn("Error returned from sensor\n");
-    return false;
-  }
+  final.length = packet_size;
 
-  uint16_t payload_size_header_removed = payload_size - HEADER_TIMEBASE_OFFSET;
-  uint8_t cargo_payload[payload_size_header_removed];
+  info("Data successfully read from bus\n");
 
-  memcpy(cargo_payload, (&payload + HEADER_TIMEBASE_OFFSET), payload_size_header_removed);
-
-  struct i2c_message cargo = {
-    .payload = cargo_payload,
-    .length = payload_size_header_removed
-  };
-
-  parse_msg(cargo);
+  return parse_msg(final);
 }

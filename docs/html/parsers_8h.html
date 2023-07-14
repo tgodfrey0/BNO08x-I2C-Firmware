@@ -104,9 +104,9 @@ $(document).ready(function(){initNavTree('parsers_8h.html',''); initResizable();
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a62112a0388c257b25eef2455b7ee1645"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parsers_8h.html#a62112a0388c257b25eef2455b7ee1645">parse_msg</a> (struct <a class="el" href="structi2c__message.html">i2c_message</a> msg)</td></tr>
-<tr class="memdesc:a62112a0388c257b25eef2455b7ee1645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a raw data frame into the relevant sensor struct.  <br /></td></tr>
-<tr class="separator:a62112a0388c257b25eef2455b7ee1645"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5997c2fbc78bb632d6c6d51d35d8913"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parsers_8h.html#ad5997c2fbc78bb632d6c6d51d35d8913">parse_msg</a> (struct <a class="el" href="structi2c__message.html">i2c_message</a> msg)</td></tr>
+<tr class="memdesc:ad5997c2fbc78bb632d6c6d51d35d8913"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a raw data frame into the relevant sensor struct.  <br /></td></tr>
+<tr class="separator:ad5997c2fbc78bb632d6c6d51d35d8913"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a831cdc29f1b446d2b4db6b541f18a332"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parsers_8h.html#a831cdc29f1b446d2b4db6b541f18a332">scale_q</a> (uint8_t q)</td></tr>
 <tr class="memdesc:a831cdc29f1b446d2b4db6b541f18a332"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a value relative to the sensor's Q point.  <br /></td></tr>
 <tr class="separator:a831cdc29f1b446d2b4db6b541f18a332"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,14 +118,14 @@ Functions</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>2023-07-12</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2023 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a62112a0388c257b25eef2455b7ee1645" name="a62112a0388c257b25eef2455b7ee1645"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62112a0388c257b25eef2455b7ee1645">&#9670;&#160;</a></span>parse_msg()</h2>
+<a id="ad5997c2fbc78bb632d6c6d51d35d8913" name="ad5997c2fbc78bb632d6c6d51d35d8913"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5997c2fbc78bb632d6c6d51d35d8913">&#9670;&#160;</a></span>parse_msg()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void parse_msg </td>
+          <td class="memname">bool parse_msg </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="structi2c__message.html">i2c_message</a>&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -141,6 +141,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the message was successfully parsed </dd>
+<dd>
+false if the message could not be parsed </dd></dl>
 
 </div>
 </div>

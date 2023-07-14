@@ -17,8 +17,10 @@
  * @brief Parses a raw data frame into the relevant sensor struct.
  * 
  * @param msg is the raw frame received from the sensor
+ * @return true if the message was successfully parsed
+ * @return false if the message could not be parsed
  */
-void parse_msg(struct i2c_message msg);
+bool parse_msg(struct i2c_message msg);
 
 /**
  * @brief Scale a value relative to the sensor's Q point.

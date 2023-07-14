@@ -13,7 +13,9 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include <string.h>
 
+#define MAX_PAYLOAD_SIZE		512 /**< The maximum buffer size for received messages. */
 
 //=================================================================================================//
 //		Global Variables & Constants
@@ -47,9 +49,11 @@ enum I2C_RESPONSE {
  * @struct i2c_message
  *
  * @brief Contains the relevant data about messages on the bus.
+ * 
+ * The `payload` field holds either the data received from a read or the data to send for a write. The `length` field holds the number of bytes to write to the bus.
  */
 struct i2c_message {
-	uint8_t* payload;		/**< The data itself */
+	uint8_t payload[MAX_PAYLOAD_SIZE];		/**< The data itself */
 	uint8_t length;		/**< The length of the data */
 };
 
@@ -104,9 +108,23 @@ struct i2c_interface {
  * 
  * The sequence number is used for outbound packets.
  * 
- * @return uint8_t the sequence number to use for the next message
+ * @return The sequence number to use for the next message
  */
 static inline uint8_t get_seq_num(){
 	static uint8_t sequence_number = 0;
 	return (sequence_number++);
+}
+
+/**
+ * @brief Create a message struct.
+ * 
+ * @param arr is the array which forms the `payload` field
+ * @param l is the length of \p arr
+ * @return the `i2c_message` struct
+ */
+static inline struct i2c_message create_msg(uint8_t arr[], uint8_t l){
+	struct i2c_message m;
+	memcpy(m.payload, arr, l);
+	m.length = l;
+	return m;
 }

@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"structgravity__report.html#aa4f0d3eebc3c443f9be81bf48561a217":[2,0,19,5],
 "structgravity__report.html#ac117f9690109b1aeb49da826aff1cca6":[2,0,19,2],
 "structgravity__report.html#ad0da36b2558901e21e7a30f6c227a45e":[2,0,19,4],
 "structgravity__report.html#ade818037fd6c985038ff29656089758d":[2,0,19,3],
@@ -45,7 +46,7 @@ var NAVTREEINDEX1 =
 "structi2c__interface.html#ad86e7ae1ce88f3a7655a02558318afc3":[2,0,28,2],
 "structi2c__interface.html#ae039547c05b5ebf04aecbc4baac3d51c":[2,0,28,3],
 "structi2c__message.html":[2,0,29],
-"structi2c__message.html#aa5cbdad2c57e9b3f949e1a4d96382b66":[2,0,29,1],
+"structi2c__message.html#a1677d80e48189228cc0c188e9f78e57e":[2,0,29,1],
 "structi2c__message.html#ab2b3adeb2a67e656ff030b56727fd0ac":[2,0,29,0],
 "structlinear__acceleration.html":[1,1,3],
 "structlinear__acceleration__report.html":[2,0,32],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "structuncalibrated__magnetic__field__report.html#a725a13d8d43f65c0f5e8adc271f71573":[2,0,80,1],
 "structuncalibrated__magnetic__field__report.html#aa4f0d3eebc3c443f9be81bf48561a217":[2,0,80,6],
 "structuncalibrated__magnetic__field__report.html#ac117f9690109b1aeb49da826aff1cca6":[2,0,80,2],
-"structuncalibrated__magnetic__field__report.html#ad0da36b2558901e21e7a30f6c227a45e":[2,0,80,4],
-"structuncalibrated__magnetic__field__report.html#ade818037fd6c985038ff29656089758d":[2,0,80,3]
+"structuncalibrated__magnetic__field__report.html#ad0da36b2558901e21e7a30f6c227a45e":[2,0,80,4]
 };
