@@ -98,9 +98,10 @@ int main(){
 	flash(5);
 
 	for(;;){
-		gpio_put(PICO_DEFAULT_LED_PIN, 0);
-		if(read_sensors(i2c)) print_last_frame();
 		gpio_put(PICO_DEFAULT_LED_PIN, 1);
+		if(read_sensors(i2c)) print_last_frame();
+		gpio_put(PICO_DEFAULT_LED_PIN, 0);
+		sleep_ms(100);
 	}
 	
 	return 0;

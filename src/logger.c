@@ -5,8 +5,6 @@
 
 #include "logger.h"
 
-static enum LEVEL log_level = INFO;
-
 void info(const char* msg, ...){
   if(INFO < log_level){
     return;
@@ -47,8 +45,4 @@ void crit(const char* msg, ...){
   vprintf(msg, argp);
 
   va_end(argp);
-}
-
-void set_log_level(enum LEVEL level){
-  log_level = level;
 }

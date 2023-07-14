@@ -1,3 +1,5 @@
+#include "stdio.h"
+
 #include "bno08x.h"
 #include "i2c.h"
 #include "logger.h"
@@ -29,10 +31,10 @@ float read_32_scale(uint8_t* p, uint8_t q){
 }
 
 void parse_accelerometer_data(uint8_t data[], uint8_t length){
-  if(length != RES_ACCELEROMETER){
-    warn("Invalid accelerometer report, expected 10 bytes, received %d bytes\n", length);
-    return;
-  }
+  // if(length != RES_ACCELEROMETER){
+  //   warn("Invalid accelerometer report, expected 10 bytes, received %d bytes\n", length);
+  //   return;
+  // }
 
   accelerometer->input_report.accelerometer.report_id = data[0];
   accelerometer->input_report.accelerometer.seq_num = data[1];
@@ -121,268 +123,300 @@ void parse_rotation_vector_data(uint8_t data[], uint8_t length){
 }
 
 void parse_gravity_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_uncalibrated_gyroscope_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_game_rotation_vector_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_geomagnetic_rotation_vector_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_pressure_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_ambient_light_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_humidity_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_proximity_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_temperature_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_uncalibrated_magnetic_field_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_tap_detector_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_step_counter_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_significant_motion_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_stability_classifier_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_raw_accelerometer_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_raw_gyroscope_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_raw_magnetometer_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_step_detector_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_shake_detector_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_flip_detector_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_pickup_detector_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_stability_detector_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_personal_activity_classifier_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_sleep_detector_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_tilt_detector_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_pocket_detector_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_circle_detector_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_heart_rate_monitor_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_arvr_stabilised_rotation_vector_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_arvr_stabilised_game_rotation_vector_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_gyro_integrated_rotation_vector_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_motion_request_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 void parse_dead_reckoning_pose_data(uint8_t data[], uint8_t length){
-  warn("Parser for frames from sensor %d has not yet been implemented\n", data[0]);
+  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
 bool parse_msg(struct i2c_message msg){
   // info("Message received from sensor with ID %d\n", data[0]);
+  static int i = 0;
+  if(i == 4) for(;;);
+  i++;
   
   info("Data: ");
   for(uint8_t i = 0; i < msg.length; i++){
-    printf("%d ", msg.payload[i]);
+    printf("0x%x ", msg.payload[i]);
   }
   printf("\n");
 
-  uint8_t data[msg.length - HEADER_TIMEBASE_OFFSET];
-  memcpy(data, (msg.payload + HEADER_TIMEBASE_OFFSET), msg.length - HEADER_TIMEBASE_OFFSET);
+  if(msg.length < HEADER_SIZE){
+    warn("No header found\n");
+    return false;
+  }
+
+  uint8_t length = msg.length - HEADER_SIZE;
+  uint8_t data_no_header[length];
+  memcpy(data_no_header, &(msg.payload[HEADER_SIZE]), length);
+
+  uint8_t* data;
+  if(data_no_header[0] == TIMEBASE_REPORT_ID){
+    // Remove timebase reference
+    if(msg.length - HEADER_SIZE < TIMEBASE_SIZE){
+      warn("Timebase report ID found but message is too short\n");
+      return false;
+    }
+
+    length = msg.length - HEADER_SIZE - TIMEBASE_SIZE;
+    uint8_t data_no_timebase[length];
+    memcpy(data_no_timebase, &(data_no_header[TIMEBASE_SIZE]), length);
+    data = data_no_timebase;
+  } else {
+    data = data_no_header;
+  }
+
+  info("Data: ");
+  for(uint8_t i = 0; i < length; i++){
+    printf("0x%x ", data[i]);
+  }
+  printf("\n");
+
   switch (data[0]) {
     case ACCELEROMETER:
-      parse_accelerometer_data(data, msg.length);
+      parse_accelerometer_data(data, length);
       break;
     case GYROSCOPE:
-      parse_gyroscope_data(data, msg.length);
+      parse_gyroscope_data(data, length);
       break;
     case MAGNETIC_FIELD:
-      parse_magnetic_field_data(data, msg.length);
+      parse_magnetic_field_data(data, length);
       break;
     case LINEAR_ACCELERATION:
-      parse_linear_acceleration_data(data, msg.length);
+      parse_linear_acceleration_data(data, length);
       break;
     case ROTATION_VECTOR:
-      parse_rotation_vector_data(data, msg.length);
+      parse_rotation_vector_data(data, length);
       break;
     case GRAVITY:
-      parse_gravity_data(data, msg.length);
+      parse_gravity_data(data, length);
       break;
     case UNCALIBRATED_GYROSCOPE:
-      parse_uncalibrated_gyroscope_data(data, msg.length);
+      parse_uncalibrated_gyroscope_data(data, length);
       break;
     case GAME_ROTATION_VECTOR:
-      parse_game_rotation_vector_data(data, msg.length);
+      parse_game_rotation_vector_data(data, length);
       break;
     case GEOMAGNETIC_ROTATION_VECTOR:
-      parse_geomagnetic_rotation_vector_data(data, msg.length);
+      parse_geomagnetic_rotation_vector_data(data, length);
       break;
     case PRESSURE:
-      parse_pressure_data(data, msg.length);
+      parse_pressure_data(data, length);
       break;
     case AMBIENT_LIGHT:
-      parse_ambient_light_data(data, msg.length);
+      parse_ambient_light_data(data, length);
       break;
     case HUMIDITY:
-      parse_humidity_data(data, msg.length);
+      parse_humidity_data(data, length);
       break;
     case PROXIMITY:
-      parse_proximity_data(data, msg.length);
+      parse_proximity_data(data, length);
       break;
     case TEMPERATURE:
-      parse_temperature_data(data, msg.length);
+      parse_temperature_data(data, length);
       break;
     case UNCALIBRATED_MAGNETIC_FIELD:
-      parse_uncalibrated_magnetic_field_data(data, msg.length);
+      parse_uncalibrated_magnetic_field_data(data, length);
       break;
     case TAP_DETECTOR:
-      parse_tap_detector_data(data, msg.length);
+      parse_tap_detector_data(data, length);
       break;
     case STEP_COUNTER:
-      parse_step_counter_data(data, msg.length);
+      parse_step_counter_data(data, length);
       break;
     case SIGNIFICANT_MOTION:
-      parse_significant_motion_data(data, msg.length);
+      parse_significant_motion_data(data, length);
       break;
     case STABILITY_CLASSIFIER:
-      parse_stability_classifier_data(data, msg.length);
+      parse_stability_classifier_data(data, length);
       break;
     case RAW_ACCELEROMETER:
-      parse_raw_accelerometer_data(data, msg.length);
+      parse_raw_accelerometer_data(data, length);
       break;
     case RAW_GYROSCOPE:
-      parse_raw_gyroscope_data(data, msg.length);
+      parse_raw_gyroscope_data(data, length);
       break;
     case RAW_MAGNETOMETER:
-      parse_raw_magnetometer_data(data, msg.length);
+      parse_raw_magnetometer_data(data, length);
       break;
     case STEP_DETECTOR:
-      parse_step_detector_data(data, msg.length);
+      parse_step_detector_data(data, length);
       break;
     case SHAKE_DETECTOR:
-      parse_shake_detector_data(data, msg.length);
+      parse_shake_detector_data(data, length);
       break;
     case FLIP_DETECTOR:
-      parse_flip_detector_data(data, msg.length);
+      parse_flip_detector_data(data, length);
       break;
     case PICKUP_DETECTOR:
-      parse_pickup_detector_data(data, msg.length);
+      parse_pickup_detector_data(data, length);
       break;
     case STABILITY_DETECTOR:
-      parse_stability_detector_data(data, msg.length);
+      parse_stability_detector_data(data, length);
       break;
     case PERSONAL_ACTIVITY_CLASSIFIER:
-      parse_personal_activity_classifier_data(data, msg.length);
+      parse_personal_activity_classifier_data(data, length);
       break;
     case SLEEP_DETECTOR:
-      parse_sleep_detector_data(data, msg.length);
+      parse_sleep_detector_data(data, length);
       break;
     case TILT_DETECTOR:
-      parse_tilt_detector_data(data, msg.length);
+      parse_tilt_detector_data(data, length);
       break;
     case POCKET_DETECTOR:
-      parse_pocket_detector_data(data, msg.length);
+      parse_pocket_detector_data(data, length);
       break;
     case CIRCLE_DETECTOR:
-      parse_circle_detector_data(data, msg.length);
+      parse_circle_detector_data(data, length);
       break;
     case HEART_RATE_MONITOR:
-      parse_heart_rate_monitor_data(data, msg.length);
+      parse_heart_rate_monitor_data(data, length);
       break;
     case ARVR_STABILISED_ROTATION_VECTOR:
-      parse_arvr_stabilised_rotation_vector_data(data, msg.length);
+      parse_arvr_stabilised_rotation_vector_data(data, length);
       break;
     case ARVR_STABILISED_GAME_ROTATION_VECTOR:
-      parse_arvr_stabilised_game_rotation_vector_data(data, msg.length);
+      parse_arvr_stabilised_game_rotation_vector_data(data, length);
       break;
     case GYRO_INTEGRATED_ROTATION_VECTOR:
-      parse_gyro_integrated_rotation_vector_data(data, msg.length);
+      parse_gyro_integrated_rotation_vector_data(data, length);
       break;
     case MOTION_REQUEST:
-      parse_motion_request_data(data, msg.length);
+      parse_motion_request_data(data, length);
       break;
     case OPTICAL_FLOW:
       warn("Optical flow frames are not supported\n");
       break;
     case DEAD_RECKONING_POSE:
-      parse_dead_reckoning_pose_data(data, msg.length);
+      parse_dead_reckoning_pose_data(data, length);
       break;
     default:
-      warn("Unrecognised sensor ID %d\n", data[0]);
+      warn("Unrecognised sensor ID 0x%x\n", data[0]);
       return false;
   }
 

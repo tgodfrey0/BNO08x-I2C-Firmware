@@ -36,9 +36,11 @@
 #include "sensors.h"
 #include "sensor_reports.h"
 
-#define OPEN_ATTEMPTS		5 /**< The number of tries to open a channel to the sensor. */
+#define OPEN_ATTEMPTS		5u /**< The number of tries to open a channel to the sensor. */
 #define min(a,b) ({ __typeof__ (a) _a = (a); __typeof__ (b) _b = (b); _a < _b ? _a : _b; }) /**< Macro to return the smaller of two numbers. */
-#define HEADER_TIMEBASE_OFFSET		9 /**< The number of bytes used for the header and timebase reference. */
+#define HEADER_SIZE		4u /**< The number of bytes used for the header. */
+#define TIMEBASE_SIZE		5u /**< The number of bytes used for the timebase reference. */
+#define TIMEBASE_REPORT_ID		0xFBu /**< The report ID for a timebase reference. */
 
 //=================================================================================================//
 //		Enums
