@@ -42,9 +42,21 @@ if (DOXYGEN_FOUND)
     set(DOXYGEN_IN ${CMAKE_CURRENT_SOURCE_DIR}/docs/Doxyfile.in)
     set(DOXYGEN_OUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
 
+    set(CSS1_IN ${CMAKE_CURRENT_SOURCE_DIR}/docs/doxygen-awesome-css/doxygen-awesome.css)
+    set(CSS2_IN ${CMAKE_CURRENT_SOURCE_DIR}/docs/doxygen-awesome-css/doxygen-awesome-sidebar-only.css)
+    set(CSS3_IN ${CMAKE_CURRENT_SOURCE_DIR}/docs/doxygen-awesome-css/doxygen-awesome-sidebar-only-darkmode-toggle.css)
+    set(JS_IN ${CMAKE_CURRENT_SOURCE_DIR}/docs/doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js)
+    set(HTML_HEADER_IN ${CMAKE_CURRENT_SOURCE_DIR}/docs/header.html)
+
     # request to configure the file
     configure_file(${DOXYGEN_IN} ${DOXYGEN_OUT} @ONLY)
     message("Doxygen build started")
+
+    file(COPY ${CSS1_IN} DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+    file(COPY ${CSS2_IN} DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+    file(COPY ${CSS3_IN} DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+    file(COPY ${JS_IN} DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+    file(COPY ${HTML_IN} DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
     # note the option ALL which allows to build the docs together with the application
     add_custom_target( doc_doxygen ALL
