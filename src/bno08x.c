@@ -437,60 +437,6 @@ bool enable_sensor(const struct i2c_interface* i2c, const enum REPORT_ID id, con
 }
 
 bool read_sensors(const struct i2c_interface* i2c){
-  // enum I2C_RESPONSE res;
-
-  // uint8_t header_content[4];
-
-  // struct i2c_message header = {
-  //   .payload = header_content,
-  //   .length = 0
-  // };
-
-  // res = i2c.read(BNO08x_ADDR, &header, 4);
-
-  // if(res != SUCCESS){
-  //   warn("Failed to read header\n");
-  //   return false;
-  // }
-
-  // if(header.length != 4){
-  //   warn("Failed to read full header. 4 bytes should be read, but %d bytes were read\n", header.length);
-  //   return false;
-  // }
-
-  // info("Header: ");
-  // for(uint8_t i = 0; i < header.length; i++){
-  //   printf("%d ", header.payload[i]);
-  // }
-
-  // uint16_t cargo_length = header.payload[0] | (header.payload[1] << 8);
-  // cargo_length &= 0x7FFF; // Remove the continuation bit
-  // cargo_length -= 4; // Header has already been read
-  // uint8_t cargo_content[cargo_length];
-
-  // info("Cargo length: %d\n", cargo_length);
-
-  // struct i2c_message cargo = {
-  //   .payload = cargo_content,
-  //   .length = 0
-  // };
-
-  // res = i2c.read(BNO08x_ADDR, &cargo, cargo_length);
-
-  // if(res != SUCCESS){
-  //   warn("Failed to read cargo\n");
-  //   return false;
-  // }
-
-  // if(cargo.length != cargo_length){
-  //   warn("Failed to read full cargo, expected %d bytes but received %d bytes\n", cargo_length, cargo.length);
-  //   return false;
-  // }
-
-  // parse_msg(cargo);
-
-  // return true;
-
   struct i2c_message head;
 
   if (i2c->read(BNO08x_ADDR, &head, 4) != SUCCESS) {

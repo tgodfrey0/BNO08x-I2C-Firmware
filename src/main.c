@@ -27,7 +27,7 @@ void flash(uint8_t n){
 
 enum I2C_RESPONSE write_i2c(const uint8_t addr, const struct i2c_message* message){
 	info("Writing %d bytes\n", message->length);
-	int8_t res = i2c_write_blocking(I2C_INST, addr, message->payload, message->length, false);
+	int8_t res = i2c_write_blocking_until(I2C_INST, addr, message->payload, message->length, false, (absolute_time_t) {(time_us_64() + (TIMEOUT_MS * 1000))});
 	if(res == PICO_ERROR_GENERIC || res == PICO_ERROR_TIMEOUT){
 		return ERROR_GENERIC;
   } else return SUCCESS;
@@ -36,7 +36,7 @@ enum I2C_RESPONSE write_i2c(const uint8_t addr, const struct i2c_message* messag
 enum I2C_RESPONSE read_i2c(const uint8_t addr, struct i2c_message* message, const uint16_t n){
 	uint8_t buf[n];
 
-	int8_t res = i2c_read_blocking(I2C_INST, addr, buf, n, false);
+	int8_t res = i2c_read_blocking_until(I2C_INST, addr, buf, n, false, (absolute_time_t) {(time_us_64() + (TIMEOUT_MS * 1000))});
 
   if(res == PICO_ERROR_GENERIC || res == PICO_ERROR_TIMEOUT){
     return ERROR_GENERIC;

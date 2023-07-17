@@ -279,6 +279,8 @@ bool parse_msg(struct i2c_message msg){
     return false;
   }
 
+  // TODO: ~~Timebase removal is wrong~~ Rewrite this whole section
+
   uint8_t length = msg.length - HEADER_SIZE;
   uint8_t data_no_header[length];
   memcpy(data_no_header, &(msg.payload[HEADER_SIZE]), length);
@@ -300,11 +302,13 @@ bool parse_msg(struct i2c_message msg){
   else if(data_no_header[0] == CMD_RESPONSE) return parse_cmd_res_msg(data, length);
   else data = data_no_header;
 
-  info("Data: ");
-  for(uint8_t i = 0; i < length; i++){
-    printf("0x%x ", data[i]);
-  }
-  printf("\n");
+
+  printf("%d\n", data[0]);
+  // info("Data: ");
+  // for(uint8_t i = 0; i < length; i++){
+  //   printf("0x%x ", data[i]);
+  // }
+  // printf("\n");
 
   switch (data[0]) {
     case ACCELEROMETER:
