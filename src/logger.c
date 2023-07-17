@@ -19,6 +19,20 @@ void info(const char* msg, ...){
   va_end(argp);
 }
 
+void data(const char* msg, ...){
+  if(DATA < log_level){
+    return;
+  }
+
+  va_list argp;
+  va_start(argp, msg);
+
+  printf("[DATA]: ");
+  vprintf(msg, argp);
+
+  va_end(argp);
+}
+
 void warn(const char* msg, ...){
   if(WARN < log_level){
     return;
