@@ -25,7 +25,9 @@
 var NAVTREE =
 [
   [ "BNO08x Firmware", "index.html", [
-    [ "BNO08x I2C Library", "index.html", "index" ],
+    [ "Overview", "index.html", null ],
+    [ "Hardware Designs", "pcbs.html", null ],
+    [ "Getting Started", "gs.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
@@ -51,8 +53,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"structgravity__report.html#a70fbd315df33bf9039e036725b569e7f",
-"structuncalibrated__magnetic__field__report.html#ac117f9690109b1aeb49da826aff1cca6"
+"structgravity__report.html",
+"structuncalibrated__magnetic__field__report.html#aa4f0d3eebc3c443f9be81bf48561a217"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

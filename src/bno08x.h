@@ -10,11 +10,29 @@
  */
 
 /**
- * @mainpage BNO08x I2C Library
+ * @mainpage Overview
  * 
- * This library is designed to be platform independent and allow for a microcontroller to communicate with a BNO08x sensor over I2C. 
+ * This library is designed to be platform independent and allow for a microcontroller to communicate with a BNO08x sensor over I2C.
  * 
- * @section instructions Instructions for Use
+ * - \ref pcbs
+ * 
+ * - \ref gs
+ *
+ */
+
+/**
+ * @page pcbs Hardware Designs
+ * 
+ * PCB designs can be found [on my GitHub](https://github.com/tgodfrey0/BNO085-I2C-PCBs).
+ * 
+ * Several PCBs were created to use the BNO08x sensor. The main driving force behind these designs is the eventual use in tactile sensing modules, therefore the PCBs were designed to be as small as possible.
+ * 
+ * A more generic rectangular version exists within the designs.
+ * 
+ */
+
+/**
+ * @page gs Getting Started
  * 
  * In order to use the library, several functions must be declared before use. These are the I2C functions found in the \ref i2c_interface "i2c_interface". The initialise function must also be run before any communication takes place.
  * 
