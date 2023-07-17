@@ -6,9 +6,9 @@ var bno08x_8h =
     [ "OPEN_ATTEMPTS", "bno08x_8h.html#afffe5576b28ba003f4f4beb6f045a0b6", null ],
     [ "TIMEBASE_REPORT_ID", "bno08x_8h.html#af60ed58c739c624b8c04feb6f4b7b275", null ],
     [ "TIMEBASE_SIZE", "bno08x_8h.html#aa290d4dcb0d884fb8c00647c74519cde", null ],
-    [ "SENSOR_ID", "group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957", null ],
-    [ "enable_sensor", "bno08x_8h.html#afbd62a1bc344d4e67589be5580500f03", null ],
-    [ "get_sensor", "bno08x_8h.html#adc2c27584639b6dc325d9f6e4a1dfcf5", null ],
+    [ "REPORT_ID", "group__Enumerations.html#ga038d4678418eb60d0f550ed10fd88e7e", null ],
+    [ "enable_sensor", "bno08x_8h.html#a5520d696f06188399629d18b933d5812", null ],
+    [ "get_sensor", "bno08x_8h.html#a18224a517762bee500dc89e27c2bc68e", null ],
     [ "init", "bno08x_8h.html#af794b30d0b44f9b11b0a7d48c14e93f3", null ],
     [ "read_sensors", "bno08x_8h.html#a3e9cfd794bcd07fd1df61436bbbd9f17", null ]
 ];

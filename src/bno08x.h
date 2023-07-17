@@ -65,13 +65,13 @@
 //=================================================================================================//
 
 /**
- * @enum SENSOR_ID
+ * @enum REPORT_ID
  *
  * @brief Stores the ID for each sensor.
  * 
  * @ingroup Enumerations
  */
-enum SENSOR_ID {
+enum REPORT_ID {
 	ACCELEROMETER = 0x01,
 	GYROSCOPE = 0x02,
 	MAGNETIC_FIELD = 0x03,
@@ -112,9 +112,14 @@ enum SENSOR_ID {
 	MOTION_REQUEST = 0x2B,
 	OPTICAL_FLOW = 0x2C,
 	DEAD_RECKONING_POSE = 0x2D,
+	CMD_RESPONSE = 0xF1,
+	CMD_REQUEST = 0xF2,
+	GET_FEATURE_RESPONSE = 0xFC,
+	SET_FEATURE_COMMAND = 0xFD,
+	GET_FEATURE_REQUEST = 0xFE
 };
 
-static enum SENSOR_ID last_received; 
+static enum REPORT_ID last_received; 
 
 //=================================================================================================//
 //    Structs
@@ -129,7 +134,7 @@ static enum SENSOR_ID last_received;
  */ 
 struct sensor {
 	const char* name;		/**< A human-readable name for the sensor. Useful for outputting results. */
-	const enum SENSOR_ID id;		/**< The sensor ID. This should be the same as the report_id in the report returned from the sensor. */
+	const enum REPORT_ID id;		/**< The sensor ID. This should be the same as the report_id in the report returned from the sensor. */
 	//const uint8_t channel;		/**< The channel the sensor communicates on. */
 	union input_report input_report;		/**< Stores the returned data from the sensor. */
 };
@@ -156,7 +161,7 @@ void init(const struct i2c_interface* i2c);
  * @return `true` if the sensor was successfully enabled
  * @return `false` if the sensor could not be enabled
  */
-bool enable_sensor(const struct i2c_interface* i2c, const enum SENSOR_ID id, const uint32_t sample_rate_ms);
+bool enable_sensor(const struct i2c_interface* i2c, const enum REPORT_ID id, const uint32_t sample_rate_ms);
 
 /**
  * @brief Read the latest sensor report on the bus.
@@ -173,4 +178,4 @@ bool read_sensors(const struct i2c_interface* i2c);
  * @param id is the ID of the sensor
  * @return the sensor struct pointer
  */
-struct sensor* get_sensor(const enum SENSOR_ID id);
+struct sensor* get_sensor(const enum REPORT_ID id);

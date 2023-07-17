@@ -141,24 +141,24 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ga5397f7a91d2d43051e74cfdee22f5957"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a> </td></tr>
-<tr class="memdesc:ga5397f7a91d2d43051e74cfdee22f5957"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the ID for each sensor.  <a href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">More...</a><br /></td></tr>
-<tr class="separator:ga5397f7a91d2d43051e74cfdee22f5957"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga038d4678418eb60d0f550ed10fd88e7e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Enumerations.html#ga038d4678418eb60d0f550ed10fd88e7e">REPORT_ID</a> </td></tr>
+<tr class="memdesc:ga038d4678418eb60d0f550ed10fd88e7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the ID for each sensor.  <a href="group__Enumerations.html#ga038d4678418eb60d0f550ed10fd88e7e">More...</a><br /></td></tr>
+<tr class="separator:ga038d4678418eb60d0f550ed10fd88e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:af794b30d0b44f9b11b0a7d48c14e93f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bno08x_8h.html#af794b30d0b44f9b11b0a7d48c14e93f3">init</a> (const struct <a class="el" href="structi2c__interface.html">i2c_interface</a> *i2c)</td></tr>
 <tr class="memdesc:af794b30d0b44f9b11b0a7d48c14e93f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn on the sensor and open the channel.  <br /></td></tr>
 <tr class="separator:af794b30d0b44f9b11b0a7d48c14e93f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbd62a1bc344d4e67589be5580500f03"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bno08x_8h.html#afbd62a1bc344d4e67589be5580500f03">enable_sensor</a> (const struct <a class="el" href="structi2c__interface.html">i2c_interface</a> *i2c, const enum <a class="el" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a> id, const uint32_t sample_rate_ms)</td></tr>
-<tr class="memdesc:afbd62a1bc344d4e67589be5580500f03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables a specified sensor with a fixed report rate.  <br /></td></tr>
-<tr class="separator:afbd62a1bc344d4e67589be5580500f03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5520d696f06188399629d18b933d5812"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bno08x_8h.html#a5520d696f06188399629d18b933d5812">enable_sensor</a> (const struct <a class="el" href="structi2c__interface.html">i2c_interface</a> *i2c, const enum <a class="el" href="group__Enumerations.html#ga038d4678418eb60d0f550ed10fd88e7e">REPORT_ID</a> id, const uint32_t sample_rate_ms)</td></tr>
+<tr class="memdesc:a5520d696f06188399629d18b933d5812"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables a specified sensor with a fixed report rate.  <br /></td></tr>
+<tr class="separator:a5520d696f06188399629d18b933d5812"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e9cfd794bcd07fd1df61436bbbd9f17"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bno08x_8h.html#a3e9cfd794bcd07fd1df61436bbbd9f17">read_sensors</a> (const struct <a class="el" href="structi2c__interface.html">i2c_interface</a> *i2c)</td></tr>
 <tr class="memdesc:a3e9cfd794bcd07fd1df61436bbbd9f17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the latest sensor report on the bus.  <br /></td></tr>
 <tr class="separator:a3e9cfd794bcd07fd1df61436bbbd9f17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc2c27584639b6dc325d9f6e4a1dfcf5"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structsensor.html">sensor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bno08x_8h.html#adc2c27584639b6dc325d9f6e4a1dfcf5">get_sensor</a> (const enum <a class="el" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a> id)</td></tr>
-<tr class="memdesc:adc2c27584639b6dc325d9f6e4a1dfcf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the sensor struct from a given ID.  <br /></td></tr>
-<tr class="separator:adc2c27584639b6dc325d9f6e4a1dfcf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18224a517762bee500dc89e27c2bc68e"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structsensor.html">sensor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bno08x_8h.html#a18224a517762bee500dc89e27c2bc68e">get_sensor</a> (const enum <a class="el" href="group__Enumerations.html#ga038d4678418eb60d0f550ed10fd88e7e">REPORT_ID</a> id)</td></tr>
+<tr class="memdesc:a18224a517762bee500dc89e27c2bc68e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the sensor struct from a given ID.  <br /></td></tr>
+<tr class="separator:a18224a517762bee500dc89e27c2bc68e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines the top level entities for the library. </p>
@@ -257,8 +257,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="afbd62a1bc344d4e67589be5580500f03" name="afbd62a1bc344d4e67589be5580500f03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afbd62a1bc344d4e67589be5580500f03">&#9670;&#160;</a></span>enable_sensor()</h2>
+<a id="a5520d696f06188399629d18b933d5812" name="a5520d696f06188399629d18b933d5812"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5520d696f06188399629d18b933d5812">&#9670;&#160;</a></span>enable_sensor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -272,7 +272,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const enum <a class="el" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a>&#160;</td>
+          <td class="paramtype">const enum <a class="el" href="group__Enumerations.html#ga038d4678418eb60d0f550ed10fd88e7e">REPORT_ID</a>&#160;</td>
           <td class="paramname"><em>id</em>, </td>
         </tr>
         <tr>
@@ -304,8 +304,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="adc2c27584639b6dc325d9f6e4a1dfcf5" name="adc2c27584639b6dc325d9f6e4a1dfcf5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc2c27584639b6dc325d9f6e4a1dfcf5">&#9670;&#160;</a></span>get_sensor()</h2>
+<a id="a18224a517762bee500dc89e27c2bc68e" name="a18224a517762bee500dc89e27c2bc68e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18224a517762bee500dc89e27c2bc68e">&#9670;&#160;</a></span>get_sensor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -313,7 +313,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">struct <a class="el" href="structsensor.html">sensor</a> * get_sensor </td>
           <td>(</td>
-          <td class="paramtype">const enum <a class="el" href="group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957">SENSOR_ID</a>&#160;</td>
+          <td class="paramtype">const enum <a class="el" href="group__Enumerations.html#ga038d4678418eb60d0f550ed10fd88e7e">REPORT_ID</a>&#160;</td>
           <td class="paramname"><em>id</em></td><td>)</td>
           <td></td>
         </tr>

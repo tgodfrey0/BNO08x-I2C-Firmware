@@ -14,13 +14,31 @@
 #include "i2c.h"
 
 /**
- * @brief Parses a raw data frame into the relevant sensor struct.
+ * @brief Parses a raw sensor data frame into the relevant sensor struct.
  * 
- * @param msg is the raw frame received from the sensor
+ * @param msg is the raw sensor data frame received from the sensor
  * @return true if the message was successfully parsed
  * @return false if the message could not be parsed
  */
-bool parse_msg(struct i2c_message msg);
+bool parse_sensor_msg(struct i2c_message msg);
+
+/**
+ * @brief Parses a raw command response frame into the relevant sensor struct.
+ * 
+ * @param msg is the raw command response frame received from the sensor
+ * @return true if the message was successfully parsed
+ * @return false if the message could not be parsed
+ */
+bool parse_cmd_res_msg(struct i2c_message msg);
+
+/**
+ * @brief Parses a raw get feature response frame into the relevant sensor struct.
+ * 
+ * @param msg is the raw get feature response frame received from the sensor
+ * @return true if the message was successfully parsed
+ * @return false if the message could not be parsed
+ */
+bool parse_get_feat_res_msg(struct i2c_message msg);
 
 /**
  * @brief Scale a value relative to the sensor's Q point.

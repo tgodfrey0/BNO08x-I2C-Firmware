@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 #include "bno08x.h"
 #include "logger.h"
 #include "output.h"
@@ -303,4 +305,20 @@ void print_last_frame(){
       warn("Unrecognised sensor ID 0x%x\n", last_received);
       break;
   }
+}
+
+void print_raw_cmd_res_msg(struct i2c_message msg){
+  info("Raw Command Response: [");
+  for(uint8_t i = 0; i < msg.length-1; i++){
+    printf("0x%x, ", msg.payload[i]);
+  }
+  printf("0x%x]\n", msg.payload[msg.length - 1]);
+}
+
+void print_raw_get_feat_res_msg(struct i2c_message msg){
+  info("Raw Get Feature Response: [");
+  for(uint8_t i = 0; i < msg.length-1; i++){
+    printf("0x%x, ", msg.payload[i]);
+  }
+  printf("0x%x]\n", msg.payload[msg.length - 1]);
 }

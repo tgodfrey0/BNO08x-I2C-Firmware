@@ -1,5 +1,9 @@
 var NAVTREEINDEX1 =
 {
+"structgeomagnetic__rotation__vector__report.html#ac117f9690109b1aeb49da826aff1cca6":[4,0,17,7],
+"structgeomagnetic__rotation__vector__report.html#ac25976cf079d34d71c9da8ca3517dfb5":[4,0,17,3],
+"structgeomagnetic__rotation__vector__report.html#ade818037fd6c985038ff29656089758d":[4,0,17,8],
+"structgravity.html":[3,1,5],
 "structgravity__report.html":[4,0,19],
 "structgravity__report.html#a70fbd315df33bf9039e036725b569e7f":[4,0,19,0],
 "structgravity__report.html#a725a13d8d43f65c0f5e8adc271f71573":[4,0,19,1],
@@ -157,8 +161,8 @@ var NAVTREEINDEX1 =
 "structrotation__vector__report.html#ade818037fd6c985038ff29656089758d":[4,0,55,8],
 "structrotation__vector__report.html#af3de58c4299b63bcdc8812fdf52342d5":[4,0,55,0],
 "structsensor.html":[4,0,56],
-"structsensor.html#a5d61fdce1be542abed960dd7d2f68cf9":[4,0,56,0],
 "structsensor.html#a8f8f80d37794cde9472343e4487ba3eb":[4,0,56,2],
+"structsensor.html#aa995460869fbbbacfbb2a94bbae3c923":[4,0,56,0],
 "structsensor.html#adb2bff821836a28632fdc702826fef1c":[4,0,56,1],
 "structshake__detector.html":[3,1,23],
 "structshake__detector__report.html":[4,0,58],
@@ -245,9 +249,5 @@ var NAVTREEINDEX1 =
 "structuncalibrated__gyroscope__report.html#af73583b1e980b0aa03f9884812e9fd4d":[4,0,78,8],
 "structuncalibrated__magnetic__field.html":[3,1,14],
 "structuncalibrated__magnetic__field__report.html":[4,0,80],
-"structuncalibrated__magnetic__field__report.html#a130457eaa905b467bc43fedb02cbb16a":[4,0,80,7],
-"structuncalibrated__magnetic__field__report.html#a56c4ea73587a9ea20595cca9bcfe9593":[4,0,80,5],
-"structuncalibrated__magnetic__field__report.html#a6e265324293107afbfa9e587941a4036":[4,0,80,9],
-"structuncalibrated__magnetic__field__report.html#a70fbd315df33bf9039e036725b569e7f":[4,0,80,0],
-"structuncalibrated__magnetic__field__report.html#a725a13d8d43f65c0f5e8adc271f71573":[4,0,80,1]
+"structuncalibrated__magnetic__field__report.html#a130457eaa905b467bc43fedb02cbb16a":[4,0,80,7]
 };

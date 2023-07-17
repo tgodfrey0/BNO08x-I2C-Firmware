@@ -4,6 +4,7 @@
 #include "bno08x.h"
 #include "i2c.h"
 #include "logger.h"
+#include "output.h"
 #include "parsers.h"
 #include "sensors.h"
 #include "sensor_reports.h"
@@ -29,7 +30,7 @@ enum I2C_RESPONSE open_channel(const struct i2c_interface* i2c){
    *   4    | Payload = CMD 2 (On)
    */
   uint8_t pkt[] = {5, 0, 1, get_seq_num(), 2};
-  enum SENSOR_ID res;
+  enum REPORT_ID res;
 
   struct i2c_message msg = create_msg(pkt, 5);
 
@@ -56,7 +57,7 @@ void init(const struct i2c_interface* i2c){
   info("Sensor channel opened\n");
 }
 
-struct sensor* get_sensor(enum SENSOR_ID id){
+struct sensor* get_sensor(enum REPORT_ID id){
   switch (id) {
     case ACCELEROMETER:
       return accelerometer;
@@ -143,7 +144,7 @@ struct sensor* get_sensor(enum SENSOR_ID id){
   }
 }
 
-void populate_struct(const enum SENSOR_ID id){
+void populate_struct(const enum REPORT_ID id){
   switch (id) {
     case ACCELEROMETER:
       accelerometer = &(struct sensor) {
@@ -384,7 +385,7 @@ void populate_struct(const enum SENSOR_ID id){
   info("Struct for sensor with ID 0x%x has been created\n", id);
 }
 
-bool enable_sensor(const struct i2c_interface* i2c, const enum SENSOR_ID id, const uint32_t sample_rate_ms){
+bool enable_sensor(const struct i2c_interface* i2c, const enum REPORT_ID id, const uint32_t sample_rate_ms){
   populate_struct(id);
 
   uint64_t period_us = sample_rate_ms * 1000;
@@ -485,7 +486,7 @@ bool read_sensors(const struct i2c_interface* i2c){
   //   return false;
   // }
 
-  // parse_msg(cargo);
+  // parse_sensor_msg(cargo);
 
   // return true;
 
@@ -562,5 +563,18 @@ bool read_sensors(const struct i2c_interface* i2c){
 
   info("Data successfully read from bus\n");
 
-  return parse_msg(final);
+  bool status;
+  switch (final.payload[0]) {
+  case CMD_RESPONSE:
+    status = parse_cmd_res_msg(final);
+    break;
+  case GET_FEATURE_RESPONSE:
+    status = parse_get_feat_res_msg(final);
+    break;
+  default:
+    status = parse_sensor_msg(final);
+    break;
+  }
+
+  return status;
 }

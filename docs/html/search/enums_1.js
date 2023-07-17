@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sensor_5fid_0',['SENSOR_ID',['../group__Enumerations.html#ga5397f7a91d2d43051e74cfdee22f5957',1,'bno08x.h']]]
+  ['report_5fid_0',['REPORT_ID',['../group__Enumerations.html#ga038d4678418eb60d0f550ed10fd88e7e',1,'bno08x.h']]]
 ];
