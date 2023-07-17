@@ -551,21 +551,16 @@ bool read_sensors(const struct i2c_interface* i2c){
     }
 
     if (first_read) {
-      // The first time we're saving the "original" header, so include it in the
-      // cargo count
+      // If it's the first time we need to save the header
       cargo_read_amount = read_size;
       memcpy(final_ptr, cargo_ptr, cargo_read_amount);
       first_read = false;
     } else {
-      // this is not the first read, so copy from 4 bytes after the beginning of
-      // the i2c buffer to skip the header included with every new i2c read and
-      // don't include the header in the amount of cargo read
+      // We can now skip the header
       cargo_read_amount = read_size - 4;
       memcpy(final_ptr, cargo_ptr + 4, cargo_read_amount);
     }
-    // advance our pointer by the amount of cargo read
     final_ptr += cargo_read_amount;
-    // mark the cargo as received
     cargo_remaining -= cargo_read_amount;
   }
 

@@ -56,7 +56,7 @@ if (DOXYGEN_FOUND)
     file(COPY ${CSS2_IN} DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
     file(COPY ${CSS3_IN} DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
     file(COPY ${JS_IN} DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
-    file(COPY ${HTML_IN} DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+    file(COPY ${HTML_HEADER_IN} DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
     # note the option ALL which allows to build the docs together with the application
     add_custom_target( doc_doxygen ALL
