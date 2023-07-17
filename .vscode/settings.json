@@ -10,6 +10,7 @@
     "output.h": "c",
     "sensor_reports.h": "c",
     "bno08x.h": "c",
-    "parsers.h": "c"
+    "parsers.h": "c",
+    "typeinfo": "c"
   }
 }

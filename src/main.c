@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <string.h>
 
 #include "boards/pico.h"
@@ -25,6 +26,7 @@ void flash(uint8_t n){
 }
 
 enum I2C_RESPONSE write_i2c(const uint8_t addr, const struct i2c_message* message){
+	info("Writing %d bytes\n", message->length);
 	int8_t res = i2c_write_blocking(I2C_INST, addr, message->payload, message->length, false);
 	if(res == PICO_ERROR_GENERIC || res == PICO_ERROR_TIMEOUT){
 		return ERROR_GENERIC;
@@ -70,6 +72,7 @@ int main(){
 
 	flash(3);
 
+	printf("\n***\n\n");
 	info("Starting initialisation process\n");
 
 	info("Initialising data structures\n");

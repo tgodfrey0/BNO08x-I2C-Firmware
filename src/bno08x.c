@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 #include "bno08x.h"
@@ -427,10 +428,10 @@ bool enable_sensor(const struct i2c_interface* i2c, const enum REPORT_ID id, con
   enum I2C_RESPONSE res = i2c->write(BNO08x_ADDR, &msg);
 
   if(res == ERROR_GENERIC || res == ERROR_TIMEOUT){
-    warn("%s could not be enabled\n", get_sensor(id)->name);
+    warn("Sensor 0x%x could not be enabled\n", id);
     return false;
   } else {
-    info("%s has been successfully enabled\n", get_sensor(id)->name);
+    info("Sensor 0x%x has been successfully enabled\n", id);
     return true;
   }
 }
@@ -500,7 +501,16 @@ bool read_sensors(const struct i2c_interface* i2c){
   // Determine amount to read
   uint16_t packet_size = (uint16_t)head.payload[0] | (uint16_t)head.payload[1] << 8;
   // Unset the "continue" bit
-  packet_size &= ~0x8000;
+  packet_size &= ~0x8000u;
+
+  char buffer[16];
+  itoa(packet_size, buffer, 2);
+  info("Packet size:                    %d / %s / 0x%x\n", packet_size, buffer, packet_size);
+  packet_size &= ~0x8000u;
+  itoa(packet_size, buffer, 2);
+  info("Packet size cont bit removed:   %d / %s / 0x%x\n", packet_size, buffer, packet_size);
+  itoa(packet_size-4, buffer, 2);
+  info("Packet size without header:     %d / %s / 0x%x\n", packet_size-4, buffer, packet_size-4);
 
   if (packet_size > MAX_PAYLOAD_SIZE) {
     warn("Packet too large for buffer\n");

@@ -268,7 +268,7 @@ bool parse_get_feat_res_msg(uint8_t data[], uint8_t length){
 bool parse_msg(struct i2c_message msg){
   // info("Message received from sensor with ID %d\n", data[0]);
   static int i = 0;
-  if(i == 4) for(;;);
+  if(i == 5) for(;;);
   i++;
   
   info("Data: ");
