@@ -268,7 +268,7 @@ bool parse_get_feat_res_msg(uint8_t data[], uint8_t length){
 bool parse_msg(struct i2c_message msg){
   // info("Message received from sensor with ID %d\n", data[0]);
   
-  info("Data: ");
+  data("Data: ");
   for(uint8_t i = 0; i < msg.length; i++){
     printf("0x%x ", msg.payload[i]);
   }

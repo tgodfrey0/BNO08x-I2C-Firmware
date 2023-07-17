@@ -7,7 +7,7 @@ enum LEVEL {
   CRIT = 3
 };
 
-static enum LEVEL log_level = INFO;
+static enum LEVEL log_level = DATA;
 
 void info(const char* message, ...);
 void data(const char* message, ...);
