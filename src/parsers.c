@@ -255,7 +255,17 @@ void parse_dead_reckoning_pose_data(uint8_t data[], uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-bool parse_sensor_msg(struct i2c_message msg){
+bool parse_cmd_res_msg(uint8_t data[], uint8_t length){
+  print_raw_cmd_res_msg(create_msg(data, length));
+  return true;
+}
+
+bool parse_get_feat_res_msg(uint8_t data[], uint8_t length){
+  print_raw_get_feat_res_msg(create_msg(data, length));
+  return true;
+}
+
+bool parse_msg(struct i2c_message msg){
   // info("Message received from sensor with ID %d\n", data[0]);
   static int i = 0;
   if(i == 4) for(;;);
@@ -277,7 +287,7 @@ bool parse_sensor_msg(struct i2c_message msg){
   memcpy(data_no_header, &(msg.payload[HEADER_SIZE]), length);
 
   uint8_t* data;
-  if(data_no_header[0] == TIMEBASE_REPORT_ID){
+  if(data_no_header[0] == TIMEBASE){
     // Remove timebase reference
     if(msg.length - HEADER_SIZE < TIMEBASE_SIZE){
       warn("Timebase report ID found but message is too short\n");
@@ -288,9 +298,10 @@ bool parse_sensor_msg(struct i2c_message msg){
     uint8_t data_no_timebase[length];
     memcpy(data_no_timebase, &(data_no_header[TIMEBASE_SIZE]), length);
     data = data_no_timebase;
-  } else {
-    data = data_no_header;
-  }
+  } 
+  else if(data_no_header[0] == GET_FEATURE_RESPONSE) return parse_get_feat_res_msg(data, length);
+  else if(data_no_header[0] == CMD_RESPONSE) return parse_cmd_res_msg(data, length);
+  else data = data_no_header;
 
   info("Data: ");
   for(uint8_t i = 0; i < length; i++){
@@ -421,15 +432,5 @@ bool parse_sensor_msg(struct i2c_message msg){
       return false;
   }
 
-  return true;
-}
-
-bool parse_cmd_res_msg(struct i2c_message msg){
-  print_raw_cmd_res_msg(msg);
-  return true;
-}
-
-bool parse_get_feat_res_msg(struct i2c_message msg){
-  print_raw_get_feat_res_msg(msg);
   return true;
 }

@@ -118,54 +118,54 @@ $(document).ready(function(){initNavTree('bno08x_8h_source.html',''); initResiza
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="bno08x_8h.html#ac6afabdc09a49a433ee19d8a9486056d">   58</a></span><span class="preprocessor">#define min(a,b) ({ __typeof__ (a) _a = (a); __typeof__ (b) _b = (b); _a &lt; _b ? _a : _b; }) </span></div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="bno08x_8h.html#a49999be01380f41cc0d0f1f1406fb277">   59</a></span><span class="preprocessor">#define HEADER_SIZE     4u </span></div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="bno08x_8h.html#aa290d4dcb0d884fb8c00647c74519cde">   60</a></span><span class="preprocessor">#define TIMEBASE_SIZE       5u </span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="bno08x_8h.html#af60ed58c739c624b8c04feb6f4b7b275">   61</a></span><span class="preprocessor">#define TIMEBASE_REPORT_ID      0xFBu </span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">//=================================================================================================//</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">//      Enums</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">//=================================================================================================//</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="group__Enumerations.html#ga038d4678418eb60d0f550ed10fd88e7e">   74</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="group__Enumerations.html#ga038d4678418eb60d0f550ed10fd88e7e">REPORT_ID</a> {</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    ACCELEROMETER = 0x01,</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    GYROSCOPE = 0x02,</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    MAGNETIC_FIELD = 0x03,</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    LINEAR_ACCELERATION = 0x04,</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    ROTATION_VECTOR = 0x05,</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    GRAVITY = 0x06,</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    UNCALIBRATED_GYROSCOPE = 0x07,</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    GAME_ROTATION_VECTOR = 0x08,</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    GEOMAGNETIC_ROTATION_VECTOR = 0x09,</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    PRESSURE = 0x0A,</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    AMBIENT_LIGHT = 0x0B,</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    HUMIDITY = 0x0C,</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    PROXIMITY = 0x0D,</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    TEMPERATURE = 0x0E,</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    UNCALIBRATED_MAGNETIC_FIELD = 0x0F,</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    TAP_DETECTOR = 0x10,</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    STEP_COUNTER = 0x11,</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    SIGNIFICANT_MOTION = 0x12,</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    STABILITY_CLASSIFIER = 0x13,</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    RAW_ACCELEROMETER = 0x14,</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    RAW_GYROSCOPE = 0x15,</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    RAW_MAGNETOMETER = 0x16,</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    RESERVED = 0x17,</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    STEP_DETECTOR = 0x18,</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    SHAKE_DETECTOR = 0x19,</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    FLIP_DETECTOR = 0x1A,</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    PICKUP_DETECTOR = 0x1B,</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    STABILITY_DETECTOR = 0x1C,</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    PERSONAL_ACTIVITY_CLASSIFIER = 0x1E,</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    SLEEP_DETECTOR = 0x1F,</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    TILT_DETECTOR = 0x20,</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    POCKET_DETECTOR = 0x21,</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    CIRCLE_DETECTOR = 0x22,</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    HEART_RATE_MONITOR = 0x23,</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    ARVR_STABILISED_ROTATION_VECTOR = 0x28,</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    ARVR_STABILISED_GAME_ROTATION_VECTOR = 0x29,</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    GYRO_INTEGRATED_ROTATION_VECTOR = 0x2A,</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    MOTION_REQUEST = 0x2B,</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    OPTICAL_FLOW = 0x2C,</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    DEAD_RECKONING_POSE = 0x2D,</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    CMD_RESPONSE = 0xF1,</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    CMD_REQUEST = 0xF2,</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">//=================================================================================================//</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">//      Enums</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">//=================================================================================================//</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="group__Enumerations.html#ga038d4678418eb60d0f550ed10fd88e7e">   73</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="group__Enumerations.html#ga038d4678418eb60d0f550ed10fd88e7e">REPORT_ID</a> {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    ACCELEROMETER = 0x01,</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    GYROSCOPE = 0x02,</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    MAGNETIC_FIELD = 0x03,</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    LINEAR_ACCELERATION = 0x04,</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    ROTATION_VECTOR = 0x05,</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    GRAVITY = 0x06,</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    UNCALIBRATED_GYROSCOPE = 0x07,</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    GAME_ROTATION_VECTOR = 0x08,</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    GEOMAGNETIC_ROTATION_VECTOR = 0x09,</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    PRESSURE = 0x0A,</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    AMBIENT_LIGHT = 0x0B,</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    HUMIDITY = 0x0C,</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    PROXIMITY = 0x0D,</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    TEMPERATURE = 0x0E,</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    UNCALIBRATED_MAGNETIC_FIELD = 0x0F,</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    TAP_DETECTOR = 0x10,</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    STEP_COUNTER = 0x11,</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    SIGNIFICANT_MOTION = 0x12,</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    STABILITY_CLASSIFIER = 0x13,</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    RAW_ACCELEROMETER = 0x14,</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    RAW_GYROSCOPE = 0x15,</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    RAW_MAGNETOMETER = 0x16,</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    RESERVED = 0x17,</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    STEP_DETECTOR = 0x18,</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    SHAKE_DETECTOR = 0x19,</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    FLIP_DETECTOR = 0x1A,</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    PICKUP_DETECTOR = 0x1B,</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    STABILITY_DETECTOR = 0x1C,</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    PERSONAL_ACTIVITY_CLASSIFIER = 0x1E,</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    SLEEP_DETECTOR = 0x1F,</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    TILT_DETECTOR = 0x20,</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    POCKET_DETECTOR = 0x21,</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    CIRCLE_DETECTOR = 0x22,</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    HEART_RATE_MONITOR = 0x23,</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    ARVR_STABILISED_ROTATION_VECTOR = 0x28,</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    ARVR_STABILISED_GAME_ROTATION_VECTOR = 0x29,</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    GYRO_INTEGRATED_ROTATION_VECTOR = 0x2A,</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    MOTION_REQUEST = 0x2B,</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    OPTICAL_FLOW = 0x2C,</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    DEAD_RECKONING_POSE = 0x2D,</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    CMD_RESPONSE = 0xF1,</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    CMD_REQUEST = 0xF2,</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    TIMEBASE = 0xFB,</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    GET_FEATURE_RESPONSE = 0xFC,</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    SET_FEATURE_COMMAND = 0xFD,</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    GET_FEATURE_REQUEST = 0xFE</div>
@@ -199,7 +199,7 @@ $(document).ready(function(){initNavTree('bno08x_8h_source.html',''); initResiza
 <div class="ttc" id="abno08x_8h_html_a3e9cfd794bcd07fd1df61436bbbd9f17"><div class="ttname"><a href="bno08x_8h.html#a3e9cfd794bcd07fd1df61436bbbd9f17">read_sensors</a></div><div class="ttdeci">bool read_sensors(const struct i2c_interface *i2c)</div><div class="ttdoc">Read the latest sensor report on the bus.</div><div class="ttdef"><b>Definition:</b> bno08x.c:438</div></div>
 <div class="ttc" id="abno08x_8h_html_a5520d696f06188399629d18b933d5812"><div class="ttname"><a href="bno08x_8h.html#a5520d696f06188399629d18b933d5812">enable_sensor</a></div><div class="ttdeci">bool enable_sensor(const struct i2c_interface *i2c, const enum REPORT_ID id, const uint32_t sample_rate_ms)</div><div class="ttdoc">Enables a specified sensor with a fixed report rate.</div><div class="ttdef"><b>Definition:</b> bno08x.c:388</div></div>
 <div class="ttc" id="abno08x_8h_html_af794b30d0b44f9b11b0a7d48c14e93f3"><div class="ttname"><a href="bno08x_8h.html#af794b30d0b44f9b11b0a7d48c14e93f3">init</a></div><div class="ttdeci">void init(const struct i2c_interface *i2c)</div><div class="ttdoc">Turn on the sensor and open the channel.</div><div class="ttdef"><b>Definition:</b> bno08x.c:46</div></div>
-<div class="ttc" id="agroup__Enumerations_html_ga038d4678418eb60d0f550ed10fd88e7e"><div class="ttname"><a href="group__Enumerations.html#ga038d4678418eb60d0f550ed10fd88e7e">REPORT_ID</a></div><div class="ttdeci">REPORT_ID</div><div class="ttdoc">Stores the ID for each sensor.</div><div class="ttdef"><b>Definition:</b> bno08x.h:74</div></div>
+<div class="ttc" id="agroup__Enumerations_html_ga038d4678418eb60d0f550ed10fd88e7e"><div class="ttname"><a href="group__Enumerations.html#ga038d4678418eb60d0f550ed10fd88e7e">REPORT_ID</a></div><div class="ttdeci">REPORT_ID</div><div class="ttdoc">Stores the ID for each sensor.</div><div class="ttdef"><b>Definition:</b> bno08x.h:73</div></div>
 <div class="ttc" id="ai2c_8h_html"><div class="ttname"><a href="i2c_8h.html">i2c.h</a></div><div class="ttdoc">I2C related definitions.</div></div>
 <div class="ttc" id="asensor__reports_8h_html"><div class="ttname"><a href="sensor__reports_8h.html">sensor_reports.h</a></div><div class="ttdoc">Definitions for all input reports available from the BNO08x.</div></div>
 <div class="ttc" id="asensors_8h_html"><div class="ttname"><a href="sensors_8h.html">sensors.h</a></div><div class="ttdoc">Sensor related definitions.</div></div>

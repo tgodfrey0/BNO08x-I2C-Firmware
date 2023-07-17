@@ -486,7 +486,7 @@ bool read_sensors(const struct i2c_interface* i2c){
   //   return false;
   // }
 
-  // parse_sensor_msg(cargo);
+  // parse_msg(cargo);
 
   // return true;
 
@@ -563,18 +563,5 @@ bool read_sensors(const struct i2c_interface* i2c){
 
   info("Data successfully read from bus\n");
 
-  bool status;
-  switch (final.payload[0]) {
-  case CMD_RESPONSE:
-    status = parse_cmd_res_msg(final);
-    break;
-  case GET_FEATURE_RESPONSE:
-    status = parse_get_feat_res_msg(final);
-    break;
-  default:
-    status = parse_sensor_msg(final);
-    break;
-  }
-
-  return status;
+  return parse_msg(final);
 }

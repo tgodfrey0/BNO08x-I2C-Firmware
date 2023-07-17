@@ -1,8 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"structuncalibrated__magnetic__field__report.html#a56c4ea73587a9ea20595cca9bcfe9593":[4,0,80,5],
-"structuncalibrated__magnetic__field__report.html#a6e265324293107afbfa9e587941a4036":[4,0,80,9],
-"structuncalibrated__magnetic__field__report.html#a70fbd315df33bf9039e036725b569e7f":[4,0,80,0],
 "structuncalibrated__magnetic__field__report.html#a725a13d8d43f65c0f5e8adc271f71573":[4,0,80,1],
 "structuncalibrated__magnetic__field__report.html#aa4f0d3eebc3c443f9be81bf48561a217":[4,0,80,6],
 "structuncalibrated__magnetic__field__report.html#ac117f9690109b1aeb49da826aff1cca6":[4,0,80,2],

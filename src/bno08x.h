@@ -58,7 +58,6 @@
 #define min(a,b) ({ __typeof__ (a) _a = (a); __typeof__ (b) _b = (b); _a < _b ? _a : _b; }) /**< Macro to return the smaller of two numbers. */
 #define HEADER_SIZE		4u /**< The number of bytes used for the header. */
 #define TIMEBASE_SIZE		5u /**< The number of bytes used for the timebase reference. */
-#define TIMEBASE_REPORT_ID		0xFBu /**< The report ID for a timebase reference. */
 
 //=================================================================================================//
 //		Enums
@@ -114,6 +113,7 @@ enum REPORT_ID {
 	DEAD_RECKONING_POSE = 0x2D,
 	CMD_RESPONSE = 0xF1,
 	CMD_REQUEST = 0xF2,
+	TIMEBASE = 0xFB,
 	GET_FEATURE_RESPONSE = 0xFC,
 	SET_FEATURE_COMMAND = 0xFD,
 	GET_FEATURE_REQUEST = 0xFE

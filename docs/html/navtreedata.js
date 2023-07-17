@@ -53,8 +53,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"structgeomagnetic__rotation__vector__report.html#ac117f9690109b1aeb49da826aff1cca6",
-"structuncalibrated__magnetic__field__report.html#a56c4ea73587a9ea20595cca9bcfe9593"
+"structgravity.html",
+"structuncalibrated__magnetic__field__report.html#a725a13d8d43f65c0f5e8adc271f71573"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
