@@ -106,19 +106,25 @@ $(document).ready(function(){initNavTree('logger_8h_source.html',''); initResiza
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">enum</span> LEVEL {</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>  INFO = 0,</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>  DATA = 1,</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>  WARN = 2,</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>  CRIT = 3</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>};</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">static</span> <span class="keyword">enum</span> LEVEL log_level = DATA;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keywordtype">void</span> info(<span class="keyword">const</span> <span class="keywordtype">char</span>* message, ...);</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keywordtype">void</span> data(<span class="keyword">const</span> <span class="keywordtype">char</span>* message, ...);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keywordtype">void</span> warn(<span class="keyword">const</span> <span class="keywordtype">char</span>* message, ...);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keywordtype">void</span> crit(<span class="keyword">const</span> <span class="keywordtype">char</span>* message, ...);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="group__Enumerations.html#ga526fd8626902411d5c8bf3b6ca134a12">    9</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="group__Enumerations.html#ga526fd8626902411d5c8bf3b6ca134a12">LEVEL</a> {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  DEBUG = 0,</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  INFO = 1,</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  DATA = 2,</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  WARN = 3,</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  CRIT = 4</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>};</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">static</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="group__Enumerations.html#ga526fd8626902411d5c8bf3b6ca134a12">LEVEL</a> log_level = DEBUG; </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keywordtype">void</span> debug(<span class="keyword">const</span> <span class="keywordtype">char</span>* message, ...);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keywordtype">void</span> info(<span class="keyword">const</span> <span class="keywordtype">char</span>* message, ...);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keywordtype">void</span> data(<span class="keyword">const</span> <span class="keywordtype">char</span>* message, ...);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keywordtype">void</span> warn(<span class="keyword">const</span> <span class="keywordtype">char</span>* message, ...);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keywordtype">void</span> crit(<span class="keyword">const</span> <span class="keywordtype">char</span>* message, ...);</div>
+<div class="ttc" id="agroup__Enumerations_html_ga526fd8626902411d5c8bf3b6ca134a12"><div class="ttname"><a href="group__Enumerations.html#ga526fd8626902411d5c8bf3b6ca134a12">LEVEL</a></div><div class="ttdeci">LEVEL</div><div class="ttdoc">Possible log levels.</div><div class="ttdef"><b>Definition:</b> logger.h:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

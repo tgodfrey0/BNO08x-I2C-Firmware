@@ -5,6 +5,20 @@
 
 #include "logger.h"
 
+void debug(const char* msg, ...){
+  if(DEBUG < log_level){
+    return;
+  }
+
+  va_list argp;
+  va_start(argp, msg);
+
+  printf("[DBUG]: ");
+  vprintf(msg, argp);
+
+  va_end(argp);
+}
+
 void info(const char* msg, ...){
   if(INFO < log_level){
     return;

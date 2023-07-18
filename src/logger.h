@@ -1,15 +1,57 @@
 #pragma once
 
+/**
+ * @brief Possible log levels.
+ * 
+ * @ingroup Enumerations
+ * 
+ */
 enum LEVEL {
-  INFO = 0,
-  DATA = 1,
-  WARN = 2,
-  CRIT = 3
+  DEBUG = 0,
+  INFO = 1,
+  DATA = 2,
+  WARN = 3,
+  CRIT = 4
 };
 
-static enum LEVEL log_level = DATA;
+static enum LEVEL log_level = DEBUG; /**< The current log level. This level and all higher-priority levels will be shown. */
 
+/**
+ * @brief Print a message with the debug log level.
+ * 
+ * @param message is the format string to print
+ * @param ... contains any other arguments for the formatting
+ */
+void debug(const char* message, ...);
+
+/**
+ * @brief Print a message with the info log level.
+ * 
+ * @param message is the format string to print
+ * @param ... contains any other arguments for the formatting
+ */
 void info(const char* message, ...);
+
+/**
+ * @brief Print a message with the data log level.
+ * 
+ * @param message is the format string to print
+ * @param ... contains any other arguments for the formatting
+ */
 void data(const char* message, ...);
+
+/**
+ * @brief Print a message with the warning log level.
+ * 
+ * @param message is the format string to print
+ * @param ... contains any other arguments for the formatting
+ */
 void warn(const char* message, ...);
+
+/**
+ * @brief Print a message with the critical log level.
+ * 
+ * @param message is the format string to print
+ * @param ... contains any other arguments for the formatting
+ */
 void crit(const char* message, ...);
