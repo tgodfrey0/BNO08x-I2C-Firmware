@@ -139,173 +139,48 @@ void print_stability_detector_data(){
 }
 
 void print_personal_activity_classifier_data(){
-  warn("Printer for frames from sensor 0x%x has not yet been implemented", ->id);
+  warn("Printer for frames from sensor 0x%x has not yet been implemented", personal_activity_classifier->id);
 }
 
 void print_sleep_detector_data(){
-  warn("Printer for frames from sensor 0x%x has not yet been implemented", ->id);
+  warn("Printer for frames from sensor 0x%x has not yet been implemented", sleep_detector->id);
 }
 
 void print_tilt_detector_data(){
-  warn("Printer for frames from sensor 0x%x has not yet been implemented", ->id);
+  warn("Printer for frames from sensor 0x%x has not yet been implemented", tilt_detector->id);
 }
 
 void print_pocket_detector_data(){
-  warn("Printer for frames from sensor 0x%x has not yet been implemented", ->id);
+  warn("Printer for frames from sensor 0x%x has not yet been implemented", pocket_detector->id);
 }
 
 void print_circle_detector_data(){
-  warn("Printer for frames from sensor 0x%x has not yet been implemented", ->id);
+  warn("Printer for frames from sensor 0x%x has not yet been implemented", circle_detector->id);
 }
 
 void print_heart_rate_monitor_data(){
-  warn("Printer for frames from sensor 0x%x has not yet been implemented", ->id);
+  warn("Printer for frames from sensor 0x%x has not yet been implemented", heart_rate_monitor->id);
 }
 
 void print_arvr_stabilised_rotation_vector_data(){
-  warn("Printer for frames from sensor 0x%x has not yet been implemented", ->id);
+  warn("Printer for frames from sensor 0x%x has not yet been implemented", arvr_stabilised_rotation_vector->id);
 }
 
 void print_arvr_stabilised_game_rotation_vector_data(){
-  warn("Printer for frames from sensor 0x%x has not yet been implemented", ->id);
+  warn("Printer for frames from sensor 0x%x has not yet been implemented", arvr_stabilised_game_rotation_vector->id);
 }
 
 void print_gyro_integrated_rotation_vector_data(){
-  warn("Printer for frames from sensor 0x%x has not yet been implemented", ->id);
+  warn("Printer for frames from sensor 0x%x has not yet been implemented", gyro_integrated_rotation_vector->id);
 }
 
 void print_motion_request_data(){
-  warn("Printer for frames from sensor 0x%x has not yet been implemented", ->id);
+  warn("Printer for frames from sensor 0x%x has not yet been implemented", motion_request->id);
 }
 
 void print_dead_reckoning_pose_data(){
-  warn("Printer for frames from sensor 0x%x has not yet been implemented", ->id);
+  warn("Printer for frames from sensor 0x%x has not yet been implemented", dead_reckoning_pose->id);
 }
-
-// void print_last_frame(){
-//   switch (->id) {
-//     case ACCELEROMETER:
-//       print_accelerometer_data();
-//       break;
-//     case GYROSCOPE:
-//       print_gyroscope_data();
-//       break;
-//     case MAGNETIC_FIELD:
-//       print_magnetic_field_data();
-//       break;
-//     case LINEAR_ACCELERATION:
-//       print_linear_acceleration_data();
-//       break;
-//     case ROTATION_VECTOR:
-//       print_rotation_vector_data();
-//       break;
-//     case GRAVITY:
-//       print_gravity_data();
-//       break;
-//     case UNCALIBRATED_GYROSCOPE:
-//       print_uncalibrated_gyroscope_data();
-//       break;
-//     case GAME_ROTATION_VECTOR:
-//       print_game_rotation_vector_data();
-//       break;
-//     case GEOMAGNETIC_ROTATION_VECTOR:
-//       print_geomagnetic_rotation_vector_data();
-//       break;
-//     case PRESSURE:
-//       print_pressure_data();
-//       break;
-//     case AMBIENT_LIGHT:
-//       print_ambient_light_data();
-//       break;
-//     case HUMIDITY:
-//       print_humidity_data();
-//       break;
-//     case PROXIMITY:
-//       print_proximity_data();
-//       break;
-//     case TEMPERATURE:
-//       print_temperature_data();
-//       break;
-//     case UNCALIBRATED_MAGNETIC_FIELD:
-//       print_uncalibrated_magnetic_field_data();
-//       break;
-//     case TAP_DETECTOR:
-//       print_tap_detector_data();
-//       break;
-//     case STEP_COUNTER:
-//       print_step_counter_data();
-//       break;
-//     case SIGNIFICANT_MOTION:
-//       print_significant_motion_data();
-//       break;
-//     case STABILITY_CLASSIFIER:
-//       print_stability_classifier_data();
-//       break;
-//     case RAW_ACCELEROMETER:
-//       print_raw_accelerometer_data();
-//       break;
-//     case RAW_GYROSCOPE:
-//       print_raw_gyroscope_data();
-//       break;
-//     case RAW_MAGNETOMETER:
-//       print_raw_magnetometer_data();
-//       break;
-//     case STEP_DETECTOR:
-//       print_step_detector_data();
-//       break;
-//     case SHAKE_DETECTOR:
-//       print_shake_detector_data();
-//       break;
-//     case FLIP_DETECTOR:
-//       print_flip_detector_data();
-//       break;
-//     case PICKUP_DETECTOR:
-//       print_pickup_detector_data();
-//       break;
-//     case STABILITY_DETECTOR:
-//       print_stability_detector_data();
-//       break;
-//     case PERSONAL_ACTIVITY_CLASSIFIER:
-//       print_personal_activity_classifier_data();
-//       break;
-//     case SLEEP_DETECTOR:
-//       print_sleep_detector_data();
-//       break;
-//     case TILT_DETECTOR:
-//       print_tilt_detector_data();
-//       break;
-//     case POCKET_DETECTOR:
-//       print_pocket_detector_data();
-//       break;
-//     case CIRCLE_DETECTOR:
-//       print_circle_detector_data();
-//       break;
-//     case HEART_RATE_MONITOR:
-//       print_heart_rate_monitor_data();
-//       break;
-//     case ARVR_STABILISED_ROTATION_VECTOR:
-//       print_arvr_stabilised_rotation_vector_data();
-//       break;
-//     case ARVR_STABILISED_GAME_ROTATION_VECTOR:
-//       print_arvr_stabilised_game_rotation_vector_data();
-//       break;
-//     case GYRO_INTEGRATED_ROTATION_VECTOR:
-//       print_gyro_integrated_rotation_vector_data();
-//       break;
-//     case MOTION_REQUEST:
-//       print_motion_request_data();
-//       break;
-//     case OPTICAL_FLOW:
-//       warn("Optical flow frames are not supported\n");
-//       break;
-//     case DEAD_RECKONING_POSE:
-//       print_dead_reckoning_pose_data();
-//       break;
-//     default:
-//       warn("Unrecognised sensor ID 0x%x passed to printer\n", ->id);
-//       break;
-//   }
-// }
 
 void print_raw_cmd_res_msg(struct i2c_message msg){
   data("Raw Command Response: [");

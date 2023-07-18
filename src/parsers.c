@@ -45,7 +45,6 @@ void parse_accelerometer_data(uint8_t* data, uint8_t length){
   accelerometer->input_report.accelerometer.y = read_16_scale(&data[6], Q_ACCELEROMETER);
   accelerometer->input_report.accelerometer.z = read_16_scale(&data[8], Q_ACCELEROMETER);
 
-  last_received = data[0];
   info("Successfully parsed accelerometer data\n");
 }
 
@@ -63,7 +62,6 @@ void parse_gyroscope_data(uint8_t* data, uint8_t length){
   gyroscope->input_report.gyroscope.y = read_16_scale(&data[6], Q_GYROSCOPE);
   gyroscope->input_report.gyroscope.z = read_16_scale(&data[8], Q_GYROSCOPE);
 
-  last_received = data[0];
   info("Successfully parsed gyroscope data\n");
 }
 
@@ -81,7 +79,6 @@ void parse_magnetic_field_data(uint8_t* data, uint8_t length){
   magnetic_field->input_report.magnetic_field.y = read_16_scale(&data[6], Q_MAGNETIC_FIELD);
   magnetic_field->input_report.magnetic_field.z = read_16_scale(&data[8], Q_MAGNETIC_FIELD);
 
-  last_received = data[0];
   info("Successfully parsed magnetic field data\n");
 }
 
@@ -99,7 +96,6 @@ void parse_linear_acceleration_data(uint8_t* data, uint8_t length){
   linear_acceleration->input_report.linear_acceleration.y = read_16_scale(&data[6], Q_LINEAR_ACCELERATION);
   linear_acceleration->input_report.linear_acceleration.z = read_16_scale(&data[8], Q_LINEAR_ACCELERATION);
 
-  last_received = data[0];
   info("Successfully parsed linear acceleration data\n");
 }
 
@@ -119,7 +115,6 @@ void parse_rotation_vector_data(uint8_t* data, uint8_t length){
   rotation_vector->input_report.rotation_vector.real = read_16_scale(&data[10], Q_ROTATION_VECTOR);
   rotation_vector->input_report.rotation_vector.accuracy = read_16_scale(&data[12], Q_ROTATION_VECTOR_ACCURACY);
 
-  last_received = data[0];
   info("Successfully parsed linear acceleration data\n");
 }
 
