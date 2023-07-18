@@ -119,7 +119,7 @@ enum REPORT_ID {
 	GET_FEATURE_REQUEST = 0xFE
 };
 
-static enum REPORT_ID last_received; 
+// static enum REPORT_ID last_received; 
 
 //=================================================================================================//
 //    Structs

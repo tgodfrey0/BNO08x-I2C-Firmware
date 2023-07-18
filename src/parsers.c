@@ -31,11 +31,11 @@ float read_32_scale(uint8_t* p, uint8_t q){
   return (read_32(p) * scale_q(q));
 }
 
-void parse_accelerometer_data(uint8_t data[], uint8_t length){
-  // if(length != RES_ACCELEROMETER){
-  //   warn("Invalid accelerometer report, expected 10 bytes, received %d bytes\n", length);
-  //   return;
-  // }
+void parse_accelerometer_data(uint8_t* data, uint8_t length){
+  if(length < RES_ACCELEROMETER){
+    warn("Accelerometer report is too small, expected 10 bytes, received %d bytes\n", length);
+    return;
+  }
 
   accelerometer->input_report.accelerometer.report_id = data[0];
   accelerometer->input_report.accelerometer.seq_num = data[1];
@@ -49,9 +49,9 @@ void parse_accelerometer_data(uint8_t data[], uint8_t length){
   info("Successfully parsed accelerometer data\n");
 }
 
-void parse_gyroscope_data(uint8_t data[], uint8_t length){
-  if(length != RES_GYROSCOPE){
-    warn("Invalid gyroscope report, expected 10 bytes, received %d bytes\n", length);
+void parse_gyroscope_data(uint8_t* data, uint8_t length){
+  if(length < RES_GYROSCOPE){
+    warn("Gyroscope report is too small, expected 10 bytes, received %d bytes\n", length);
     return;
   }
 
@@ -67,9 +67,9 @@ void parse_gyroscope_data(uint8_t data[], uint8_t length){
   info("Successfully parsed gyroscope data\n");
 }
 
-void parse_magnetic_field_data(uint8_t data[], uint8_t length){
-  if(length != RES_MAGNETIC_FIELD){
-    warn("Invalid magnetic field report, expected 10 bytes, received %d bytes\n", length);
+void parse_magnetic_field_data(uint8_t* data, uint8_t length){
+  if(length < RES_MAGNETIC_FIELD){
+    warn("Magnetic field report is too small, expected 10 bytes, received %d bytes\n", length);
     return;
   }
 
@@ -85,9 +85,9 @@ void parse_magnetic_field_data(uint8_t data[], uint8_t length){
   info("Successfully parsed magnetic field data\n");
 }
 
-void parse_linear_acceleration_data(uint8_t data[], uint8_t length){
-  if(length != RES_LINEAR_ACCELERATION){
-    warn("Invalid linear acceleration report, expected 10 bytes, received %d bytes\n", length);
+void parse_linear_acceleration_data(uint8_t* data, uint8_t length){
+  if(length < RES_LINEAR_ACCELERATION){
+    warn("Linear acceleration report is too small, expected 10 bytes, received %d bytes\n", length);
     return;
   }
 
@@ -103,9 +103,9 @@ void parse_linear_acceleration_data(uint8_t data[], uint8_t length){
   info("Successfully parsed linear acceleration data\n");
 }
 
-void parse_rotation_vector_data(uint8_t data[], uint8_t length){
-  if(length != RES_ROTATION_VECTOR){
-    warn("Invalid rotation vector report, expected 14 bytes, received %d bytes\n", length);
+void parse_rotation_vector_data(uint8_t* data, uint8_t length){
+  if(length < RES_ROTATION_VECTOR){
+    warn("Rotation vector report is too small, expected 14 bytes, received %d bytes\n", length);
     return;
   }
 
@@ -123,144 +123,144 @@ void parse_rotation_vector_data(uint8_t data[], uint8_t length){
   info("Successfully parsed linear acceleration data\n");
 }
 
-void parse_gravity_data(uint8_t data[], uint8_t length){
+void parse_gravity_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_uncalibrated_gyroscope_data(uint8_t data[], uint8_t length){
+void parse_uncalibrated_gyroscope_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_game_rotation_vector_data(uint8_t data[], uint8_t length){
+void parse_game_rotation_vector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_geomagnetic_rotation_vector_data(uint8_t data[], uint8_t length){
+void parse_geomagnetic_rotation_vector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_pressure_data(uint8_t data[], uint8_t length){
+void parse_pressure_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_ambient_light_data(uint8_t data[], uint8_t length){
+void parse_ambient_light_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_humidity_data(uint8_t data[], uint8_t length){
+void parse_humidity_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_proximity_data(uint8_t data[], uint8_t length){
+void parse_proximity_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_temperature_data(uint8_t data[], uint8_t length){
+void parse_temperature_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_uncalibrated_magnetic_field_data(uint8_t data[], uint8_t length){
+void parse_uncalibrated_magnetic_field_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_tap_detector_data(uint8_t data[], uint8_t length){
+void parse_tap_detector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_step_counter_data(uint8_t data[], uint8_t length){
+void parse_step_counter_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_significant_motion_data(uint8_t data[], uint8_t length){
+void parse_significant_motion_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_stability_classifier_data(uint8_t data[], uint8_t length){
+void parse_stability_classifier_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_raw_accelerometer_data(uint8_t data[], uint8_t length){
+void parse_raw_accelerometer_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_raw_gyroscope_data(uint8_t data[], uint8_t length){
+void parse_raw_gyroscope_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_raw_magnetometer_data(uint8_t data[], uint8_t length){
+void parse_raw_magnetometer_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_step_detector_data(uint8_t data[], uint8_t length){
+void parse_step_detector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_shake_detector_data(uint8_t data[], uint8_t length){
+void parse_shake_detector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_flip_detector_data(uint8_t data[], uint8_t length){
+void parse_flip_detector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_pickup_detector_data(uint8_t data[], uint8_t length){
+void parse_pickup_detector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_stability_detector_data(uint8_t data[], uint8_t length){
+void parse_stability_detector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_personal_activity_classifier_data(uint8_t data[], uint8_t length){
+void parse_personal_activity_classifier_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_sleep_detector_data(uint8_t data[], uint8_t length){
+void parse_sleep_detector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_tilt_detector_data(uint8_t data[], uint8_t length){
+void parse_tilt_detector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_pocket_detector_data(uint8_t data[], uint8_t length){
+void parse_pocket_detector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_circle_detector_data(uint8_t data[], uint8_t length){
+void parse_circle_detector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_heart_rate_monitor_data(uint8_t data[], uint8_t length){
+void parse_heart_rate_monitor_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_arvr_stabilised_rotation_vector_data(uint8_t data[], uint8_t length){
+void parse_arvr_stabilised_rotation_vector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_arvr_stabilised_game_rotation_vector_data(uint8_t data[], uint8_t length){
+void parse_arvr_stabilised_game_rotation_vector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_gyro_integrated_rotation_vector_data(uint8_t data[], uint8_t length){
+void parse_gyro_integrated_rotation_vector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_motion_request_data(uint8_t data[], uint8_t length){
+void parse_motion_request_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-void parse_dead_reckoning_pose_data(uint8_t data[], uint8_t length){
+void parse_dead_reckoning_pose_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
 }
 
-bool parse_cmd_res_msg(uint8_t data[], uint8_t length){
+bool parse_cmd_res_msg(uint8_t* data, uint8_t length){
   print_raw_cmd_res_msg(create_msg(data, length));
   return true;
 }
 
-bool parse_get_feat_res_msg(uint8_t data[], uint8_t length){
+bool parse_get_feat_res_msg(uint8_t* data, uint8_t length){
   print_raw_get_feat_res_msg(create_msg(data, length));
   return true;
 }
@@ -287,7 +287,7 @@ bool parse_msg(struct i2c_message msg){
 
   d += HEADER_SIZE;
 
-  if(d[0] == TIMEBASE){ // Remove the timebase fields
+  if(*d == TIMEBASE){ // Remove the timebase fields
     l -= TIMEBASE_SIZE; // Length of payload only
     d += TIMEBASE_SIZE;
   }
@@ -299,12 +299,10 @@ bool parse_msg(struct i2c_message msg){
   }
   printf("\n\n");
 
-  return false;
-
-  if(d[0] == GET_FEATURE_RESPONSE) return parse_get_feat_res_msg(d, l);
-  else if(d[0] == CMD_RESPONSE) return parse_cmd_res_msg(d, l);
+  if(*d == GET_FEATURE_RESPONSE) return parse_get_feat_res_msg(d, l);
+  else if(*d == CMD_RESPONSE) return parse_cmd_res_msg(d, l);
   else {
-    switch (d[0]) {
+    switch (*d) {
       case ACCELEROMETER:
         parse_accelerometer_data(d, l);
         break;
@@ -423,7 +421,7 @@ bool parse_msg(struct i2c_message msg){
         parse_dead_reckoning_pose_data(d, l);
         break;
       default:
-        warn("Unrecognised sensor ID 0x%x\n", d[0]);
+        warn("Unrecognised sensor ID 0x%x passed to parser\n", *d);
         return false;
     }
 
