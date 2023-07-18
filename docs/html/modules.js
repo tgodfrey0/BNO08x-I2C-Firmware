@@ -1,5 +1,5 @@
 var modules =
 [
-    [ "Public enumeration types", "group__Enumerations.html", "group__Enumerations" ],
-    [ "Sensor instances", "group__Sensors.html", "group__Sensors" ]
+    [ "Public enumerations", "group__Enumerations.html", "group__Enumerations" ],
+    [ "Sensor structs", "group__Sensors.html", "group__Sensors" ]
 ];

@@ -9,7 +9,9 @@
  * 
  */
 
-
+/*! 
+	\defgroup Sensors Sensor structs
+*/
 
 /**
  * @struct accelerometer

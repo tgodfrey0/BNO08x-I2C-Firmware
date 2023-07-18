@@ -300,13 +300,6 @@ bool parse_get_feat_res_msg(uint8_t* data, uint8_t length){
 
 bool parse_msg(struct i2c_message msg){
   // info("Message received from sensor with ID %d\n", data[0]);
-  
-  debug("Length 1: %d\n", msg.length);
-  debug("Data 1: ");
-  for(uint8_t i = 0; i < msg.length; i++){
-    debug_quiet("(0x%x - %p) ", msg.payload[i], &(msg.payload[i]));
-  }
-  debug_quiet("\n");
 
   if(msg.length < HEADER_SIZE){
     warn("No header found\n");
@@ -325,8 +318,8 @@ bool parse_msg(struct i2c_message msg){
     d += TIMEBASE_SIZE;
   }
 
-  debug("Length 2: %d\n", l);
-  debug("Data 2: ");
+  debug("Msg Length: %d\n", l);
+  debug("Msg Data  : ");
   for(uint8_t i = 0; i < l; i++){
     debug_quiet("(0x%x - %p) ", *(d+i), d+i);
   }

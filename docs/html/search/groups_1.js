@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sensor_20instances_0',['Sensor instances',['../group__Sensors.html',1,'']]]
+  ['sensor_20structs_0',['Sensor structs',['../group__Sensors.html',1,'']]]
 ];

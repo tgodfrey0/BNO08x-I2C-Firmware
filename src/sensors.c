@@ -2,9 +2,6 @@
 
 #include "sensors.h"
 
-/*! 
-	\defgroup Sensors Sensor instances
-*/
 
 //=================================================================================================//
 //		Sensor Struct Declarations

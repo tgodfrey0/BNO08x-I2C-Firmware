@@ -448,15 +448,7 @@ bool read_sensors(const struct i2c_interface* i2c){
   uint16_t packet_size = (uint16_t)head.payload[0] | (uint16_t)head.payload[1] << 8;
   // Unset the "continue" bit
   packet_size &= ~0x8000u;
-
-  char buffer[16];
-  itoa(packet_size, buffer, 2);
-  info("Packet size:                    %d / %s / 0x%x\n", packet_size, buffer, packet_size);
-  packet_size &= ~0x8000u;
-  itoa(packet_size, buffer, 2);
-  info("Packet size cont bit removed:   %d / %s / 0x%x\n", packet_size, buffer, packet_size);
-  itoa(packet_size-4, buffer, 2);
-  info("Packet size without header:     %d / %s / 0x%x\n", packet_size-4, buffer, packet_size-4);
+  debug("Packet size:     %d / 0x%x\n", packet_size, packet_size-4);
 
   if (packet_size > MAX_PAYLOAD_SIZE) {
     warn("Packet too large for buffer\n");
@@ -481,8 +473,8 @@ bool read_sensors(const struct i2c_interface* i2c){
       read_size = min(MAX_PAYLOAD_SIZE, (uint32_t)cargo_remaining + 4);
     }
 
-    // info("Reading from I2C: %d\n", read_size);
-    // info("Remaining to read: %d\n", cargo_remaining);
+    debug("Reading from I2C: %d\n", read_size);
+    debug("Remaining to read: %d\n", cargo_remaining);
 
     if (i2c->read(BNO08x_ADDR, &cargo_tmp, read_size) != SUCCESS) {
       warn("Failed to read the remaining data\n");

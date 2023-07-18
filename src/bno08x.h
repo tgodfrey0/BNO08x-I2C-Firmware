@@ -42,7 +42,7 @@
  */
 
 /*! 
-	\defgroup Enumerations Public enumeration types
+	\defgroup Enumerations Public enumerations
 */
 
 #pragma once
