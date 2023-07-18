@@ -281,157 +281,184 @@ bool parse_msg(struct i2c_message msg){
 
   // TODO: ~~Timebase removal is wrong~~ Rewrite this whole section
 
-  uint8_t length = msg.length - HEADER_SIZE;
-  uint8_t data_no_header[length];
-  memcpy(data_no_header, &(msg.payload[HEADER_SIZE]), length);
+  // uint8_t length = msg.length - HEADER_SIZE;
+  // uint8_t data_no_header[length];
+  // memcpy(data_no_header, &(msg.payload[HEADER_SIZE]), length);
+
+  // uint8_t* data;
+  // if(data_no_header[0] == TIMEBASE){
+  //   // Remove timebase reference
+  //   if(msg.length - HEADER_SIZE < TIMEBASE_SIZE){
+  //     warn("Timebase report ID found but message is too short\n");
+  //     return false;
+  //   }
+
+  //   length = msg.length - HEADER_SIZE - TIMEBASE_SIZE;
+  //   uint8_t data_no_timebase[length];
+  //   memcpy(data_no_timebase, &(data_no_header[TIMEBASE_SIZE]), length);
+  //   data = data_no_timebase;
+  // } 
+  // else if(data_no_header[0] == GET_FEATURE_RESPONSE) return parse_get_feat_res_msg(data, length);
+  // else if(data_no_header[0] == CMD_RESPONSE) return parse_cmd_res_msg(data, length);
+  // else data = data_no_header;
+
+
+  // printf("%d\n", data[0]);
+  // // info("Data: ");
+  // // for(uint8_t i = 0; i < length; i++){
+  // //   printf("0x%x ", data[i]);
+  // // }
+  // // printf("\n");
+
+  uint8_t length; // Length of payload + header (+ timebase)
+  length = msg.length - HEADER_SIZE;
 
   uint8_t* data;
-  if(data_no_header[0] == TIMEBASE){
-    // Remove timebase reference
-    if(msg.length - HEADER_SIZE < TIMEBASE_SIZE){
-      warn("Timebase report ID found but message is too short\n");
-      return false;
-    }
+  uint8_t data_no_header[length];
 
-    length = msg.length - HEADER_SIZE - TIMEBASE_SIZE;
+  uint8_t* msg_data_ptr = msg.payload;
+  msg_data_ptr += HEADER_SIZE;
+  memcpy(data_no_header, msg_data_ptr, length);
+
+  data = data_no_header;
+
+  if(data[0] == TIMEBASE){ // Remove the timebase fields
+    length -= TIMEBASE_SIZE; // Length of payload only
+
     uint8_t data_no_timebase[length];
-    memcpy(data_no_timebase, &(data_no_header[TIMEBASE_SIZE]), length);
+
+    msg_data_ptr += TIMEBASE;
+    memcpy(data_no_timebase, msg_data_ptr, length);
+
     data = data_no_timebase;
-  } 
-  else if(data_no_header[0] == GET_FEATURE_RESPONSE) return parse_get_feat_res_msg(data, length);
-  else if(data_no_header[0] == CMD_RESPONSE) return parse_cmd_res_msg(data, length);
-  else data = data_no_header;
-
-
-  printf("%d\n", data[0]);
-  // info("Data: ");
-  // for(uint8_t i = 0; i < length; i++){
-  //   printf("0x%x ", data[i]);
-  // }
-  // printf("\n");
-
-  switch (data[0]) {
-    case ACCELEROMETER:
-      parse_accelerometer_data(data, length);
-      break;
-    case GYROSCOPE:
-      parse_gyroscope_data(data, length);
-      break;
-    case MAGNETIC_FIELD:
-      parse_magnetic_field_data(data, length);
-      break;
-    case LINEAR_ACCELERATION:
-      parse_linear_acceleration_data(data, length);
-      break;
-    case ROTATION_VECTOR:
-      parse_rotation_vector_data(data, length);
-      break;
-    case GRAVITY:
-      parse_gravity_data(data, length);
-      break;
-    case UNCALIBRATED_GYROSCOPE:
-      parse_uncalibrated_gyroscope_data(data, length);
-      break;
-    case GAME_ROTATION_VECTOR:
-      parse_game_rotation_vector_data(data, length);
-      break;
-    case GEOMAGNETIC_ROTATION_VECTOR:
-      parse_geomagnetic_rotation_vector_data(data, length);
-      break;
-    case PRESSURE:
-      parse_pressure_data(data, length);
-      break;
-    case AMBIENT_LIGHT:
-      parse_ambient_light_data(data, length);
-      break;
-    case HUMIDITY:
-      parse_humidity_data(data, length);
-      break;
-    case PROXIMITY:
-      parse_proximity_data(data, length);
-      break;
-    case TEMPERATURE:
-      parse_temperature_data(data, length);
-      break;
-    case UNCALIBRATED_MAGNETIC_FIELD:
-      parse_uncalibrated_magnetic_field_data(data, length);
-      break;
-    case TAP_DETECTOR:
-      parse_tap_detector_data(data, length);
-      break;
-    case STEP_COUNTER:
-      parse_step_counter_data(data, length);
-      break;
-    case SIGNIFICANT_MOTION:
-      parse_significant_motion_data(data, length);
-      break;
-    case STABILITY_CLASSIFIER:
-      parse_stability_classifier_data(data, length);
-      break;
-    case RAW_ACCELEROMETER:
-      parse_raw_accelerometer_data(data, length);
-      break;
-    case RAW_GYROSCOPE:
-      parse_raw_gyroscope_data(data, length);
-      break;
-    case RAW_MAGNETOMETER:
-      parse_raw_magnetometer_data(data, length);
-      break;
-    case STEP_DETECTOR:
-      parse_step_detector_data(data, length);
-      break;
-    case SHAKE_DETECTOR:
-      parse_shake_detector_data(data, length);
-      break;
-    case FLIP_DETECTOR:
-      parse_flip_detector_data(data, length);
-      break;
-    case PICKUP_DETECTOR:
-      parse_pickup_detector_data(data, length);
-      break;
-    case STABILITY_DETECTOR:
-      parse_stability_detector_data(data, length);
-      break;
-    case PERSONAL_ACTIVITY_CLASSIFIER:
-      parse_personal_activity_classifier_data(data, length);
-      break;
-    case SLEEP_DETECTOR:
-      parse_sleep_detector_data(data, length);
-      break;
-    case TILT_DETECTOR:
-      parse_tilt_detector_data(data, length);
-      break;
-    case POCKET_DETECTOR:
-      parse_pocket_detector_data(data, length);
-      break;
-    case CIRCLE_DETECTOR:
-      parse_circle_detector_data(data, length);
-      break;
-    case HEART_RATE_MONITOR:
-      parse_heart_rate_monitor_data(data, length);
-      break;
-    case ARVR_STABILISED_ROTATION_VECTOR:
-      parse_arvr_stabilised_rotation_vector_data(data, length);
-      break;
-    case ARVR_STABILISED_GAME_ROTATION_VECTOR:
-      parse_arvr_stabilised_game_rotation_vector_data(data, length);
-      break;
-    case GYRO_INTEGRATED_ROTATION_VECTOR:
-      parse_gyro_integrated_rotation_vector_data(data, length);
-      break;
-    case MOTION_REQUEST:
-      parse_motion_request_data(data, length);
-      break;
-    case OPTICAL_FLOW:
-      warn("Optical flow frames are not supported\n");
-      break;
-    case DEAD_RECKONING_POSE:
-      parse_dead_reckoning_pose_data(data, length);
-      break;
-    default:
-      warn("Unrecognised sensor ID 0x%x\n", data[0]);
-      return false;
   }
 
-  return true;
+  if(data[0] == GET_FEATURE_RESPONSE) return parse_get_feat_res_msg(data, length);
+  else if(data[0] == CMD_RESPONSE) return parse_cmd_res_msg(data, length);
+  else {
+    switch (data[0]) {
+      case ACCELEROMETER:
+        parse_accelerometer_data(data, length);
+        break;
+      case GYROSCOPE:
+        parse_gyroscope_data(data, length);
+        break;
+      case MAGNETIC_FIELD:
+        parse_magnetic_field_data(data, length);
+        break;
+      case LINEAR_ACCELERATION:
+        parse_linear_acceleration_data(data, length);
+        break;
+      case ROTATION_VECTOR:
+        parse_rotation_vector_data(data, length);
+        break;
+      case GRAVITY:
+        parse_gravity_data(data, length);
+        break;
+      case UNCALIBRATED_GYROSCOPE:
+        parse_uncalibrated_gyroscope_data(data, length);
+        break;
+      case GAME_ROTATION_VECTOR:
+        parse_game_rotation_vector_data(data, length);
+        break;
+      case GEOMAGNETIC_ROTATION_VECTOR:
+        parse_geomagnetic_rotation_vector_data(data, length);
+        break;
+      case PRESSURE:
+        parse_pressure_data(data, length);
+        break;
+      case AMBIENT_LIGHT:
+        parse_ambient_light_data(data, length);
+        break;
+      case HUMIDITY:
+        parse_humidity_data(data, length);
+        break;
+      case PROXIMITY:
+        parse_proximity_data(data, length);
+        break;
+      case TEMPERATURE:
+        parse_temperature_data(data, length);
+        break;
+      case UNCALIBRATED_MAGNETIC_FIELD:
+        parse_uncalibrated_magnetic_field_data(data, length);
+        break;
+      case TAP_DETECTOR:
+        parse_tap_detector_data(data, length);
+        break;
+      case STEP_COUNTER:
+        parse_step_counter_data(data, length);
+        break;
+      case SIGNIFICANT_MOTION:
+        parse_significant_motion_data(data, length);
+        break;
+      case STABILITY_CLASSIFIER:
+        parse_stability_classifier_data(data, length);
+        break;
+      case RAW_ACCELEROMETER:
+        parse_raw_accelerometer_data(data, length);
+        break;
+      case RAW_GYROSCOPE:
+        parse_raw_gyroscope_data(data, length);
+        break;
+      case RAW_MAGNETOMETER:
+        parse_raw_magnetometer_data(data, length);
+        break;
+      case STEP_DETECTOR:
+        parse_step_detector_data(data, length);
+        break;
+      case SHAKE_DETECTOR:
+        parse_shake_detector_data(data, length);
+        break;
+      case FLIP_DETECTOR:
+        parse_flip_detector_data(data, length);
+        break;
+      case PICKUP_DETECTOR:
+        parse_pickup_detector_data(data, length);
+        break;
+      case STABILITY_DETECTOR:
+        parse_stability_detector_data(data, length);
+        break;
+      case PERSONAL_ACTIVITY_CLASSIFIER:
+        parse_personal_activity_classifier_data(data, length);
+        break;
+      case SLEEP_DETECTOR:
+        parse_sleep_detector_data(data, length);
+        break;
+      case TILT_DETECTOR:
+        parse_tilt_detector_data(data, length);
+        break;
+      case POCKET_DETECTOR:
+        parse_pocket_detector_data(data, length);
+        break;
+      case CIRCLE_DETECTOR:
+        parse_circle_detector_data(data, length);
+        break;
+      case HEART_RATE_MONITOR:
+        parse_heart_rate_monitor_data(data, length);
+        break;
+      case ARVR_STABILISED_ROTATION_VECTOR:
+        parse_arvr_stabilised_rotation_vector_data(data, length);
+        break;
+      case ARVR_STABILISED_GAME_ROTATION_VECTOR:
+        parse_arvr_stabilised_game_rotation_vector_data(data, length);
+        break;
+      case GYRO_INTEGRATED_ROTATION_VECTOR:
+        parse_gyro_integrated_rotation_vector_data(data, length);
+        break;
+      case MOTION_REQUEST:
+        parse_motion_request_data(data, length);
+        break;
+      case OPTICAL_FLOW:
+        warn("Optical flow frames are not supported\n");
+        break;
+      case DEAD_RECKONING_POSE:
+        parse_dead_reckoning_pose_data(data, length);
+        break;
+      default:
+        warn("Unrecognised sensor ID 0x%x\n", data[0]);
+        return false;
+    }
+
+    return true;
+  }
 }
