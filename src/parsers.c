@@ -268,9 +268,10 @@ bool parse_get_feat_res_msg(uint8_t data[], uint8_t length){
 bool parse_msg(struct i2c_message msg){
   // info("Message received from sensor with ID %d\n", data[0]);
   
-  data("Data: ");
+  data("Length 1: %d\n", msg.length);
+  data("Data 1: ");
   for(uint8_t i = 0; i < msg.length; i++){
-    printf("0x%x ", msg.payload[i]);
+    printf("(0x%x - %p) ", msg.payload[i], &(msg.payload[i]));
   }
   printf("\n");
 
@@ -279,183 +280,150 @@ bool parse_msg(struct i2c_message msg){
     return false;
   }
 
-  // TODO: ~~Timebase removal is wrong~~ Rewrite this whole section
+  uint8_t l; // Length of payload + header (+ timebase)
+  l = msg.length - HEADER_SIZE;
 
-  // uint8_t length = msg.length - HEADER_SIZE;
-  // uint8_t data_no_header[length];
-  // memcpy(data_no_header, &(msg.payload[HEADER_SIZE]), length);
+  uint8_t* d = msg.payload;
 
-  // uint8_t* data;
-  // if(data_no_header[0] == TIMEBASE){
-  //   // Remove timebase reference
-  //   if(msg.length - HEADER_SIZE < TIMEBASE_SIZE){
-  //     warn("Timebase report ID found but message is too short\n");
-  //     return false;
-  //   }
+  d += HEADER_SIZE;
 
-  //   length = msg.length - HEADER_SIZE - TIMEBASE_SIZE;
-  //   uint8_t data_no_timebase[length];
-  //   memcpy(data_no_timebase, &(data_no_header[TIMEBASE_SIZE]), length);
-  //   data = data_no_timebase;
-  // } 
-  // else if(data_no_header[0] == GET_FEATURE_RESPONSE) return parse_get_feat_res_msg(data, length);
-  // else if(data_no_header[0] == CMD_RESPONSE) return parse_cmd_res_msg(data, length);
-  // else data = data_no_header;
-
-
-  // printf("%d\n", data[0]);
-  // // info("Data: ");
-  // // for(uint8_t i = 0; i < length; i++){
-  // //   printf("0x%x ", data[i]);
-  // // }
-  // // printf("\n");
-
-  uint8_t length; // Length of payload + header (+ timebase)
-  length = msg.length - HEADER_SIZE;
-
-  uint8_t* data;
-  uint8_t data_no_header[length];
-
-  uint8_t* msg_data_ptr = msg.payload;
-  msg_data_ptr += HEADER_SIZE;
-  memcpy(data_no_header, msg_data_ptr, length);
-
-  data = data_no_header;
-
-  if(data[0] == TIMEBASE){ // Remove the timebase fields
-    length -= TIMEBASE_SIZE; // Length of payload only
-
-    uint8_t data_no_timebase[length];
-
-    msg_data_ptr += TIMEBASE;
-    memcpy(data_no_timebase, msg_data_ptr, length);
-
-    data = data_no_timebase;
+  if(d[0] == TIMEBASE){ // Remove the timebase fields
+    l -= TIMEBASE_SIZE; // Length of payload only
+    d += TIMEBASE_SIZE;
   }
 
-  if(data[0] == GET_FEATURE_RESPONSE) return parse_get_feat_res_msg(data, length);
-  else if(data[0] == CMD_RESPONSE) return parse_cmd_res_msg(data, length);
+  data("Length 2: %d\n", l);
+  data("Data 2: ");
+  for(uint8_t i = 0; i < l; i++){
+    printf("(0x%x - %p) ", *(d+i), d+i);
+  }
+  printf("\n\n");
+
+  return false;
+
+  if(d[0] == GET_FEATURE_RESPONSE) return parse_get_feat_res_msg(d, l);
+  else if(d[0] == CMD_RESPONSE) return parse_cmd_res_msg(d, l);
   else {
-    switch (data[0]) {
+    switch (d[0]) {
       case ACCELEROMETER:
-        parse_accelerometer_data(data, length);
+        parse_accelerometer_data(d, l);
         break;
       case GYROSCOPE:
-        parse_gyroscope_data(data, length);
+        parse_gyroscope_data(d, l);
         break;
       case MAGNETIC_FIELD:
-        parse_magnetic_field_data(data, length);
+        parse_magnetic_field_data(d, l);
         break;
       case LINEAR_ACCELERATION:
-        parse_linear_acceleration_data(data, length);
+        parse_linear_acceleration_data(d, l);
         break;
       case ROTATION_VECTOR:
-        parse_rotation_vector_data(data, length);
+        parse_rotation_vector_data(d, l);
         break;
       case GRAVITY:
-        parse_gravity_data(data, length);
+        parse_gravity_data(d, l);
         break;
       case UNCALIBRATED_GYROSCOPE:
-        parse_uncalibrated_gyroscope_data(data, length);
+        parse_uncalibrated_gyroscope_data(d, l);
         break;
       case GAME_ROTATION_VECTOR:
-        parse_game_rotation_vector_data(data, length);
+        parse_game_rotation_vector_data(d, l);
         break;
       case GEOMAGNETIC_ROTATION_VECTOR:
-        parse_geomagnetic_rotation_vector_data(data, length);
+        parse_geomagnetic_rotation_vector_data(d, l);
         break;
       case PRESSURE:
-        parse_pressure_data(data, length);
+        parse_pressure_data(d, l);
         break;
       case AMBIENT_LIGHT:
-        parse_ambient_light_data(data, length);
+        parse_ambient_light_data(d, l);
         break;
       case HUMIDITY:
-        parse_humidity_data(data, length);
+        parse_humidity_data(d, l);
         break;
       case PROXIMITY:
-        parse_proximity_data(data, length);
+        parse_proximity_data(d, l);
         break;
       case TEMPERATURE:
-        parse_temperature_data(data, length);
+        parse_temperature_data(d, l);
         break;
       case UNCALIBRATED_MAGNETIC_FIELD:
-        parse_uncalibrated_magnetic_field_data(data, length);
+        parse_uncalibrated_magnetic_field_data(d, l);
         break;
       case TAP_DETECTOR:
-        parse_tap_detector_data(data, length);
+        parse_tap_detector_data(d, l);
         break;
       case STEP_COUNTER:
-        parse_step_counter_data(data, length);
+        parse_step_counter_data(d, l);
         break;
       case SIGNIFICANT_MOTION:
-        parse_significant_motion_data(data, length);
+        parse_significant_motion_data(d, l);
         break;
       case STABILITY_CLASSIFIER:
-        parse_stability_classifier_data(data, length);
+        parse_stability_classifier_data(d, l);
         break;
       case RAW_ACCELEROMETER:
-        parse_raw_accelerometer_data(data, length);
+        parse_raw_accelerometer_data(d, l);
         break;
       case RAW_GYROSCOPE:
-        parse_raw_gyroscope_data(data, length);
+        parse_raw_gyroscope_data(d, l);
         break;
       case RAW_MAGNETOMETER:
-        parse_raw_magnetometer_data(data, length);
+        parse_raw_magnetometer_data(d, l);
         break;
       case STEP_DETECTOR:
-        parse_step_detector_data(data, length);
+        parse_step_detector_data(d, l);
         break;
       case SHAKE_DETECTOR:
-        parse_shake_detector_data(data, length);
+        parse_shake_detector_data(d, l);
         break;
       case FLIP_DETECTOR:
-        parse_flip_detector_data(data, length);
+        parse_flip_detector_data(d, l);
         break;
       case PICKUP_DETECTOR:
-        parse_pickup_detector_data(data, length);
+        parse_pickup_detector_data(d, l);
         break;
       case STABILITY_DETECTOR:
-        parse_stability_detector_data(data, length);
+        parse_stability_detector_data(d, l);
         break;
       case PERSONAL_ACTIVITY_CLASSIFIER:
-        parse_personal_activity_classifier_data(data, length);
+        parse_personal_activity_classifier_data(d, l);
         break;
       case SLEEP_DETECTOR:
-        parse_sleep_detector_data(data, length);
+        parse_sleep_detector_data(d, l);
         break;
       case TILT_DETECTOR:
-        parse_tilt_detector_data(data, length);
+        parse_tilt_detector_data(d, l);
         break;
       case POCKET_DETECTOR:
-        parse_pocket_detector_data(data, length);
+        parse_pocket_detector_data(d, l);
         break;
       case CIRCLE_DETECTOR:
-        parse_circle_detector_data(data, length);
+        parse_circle_detector_data(d, l);
         break;
       case HEART_RATE_MONITOR:
-        parse_heart_rate_monitor_data(data, length);
+        parse_heart_rate_monitor_data(d, l);
         break;
       case ARVR_STABILISED_ROTATION_VECTOR:
-        parse_arvr_stabilised_rotation_vector_data(data, length);
+        parse_arvr_stabilised_rotation_vector_data(d, l);
         break;
       case ARVR_STABILISED_GAME_ROTATION_VECTOR:
-        parse_arvr_stabilised_game_rotation_vector_data(data, length);
+        parse_arvr_stabilised_game_rotation_vector_data(d, l);
         break;
       case GYRO_INTEGRATED_ROTATION_VECTOR:
-        parse_gyro_integrated_rotation_vector_data(data, length);
+        parse_gyro_integrated_rotation_vector_data(d, l);
         break;
       case MOTION_REQUEST:
-        parse_motion_request_data(data, length);
+        parse_motion_request_data(d, l);
         break;
       case OPTICAL_FLOW:
         warn("Optical flow frames are not supported\n");
         break;
       case DEAD_RECKONING_POSE:
-        parse_dead_reckoning_pose_data(data, length);
+        parse_dead_reckoning_pose_data(d, l);
         break;
       default:
-        warn("Unrecognised sensor ID 0x%x\n", data[0]);
+        warn("Unrecognised sensor ID 0x%x\n", d[0]);
         return false;
     }
 
