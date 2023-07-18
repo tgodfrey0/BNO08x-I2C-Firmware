@@ -185,15 +185,15 @@ void print_dead_reckoning_pose_data(){
 void print_raw_cmd_res_msg(struct i2c_message msg){
   data("Raw Command Response: [");
   for(uint8_t i = 0; i < msg.length-1; i++){
-    printf("0x%x, ", msg.payload[i]);
+    data_quiet("0x%x, ", msg.payload[i]);
   }
-  printf("0x%x]\n", msg.payload[msg.length - 1]);
+  data_quiet("0x%x]\n", msg.payload[msg.length - 1]);
 }
 
 void print_raw_get_feat_res_msg(struct i2c_message msg){
   data("Raw Get Feature Response: [");
   for(uint8_t i = 0; i < msg.length-1; i++){
-    printf("0x%x, ", msg.payload[i]);
+    data_quiet("0x%x, ", msg.payload[i]);
   }
-  printf("0x%x]\n", msg.payload[msg.length - 1]);
+  data_quiet("0x%x]\n", msg.payload[msg.length - 1]);
 }

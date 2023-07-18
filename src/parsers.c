@@ -301,12 +301,12 @@ bool parse_get_feat_res_msg(uint8_t* data, uint8_t length){
 bool parse_msg(struct i2c_message msg){
   // info("Message received from sensor with ID %d\n", data[0]);
   
-  data("Length 1: %d\n", msg.length);
-  data("Data 1: ");
+  debug("Length 1: %d\n", msg.length);
+  debug("Data 1: ");
   for(uint8_t i = 0; i < msg.length; i++){
-    printf("(0x%x - %p) ", msg.payload[i], &(msg.payload[i]));
+    debug_quiet("(0x%x - %p) ", msg.payload[i], &(msg.payload[i]));
   }
-  printf("\n");
+  debug_quiet("\n");
 
   if(msg.length < HEADER_SIZE){
     warn("No header found\n");
@@ -325,12 +325,12 @@ bool parse_msg(struct i2c_message msg){
     d += TIMEBASE_SIZE;
   }
 
-  data("Length 2: %d\n", l);
-  data("Data 2: ");
+  debug("Length 2: %d\n", l);
+  debug("Data 2: ");
   for(uint8_t i = 0; i < l; i++){
-    printf("(0x%x - %p) ", *(d+i), d+i);
+    debug_quiet("(0x%x - %p) ", *(d+i), d+i);
   }
-  printf("\n\n");
+  debug_quiet("\n\n");
 
   if(*d == GET_FEATURE_RESPONSE) return parse_get_feat_res_msg(d, l);
   else if(*d == CMD_RESPONSE) return parse_cmd_res_msg(d, l);

@@ -474,13 +474,6 @@ bool read_sensors(const struct i2c_interface* i2c){
   struct i2c_message final;
   uint8_t* final_ptr = final.payload;
 
-  // info("Size: %d\n", packet_size);
-  // info("Header: ");
-  // for(uint8_t i = 0; i < head.length; i++){
-  //   printf("%d ", head.payload[i]);
-  // }
-  // printf("\n");
-
   while (cargo_remaining > 0) {
     if (first_read) {
       read_size = min(MAX_PAYLOAD_SIZE, (uint32_t)cargo_remaining);
