@@ -12,6 +12,8 @@
 #pragma once
 
 /**
+ * @enum LEVEL
+ * 
  * @brief Possible log levels.
  * 
  * @ingroup Enumerations
