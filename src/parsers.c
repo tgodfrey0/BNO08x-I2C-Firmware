@@ -46,6 +46,7 @@ void parse_accelerometer_data(uint8_t* data, uint8_t length){
   accelerometer->input_report.accelerometer.z = read_16_scale(&data[8], Q_ACCELEROMETER);
 
   info("Successfully parsed accelerometer data\n");
+  print_accelerometer_data();
 }
 
 void parse_gyroscope_data(uint8_t* data, uint8_t length){
@@ -63,6 +64,7 @@ void parse_gyroscope_data(uint8_t* data, uint8_t length){
   gyroscope->input_report.gyroscope.z = read_16_scale(&data[8], Q_GYROSCOPE);
 
   info("Successfully parsed gyroscope data\n");
+  print_gyroscope_data();
 }
 
 void parse_magnetic_field_data(uint8_t* data, uint8_t length){
@@ -80,6 +82,7 @@ void parse_magnetic_field_data(uint8_t* data, uint8_t length){
   magnetic_field->input_report.magnetic_field.z = read_16_scale(&data[8], Q_MAGNETIC_FIELD);
 
   info("Successfully parsed magnetic field data\n");
+  print_magnetic_field_data();
 }
 
 void parse_linear_acceleration_data(uint8_t* data, uint8_t length){
@@ -97,6 +100,7 @@ void parse_linear_acceleration_data(uint8_t* data, uint8_t length){
   linear_acceleration->input_report.linear_acceleration.z = read_16_scale(&data[8], Q_LINEAR_ACCELERATION);
 
   info("Successfully parsed linear acceleration data\n");
+  print_linear_acceleration_data();
 }
 
 void parse_rotation_vector_data(uint8_t* data, uint8_t length){
@@ -116,138 +120,172 @@ void parse_rotation_vector_data(uint8_t* data, uint8_t length){
   rotation_vector->input_report.rotation_vector.accuracy = read_16_scale(&data[12], Q_ROTATION_VECTOR_ACCURACY);
 
   info("Successfully parsed linear acceleration data\n");
+  print_rotation_vector_data();
 }
 
 void parse_gravity_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_gravity_data();
 }
 
 void parse_uncalibrated_gyroscope_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_uncalibrated_gyroscope_data();
 }
 
 void parse_game_rotation_vector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_game_rotation_vector_data();
 }
 
 void parse_geomagnetic_rotation_vector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_geomagnetic_rotation_vector_data();
 }
 
 void parse_pressure_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_pressure_data();
 }
 
 void parse_ambient_light_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_ambient_light_data();
 }
 
 void parse_humidity_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_humidity_data();
 }
 
 void parse_proximity_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_proximity_data();
 }
 
 void parse_temperature_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_temperature_data();
 }
 
 void parse_uncalibrated_magnetic_field_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_uncalibrated_magnetic_field_data();
 }
 
 void parse_tap_detector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_tap_detector_data();
 }
 
 void parse_step_counter_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_step_counter_data();
 }
 
 void parse_significant_motion_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_significant_motion_data();
 }
 
 void parse_stability_classifier_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_stability_classifier_data();
 }
 
 void parse_raw_accelerometer_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_raw_accelerometer_data();
 }
 
 void parse_raw_gyroscope_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_raw_gyroscope_data();
 }
 
 void parse_raw_magnetometer_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_raw_magnetometer_data();
 }
 
 void parse_step_detector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_step_detector_data();
 }
 
 void parse_shake_detector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_shake_detector_data();
 }
 
 void parse_flip_detector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_flip_detector_data();
 }
 
 void parse_pickup_detector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_pickup_detector_data();
 }
 
 void parse_stability_detector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_stability_detector_data();
 }
 
 void parse_personal_activity_classifier_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_personal_activity_classifier_data();
 }
 
 void parse_sleep_detector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_sleep_detector_data();
 }
 
 void parse_tilt_detector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_tilt_detector_data();
 }
 
 void parse_pocket_detector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_pocket_detector_data();
 }
 
 void parse_circle_detector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_circle_detector_data();
 }
 
 void parse_heart_rate_monitor_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_heart_rate_monitor_data();
 }
 
 void parse_arvr_stabilised_rotation_vector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_arvr_stabilised_rotation_vector_data();
 }
 
 void parse_arvr_stabilised_game_rotation_vector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_arvr_stabilised_game_rotation_vector_data();
 }
 
 void parse_gyro_integrated_rotation_vector_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_gyro_integrated_rotation_vector_data();
 }
 
 void parse_motion_request_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_motion_request_data();
 }
 
 void parse_dead_reckoning_pose_data(uint8_t* data, uint8_t length){
   warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  print_dead_reckoning_pose_data();
 }
 
 bool parse_cmd_res_msg(uint8_t* data, uint8_t length){
