@@ -104,9 +104,9 @@ int main(){
 		gpio_put(PICO_DEFAULT_LED_PIN, 1);
 		read_sensors(i2c);
 
-		static int i = 0;
-		if(i == 5) for(;;);
-		i++;
+		// static int i = 0;
+		// if(i == 5) for(;;);
+		// i++;
 
 		gpio_put(PICO_DEFAULT_LED_PIN, 0);
 		sleep_ms(100);
