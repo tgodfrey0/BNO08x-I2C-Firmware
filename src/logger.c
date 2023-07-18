@@ -74,3 +74,68 @@ void crit(const char* msg, ...){
 
   va_end(argp);
 }
+
+void debug_quiet(const char* msg, ...){
+  if(DEBUG < log_level){
+    return;
+  }
+
+  va_list argp;
+  va_start(argp, msg);
+
+  vprintf(msg, argp);
+
+  va_end(argp);
+}
+
+void info_quiet(const char* msg, ...){
+  if(INFO < log_level){
+    return;
+  }
+
+  va_list argp;
+  va_start(argp, msg);
+
+  vprintf(msg, argp);
+
+  va_end(argp);
+}
+
+void data_quiet(const char* msg, ...){
+  if(DATA < log_level){
+    return;
+  }
+
+  va_list argp;
+  va_start(argp, msg);
+
+  vprintf(msg, argp);
+
+  va_end(argp);
+}
+
+void warn_quiet(const char* msg, ...){
+  if(WARN < log_level){
+    return;
+  }
+
+  va_list argp;
+  va_start(argp, msg);
+
+  vprintf(msg, argp);
+
+  va_end(argp);
+}
+
+void crit_quiet(const char* msg, ...){
+  if(CRIT < log_level){
+    return;
+  }
+
+  va_list argp;
+  va_start(argp, msg);
+
+  vprintf(msg, argp);
+
+  va_end(argp);
+}
