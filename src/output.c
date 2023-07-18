@@ -21,33 +21,33 @@ char* print_status(uint8_t s){
 
 void print_accelerometer_data(){
   data("Accelerometer Frame:\n");
-  data("Sensor status is \"%s\", delay is %d us", print_status(accelerometer->input_report.accelerometer.status), (accelerometer->input_report.accelerometer.delay * 100));
-  data("(x, y, z) m/s^2: (%d, %d, %d) m/s^2", accelerometer->input_report.accelerometer.x, accelerometer->input_report.accelerometer.y, accelerometer->input_report.accelerometer.z);
+  data("Sensor status is \"%s\", delay is %d us\n", print_status(accelerometer->input_report.accelerometer.status), (accelerometer->input_report.accelerometer.delay * 100));
+  data("(x, y, z) m/s^2: (%d, %d, %d) m/s^2\n", accelerometer->input_report.accelerometer.x, accelerometer->input_report.accelerometer.y, accelerometer->input_report.accelerometer.z);
 }
 
 void print_gyroscope_data(){
   data("Gyroscope Frame:\n");
-  data("Sensor status is \"%s\", delay is %d us", print_status(gyroscope->input_report.gyroscope.status), (gyroscope->input_report.gyroscope.delay * 100));
-  data("(x, y, z) rad/s: (%d, %d, %d) rad/s", gyroscope->input_report.gyroscope.x, gyroscope->input_report.gyroscope.y, gyroscope->input_report.gyroscope.z);
+  data("Sensor status is \"%s\", delay is %d us\n", print_status(gyroscope->input_report.gyroscope.status), (gyroscope->input_report.gyroscope.delay * 100));
+  data("(x, y, z) rad/s: (%d, %d, %d) rad/s\n", gyroscope->input_report.gyroscope.x, gyroscope->input_report.gyroscope.y, gyroscope->input_report.gyroscope.z);
 }
 
 void print_magnetic_field_data(){
   data("Magnetic Field Frame:\n");
-  data("Sensor status is \"%s\", delay is %d us", print_status(magnetic_field->input_report.magnetic_field.status), (magnetic_field->input_report.magnetic_field.delay * 100));
-  data("(x, y, z) uT: (%d, %d, %d) uT", magnetic_field->input_report.magnetic_field.x, magnetic_field->input_report.magnetic_field.y, magnetic_field->input_report.magnetic_field.z);
+  data("Sensor status is \"%s\", delay is %d us\n", print_status(magnetic_field->input_report.magnetic_field.status), (magnetic_field->input_report.magnetic_field.delay * 100));
+  data("(x, y, z) uT: (%d, %d, %d) uT\n", magnetic_field->input_report.magnetic_field.x, magnetic_field->input_report.magnetic_field.y, magnetic_field->input_report.magnetic_field.z);
 }
 
 void print_linear_acceleration_data(){
   data("Linear Accelerometer Frame:\n");
-  data("Sensor status is \"%s\", delay is %d us", print_status(linear_acceleration->input_report.linear_acceleration.status), (linear_acceleration->input_report.linear_acceleration.delay * 100));
-  data("(x, y, z) m/s^2: (%d, %d, %d) m/s^2", linear_acceleration->input_report.linear_acceleration.x, linear_acceleration->input_report.linear_acceleration.y, linear_acceleration->input_report.linear_acceleration.z);
+  data("Sensor status is \"%s\", delay is %d us\n", print_status(linear_acceleration->input_report.linear_acceleration.status), (linear_acceleration->input_report.linear_acceleration.delay * 100));
+  data("(x, y, z) m/s^2: (%d, %d, %d) m/s^2\n", linear_acceleration->input_report.linear_acceleration.x, linear_acceleration->input_report.linear_acceleration.y, linear_acceleration->input_report.linear_acceleration.z);
 }
 
 void print_rotation_vector_data(){
   data("Rotation Vector Frame:\n");
-  data("Sensor status is \"%s\", delay is %d us", print_status(rotation_vector->input_report.rotation_vector.status), (rotation_vector->input_report.rotation_vector.delay * 100));
-  data("Quaternion: %d + %di + %dj + %dk", rotation_vector->input_report.rotation_vector.real, rotation_vector->input_report.rotation_vector.i, rotation_vector->input_report.rotation_vector.j, rotation_vector->input_report.rotation_vector.k);
-  data("Accuracy: %d rad", rotation_vector->input_report.rotation_vector.accuracy);
+  data("Sensor status is \"%s\", delay is %d us\n", print_status(rotation_vector->input_report.rotation_vector.status), (rotation_vector->input_report.rotation_vector.delay * 100));
+  data("Quaternion: %d + %di + %dj + %dk\n", rotation_vector->input_report.rotation_vector.real, rotation_vector->input_report.rotation_vector.i, rotation_vector->input_report.rotation_vector.j, rotation_vector->input_report.rotation_vector.k);
+  data("Accuracy: %d rad\n", rotation_vector->input_report.rotation_vector.accuracy);
 }
 
 void print_gravity_data(){
