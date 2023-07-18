@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['report_5fid_0',['REPORT_ID',['../group__Enumerations.html#ga038d4678418eb60d0f550ed10fd88e7e',1,'bno08x.h']]]
+  ['level_0',['LEVEL',['../group__Enumerations.html#ga526fd8626902411d5c8bf3b6ca134a12',1,'logger.h']]]
 ];

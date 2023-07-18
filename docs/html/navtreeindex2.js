@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"structtap__detector.html":[3,1,15],
 "structtap__detector__report.html":[4,0,72],
 "structtap__detector__report.html#a4c6f405a730106256a9f81d64f6274a8":[4,0,72,4],
 "structtap__detector__report.html#a70fbd315df33bf9039e036725b569e7f":[4,0,72,0],

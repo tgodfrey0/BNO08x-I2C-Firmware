@@ -69,8 +69,9 @@ var NAVTREEINDEX0 =
 "globals_func.html":[5,1,1],
 "globals_vars.html":[5,1,2],
 "group__Enumerations.html":[3,0],
-"group__Enumerations.html#ga038d4678418eb60d0f550ed10fd88e7e":[3,0,1],
+"group__Enumerations.html#ga038d4678418eb60d0f550ed10fd88e7e":[3,0,2],
 "group__Enumerations.html#ga1be58a16c8c5ada6066b62182cdb3540":[3,0,0],
+"group__Enumerations.html#ga526fd8626902411d5c8bf3b6ca134a12":[3,0,1],
 "group__Sensors.html":[3,1],
 "gs.html":[2],
 "i2c_8h.html":[5,0,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "structdead__reckoning__pose__report.html#a70fbd315df33bf9039e036725b569e7f":[4,0,11,0],
 "structdead__reckoning__pose__report.html#a725a13d8d43f65c0f5e8adc271f71573":[4,0,11,5],
 "structdead__reckoning__pose__report.html#a888e2db98f4bc39764d3e7658f2f73ff":[4,0,11,10],
-"structdead__reckoning__pose__report.html#a95b396253a02b341ffd8df5096943b7c":[4,0,11,1],
-"structdead__reckoning__pose__report.html#a9fc85c5b1a2f97b10e0489545f437220":[4,0,11,3]
+"structdead__reckoning__pose__report.html#a95b396253a02b341ffd8df5096943b7c":[4,0,11,1]
 };
