@@ -1,5 +1,17 @@
 var NAVTREEINDEX2 =
 {
+"structstep__counter__report.html#a70fbd315df33bf9039e036725b569e7f":[4,0,68,0],
+"structstep__counter__report.html#a725a13d8d43f65c0f5e8adc271f71573":[4,0,68,2],
+"structstep__counter__report.html#ac117f9690109b1aeb49da826aff1cca6":[4,0,68,3],
+"structstep__counter__report.html#acd3d24a29a6e07be2bd52fcaffecc872":[4,0,68,1],
+"structstep__counter__report.html#ade818037fd6c985038ff29656089758d":[4,0,68,4],
+"structstep__detector.html":[3,1,22],
+"structstep__detector__report.html":[4,0,70],
+"structstep__detector__report.html#a70fbd315df33bf9039e036725b569e7f":[4,0,70,0],
+"structstep__detector__report.html#a725a13d8d43f65c0f5e8adc271f71573":[4,0,70,2],
+"structstep__detector__report.html#ac117f9690109b1aeb49da826aff1cca6":[4,0,70,3],
+"structstep__detector__report.html#acd3d24a29a6e07be2bd52fcaffecc872":[4,0,70,1],
+"structstep__detector__report.html#ade818037fd6c985038ff29656089758d":[4,0,70,4],
 "structtap__detector.html":[3,1,15],
 "structtap__detector__report.html":[4,0,72],
 "structtap__detector__report.html#a4c6f405a730106256a9f81d64f6274a8":[4,0,72,4],

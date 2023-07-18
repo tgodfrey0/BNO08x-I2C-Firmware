@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['scale_5fq_0',['scale_q',['../parsers_8h.html#a831cdc29f1b446d2b4db6b541f18a332',1,'parsers.c']]]
+  ['read_5fsensors_0',['read_sensors',['../bno08x_8h.html#a3e9cfd794bcd07fd1df61436bbbd9f17',1,'bno08x.c']]]
 ];

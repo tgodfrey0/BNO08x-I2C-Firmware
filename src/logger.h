@@ -1,3 +1,14 @@
+/**
+ * @file logger.h
+ * @author Toby Godfrey (me@tgodfrey.com)
+ * @brief A very basic logger implementation.
+ * @version 0.1
+ * @date 2023-07-18
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 #pragma once
 
 /**
