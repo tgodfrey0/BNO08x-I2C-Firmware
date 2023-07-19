@@ -4,7 +4,7 @@ var searchData=
   ['i2c_2eh_1',['i2c.h',['../i2c_8h.html',1,'']]],
   ['i2c_5finterface_2',['i2c_interface',['../structi2c__interface.html',1,'']]],
   ['i2c_5fmessage_3',['i2c_message',['../structi2c__message.html',1,'']]],
-  ['i2c_5fresponse_4',['I2C_RESPONSE',['../group__Enumerations.html#ga1be58a16c8c5ada6066b62182cdb3540',1,'i2c.h']]],
+  ['i2c_5fresponse_4',['I2C_RESPONSE',['../i2c_8h.html#a1be58a16c8c5ada6066b62182cdb3540',1,'i2c.h']]],
   ['i_5fangular_5fpos_5',['i_angular_pos',['../structdead__reckoning__pose__report.html#a95b396253a02b341ffd8df5096943b7c',1,'dead_reckoning_pose_report']]],
   ['id_6',['id',['../structsensor.html#aa995460869fbbbacfbb2a94bbae3c923',1,'sensor']]],
   ['info_7',['info',['../logger_8h.html#a5cac247256fc2585ae55e1c29cf3c7fa',1,'logger.c']]],

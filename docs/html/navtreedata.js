@@ -28,7 +28,6 @@ var NAVTREE =
     [ "Overview", "index.html", null ],
     [ "Hardware Designs", "pcbs.html", null ],
     [ "Getting Started", "gs.html", null ],
-    [ "Modules", "modules.html", "modules" ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
@@ -53,8 +52,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"structcircle__detector__report.html#a725a13d8d43f65c0f5e8adc271f71573",
-"structstep__counter__report.html#a70fbd315df33bf9039e036725b569e7f"
+"structdead__reckoning__pose.html",
+"structstep__counter__report.html#acd3d24a29a6e07be2bd52fcaffecc872"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

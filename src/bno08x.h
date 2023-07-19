@@ -41,10 +41,6 @@
  * Before sensors can be read, the sensor must be enabled (found in \ref sensors.h).
  */
 
-/*! 
-	\defgroup Enumerations Public enumerations
-*/
-
 #pragma once
 
 #include <stdint.h>

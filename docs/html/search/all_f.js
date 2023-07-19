@@ -56,6 +56,5 @@ var searchData=
   ['print_5funcalibrated_5fgyroscope_5fdata_53',['print_uncalibrated_gyroscope_data',['../output_8h.html#ab84f53264c141ea41b1e09c9783616d1',1,'output.c']]],
   ['print_5funcalibrated_5fmagnetic_5ffield_5fdata_54',['print_uncalibrated_magnetic_field_data',['../output_8h.html#ae605c565eb30962983fd4c5601eac50d',1,'output.c']]],
   ['proximity_55',['proximity',['../structproximity.html',1,'proximity'],['../unioninput__report.html#a3f6093bd6636ef8649577dc30ca7424b',1,'input_report::proximity()']]],
-  ['proximity_5freport_56',['proximity_report',['../structproximity__report.html',1,'']]],
-  ['public_20enumerations_57',['Public enumerations',['../group__Enumerations.html',1,'']]]
+  ['proximity_5freport_56',['proximity_report',['../structproximity__report.html',1,'']]]
 ];

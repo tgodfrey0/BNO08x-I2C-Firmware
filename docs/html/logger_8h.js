@@ -1,6 +1,6 @@
 var logger_8h =
 [
-    [ "LEVEL", "group__Enumerations.html#ga526fd8626902411d5c8bf3b6ca134a12", null ],
+    [ "LEVEL", "logger_8h.html#a526fd8626902411d5c8bf3b6ca134a12", null ],
     [ "crit", "logger_8h.html#aa5036c87287f800d813f5331c6027f8f", null ],
     [ "crit_quiet", "logger_8h.html#abe3deeb785781ae925626317c47ef860", null ],
     [ "data", "logger_8h.html#aa725ed931c4cdca1f223cf39190bce0e", null ],
