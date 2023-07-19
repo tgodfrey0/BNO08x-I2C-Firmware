@@ -20,6 +20,9 @@ uint16_t read_16(uint8_t* p){
 }
 
 float read_16_scale(uint8_t* p, uint8_t q){
+  uint16_t i = read_16(p);
+  float qp = scale_q(q);
+  debug("V: %d\t-\tQ: %f\t-\tV*Q: %f\n", i, qp, (i * qp));
   return (read_16(p) * scale_q(q));
 }
 
