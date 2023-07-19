@@ -13,5 +13,6 @@
     "bno08x.h": "c",
     "parsers.h": "c",
     "typeinfo": "c"
-  }
+  },
+  "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
 }

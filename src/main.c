@@ -91,11 +91,13 @@ int main(){
 
 	init(i2c);
 
-	enable_sensor(i2c, ACCELEROMETER, 100);
+	// enable_sensor(i2c, ACCELEROMETER, 100);
 	// enable_sensor(i2c, GYROSCOPE, 100);
 	// enable_sensor(i2c, MAGNETIC_FIELD, 100);
 	// enable_sensor(i2c, LINEAR_ACCELERATION, 100);
 	// enable_sensor(i2c, ROTATION_VECTOR, 100);
+	// enable_sensor(i2c, RAW_ACCELEROMETER, 100);
+	enable_sensor(i2c, AMBIENT_LIGHT, 100);
 
 	info("Initialisation process complete\n");
 	flash(5);

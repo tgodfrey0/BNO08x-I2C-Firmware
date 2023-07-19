@@ -149,7 +149,17 @@ void parse_pressure_data(uint8_t* data, uint8_t length){
 }
 
 void parse_ambient_light_data(uint8_t* data, uint8_t length){
-  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  if(length < RES_AMBIENT_LIGHT){
+    warn("Ambient light frame is too small, expected %d bytes but received only %d bytes\n", RES_AMBIENT_LIGHT, length);
+    return;
+  }
+
+  ambient_light->input_report.ambient_light.report_id = data[0];
+  ambient_light->input_report.ambient_light.seq_num = data[1];
+  ambient_light->input_report.ambient_light.status = data[2];
+  ambient_light->input_report.ambient_light.delay = data[3];
+  ambient_light->input_report.ambient_light.value = read_32_scale(&(data[4]), Q_AMBIENT_LIGHT);
+
   print_ambient_light_data();
 }
 
@@ -194,7 +204,19 @@ void parse_stability_classifier_data(uint8_t* data, uint8_t length){
 }
 
 void parse_raw_accelerometer_data(uint8_t* data, uint8_t length){
-  warn("Parser for frames from sensor 0x%x has not yet been implemented\n", data[0]);
+  if(length < RES_RAW_ACCELERATION){
+    warn("Raw accelerometer frame is too small, expected %d bytes but received only %d\n", RES_RAW_ACCELERATION, length);
+    return;
+  }
+
+  raw_accelerometer->input_report.raw_accelerometer.report_id = data[0];
+  raw_accelerometer->input_report.raw_accelerometer.seq_num = data[1];
+  raw_accelerometer->input_report.raw_accelerometer.status = data[2];
+  raw_accelerometer->input_report.raw_accelerometer.delay = data[3];
+  raw_accelerometer->input_report.raw_accelerometer.x = read_16(&data[4]);
+  raw_accelerometer->input_report.raw_accelerometer.y = read_16(&data[6]);
+  raw_accelerometer->input_report.raw_accelerometer.z = read_16(&data[8]);
+  raw_accelerometer->input_report.raw_accelerometer.timestamp = read_32(&data[12]);
   print_raw_accelerometer_data();
 }
 

@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 #include "bno08x.h"
 #include "logger.h"
 #include "output.h"
@@ -76,7 +74,10 @@ void print_pressure_data(){
 }
 
 void print_ambient_light_data(){
-  warn("Printer for frames from sensor 0x%x has not yet been implemented", ambient_light->id);
+  data("Ambient Light Frame:\n");
+  data("Sensor status is \"%s\", delay is %d us\n", print_status(raw_accelerometer->input_report.raw_accelerometer.status), (raw_accelerometer->input_report.raw_accelerometer.delay * 100));
+  data("Value (lux): %d lux\n", ambient_light->input_report.ambient_light.value);
+  data_quiet("\n");
 }
 
 void print_humidity_data(){
@@ -112,7 +113,11 @@ void print_stability_classifier_data(){
 }
 
 void print_raw_accelerometer_data(){
-  warn("Printer for frames from sensor 0x%x has not yet been implemented", raw_accelerometer->id);
+  data("Raw Accelerometer Frame:\n");
+  data("Sensor status is \"%s\", delay is %d us\n", print_status(raw_accelerometer->input_report.raw_accelerometer.status), (raw_accelerometer->input_report.raw_accelerometer.delay * 100));
+  data("(x, y, z) ADCs: (%d, %d, %d) ADCs\n", raw_accelerometer->input_report.raw_accelerometer.x, raw_accelerometer->input_report.raw_accelerometer.y, raw_accelerometer->input_report.raw_accelerometer.z);
+  data("Timestamp: %d\n", raw_accelerometer->input_report.raw_accelerometer.timestamp);
+  data_quiet("\n");
 }
 
 void print_raw_gyroscope_data(){

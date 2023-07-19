@@ -448,7 +448,7 @@ bool read_sensors(const struct i2c_interface* i2c){
   uint16_t packet_size = (uint16_t)head.payload[0] | (uint16_t)head.payload[1] << 8;
   // Unset the "continue" bit
   packet_size &= ~0x8000u;
-  debug("Packet size:     %d / 0x%x\n", packet_size, packet_size-4);
+  debug("Packet size:     %d / 0x%x\n", packet_size, packet_size);
 
   if (packet_size > MAX_PAYLOAD_SIZE) {
     warn("Packet too large for buffer\n");
@@ -497,7 +497,9 @@ bool read_sensors(const struct i2c_interface* i2c){
 
   final.length = packet_size;
 
-  info("Data successfully read from bus\n");
+  info("Data successfully read from bus: [");
+  for(uint8_t i = 0; i < final.length-1; i++) info_quiet("0x%x, ", final.payload[i]);
+  info_quiet("0x%x]\n", final.payload[final.length-1]);
 
   return parse_msg(final);
 }
