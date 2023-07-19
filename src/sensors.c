@@ -45,3 +45,5 @@ struct sensor* arvr_stabilised_game_rotation_vector = NULL;
 struct sensor* gyro_integrated_rotation_vector = NULL;
 struct sensor* motion_request = NULL;
 struct sensor* dead_reckoning_pose = NULL;
+
+// TODO: Remove global structs
