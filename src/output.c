@@ -19,37 +19,37 @@ char* print_status(uint8_t s){
 
 void print_accelerometer_data(struct sensor_collection* sc){
   data("Accelerometer Frame:\n");
-  data("Sensor status is \"%s\", delay is %d us\n", print_status(accelerometer->input_report.accelerometer.status), (accelerometer->input_report.accelerometer.delay * 100));
-  data("(x, y, z) m/s^2: (%d, %d, %d) m/s^2\n", accelerometer->input_report.accelerometer.x, accelerometer->input_report.accelerometer.y, accelerometer->input_report.accelerometer.z);
+  data("\tSensor status is \"%s\", delay is %d us\n", print_status(sc->accelerometer.input_report.accelerometer.status), (sc->accelerometer.input_report.accelerometer.delay * 100));
+  data("\t(x, y, z) m/s^2: (%d, %d, %d) m/s^2\n", sc->accelerometer.input_report.accelerometer.x, sc->accelerometer.input_report.accelerometer.y, sc->accelerometer.input_report.accelerometer.z);
   data_quiet("\n");
 }
 
 void print_gyroscope_data(struct sensor_collection* sc){
   data("Gyroscope Frame:\n");
-  data("Sensor status is \"%s\", delay is %d us\n", print_status(gyroscope->input_report.gyroscope.status), (gyroscope->input_report.gyroscope.delay * 100));
-  data("(x, y, z) rad/s: (%d, %d, %d) rad/s\n", gyroscope->input_report.gyroscope.x, gyroscope->input_report.gyroscope.y, gyroscope->input_report.gyroscope.z);
+  data("\tSensor status is \"%s\", delay is %d us\n", print_status(sc->gyroscope.input_report.gyroscope.status), (sc->gyroscope.input_report.gyroscope.delay * 100));
+  data("\t(x, y, z) rad/s: (%d, %d, %d) rad/s\n", sc->gyroscope.input_report.gyroscope.x, sc->gyroscope.input_report.gyroscope.y, sc->gyroscope.input_report.gyroscope.z);
   data_quiet("\n");
 }
 
 void print_magnetic_field_data(struct sensor_collection* sc){
   data("Magnetic Field Frame:\n");
-  data("Sensor status is \"%s\", delay is %d us\n", print_status(magnetic_field->input_report.magnetic_field.status), (magnetic_field->input_report.magnetic_field.delay * 100));
-  data("(x, y, z) uT: (%d, %d, %d) uT\n", magnetic_field->input_report.magnetic_field.x, magnetic_field->input_report.magnetic_field.y, magnetic_field->input_report.magnetic_field.z);
+  data("\tSensor status is \"%s\", delay is %d us\n", print_status(sc->magnetic_field.input_report.magnetic_field.status), (sc->magnetic_field.input_report.magnetic_field.delay * 100));
+  data("\t(x, y, z) uT: (%d, %d, %d) uT\n", sc->magnetic_field.input_report.magnetic_field.x, sc->magnetic_field.input_report.magnetic_field.y, sc->magnetic_field.input_report.magnetic_field.z);
   data_quiet("\n");
 }
 
 void print_linear_acceleration_data(struct sensor_collection* sc){
   data("Linear Accelerometer Frame:\n");
-  data("Sensor status is \"%s\", delay is %d us\n", print_status(linear_acceleration->input_report.linear_acceleration.status), (linear_acceleration->input_report.linear_acceleration.delay * 100));
-  data("(x, y, z) m/s^2: (%d, %d, %d) m/s^2\n", linear_acceleration->input_report.linear_acceleration.x, linear_acceleration->input_report.linear_acceleration.y, linear_acceleration->input_report.linear_acceleration.z);
+  data("\tSensor status is \"%s\", delay is %d us\n", print_status(sc->linear_acceleration.input_report.linear_acceleration.status), (sc->linear_acceleration.input_report.linear_acceleration.delay * 100));
+  data("\t(x, y, z) m/s^2: (%d, %d, %d) m/s^2\n", sc->linear_acceleration.input_report.linear_acceleration.x, sc->linear_acceleration.input_report.linear_acceleration.y, sc->linear_acceleration.input_report.linear_acceleration.z);
   data_quiet("\n");
 }
 
 void print_rotation_vector_data(struct sensor_collection* sc){
   data("Rotation Vector Frame:\n");
-  data("Sensor status is \"%s\", delay is %d us\n", print_status(rotation_vector->input_report.rotation_vector.status), (rotation_vector->input_report.rotation_vector.delay * 100));
-  data("Quaternion: %d + %di + %dj + %dk\n", rotation_vector->input_report.rotation_vector.real, rotation_vector->input_report.rotation_vector.i, rotation_vector->input_report.rotation_vector.j, rotation_vector->input_report.rotation_vector.k);
-  data("Accuracy: %d rad\n", rotation_vector->input_report.rotation_vector.accuracy);
+  data("\tSensor status is \"%s\", delay is %d us\n", print_status(sc->rotation_vector.input_report.rotation_vector.status), (sc->rotation_vector.input_report.rotation_vector.delay * 100));
+  data("\tQuaternion: %d + %di + %dj + %dk\n", sc->rotation_vector.input_report.rotation_vector.real, sc->rotation_vector.input_report.rotation_vector.i, sc->rotation_vector.input_report.rotation_vector.j, sc->rotation_vector.input_report.rotation_vector.k);
+  data("\tAccuracy: %d rad\n", sc->rotation_vector.input_report.rotation_vector.accuracy);
   data_quiet("\n");
 }
 
@@ -75,8 +75,8 @@ void print_pressure_data(struct sensor_collection* sc){
 
 void print_ambient_light_data(struct sensor_collection* sc){
   data("Ambient Light Frame:\n");
-  data("Sensor status is \"%s\", delay is %d us\n", print_status(raw_accelerometer->input_report.raw_accelerometer.status), (raw_accelerometer->input_report.raw_accelerometer.delay * 100));
-  data("Value (lux): %d lux\n", ambient_light->input_report.ambient_light.value);
+  data("\tSensor status is \"%s\", delay is %d us\n", print_status(sc->ambient_light.input_report.raw_accelerometer.status), (sc->ambient_light.input_report.raw_accelerometer.delay * 100));
+  data("\tValue (lux): %d lux\n", sc->ambient_light.input_report.ambient_light.value);
   data_quiet("\n");
 }
 
@@ -114,9 +114,9 @@ void print_stability_classifier_data(struct sensor_collection* sc){
 
 void print_raw_accelerometer_data(struct sensor_collection* sc){
   data("Raw Accelerometer Frame:\n");
-  data("Sensor status is \"%s\", delay is %d us\n", print_status(raw_accelerometer->input_report.raw_accelerometer.status), (raw_accelerometer->input_report.raw_accelerometer.delay * 100));
-  data("(x, y, z) ADCs: (%d, %d, %d) ADCs\n", raw_accelerometer->input_report.raw_accelerometer.x, raw_accelerometer->input_report.raw_accelerometer.y, raw_accelerometer->input_report.raw_accelerometer.z);
-  data("Timestamp: %d\n", raw_accelerometer->input_report.raw_accelerometer.timestamp);
+  data("\tSensor status is \"%s\", delay is %d us\n", print_status(sc->raw_accelerometer.input_report.raw_accelerometer.status), (sc->raw_accelerometer.input_report.raw_accelerometer.delay * 100));
+  data("\t(x, y, z) ADCs: (%d, %d, %d) ADCs\n", sc->raw_accelerometer.input_report.raw_accelerometer.x, sc->raw_accelerometer.input_report.raw_accelerometer.y, sc->raw_accelerometer.input_report.raw_accelerometer.z);
+  data("\tTimestamp: %d\n", sc->raw_accelerometer.input_report.raw_accelerometer.timestamp);
   data_quiet("\n");
 }
 

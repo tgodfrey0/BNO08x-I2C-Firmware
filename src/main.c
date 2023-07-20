@@ -91,13 +91,13 @@ int main(){
 
 	struct sensor_collection sc = init(i2c);
 
-	// enable_sensor(i2c, ACCELEROMETER, 100);
-	// enable_sensor(i2c, GYROSCOPE, 100);
-	// enable_sensor(i2c, MAGNETIC_FIELD, 100);
-	// enable_sensor(i2c, LINEAR_ACCELERATION, 100);
+	// enable_sensor(i2c, &sc, ACCELEROMETER, 100);
+	// enable_sensor(i2c, &sc, GYROSCOPE, 100);
+	// enable_sensor(i2c, &sc, MAGNETIC_FIELD, 100);
+	// enable_sensor(i2c, &sc, LINEAR_ACCELERATION, 100);
 	enable_sensor(i2c, &sc, ROTATION_VECTOR, 100);
-	// enable_sensor(i2c, RAW_ACCELEROMETER, 100);
-	// enable_sensor(i2c, AMBIENT_LIGHT, 100);
+	// enable_sensor(i2c, &sc, RAW_ACCELEROMETER, 100);
+	// enable_sensor(i2c, &sc, AMBIENT_LIGHT, 100);
 
 	info("Initialisation process complete\n");
 	flash(5);
