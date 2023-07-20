@@ -34,11 +34,109 @@
 /**
  * @page gs Getting Started
  * 
- * In order to use the library, several functions must be declared before use. These are the I2C functions found in the \ref i2c_interface "i2c_interface". The initialise function must also be run before any communication takes place.
+ * In order to use the library, several functions must be declared before use. These are the I2C functions found in the \ref i2c_interface "i2c_interface". The `initialise` function must also be run before any communication takes place.
  * 
  * A `MAX_PAYLOAD_SIZE` value must also be defined.
  * 
  * Before sensors can be read, the sensor must be enabled (found in \ref sensors.h).
+ * 
+ * An minimal example for a Raspberry Pi Pico can be see below.
+ * 
+ * @code{.c}
+#include <stdio.h>
+#include <string.h>
+
+#include "boards/pico.h"
+#include "hardware/gpio.h"
+#include "hardware/timer.h"
+#include "pico/platform.h"
+#include "pico/stdio.h"
+#include "pico/stdlib.h"
+#include "hardware/i2c.h"
+
+#include "bno08x.h"
+#include "defs.h"
+#include "i2c.h"
+#include "logger.h"
+#include "output.h"
+
+// Define the callback for writing data to the I2C bus
+enum I2C_RESPONSE write_i2c(const uint8_t addr, const struct i2c_message* message){
+	info("Writing %d bytes\n", message->length);
+	int8_t res = i2c_write_blocking_until(I2C_INST, addr, message->payload, message->length, false, (absolute_time_t) {(time_us_64() + (TIMEOUT_MS * 1000))});
+	if(res == PICO_ERROR_GENERIC || res == PICO_ERROR_TIMEOUT){
+		return ERROR_GENERIC;
+  } else return SUCCESS;
+}
+
+// Define the callback for reading data from the I2C bus
+enum I2C_RESPONSE read_i2c(const uint8_t addr, struct i2c_message* message, const uint16_t n){
+	uint8_t buf[n];
+
+	int8_t res = i2c_read_blocking_until(I2C_INST, addr, buf, n, false, (absolute_time_t) {(time_us_64() + (TIMEOUT_MS * 1000))});
+
+  if(res == PICO_ERROR_GENERIC || res == PICO_ERROR_TIMEOUT){
+    return ERROR_GENERIC;
+  } else {
+    memcpy(message->payload, buf, n);
+		message->length = n;
+		return SUCCESS;
+  }
+}
+
+// Define the callback to initialise the I2C interface
+enum I2C_RESPONSE init_i2c(struct i2c_interface* self){
+	i2c_init(I2C_INST, FREQ_HZ);
+
+  gpio_set_function(SDA_PIN, GPIO_FUNC_I2C);
+  gpio_set_function(SCL_PIN, GPIO_FUNC_I2C);
+
+  gpio_pull_up(SCL_PIN);
+  gpio_pull_up(SDA_PIN);
+
+	self->initialised = true;
+
+  info("I2C interface successfully configured\n");
+	return SUCCESS;
+}
+
+int main(){
+
+	stdio_init_all();
+
+	printf("\n***\n\n");
+	info("Starting initialisation process\n");
+
+	info("Initialising data structures\n");
+
+	struct i2c_interface* i2c = &(struct i2c_interface) {
+		.sda_pin = SDA_PIN,
+		.scl_pin = SCL_PIN,
+		.baud_rate_hz = FREQ_HZ,
+		.initialise = false,
+		.write = &write_i2c,
+		.read = &read_i2c,
+		.initialise = &init_i2c
+	};
+
+	i2c->initialise(i2c);
+
+	struct sensor_collection sc = init(i2c);
+
+	enable_sensor(i2c, &sc, ACCELEROMETER, 50);
+	enable_sensor(i2c, &sc, GYROSCOPE, 50);
+	enable_sensor(i2c, &sc, MAGNETIC_FIELD, 50);
+
+	info("Initialisation process complete\n");
+
+	for(;;){
+		read_sensors(i2c, &sc);
+		sleep_ms(50);
+	}
+	
+	return 0;
+}
+ * @endcode
  */
 
 #pragma once

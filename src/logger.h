@@ -27,7 +27,7 @@ enum LEVEL {
   CRIT = 4
 };
 
-static enum LEVEL log_level = DEBUG; /**< The current log level. This level and all higher-priority levels will be shown. */
+static enum LEVEL log_level = DATA; /**< The current log level. This level and all higher-priority levels will be shown. */
 
 /**
  * @brief Print a message with the debug log level prepended with the `[DBUG]` tag.

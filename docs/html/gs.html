@@ -104,10 +104,120 @@ $(document).ready(function(){initNavTree('gs.html',''); initResizable(); });
   <div class="headertitle"><div class="title">Getting Started </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>In order to use the library, several functions must be declared before use. These are the I2C functions found in the <a class="el" href="structi2c__interface.html">i2c_interface</a>. The initialise function must also be run before any communication takes place.</p>
+<div class="textblock"><p>In order to use the library, several functions must be declared before use. These are the I2C functions found in the <a class="el" href="structi2c__interface.html">i2c_interface</a>. The <code>initialise</code> function must also be run before any communication takes place.</p>
 <p>A <code>MAX_PAYLOAD_SIZE</code> value must also be defined.</p>
-<p>Before sensors can be read, the sensor must be enabled (found in <a class="el" href="sensors_8h.html">sensors.h</a>). </p>
-</div></div><!-- contents -->
+<p>Before sensors can be read, the sensor must be enabled (found in <a class="el" href="sensors_8h.html">sensors.h</a>).</p>
+<p>An minimal example for a Raspberry Pi Pico can be see below.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &quot;boards/pico.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;hardware/gpio.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;hardware/timer.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;pico/platform.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;pico/stdio.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;pico/stdlib.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;hardware/i2c.h&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="bno08x_8h.html">bno08x.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;defs.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="i2c_8h.html">i2c.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="logger_8h.html">logger.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="output_8h.html">output.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Define the callback for writing data to the I2C bus</span></div>
+<div class="line"><span class="keyword">enum</span> <a class="code hl_enumeration" href="i2c_8h.html#a1be58a16c8c5ada6066b62182cdb3540">I2C_RESPONSE</a> write_i2c(<span class="keyword">const</span> uint8_t addr, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structi2c__message.html">i2c_message</a>* message){</div>
+<div class="line">    info(<span class="stringliteral">&quot;Writing %d bytes\n&quot;</span>, message-&gt;<a class="code hl_variable" href="structi2c__message.html#ab2b3adeb2a67e656ff030b56727fd0ac">length</a>);</div>
+<div class="line">    int8_t res = i2c_write_blocking_until(I2C_INST, addr, message-&gt;<a class="code hl_variable" href="structi2c__message.html#a1677d80e48189228cc0c188e9f78e57e">payload</a>, message-&gt;<a class="code hl_variable" href="structi2c__message.html#ab2b3adeb2a67e656ff030b56727fd0ac">length</a>, <span class="keyword">false</span>, (absolute_time_t) {(time_us_64() + (TIMEOUT_MS * 1000))});</div>
+<div class="line">    <span class="keywordflow">if</span>(res == PICO_ERROR_GENERIC || res == PICO_ERROR_TIMEOUT){</div>
+<div class="line">        <span class="keywordflow">return</span> ERROR_GENERIC;</div>
+<div class="line">  } <span class="keywordflow">else</span> <span class="keywordflow">return</span> SUCCESS;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Define the callback for reading data from the I2C bus</span></div>
+<div class="line"><span class="keyword">enum</span> <a class="code hl_enumeration" href="i2c_8h.html#a1be58a16c8c5ada6066b62182cdb3540">I2C_RESPONSE</a> read_i2c(<span class="keyword">const</span> uint8_t addr, <span class="keyword">struct</span> <a class="code hl_struct" href="structi2c__message.html">i2c_message</a>* message, <span class="keyword">const</span> uint16_t n){</div>
+<div class="line">    uint8_t buf[n];</div>
+<div class="line"> </div>
+<div class="line">    int8_t res = i2c_read_blocking_until(I2C_INST, addr, buf, n, <span class="keyword">false</span>, (absolute_time_t) {(time_us_64() + (TIMEOUT_MS * 1000))});</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">if</span>(res == PICO_ERROR_GENERIC || res == PICO_ERROR_TIMEOUT){</div>
+<div class="line">    <span class="keywordflow">return</span> ERROR_GENERIC;</div>
+<div class="line">  } <span class="keywordflow">else</span> {</div>
+<div class="line">    memcpy(message-&gt;<a class="code hl_variable" href="structi2c__message.html#a1677d80e48189228cc0c188e9f78e57e">payload</a>, buf, n);</div>
+<div class="line">        message-&gt;<a class="code hl_variable" href="structi2c__message.html#ab2b3adeb2a67e656ff030b56727fd0ac">length</a> = n;</div>
+<div class="line">        <span class="keywordflow">return</span> SUCCESS;</div>
+<div class="line">  }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Define the callback to initialise the I2C interface</span></div>
+<div class="line"><span class="keyword">enum</span> <a class="code hl_enumeration" href="i2c_8h.html#a1be58a16c8c5ada6066b62182cdb3540">I2C_RESPONSE</a> init_i2c(<span class="keyword">struct</span> <a class="code hl_struct" href="structi2c__interface.html">i2c_interface</a>* self){</div>
+<div class="line">    i2c_init(I2C_INST, FREQ_HZ);</div>
+<div class="line"> </div>
+<div class="line">  gpio_set_function(SDA_PIN, GPIO_FUNC_I2C);</div>
+<div class="line">  gpio_set_function(SCL_PIN, GPIO_FUNC_I2C);</div>
+<div class="line"> </div>
+<div class="line">  gpio_pull_up(SCL_PIN);</div>
+<div class="line">  gpio_pull_up(SDA_PIN);</div>
+<div class="line"> </div>
+<div class="line">    self-&gt;<a class="code hl_variable" href="structi2c__interface.html#ad86e7ae1ce88f3a7655a02558318afc3">initialised</a> = <span class="keyword">true</span>;</div>
+<div class="line"> </div>
+<div class="line">  info(<span class="stringliteral">&quot;I2C interface successfully configured\n&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">return</span> SUCCESS;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main(){</div>
+<div class="line"> </div>
+<div class="line">    stdio_init_all();</div>
+<div class="line"> </div>
+<div class="line">    printf(<span class="stringliteral">&quot;\n***\n\n&quot;</span>);</div>
+<div class="line">    info(<span class="stringliteral">&quot;Starting initialisation process\n&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">    info(<span class="stringliteral">&quot;Initialising data structures\n&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">struct </span><a class="code hl_struct" href="structi2c__interface.html">i2c_interface</a>* i2c = &amp;(<span class="keyword">struct </span><a class="code hl_struct" href="structi2c__interface.html">i2c_interface</a>) {</div>
+<div class="line">        .<a class="code hl_variable" href="structi2c__interface.html#acb49865e2894e64fdb1749089ea4ecfe">sda_pin</a> = SDA_PIN,</div>
+<div class="line">        .scl_pin = SCL_PIN,</div>
+<div class="line">        .baud_rate_hz = FREQ_HZ,</div>
+<div class="line">        .initialise = <span class="keyword">false</span>,</div>
+<div class="line">        .write = &amp;write_i2c,</div>
+<div class="line">        .read = &amp;read_i2c,</div>
+<div class="line">        .initialise = &amp;init_i2c</div>
+<div class="line">    };</div>
+<div class="line"> </div>
+<div class="line">    i2c-&gt;<a class="code hl_variable" href="structi2c__interface.html#a2b029a80e90944058da87d6544294625">initialise</a>(i2c);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">struct </span><a class="code hl_struct" href="structsensor__collection.html">sensor_collection</a> sc = <a class="code hl_function" href="bno08x_8h.html#ad10c299e74552cfca458c4fe60629715">init</a>(i2c);</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_function" href="bno08x_8h.html#ae4bf054129673570be11d3250aa61a20">enable_sensor</a>(i2c, &amp;sc, ACCELEROMETER, 50);</div>
+<div class="line">    <a class="code hl_function" href="bno08x_8h.html#ae4bf054129673570be11d3250aa61a20">enable_sensor</a>(i2c, &amp;sc, GYROSCOPE, 50);</div>
+<div class="line">    <a class="code hl_function" href="bno08x_8h.html#ae4bf054129673570be11d3250aa61a20">enable_sensor</a>(i2c, &amp;sc, MAGNETIC_FIELD, 50);</div>
+<div class="line"> </div>
+<div class="line">    info(<span class="stringliteral">&quot;Initialisation process complete\n&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">for</span>(;;){</div>
+<div class="line">        <a class="code hl_function" href="bno08x_8h.html#afcbe1d2f332a7802f7ce27201e08d7e0">read_sensors</a>(i2c, &amp;sc);</div>
+<div class="line">        sleep_ms(50);</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="abno08x_8h_html"><div class="ttname"><a href="bno08x_8h.html">bno08x.h</a></div><div class="ttdoc">Defines the top level entities for the library.</div></div>
+<div class="ttc" id="abno08x_8h_html_ad10c299e74552cfca458c4fe60629715"><div class="ttname"><a href="bno08x_8h.html#ad10c299e74552cfca458c4fe60629715">init</a></div><div class="ttdeci">struct sensor_collection init(const struct i2c_interface *i2c)</div><div class="ttdoc">Turn on the sensor and open the channel.</div><div class="ttdef"><b>Definition:</b> bno08x.c:242</div></div>
+<div class="ttc" id="abno08x_8h_html_ae4bf054129673570be11d3250aa61a20"><div class="ttname"><a href="bno08x_8h.html#ae4bf054129673570be11d3250aa61a20">enable_sensor</a></div><div class="ttdeci">bool enable_sensor(const struct i2c_interface *i2c, struct sensor_collection *sc, const enum REPORT_ID id, const uint32_t sample_rate_ms)</div><div class="ttdoc">Enables a specified sensor with a fixed report rate.</div><div class="ttdef"><b>Definition:</b> bno08x.c:382</div></div>
+<div class="ttc" id="abno08x_8h_html_afcbe1d2f332a7802f7ce27201e08d7e0"><div class="ttname"><a href="bno08x_8h.html#afcbe1d2f332a7802f7ce27201e08d7e0">read_sensors</a></div><div class="ttdeci">bool read_sensors(const struct i2c_interface *i2c, struct sensor_collection *sc)</div><div class="ttdoc">Read the latest sensor report on the bus.</div><div class="ttdef"><b>Definition:</b> bno08x.c:432</div></div>
+<div class="ttc" id="ai2c_8h_html"><div class="ttname"><a href="i2c_8h.html">i2c.h</a></div><div class="ttdoc">I2C related definitions.</div></div>
+<div class="ttc" id="ai2c_8h_html_a1be58a16c8c5ada6066b62182cdb3540"><div class="ttname"><a href="i2c_8h.html#a1be58a16c8c5ada6066b62182cdb3540">I2C_RESPONSE</a></div><div class="ttdeci">I2C_RESPONSE</div><div class="ttdoc">Possible I2C response codes.</div><div class="ttdef"><b>Definition:</b> i2c.h:37</div></div>
+<div class="ttc" id="alogger_8h_html"><div class="ttname"><a href="logger_8h.html">logger.h</a></div><div class="ttdoc">A very basic logger implementation.</div></div>
+<div class="ttc" id="aoutput_8h_html"><div class="ttname"><a href="output_8h.html">output.h</a></div><div class="ttdoc">Functions to print data to stdout.</div></div>
+<div class="ttc" id="astructi2c__interface_html"><div class="ttname"><a href="structi2c__interface.html">i2c_interface</a></div><div class="ttdoc">Holds the data relevant to the I2C interface configuration.</div><div class="ttdef"><b>Definition:</b> i2c.h:68</div></div>
+<div class="ttc" id="astructi2c__interface_html_a2b029a80e90944058da87d6544294625"><div class="ttname"><a href="structi2c__interface.html#a2b029a80e90944058da87d6544294625">i2c_interface::initialise</a></div><div class="ttdeci">enum I2C_RESPONSE(* initialise)(struct i2c_interface *self)</div><div class="ttdoc">Callback to initialise the I2C interface.</div><div class="ttdef"><b>Definition:</b> i2c.h:98</div></div>
+<div class="ttc" id="astructi2c__interface_html_acb49865e2894e64fdb1749089ea4ecfe"><div class="ttname"><a href="structi2c__interface.html#acb49865e2894e64fdb1749089ea4ecfe">i2c_interface::sda_pin</a></div><div class="ttdeci">uint8_t sda_pin</div><div class="ttdef"><b>Definition:</b> i2c.h:69</div></div>
+<div class="ttc" id="astructi2c__interface_html_ad86e7ae1ce88f3a7655a02558318afc3"><div class="ttname"><a href="structi2c__interface.html#ad86e7ae1ce88f3a7655a02558318afc3">i2c_interface::initialised</a></div><div class="ttdeci">bool initialised</div><div class="ttdef"><b>Definition:</b> i2c.h:72</div></div>
+<div class="ttc" id="astructi2c__message_html"><div class="ttname"><a href="structi2c__message.html">i2c_message</a></div><div class="ttdoc">Contains the relevant data about messages on the bus.</div><div class="ttdef"><b>Definition:</b> i2c.h:55</div></div>
+<div class="ttc" id="astructi2c__message_html_a1677d80e48189228cc0c188e9f78e57e"><div class="ttname"><a href="structi2c__message.html#a1677d80e48189228cc0c188e9f78e57e">i2c_message::payload</a></div><div class="ttdeci">uint8_t payload[MAX_PAYLOAD_SIZE]</div><div class="ttdef"><b>Definition:</b> i2c.h:56</div></div>
+<div class="ttc" id="astructi2c__message_html_ab2b3adeb2a67e656ff030b56727fd0ac"><div class="ttname"><a href="structi2c__message.html#ab2b3adeb2a67e656ff030b56727fd0ac">i2c_message::length</a></div><div class="ttdeci">uint8_t length</div><div class="ttdef"><b>Definition:</b> i2c.h:57</div></div>
+<div class="ttc" id="astructsensor__collection_html"><div class="ttname"><a href="structsensor__collection.html">sensor_collection</a></div><div class="ttdoc">Stores the collection of sensors.</div><div class="ttdef"><b>Definition:</b> bno08x.h:244</div></div>
+</div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
