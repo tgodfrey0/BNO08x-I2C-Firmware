@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"structcircle__detector__report.html#ade818037fd6c985038ff29656089758d":[3,0,9,4],
+"structdead__reckoning__pose.html":[3,0,10],
 "structdead__reckoning__pose__report.html":[3,0,11],
 "structdead__reckoning__pose__report.html#a1861a72677ca8121636bb586caf49d55":[3,0,11,13],
 "structdead__reckoning__pose__report.html#a1f54e44dcd9e75ee13acef9682aff1e4":[3,0,11,15],
@@ -205,9 +207,10 @@ var NAVTREEINDEX1 =
 "structrotation__vector__report.html#ade818037fd6c985038ff29656089758d":[3,0,55,8],
 "structrotation__vector__report.html#af3de58c4299b63bcdc8812fdf52342d5":[3,0,55,0],
 "structsensor.html":[3,0,56],
-"structsensor.html#a8f8f80d37794cde9472343e4487ba3eb":[3,0,56,2],
-"structsensor.html#aa995460869fbbbacfbb2a94bbae3c923":[3,0,56,0],
-"structsensor.html#adb2bff821836a28632fdc702826fef1c":[3,0,56,1],
+"structsensor.html#a8740ba80e30dd75e71d09fa1dcf04f3d":[3,0,56,0],
+"structsensor.html#a8f8f80d37794cde9472343e4487ba3eb":[3,0,56,3],
+"structsensor.html#aa995460869fbbbacfbb2a94bbae3c923":[3,0,56,1],
+"structsensor.html#adb2bff821836a28632fdc702826fef1c":[3,0,56,2],
 "structsensor__collection.html":[3,0,57],
 "structsensor__collection.html#a04d7934b9d384b6cfedd347c04daa5ac":[3,0,57,33],
 "structsensor__collection.html#a077d2439b05a4c305a8a5470520e55b9":[3,0,57,6],
@@ -246,8 +249,5 @@ var NAVTREEINDEX1 =
 "structsensor__collection.html#af9ffbb414127f45b914c9658017afaf9":[3,0,57,18],
 "structsensor__collection.html#afa05a669b397994295f456c7641dddef":[3,0,57,1],
 "structsensor__collection.html#afdceb65a7f06d8212d7fdc1a42640047":[3,0,57,3],
-"structsensor__collection.html#aff6533afecb839346e2a79e6d656de61":[3,0,57,27],
-"structshake__detector.html":[3,0,58],
-"structshake__detector__report.html":[3,0,59],
-"structshake__detector__report.html#a70fbd315df33bf9039e036725b569e7f":[3,0,59,0]
+"structsensor__collection.html#aff6533afecb839346e2a79e6d656de61":[3,0,57,27]
 };

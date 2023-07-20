@@ -131,7 +131,7 @@ struct sensor {
 	const char* name;		/**< A human-readable name for the sensor. Useful for outputting results. */
 	const enum REPORT_ID id;		/**< The sensor ID. This should be the same as the report_id in the report returned from the sensor. */
 	//const uint8_t channel;		/**< The channel the sensor communicates on. */
-	bool enabled;
+	bool enabled;		/**< Boolean flag as to whether the sensor has been enabled. */
 	union input_report input_report;		/**< Stores the returned data from the sensor. */
 };
 

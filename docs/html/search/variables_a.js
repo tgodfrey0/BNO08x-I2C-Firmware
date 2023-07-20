@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['latency_0',['latency',['../structstep__counter__report.html#acd3d24a29a6e07be2bd52fcaffecc872',1,'step_counter_report::latency()'],['../structstep__detector__report.html#acd3d24a29a6e07be2bd52fcaffecc872',1,'step_detector_report::latency()']]],
-  ['length_1',['length',['../structi2c__message.html#ab2b3adeb2a67e656ff030b56727fd0ac',1,'i2c_message']]],
-  ['linear_5facceleration_2',['linear_acceleration',['../structsensor__collection.html#ae673cbaa797f80b75549fabffa0e6474',1,'sensor_collection::linear_acceleration()'],['../unioninput__report.html#a89cba08a9a8d55bcdc80bfa2fb743da1',1,'input_report::linear_acceleration()']]],
-  ['log_5flevel_3',['log_level',['../logger_8h.html#a4991f5f6b0a54252bb2791ebf0ba7a74',1,'logger.h']]]
+  ['k_0',['k',['../structrotation__vector__report.html#a9fc4cca635a26c692681a7071e379aa7',1,'rotation_vector_report::k()'],['../structgame__rotation__vector__report.html#a9fc4cca635a26c692681a7071e379aa7',1,'game_rotation_vector_report::k()'],['../structgeomagnetic__rotation__vector__report.html#a9fc4cca635a26c692681a7071e379aa7',1,'geomagnetic_rotation_vector_report::k()'],['../structarvr__stabilised__rotation__vector__report.html#a9fc4cca635a26c692681a7071e379aa7',1,'arvr_stabilised_rotation_vector_report::k()'],['../structarvr__stabilised__game__rotation__vector__report.html#a9fc4cca635a26c692681a7071e379aa7',1,'arvr_stabilised_game_rotation_vector_report::k()'],['../structgyro__integrated__rotation__vector__report.html#a9fc4cca635a26c692681a7071e379aa7',1,'gyro_integrated_rotation_vector_report::k()']]],
+  ['k_5fangular_5fpos_1',['k_angular_pos',['../structdead__reckoning__pose__report.html#a9fc85c5b1a2f97b10e0489545f437220',1,'dead_reckoning_pose_report']]]
 ];

@@ -255,6 +255,130 @@ struct sensor_collection init(const struct i2c_interface* i2c){
   return populate_struct();
 }
 
+void mark_sensor_enabled(struct sensor_collection* sc, const enum REPORT_ID id){
+  switch (id) {
+    case ACCELEROMETER:
+      sc->accelerometer.enabled = true;
+      break;
+    case GYROSCOPE:
+      sc->gyroscope.enabled = true;
+      break;
+    case MAGNETIC_FIELD:
+      sc->magnetic_field.enabled = true;
+      break;
+    case LINEAR_ACCELERATION:
+      sc->linear_acceleration.enabled = true;
+      break;
+    case ROTATION_VECTOR:
+      sc->rotation_vector.enabled = true;
+      break;
+    case GRAVITY:
+      sc->gravity.enabled = true;
+      break;
+    case UNCALIBRATED_GYROSCOPE:
+      sc->uncalibrated_gyroscope.enabled = true;
+      break;
+    case GAME_ROTATION_VECTOR:
+      sc->game_rotation_vector.enabled = true;
+      break;
+    case GEOMAGNETIC_ROTATION_VECTOR:
+      sc->geomagnetic_rotation_vector.enabled = true;
+      break;
+    case PRESSURE:
+      sc->pressure.enabled = true;
+      break;
+    case AMBIENT_LIGHT:
+      sc->ambient_light.enabled = true;
+      break;
+    case HUMIDITY:
+      sc->humidity.enabled = true;
+      break;
+    case PROXIMITY:
+      sc->proximity.enabled = true;
+      break;
+    case TEMPERATURE:
+      sc->temperature.enabled = true;
+      break;
+    case UNCALIBRATED_MAGNETIC_FIELD:
+      sc->uncalibrated_magnetic_field.enabled = true;
+      break;
+    case TAP_DETECTOR:
+      sc->tap_detector.enabled = true;
+      break;
+    case STEP_COUNTER:
+      sc->step_counter.enabled = true;
+      break;
+    case SIGNIFICANT_MOTION:
+      sc->significant_motion.enabled = true;
+      break;
+    case STABILITY_CLASSIFIER:
+      sc->stability_classifier.enabled = true;
+      break;
+    case RAW_ACCELEROMETER:
+      sc->raw_accelerometer.enabled = true;
+      break;
+    case RAW_GYROSCOPE:
+      sc->raw_gyroscope.enabled = true;
+      break;
+    case RAW_MAGNETOMETER:
+      sc->raw_magnetometer.enabled = true;
+      break;
+    case STEP_DETECTOR:
+      sc->step_detector.enabled = true;
+      break;
+    case SHAKE_DETECTOR:
+      sc->shake_detector.enabled = true;
+      break;
+    case FLIP_DETECTOR:
+      sc->flip_detector.enabled = true;
+      break;
+    case PICKUP_DETECTOR:
+      sc->pickup_detector.enabled = true;
+      break;
+    case STABILITY_DETECTOR:
+      sc->stability_classifier.enabled = true;
+      break;
+    case PERSONAL_ACTIVITY_CLASSIFIER:
+      sc->personal_activity_classifier.enabled = true;
+      break;
+    case SLEEP_DETECTOR:
+      sc->sleep_detector.enabled = true;
+      break;
+    case TILT_DETECTOR:
+      sc->tilt_detector.enabled = true;
+      break;
+    case POCKET_DETECTOR:
+      sc->pocket_detector.enabled = true;
+      break;
+    case CIRCLE_DETECTOR:
+      sc->circle_detector.enabled = true;
+      break;
+    case HEART_RATE_MONITOR:
+      sc->heart_rate_monitor.enabled = true;
+      break;
+    case ARVR_STABILISED_ROTATION_VECTOR:
+      sc->arvr_stabilised_rotation_vector.enabled = true;
+      break;
+    case ARVR_STABILISED_GAME_ROTATION_VECTOR:
+      sc->arvr_stabilised_game_rotation_vector.enabled = true;
+      break;
+    case GYRO_INTEGRATED_ROTATION_VECTOR:
+      sc->gyro_integrated_rotation_vector.enabled = true;
+      break;
+    case MOTION_REQUEST:
+      sc->motion_request.enabled = true;
+      break;
+    case OPTICAL_FLOW:
+      break;
+    case DEAD_RECKONING_POSE:
+      sc->dead_reckoning_pose.enabled = true;
+      break;
+    default:
+      warn("Unrecognised sensor ID 0x%x passed to parser\n", id);
+      return;
+  }
+}
+
 bool enable_sensor(const struct i2c_interface* i2c, struct sensor_collection* sc, const enum REPORT_ID id, const uint32_t sample_rate_ms){
 
   uint64_t period_us = sample_rate_ms * 1000;
@@ -300,6 +424,7 @@ bool enable_sensor(const struct i2c_interface* i2c, struct sensor_collection* sc
     return false;
   } else {
     info("Sensor 0x%x has been successfully enabled\n", id);
+    mark_sensor_enabled(sc, id);
     return true;
   }
 }

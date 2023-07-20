@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['magnetic_5ffield_0',['magnetic_field',['../structsensor__collection.html#a16f5909c5298a5f827e43000164ae74d',1,'sensor_collection::magnetic_field()'],['../unioninput__report.html#ac51b7d06151e86996043a97d8d858454',1,'input_report::magnetic_field()']]],
-  ['most_5flikely_5fstate_1',['most_likely_state',['../structpersonal__activity__classifier__report.html#a2409218e5d962c8d686f9a59bcb42b24',1,'personal_activity_classifier_report']]],
-  ['motion_2',['motion',['../structsignificant__motion__report.html#ab787402b4c49d327979772dfc8a6a188',1,'significant_motion_report']]],
-  ['motion_5frequest_3',['motion_request',['../structsensor__collection.html#a10d5400c77c46ea2e747e8643b1235d3',1,'sensor_collection::motion_request()'],['../unioninput__report.html#adafe21a1039fa93629bb462b94730e20',1,'input_report::motion_request()']]]
+  ['latency_0',['latency',['../structstep__counter__report.html#acd3d24a29a6e07be2bd52fcaffecc872',1,'step_counter_report::latency()'],['../structstep__detector__report.html#acd3d24a29a6e07be2bd52fcaffecc872',1,'step_detector_report::latency()']]],
+  ['length_1',['length',['../structi2c__message.html#ab2b3adeb2a67e656ff030b56727fd0ac',1,'i2c_message']]],
+  ['linear_5facceleration_2',['linear_acceleration',['../structsensor__collection.html#ae673cbaa797f80b75549fabffa0e6474',1,'sensor_collection::linear_acceleration()'],['../unioninput__report.html#a89cba08a9a8d55bcdc80bfa2fb743da1',1,'input_report::linear_acceleration()']]],
+  ['log_5flevel_3',['log_level',['../logger_8h.html#a4991f5f6b0a54252bb2791ebf0ba7a74',1,'logger.h']]]
 ];
