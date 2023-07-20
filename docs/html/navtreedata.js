@@ -24,36 +24,12 @@
 */
 var NAVTREE =
 [
-  [ "BNO08x Firmware", "index.html", [
-    [ "Overview", "index.html", null ],
-    [ "Hardware Designs", "pcbs.html", null ],
-    [ "Getting Started", "gs.html", null ],
-    [ "Data Structures", "annotated.html", [
-      [ "Data Structures", "annotated.html", "annotated_dup" ],
-      [ "Data Structure Index", "classes.html", null ],
-      [ "Data Fields", "functions.html", [
-        [ "All", "functions.html", "functions_dup" ],
-        [ "Variables", "functions_vars.html", "functions_vars" ]
-      ] ]
-    ] ],
-    [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ],
-      [ "Globals", "globals.html", [
-        [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ],
-        [ "Variables", "globals_vars.html", null ],
-        [ "Enumerations", "globals_enum.html", null ],
-        [ "Macros", "globals_defs.html", null ]
-      ] ]
-    ] ]
-  ] ]
+  [ "BNO08x Firmware", "index.html", ]
 ];
 
 var NAVTREEINDEX =
 [
-"annotated.html",
-"structdead__reckoning__pose.html",
-"structstep__counter__report.html#acd3d24a29a6e07be2bd52fcaffecc872"
+"index.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
