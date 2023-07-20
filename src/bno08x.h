@@ -47,7 +47,6 @@
 #include <stdbool.h>
 
 #include "i2c.h"
-#include "sensors.h"
 #include "sensor_reports.h"
 
 #define OPEN_ATTEMPTS		5u /**< The number of tries to open a channel to the sensor. */
@@ -132,7 +131,57 @@ struct sensor {
 	const char* name;		/**< A human-readable name for the sensor. Useful for outputting results. */
 	const enum REPORT_ID id;		/**< The sensor ID. This should be the same as the report_id in the report returned from the sensor. */
 	//const uint8_t channel;		/**< The channel the sensor communicates on. */
+	bool enabled;
 	union input_report input_report;		/**< Stores the returned data from the sensor. */
+};
+
+/**
+ * @struct sensor_collection
+ * 
+ * @brief Stores the collection of sensors.
+ * 
+ * Stores a struct for each sensor.
+ * 
+ */
+struct sensor_collection {
+	struct sensor accelerometer;    /**< Stores the accelerometer sensor struct. */
+  struct sensor gyroscope;    /**< Stores the gyroscope sensor struct. */
+  struct sensor magnetic_field;    /**< Stores the magnetic field sensor struct. */
+  struct sensor linear_acceleration;    /**< Stores the linear acceleration sensor struct. */
+  struct sensor rotation_vector;    /**< Stores the rotation vector sensor struct. */
+  struct sensor gravity;    /**< Stores the gravity sensor struct. */
+  struct sensor uncalibrated_gyroscope;    /**< Stores the uncalibrated gyroscope sensor struct. */
+  struct sensor game_rotation_vector;    /**< Stores the game rotation vector sensor struct. */
+  struct sensor geomagnetic_rotation_vector;    /**< Stores the geomagnetic rotation vector sensor struct. */
+  struct sensor pressure;    /**< Stores the pressure sensor struct. */
+  struct sensor ambient_light;    /**< Stores the ambient light sensor struct. */
+  struct sensor humidity;    /**< Stores the humidity sensor struct. */
+  struct sensor proximity;    /**< Stores the proximity sensor struct. */
+  struct sensor temperature;    /**< Stores the temperature sensor struct. */
+  struct sensor uncalibrated_magnetic_field;    /**< Stores the uncalibrated magnetic field sensor struct. */
+  struct sensor tap_detector;    /**< Stores the tap detector sensor struct. */
+  struct sensor step_counter;    /**< Stores the step counter sensor struct. */
+  struct sensor significant_motion;    /**< Stores the significant motion sensor struct. */
+  struct sensor stability_classifier;    /**< Stores the stability classifier sensor struct. */
+  struct sensor raw_accelerometer;    /**< Stores the raw accelerometer sensor struct. */
+  struct sensor raw_gyroscope;    /**< Stores the raw gyroscope sensor struct. */
+  struct sensor raw_magnetometer;    /**< Stores the raw magnetometer sensor struct. */
+  struct sensor step_detector;    /**< Stores the step detector sensor struct. */
+  struct sensor shake_detector;    /**< Stores the shake detector sensor struct. */
+  struct sensor flip_detector;    /**< Stores the flip detector sensor struct. */
+  struct sensor pickup_detector;    /**< Stores the pickup detector sensor struct. */
+  struct sensor stability_detector;    /**< Stores the stability detector sensor struct. */
+  struct sensor personal_activity_classifier;    /**< Stores the personal activity classifier sensor struct. */
+  struct sensor sleep_detector;    /**< Stores the sleep detector sensor struct. */
+  struct sensor tilt_detector;    /**< Stores the tilt detector sensor struct. */
+  struct sensor pocket_detector;    /**< Stores the pocket detector sensor struct. */
+  struct sensor circle_detector;    /**< Stores the circle detector sensor struct. */
+  struct sensor heart_rate_monitor;    /**< Stores the hear rate monitor sensor struct. */
+  struct sensor arvr_stabilised_rotation_vector;    /**< Stores the ARVR stabilised rotation vector sensor struct. */
+  struct sensor arvr_stabilised_game_rotation_vector;    /**< Stores the ARVR stabilised game rotation vector sensor struct. */
+  struct sensor gyro_integrated_rotation_vector;    /**< Stores the gyro-integrated rotation vector sensor struct. */
+  struct sensor motion_request;    /**< Stores the motion request sensor struct. */
+  struct sensor dead_reckoning_pose;    /**< Stores the dead reckoning pose sensor struct. */
 };
 
 //=================================================================================================//
@@ -145,33 +194,28 @@ struct sensor {
  * This *must* be run before any other sensor operation.
  * 
  * @param i2c is the I2C interface to communicate with the sensor on
+ * @return the `sensor_collection` struct
  */
-void init(const struct i2c_interface* i2c);
+struct sensor_collection init(const struct i2c_interface* i2c);
 
 /**
  * @brief Enables a specified sensor with a fixed report rate.
  * 
  * @param i2c is the I2C interface to communicate with the sensor on
+ * @param sc is the pointer to the `sensor_collection` struct
  * @param id is the ID of the sensor to enable
  * @param sample_rate_ms is the desired report rate in miliseconds 
  * @return `true` if the sensor was successfully enabled
  * @return `false` if the sensor could not be enabled
  */
-bool enable_sensor(const struct i2c_interface* i2c, const enum REPORT_ID id, const uint32_t sample_rate_ms);
+bool enable_sensor(const struct i2c_interface* i2c, struct sensor_collection* sc, const enum REPORT_ID id, const uint32_t sample_rate_ms);
 
 /**
  * @brief Read the latest sensor report on the bus.
  * 
  * @param i2c is the I2C interface to communicate with the sensor on
+ * @param sc is the pointer to the `sensor_collection` struct
  * @return `true`	if the read was successful
  * @return `false` if an error occurred
  */
-bool read_sensors(const struct i2c_interface* i2c);
-
-/**
- * @brief Get the sensor struct from a given ID.
- * 
- * @param id is the ID of the sensor
- * @return the sensor struct pointer
- */
-struct sensor* get_sensor(const enum REPORT_ID id);
+bool read_sensors(const struct i2c_interface* i2c, struct sensor_collection* sc);

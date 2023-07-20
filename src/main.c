@@ -89,13 +89,13 @@ int main(){
 
 	i2c->initialise(i2c);
 
-	init(i2c);
+	struct sensor_collection sc = init(i2c);
 
 	// enable_sensor(i2c, ACCELEROMETER, 100);
 	// enable_sensor(i2c, GYROSCOPE, 100);
 	// enable_sensor(i2c, MAGNETIC_FIELD, 100);
 	// enable_sensor(i2c, LINEAR_ACCELERATION, 100);
-	enable_sensor(i2c, ROTATION_VECTOR, 100);
+	enable_sensor(i2c, &sc, ROTATION_VECTOR, 100);
 	// enable_sensor(i2c, RAW_ACCELEROMETER, 100);
 	// enable_sensor(i2c, AMBIENT_LIGHT, 100);
 
@@ -104,7 +104,7 @@ int main(){
 
 	for(;;){
 		gpio_put(PICO_DEFAULT_LED_PIN, 1);
-		read_sensors(i2c);
+		read_sensors(i2c, &sc);
 
 		// static int i = 0;
 		// if(i == 5) for(;;);

@@ -1,16 +1,15 @@
 var searchData=
 [
-  ['game_5frotation_5fvector_0',['game_rotation_vector',['../structgame__rotation__vector.html',1,'game_rotation_vector'],['../unioninput__report.html#ac5c2097561eae27d35ac043eef6a819c',1,'input_report::game_rotation_vector()']]],
+  ['game_5frotation_5fvector_0',['game_rotation_vector',['../structgame__rotation__vector.html',1,'game_rotation_vector'],['../unioninput__report.html#ac5c2097561eae27d35ac043eef6a819c',1,'input_report::game_rotation_vector()'],['../structsensor__collection.html#af1f47293b70cc090ba7c84fb3490efd2',1,'sensor_collection::game_rotation_vector()']]],
   ['game_5frotation_5fvector_5freport_1',['game_rotation_vector_report',['../structgame__rotation__vector__report.html',1,'']]],
-  ['geomagnetic_5frotation_5fvector_2',['geomagnetic_rotation_vector',['../structgeomagnetic__rotation__vector.html',1,'geomagnetic_rotation_vector'],['../unioninput__report.html#afb1a3110a2915f79282850a603cb2bf2',1,'input_report::geomagnetic_rotation_vector()']]],
+  ['geomagnetic_5frotation_5fvector_2',['geomagnetic_rotation_vector',['../unioninput__report.html#afb1a3110a2915f79282850a603cb2bf2',1,'input_report::geomagnetic_rotation_vector()'],['../structsensor__collection.html#a6be1ca7f210684d411f18a7e1f36078a',1,'sensor_collection::geomagnetic_rotation_vector()'],['../structgeomagnetic__rotation__vector.html',1,'geomagnetic_rotation_vector']]],
   ['geomagnetic_5frotation_5fvector_5freport_3',['geomagnetic_rotation_vector_report',['../structgeomagnetic__rotation__vector__report.html',1,'']]],
-  ['get_5fsensor_4',['get_sensor',['../bno08x_8h.html#a18224a517762bee500dc89e27c2bc68e',1,'bno08x.c']]],
-  ['get_5fseq_5fnum_5',['get_seq_num',['../i2c_8h.html#aebc32a9ef92d3da9638843398af27520',1,'i2c.h']]],
-  ['getting_20started_6',['Getting Started',['../gs.html',1,'']]],
-  ['gravity_7',['gravity',['../unioninput__report.html#a0fcc3d1225ed1ec0e364590628d87d3d',1,'input_report::gravity()'],['../structgravity.html',1,'gravity']]],
-  ['gravity_5freport_8',['gravity_report',['../structgravity__report.html',1,'']]],
-  ['gyro_5fintegrated_5frotation_5fvector_9',['gyro_integrated_rotation_vector',['../unioninput__report.html#ae8ec2bce527488918a9af03f628b546e',1,'input_report::gyro_integrated_rotation_vector()'],['../structgyro__integrated__rotation__vector.html',1,'gyro_integrated_rotation_vector']]],
-  ['gyro_5fintegrated_5frotation_5fvector_5freport_10',['gyro_integrated_rotation_vector_report',['../structgyro__integrated__rotation__vector__report.html',1,'']]],
-  ['gyroscope_11',['gyroscope',['../structgyroscope.html',1,'gyroscope'],['../unioninput__report.html#a3d15093866dd4528fdb6813be8b0c1ad',1,'input_report::gyroscope()']]],
-  ['gyroscope_5freport_12',['gyroscope_report',['../structgyroscope__report.html',1,'']]]
+  ['get_5fseq_5fnum_4',['get_seq_num',['../i2c_8h.html#aebc32a9ef92d3da9638843398af27520',1,'i2c.h']]],
+  ['getting_20started_5',['Getting Started',['../gs.html',1,'']]],
+  ['gravity_6',['gravity',['../structsensor__collection.html#a82c224720b053fbf2715237967b55984',1,'sensor_collection::gravity()'],['../unioninput__report.html#a0fcc3d1225ed1ec0e364590628d87d3d',1,'input_report::gravity()'],['../structgravity.html',1,'gravity']]],
+  ['gravity_5freport_7',['gravity_report',['../structgravity__report.html',1,'']]],
+  ['gyro_5fintegrated_5frotation_5fvector_8',['gyro_integrated_rotation_vector',['../structgyro__integrated__rotation__vector.html',1,'gyro_integrated_rotation_vector'],['../structsensor__collection.html#ac00f8fbc9892910a455bc5a03b320337',1,'sensor_collection::gyro_integrated_rotation_vector()'],['../unioninput__report.html#ae8ec2bce527488918a9af03f628b546e',1,'input_report::gyro_integrated_rotation_vector()']]],
+  ['gyro_5fintegrated_5frotation_5fvector_5freport_9',['gyro_integrated_rotation_vector_report',['../structgyro__integrated__rotation__vector__report.html',1,'']]],
+  ['gyroscope_10',['gyroscope',['../structgyroscope.html',1,'gyroscope'],['../structsensor__collection.html#a63f868ea97f2b2cfc6ce5d33ab0a3099',1,'sensor_collection::gyroscope()'],['../unioninput__report.html#a3d15093866dd4528fdb6813be8b0c1ad',1,'input_report::gyroscope()']]],
+  ['gyroscope_5freport_11',['gyroscope_report',['../structgyroscope__report.html',1,'']]]
 ];

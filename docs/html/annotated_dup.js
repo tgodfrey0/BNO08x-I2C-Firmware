@@ -57,6 +57,7 @@ var annotated_dup =
     [ "rotation_vector", "structrotation__vector.html", null ],
     [ "rotation_vector_report", "structrotation__vector__report.html", "structrotation__vector__report" ],
     [ "sensor", "structsensor.html", "structsensor" ],
+    [ "sensor_collection", "structsensor__collection.html", "structsensor__collection" ],
     [ "shake_detector", "structshake__detector.html", null ],
     [ "shake_detector_report", "structshake__detector__report.html", "structshake__detector__report" ],
     [ "significant_motion", "structsignificant__motion.html", null ],

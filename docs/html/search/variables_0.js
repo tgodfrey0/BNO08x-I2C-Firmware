@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['accelerometer_0',['accelerometer',['../unioninput__report.html#aa8e10bfe5a835918c1433c176be4825d',1,'input_report']]],
+  ['accelerometer_0',['accelerometer',['../structsensor__collection.html#a34054e0264bd361b0ec03708e63d4170',1,'sensor_collection::accelerometer()'],['../unioninput__report.html#aa8e10bfe5a835918c1433c176be4825d',1,'input_report::accelerometer()']]],
   ['accuracy_1',['accuracy',['../structrotation__vector__report.html#af3de58c4299b63bcdc8812fdf52342d5',1,'rotation_vector_report::accuracy()'],['../structgeomagnetic__rotation__vector__report.html#a4655b4ced08b73119087d8af58680ff1',1,'geomagnetic_rotation_vector_report::accuracy()'],['../structarvr__stabilised__rotation__vector__report.html#af3de58c4299b63bcdc8812fdf52342d5',1,'arvr_stabilised_rotation_vector_report::accuracy()']]],
-  ['ambient_5flight_2',['ambient_light',['../unioninput__report.html#a2163957bb5b2ef3cdd8a7f2323a27d31',1,'input_report']]],
-  ['arvr_5fstabilised_5fgame_5frotation_5fvector_3',['arvr_stabilised_game_rotation_vector',['../unioninput__report.html#af51422749b8cf414fb8def8dcf00d418',1,'input_report']]],
-  ['arvr_5fstabilised_5frotation_5fvector_4',['arvr_stabilised_rotation_vector',['../unioninput__report.html#abf3825c785865c82baf2ab924654014e',1,'input_report']]]
+  ['ambient_5flight_2',['ambient_light',['../structsensor__collection.html#afa05a669b397994295f456c7641dddef',1,'sensor_collection::ambient_light()'],['../unioninput__report.html#a2163957bb5b2ef3cdd8a7f2323a27d31',1,'input_report::ambient_light()']]],
+  ['arvr_5fstabilised_5fgame_5frotation_5fvector_3',['arvr_stabilised_game_rotation_vector',['../structsensor__collection.html#ac5ffc852202d669fd74efe6f68864ce1',1,'sensor_collection::arvr_stabilised_game_rotation_vector()'],['../unioninput__report.html#af51422749b8cf414fb8def8dcf00d418',1,'input_report::arvr_stabilised_game_rotation_vector()']]],
+  ['arvr_5fstabilised_5frotation_5fvector_4',['arvr_stabilised_rotation_vector',['../structsensor__collection.html#afdceb65a7f06d8212d7fdc1a42640047',1,'sensor_collection::arvr_stabilised_rotation_vector()'],['../unioninput__report.html#abf3825c785865c82baf2ab924654014e',1,'input_report::arvr_stabilised_rotation_vector()']]]
 ];

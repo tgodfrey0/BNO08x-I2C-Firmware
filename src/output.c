@@ -17,35 +17,35 @@ char* print_status(uint8_t s){
   }
 }
 
-void print_accelerometer_data(){
+void print_accelerometer_data(struct sensor_collection* sc){
   data("Accelerometer Frame:\n");
   data("Sensor status is \"%s\", delay is %d us\n", print_status(accelerometer->input_report.accelerometer.status), (accelerometer->input_report.accelerometer.delay * 100));
   data("(x, y, z) m/s^2: (%d, %d, %d) m/s^2\n", accelerometer->input_report.accelerometer.x, accelerometer->input_report.accelerometer.y, accelerometer->input_report.accelerometer.z);
   data_quiet("\n");
 }
 
-void print_gyroscope_data(){
+void print_gyroscope_data(struct sensor_collection* sc){
   data("Gyroscope Frame:\n");
   data("Sensor status is \"%s\", delay is %d us\n", print_status(gyroscope->input_report.gyroscope.status), (gyroscope->input_report.gyroscope.delay * 100));
   data("(x, y, z) rad/s: (%d, %d, %d) rad/s\n", gyroscope->input_report.gyroscope.x, gyroscope->input_report.gyroscope.y, gyroscope->input_report.gyroscope.z);
   data_quiet("\n");
 }
 
-void print_magnetic_field_data(){
+void print_magnetic_field_data(struct sensor_collection* sc){
   data("Magnetic Field Frame:\n");
   data("Sensor status is \"%s\", delay is %d us\n", print_status(magnetic_field->input_report.magnetic_field.status), (magnetic_field->input_report.magnetic_field.delay * 100));
   data("(x, y, z) uT: (%d, %d, %d) uT\n", magnetic_field->input_report.magnetic_field.x, magnetic_field->input_report.magnetic_field.y, magnetic_field->input_report.magnetic_field.z);
   data_quiet("\n");
 }
 
-void print_linear_acceleration_data(){
+void print_linear_acceleration_data(struct sensor_collection* sc){
   data("Linear Accelerometer Frame:\n");
   data("Sensor status is \"%s\", delay is %d us\n", print_status(linear_acceleration->input_report.linear_acceleration.status), (linear_acceleration->input_report.linear_acceleration.delay * 100));
   data("(x, y, z) m/s^2: (%d, %d, %d) m/s^2\n", linear_acceleration->input_report.linear_acceleration.x, linear_acceleration->input_report.linear_acceleration.y, linear_acceleration->input_report.linear_acceleration.z);
   data_quiet("\n");
 }
 
-void print_rotation_vector_data(){
+void print_rotation_vector_data(struct sensor_collection* sc){
   data("Rotation Vector Frame:\n");
   data("Sensor status is \"%s\", delay is %d us\n", print_status(rotation_vector->input_report.rotation_vector.status), (rotation_vector->input_report.rotation_vector.delay * 100));
   data("Quaternion: %d + %di + %dj + %dk\n", rotation_vector->input_report.rotation_vector.real, rotation_vector->input_report.rotation_vector.i, rotation_vector->input_report.rotation_vector.j, rotation_vector->input_report.rotation_vector.k);
@@ -53,66 +53,66 @@ void print_rotation_vector_data(){
   data_quiet("\n");
 }
 
-void print_gravity_data(){
+void print_gravity_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", gravity->id);
 }
 
-void print_uncalibrated_gyroscope_data(){
+void print_uncalibrated_gyroscope_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", uncalibrated_gyroscope->id);
 }
 
-void print_game_rotation_vector_data(){
+void print_game_rotation_vector_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", game_rotation_vector->id);
 }
 
-void print_geomagnetic_rotation_vector_data(){
+void print_geomagnetic_rotation_vector_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", geomagnetic_rotation_vector->id);
 }
 
-void print_pressure_data(){
+void print_pressure_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", pressure->id);
 }
 
-void print_ambient_light_data(){
+void print_ambient_light_data(struct sensor_collection* sc){
   data("Ambient Light Frame:\n");
   data("Sensor status is \"%s\", delay is %d us\n", print_status(raw_accelerometer->input_report.raw_accelerometer.status), (raw_accelerometer->input_report.raw_accelerometer.delay * 100));
   data("Value (lux): %d lux\n", ambient_light->input_report.ambient_light.value);
   data_quiet("\n");
 }
 
-void print_humidity_data(){
+void print_humidity_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", humidity->id);
 }
 
-void print_proximity_data(){
+void print_proximity_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", proximity->id);
 }
 
-void print_temperature_data(){
+void print_temperature_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", temperature->id);
 }
 
-void print_uncalibrated_magnetic_field_data(){
+void print_uncalibrated_magnetic_field_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", uncalibrated_magnetic_field->id);
 }
 
-void print_tap_detector_data(){
+void print_tap_detector_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", tap_detector->id);
 }
 
-void print_step_counter_data(){
+void print_step_counter_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", step_counter->id);
 }
 
-void print_significant_motion_data(){
+void print_significant_motion_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", significant_motion->id);
 }
 
-void print_stability_classifier_data(){
+void print_stability_classifier_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", stability_classifier->id);
 }
 
-void print_raw_accelerometer_data(){
+void print_raw_accelerometer_data(struct sensor_collection* sc){
   data("Raw Accelerometer Frame:\n");
   data("Sensor status is \"%s\", delay is %d us\n", print_status(raw_accelerometer->input_report.raw_accelerometer.status), (raw_accelerometer->input_report.raw_accelerometer.delay * 100));
   data("(x, y, z) ADCs: (%d, %d, %d) ADCs\n", raw_accelerometer->input_report.raw_accelerometer.x, raw_accelerometer->input_report.raw_accelerometer.y, raw_accelerometer->input_report.raw_accelerometer.z);
@@ -120,75 +120,75 @@ void print_raw_accelerometer_data(){
   data_quiet("\n");
 }
 
-void print_raw_gyroscope_data(){
+void print_raw_gyroscope_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", raw_gyroscope->id);
 }
 
-void print_raw_magnetometer_data(){
+void print_raw_magnetometer_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", raw_magnetometer->id);
 }
 
-void print_step_detector_data(){
+void print_step_detector_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", step_detector->id);
 }
 
-void print_shake_detector_data(){
+void print_shake_detector_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", shake_detector->id);
 }
 
-void print_flip_detector_data(){
+void print_flip_detector_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", flip_detector->id);
 }
 
-void print_pickup_detector_data(){
+void print_pickup_detector_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", pickup_detector->id);
 }
 
-void print_stability_detector_data(){
+void print_stability_detector_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", stability_detector->id);
 }
 
-void print_personal_activity_classifier_data(){
+void print_personal_activity_classifier_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", personal_activity_classifier->id);
 }
 
-void print_sleep_detector_data(){
+void print_sleep_detector_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", sleep_detector->id);
 }
 
-void print_tilt_detector_data(){
+void print_tilt_detector_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", tilt_detector->id);
 }
 
-void print_pocket_detector_data(){
+void print_pocket_detector_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", pocket_detector->id);
 }
 
-void print_circle_detector_data(){
+void print_circle_detector_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", circle_detector->id);
 }
 
-void print_heart_rate_monitor_data(){
+void print_heart_rate_monitor_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", heart_rate_monitor->id);
 }
 
-void print_arvr_stabilised_rotation_vector_data(){
+void print_arvr_stabilised_rotation_vector_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", arvr_stabilised_rotation_vector->id);
 }
 
-void print_arvr_stabilised_game_rotation_vector_data(){
+void print_arvr_stabilised_game_rotation_vector_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", arvr_stabilised_game_rotation_vector->id);
 }
 
-void print_gyro_integrated_rotation_vector_data(){
+void print_gyro_integrated_rotation_vector_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", gyro_integrated_rotation_vector->id);
 }
 
-void print_motion_request_data(){
+void print_motion_request_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", motion_request->id);
 }
 
-void print_dead_reckoning_pose_data(){
+void print_dead_reckoning_pose_data(struct sensor_collection* sc){
   warn("Printer for frames from sensor 0x%x has not yet been implemented", dead_reckoning_pose->id);
 }
 

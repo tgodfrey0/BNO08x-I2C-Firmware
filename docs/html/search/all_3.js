@@ -2,7 +2,7 @@ var searchData=
 [
   ['data_0',['data',['../logger_8h.html#aa725ed931c4cdca1f223cf39190bce0e',1,'logger.c']]],
   ['data_5fquiet_1',['data_quiet',['../logger_8h.html#a8282681679f05f483e793816aabbc999',1,'logger.c']]],
-  ['dead_5freckoning_5fpose_2',['dead_reckoning_pose',['../unioninput__report.html#a33d6e68d5aab496e5746ad1730c770d1',1,'input_report::dead_reckoning_pose()'],['../structdead__reckoning__pose.html',1,'dead_reckoning_pose']]],
+  ['dead_5freckoning_5fpose_2',['dead_reckoning_pose',['../structsensor__collection.html#a771206827cbdcd8d6108c3d46c773f00',1,'sensor_collection::dead_reckoning_pose()'],['../unioninput__report.html#a33d6e68d5aab496e5746ad1730c770d1',1,'input_report::dead_reckoning_pose()'],['../structdead__reckoning__pose.html',1,'dead_reckoning_pose']]],
   ['dead_5freckoning_5fpose_5freport_3',['dead_reckoning_pose_report',['../structdead__reckoning__pose__report.html',1,'']]],
   ['debug_4',['debug',['../logger_8h.html#af7a3ecd9d76ae8bb6c000f23f5aff541',1,'logger.c']]],
   ['debug_5fquiet_5',['debug_quiet',['../logger_8h.html#a50743259fb267a98cd5fe07273261d8f',1,'logger.c']]],
