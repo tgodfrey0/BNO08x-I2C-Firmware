@@ -21,7 +21,6 @@ uint16_t read_16(uint8_t* p){
 float read_16_scale(uint8_t* p, uint8_t q){
   uint16_t i = read_16(p);
   float qp = scale_q(q);
-  debug("V: %d\t-\tQ: %f\t-\tV*Q: %f\n", i, qp, (i * qp));
   return (read_16(p) * scale_q(q));
 }
 
@@ -111,27 +110,18 @@ void parse_rotation_vector_data(struct sensor_collection* sc, uint8_t* data, uin
     return;
   }
   
-  printf("%d\n", sc->rotation_vector.input_report.rotation_vector.report_id);
   sc->rotation_vector.input_report.rotation_vector.report_id = data[0];
-  printf("%d\n\n", sc->rotation_vector.input_report.rotation_vector.report_id);
-  printf("%d\n", sc->rotation_vector.input_report.rotation_vector.seq_num);
   sc->rotation_vector.input_report.rotation_vector.seq_num = data[1];
-  printf("%d\n\n", sc->rotation_vector.input_report.rotation_vector.seq_num);
-  printf("%d\n", sc->rotation_vector.input_report.rotation_vector.status);
   sc->rotation_vector.input_report.rotation_vector.status = data[2];
-  printf("%d\n\n", sc->rotation_vector.input_report.rotation_vector.status);
-  printf("%d\n", sc->rotation_vector.input_report.rotation_vector.delay);
   sc->rotation_vector.input_report.rotation_vector.delay = data[3];
-  printf("%d\n\n", sc->rotation_vector.input_report.rotation_vector.delay);
-  printf("%f\n", sc->rotation_vector.input_report.rotation_vector.i);
   sc->rotation_vector.input_report.rotation_vector.i = read_16_scale(&data[4], Q_ROTATION_VECTOR);
-  printf("%f\n\n", sc->rotation_vector.input_report.rotation_vector.i);
   sc->rotation_vector.input_report.rotation_vector.j = read_16_scale(&data[6], Q_ROTATION_VECTOR);
   sc->rotation_vector.input_report.rotation_vector.k = read_16_scale(&data[8], Q_ROTATION_VECTOR);
   sc->rotation_vector.input_report.rotation_vector.real = read_16_scale(&data[10], Q_ROTATION_VECTOR);
   sc->rotation_vector.input_report.rotation_vector.accuracy = read_16_scale(&data[12], Q_ROTATION_VECTOR_ACCURACY);
 
   info("Successfully parsed rotation vector data\n");
+
   print_rotation_vector_data(sc);
 }
 
