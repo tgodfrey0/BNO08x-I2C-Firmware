@@ -1,0 +1,8 @@
+prefix=/home/toby/projects/tactile_sensing_research/bno08x_teensy/bno08x_teensy_ws/devel
+
+Name: bno08x-teensy
+Description: Description of bno08x-teensy
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

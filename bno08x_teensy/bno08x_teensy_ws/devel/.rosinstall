@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/toby/projects/tactile_sensing_research/bno08x_teensy/bno08x_teensy_ws/devel/setup.sh
