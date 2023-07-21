@@ -125,6 +125,14 @@ $(document).ready(function(){initNavTree('gs.html',''); initResizable(); });
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="logger_8h.html">logger.h</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="output_8h.html">output.h</a>&quot;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="preprocessor">#define FREQ_HZ     400000u</span></div>
+<div class="line"><span class="preprocessor">#define I2C_INST    i2c0</span></div>
+<div class="line"><span class="preprocessor">#define SDA_PIN     16</span></div>
+<div class="line"><span class="preprocessor">#define SCL_PIN     17</span></div>
+<div class="line"><span class="preprocessor">#define TIMEOUT_MS  5000</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#define SENSOR_REPORT_RATE 50</span></div>
+<div class="line"> </div>
 <div class="line"><span class="comment">// Define the callback for writing data to the I2C bus</span></div>
 <div class="line"><span class="keyword">enum</span> <a class="code hl_enumeration" href="i2c_8h.html#a1be58a16c8c5ada6066b62182cdb3540">I2C_RESPONSE</a> write_i2c(<span class="keyword">const</span> uint8_t addr, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structi2c__message.html">i2c_message</a>* message){</div>
 <div class="line">    info(<span class="stringliteral">&quot;Writing %d bytes\n&quot;</span>, message-&gt;<a class="code hl_variable" href="structi2c__message.html#ab2b3adeb2a67e656ff030b56727fd0ac">length</a>);</div>
@@ -188,15 +196,15 @@ $(document).ready(function(){initNavTree('gs.html',''); initResizable(); });
 <div class="line"> </div>
 <div class="line">    <span class="keyword">struct </span><a class="code hl_struct" href="structsensor__collection.html">sensor_collection</a> sc = <a class="code hl_function" href="bno08x_8h.html#ad10c299e74552cfca458c4fe60629715">init</a>(i2c);</div>
 <div class="line"> </div>
-<div class="line">    <a class="code hl_function" href="bno08x_8h.html#ae4bf054129673570be11d3250aa61a20">enable_sensor</a>(i2c, &amp;sc, ACCELEROMETER, 50);</div>
-<div class="line">    <a class="code hl_function" href="bno08x_8h.html#ae4bf054129673570be11d3250aa61a20">enable_sensor</a>(i2c, &amp;sc, GYROSCOPE, 50);</div>
-<div class="line">    <a class="code hl_function" href="bno08x_8h.html#ae4bf054129673570be11d3250aa61a20">enable_sensor</a>(i2c, &amp;sc, MAGNETIC_FIELD, 50);</div>
+<div class="line">    <a class="code hl_function" href="bno08x_8h.html#ae4bf054129673570be11d3250aa61a20">enable_sensor</a>(i2c, &amp;sc, ACCELEROMETER, SENSOR_REPORT_RATE);</div>
+<div class="line">    <a class="code hl_function" href="bno08x_8h.html#ae4bf054129673570be11d3250aa61a20">enable_sensor</a>(i2c, &amp;sc, GYROSCOPE, SENSOR_REPORT_RATE);</div>
+<div class="line">    <a class="code hl_function" href="bno08x_8h.html#ae4bf054129673570be11d3250aa61a20">enable_sensor</a>(i2c, &amp;sc, MAGNETIC_FIELD, SENSOR_REPORT_RATE);</div>
 <div class="line"> </div>
 <div class="line">    info(<span class="stringliteral">&quot;Initialisation process complete\n&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">for</span>(;;){</div>
 <div class="line">        <a class="code hl_function" href="bno08x_8h.html#afcbe1d2f332a7802f7ce27201e08d7e0">read_sensors</a>(i2c, &amp;sc);</div>
-<div class="line">        sleep_ms(50);</div>
+<div class="line">        sleep_ms(SENSOR_REPORT_RATE);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
@@ -216,7 +224,7 @@ $(document).ready(function(){initNavTree('gs.html',''); initResizable(); });
 <div class="ttc" id="astructi2c__message_html"><div class="ttname"><a href="structi2c__message.html">i2c_message</a></div><div class="ttdoc">Contains the relevant data about messages on the bus.</div><div class="ttdef"><b>Definition:</b> i2c.h:55</div></div>
 <div class="ttc" id="astructi2c__message_html_a1677d80e48189228cc0c188e9f78e57e"><div class="ttname"><a href="structi2c__message.html#a1677d80e48189228cc0c188e9f78e57e">i2c_message::payload</a></div><div class="ttdeci">uint8_t payload[MAX_PAYLOAD_SIZE]</div><div class="ttdef"><b>Definition:</b> i2c.h:56</div></div>
 <div class="ttc" id="astructi2c__message_html_ab2b3adeb2a67e656ff030b56727fd0ac"><div class="ttname"><a href="structi2c__message.html#ab2b3adeb2a67e656ff030b56727fd0ac">i2c_message::length</a></div><div class="ttdeci">uint8_t length</div><div class="ttdef"><b>Definition:</b> i2c.h:57</div></div>
-<div class="ttc" id="astructsensor__collection_html"><div class="ttname"><a href="structsensor__collection.html">sensor_collection</a></div><div class="ttdoc">Stores the collection of sensors.</div><div class="ttdef"><b>Definition:</b> bno08x.h:244</div></div>
+<div class="ttc" id="astructsensor__collection_html"><div class="ttname"><a href="structsensor__collection.html">sensor_collection</a></div><div class="ttdoc">Stores the collection of sensors.</div><div class="ttdef"><b>Definition:</b> bno08x.h:252</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

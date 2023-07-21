@@ -60,6 +60,14 @@
 #include "logger.h"
 #include "output.h"
 
+#define FREQ_HZ		400000u
+#define I2C_INST	i2c0
+#define SDA_PIN		16
+#define SCL_PIN		17
+#define TIMEOUT_MS	5000
+
+#define SENSOR_REPORT_RATE 50
+
 // Define the callback for writing data to the I2C bus
 enum I2C_RESPONSE write_i2c(const uint8_t addr, const struct i2c_message* message){
 	info("Writing %d bytes\n", message->length);
@@ -123,15 +131,15 @@ int main(){
 
 	struct sensor_collection sc = init(i2c);
 
-	enable_sensor(i2c, &sc, ACCELEROMETER, 50);
-	enable_sensor(i2c, &sc, GYROSCOPE, 50);
-	enable_sensor(i2c, &sc, MAGNETIC_FIELD, 50);
+	enable_sensor(i2c, &sc, ACCELEROMETER, SENSOR_REPORT_RATE);
+	enable_sensor(i2c, &sc, GYROSCOPE, SENSOR_REPORT_RATE);
+	enable_sensor(i2c, &sc, MAGNETIC_FIELD, SENSOR_REPORT_RATE);
 
 	info("Initialisation process complete\n");
 
 	for(;;){
 		read_sensors(i2c, &sc);
-		sleep_ms(50);
+		sleep_ms(SENSOR_REPORT_RATE);
 	}
 	
 	return 0;
